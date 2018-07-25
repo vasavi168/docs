@@ -1,7 +1,8 @@
 # Send SMS Using JSON object
 
+#### POST
 ```
-/send/json
+{endpoint}sms/send/json
 ```
 
 You can send sms using `POST` method content in body.

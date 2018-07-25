@@ -4,7 +4,7 @@
   - [Status Code](/docs/{{version}}#http-status-codes)
 
 - Account
-  - [Check Balance](/docs/{{version}}/balance)
+  - [Check Account Balance](/docs/{{version}}/balance)
 
 - Messaging
   - [Send Sms](/docs/{{version}}/send-sms)

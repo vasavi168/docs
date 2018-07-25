@@ -1,26 +1,18 @@
-# Pull The Dlr
+# Check Account Balance
 
+#### GET
 ```
-/status?id=469ea920-ccd1-4a39-b728-c0b6f15f6aa6:1&token=209eccd40ee3a2e14af7fe45b2xxxx
+/account/balance
 ```
 
-You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.
-
-####  ACCEPTED PARAMETERS
-
-| Name     | Descriptions |
-|----------|--------------|
-| id | Message Id we have given in response|
-| mobile | Mobile number with country code|
-| cid | Your custom id|
-
-you can pass any of the above params to get the dlr response
+You can get the account balance of each service using this api.
 
 #### Example Request
 
 ```curl
-curl -X GET \
-  '{{base_url}}status?id=469ea920-ccd1-xxxx&access_token=209eccd40e45b21xxxx'
+  curl -X GET \
+  {endpoint}account/balance \
+  -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b211cae4'
 ```
 
 #### Example Response
@@ -31,18 +23,18 @@ curl -X GET \
     "message": "OK",
     "data": [
         {
-            "id": "469ea920-ccd1-4a39-b728-c0b6f15f6aa6:1",
-            "mobile": "9189212693xx",
-            "status": "DELIVRD",
-            "units": 1,
-            "length": 7,
-            "charges": 1,
-            "custom": "",
-            "custom1": "",
-            "location": "",
-            "provider": "",
-            "submitted_at": "2018-07-06 09:57:42",
-            "delivered_at": "2018-07-06 21:57:42"
+            "service": "P",
+            "name": "Promotional SMS",
+            "postpaid": 0,
+            "credits": 69,
+            "charges": 1
+        },
+        {
+            "service": "T",
+            "name": "Transactional SMS",
+            "postpaid": 0,
+            "credits": 109,
+            "charges": 1
         }
     ]
 }

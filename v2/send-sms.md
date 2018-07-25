@@ -8,15 +8,7 @@ The SMS API supports the following:
 
 `GET` - You can retrieve the results of the message you sent using the GET method. You do this by sending a GET request containing the reference id for the message you sent. We returns a response message in the form of a *__JSON__* object in the entity body.
 
-### Base URL  for Integration
-
-To start using SMS Services, the base URL with default response is provided below:
-
-```shell
-http://portal.mobtexting.com/api/sms/{{version}}
-```
-
-NOTE:
+### Services
 
 Types of services and their values are listed below:
 
@@ -31,8 +23,10 @@ Before you start sending transactional SMS through this API, please test whether
 
 ## Send SMS
 
+#### POST/GET
+
 ```
-/send?message=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T
+{endpoint}sms/send?message=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T
 ```
 
 You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.

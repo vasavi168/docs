@@ -1,7 +1,8 @@
-# Pull The Dlr
+# PULL DLR STATUS
 
+#### GET
 ```
-/status?id=469ea920-ccd1-4a39-b728-c0b6f15f6aa6:1&token=209eccd40ee3a2e14af7fe45b2xxxx
+{endpoint}sms/status?id=469ea920-ccd1-4a39-b728-c0b6f15f6aa6:1&token=209eccd40ee3a2e14af7fe45b2xxxx
 ```
 
 You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.
