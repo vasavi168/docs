@@ -12,7 +12,7 @@ You can get the account balance of each service using this api.
 ```curl
   curl -X GET \
   {endpoint}account/balance \
-  -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b211cae4'
+  -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
 ```
 
 #### Example Response
