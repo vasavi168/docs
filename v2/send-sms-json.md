@@ -43,7 +43,7 @@ All params in send sms will support in JSON also.
 
 ```curl
 curl --request POST \
-  --url {{base_url}}/send/json \
+  --url {endpoint}/send/json \
   --header 'Content-Type: application/json' \
   --data '{
     "root": {

@@ -59,7 +59,7 @@ In case of an error, the body of the response includes a json formatted response
 #### ATTRIBUTES
 | Name | Value |
 | ----- | ----- |
-| status | This represents the error type. OK is success and rest everthing is failed|
+| status | This represents the error type. OK or 200 is success and rest everthing is failed|
 | message | A human-readable description of the error. You can provide your users with this information to indicate what they can do about the error. |
 
 
