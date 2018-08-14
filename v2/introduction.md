@@ -1,8 +1,8 @@
 # API OVERVIEW
 
-API's are built on `POST` and `GET` method & REST standard that allows you to easily send SMS messages to your end users and makes your work ease. You can send alerts, reminders, and notifications, or you can send verification messages containing one-time passcodes (OTP) using this feature of ours. 
+API's are built on `POST` and `GET` method & REST standard that allows you to easily send messages to your end users and make your work easy. You can send alerts, reminders, and notifications, or you can send verification messages containing one-time passcodes (OTP) using this feature of ours. 
 
-This documentation gives you instructions on how to integrate our api through various *_HTTP_* API and *_json_* API.
+This documentation gives you instructions on how to integrate our api through various *_HTTP_* API and *_JSON_* API.
 
 We'll be helping you configure, access and use the API for SMS.
 
@@ -24,7 +24,7 @@ Don't have an access token? You will find your access token in the `API Tokens` 
 
 When your application can't send an Authorization header, you can use the GET parameter access_token to provide your access key.
 
-We do provide incoming request whitelisting on our platform for our REST API. You can whitelist the ip addressess while generating the access token.
+We do provide incoming request whitelisting on our platform for our REST API. You can whitelist the IP addressess while generating the access token.
 
 ### CURL Example
 ```shell
@@ -54,7 +54,7 @@ You can contact our support team to increase the limit. Our team will increase t
 
 We uses standard HTTP status codes to indicate success or failure of an API request. Codes in the 2xx range indicate that a request was successfuly processed and codes in the 4xx range indicate that there was an error that resulted from the information sent (e.g. authentication, no balance or a missing or wrong parameter).
 
-In case of an error, the body of the response includes a json formatted response that tells you exactly what is wrong.
+In case of an error, the body of the response includes a JSON formatted response that tells you exactly what is wrong.
 
 #### ATTRIBUTES
 | Name | Value |
@@ -71,8 +71,8 @@ In case of an error, the body of the response includes a json formatted response
 | 202 | Accepted - Request accepted. |
 | 400 | Bad Request - Something in your header or request body was malformed. |
 | 401 | Unauthorised - Necessary credentials were either missing or invalid. |
-| 403 | Your credentials are valid, but you donâ€™t have access to the requested resource. |
+| 403 | Your credentials are valid, but you don’t have access to the requested resource. |
 | 404 | The resources cannot be found |
 | 409 | Conflict - You might be trying to update the same resource concurrently.
 | 429 | Too Many Requests - You are calling our APIs more frequently than we allow.
-| 5xx | Something went wrong on our end	Please try again |
+| 5xx | Something went wrong on our end.	Please try again |
