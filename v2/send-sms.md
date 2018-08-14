@@ -4,7 +4,7 @@ The SMS API supports the following:
 
 #### HTTP Methods 
 
-`POST` - When you send a POST request with the end userâ€™s phone number to the messaging subresource, We sends the SMS message you specify.
+`POST` - When you send a POST request with the end user’s phone number to the messaging subresource, We sends the SMS message you specify.
 
 `GET` - You can retrieve the results of the message you sent using the GET method. You do this by sending a GET request containing the reference id for the message you sent. We returns a response message in the form of a *__JSON__* object in the entity body.
 
@@ -51,8 +51,8 @@ You can send sms using `POST` or `GET` methods, GET method requires data should 
 | time |  Scheduling the time (in mysql format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent. |
 | unicode | This parameter determines whether the SMS to be sent is Unicode or the normal SMS. (value "auto", "1" or "0") |
 | flash | This parameter can be used to send flash sms via API ( Values 1 or 0.) |
-| custom | any customised parameters can be passed  using this parameter |
-| custom1 | any customised parameter |
+| custom | Any customised parameters can be passed  using this parameter |
+| custom1 | Any customised parameter |
 | port | Port number to which SMS has to be sent |
 
 #### Example Request
