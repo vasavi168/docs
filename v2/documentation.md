@@ -13,3 +13,4 @@
     
 - Help
   - [Setting Custom Domain](/docs/{{version}}/branding)
+  - [SMPP Gateway](/docs/{{version}}/smpp-gateway)
