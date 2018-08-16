@@ -10,6 +10,7 @@
   - [Send Sms](/docs/{{version}}/send-sms)
   - [Send Sms Using JSON](/docs/{{version}}/send-sms-json)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
+  - [Push DLR](/docs/{{version}}/sms-push-dlr)
     
 - Help
   - [Setting Custom Domain](/docs/{{version}}/branding)
