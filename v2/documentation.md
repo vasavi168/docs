@@ -1,14 +1,14 @@
 - Overview
   - [Authentication](/docs/{{version}})
-  - [Rate limits](/docs/{{version}}#rate-limits)
+  - [Rate Limits](/docs/{{version}}#rate-limits)
   - [Status Code](/docs/{{version}}#http-status-codes)
 
 - Account
   - [Check Account Balance](/docs/{{version}}/balance)
 
 - Messaging
-  - [Send Sms](/docs/{{version}}/send-sms)
-  - [Send Sms Using JSON](/docs/{{version}}/send-sms-json)
+  - [Send SMS](/docs/{{version}}/send-sms)
+  - [Send SMS Using JSON](/docs/{{version}}/send-sms-json)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
   - [Push DLR](/docs/{{version}}/sms-push-dlr)
     
