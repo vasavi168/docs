@@ -48,8 +48,9 @@ You can send sms using `POST` or `GET` methods, GET method requires data should 
 | Name     | Descriptions |
 |----------|--------------|
 | dlr_url | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. |
-| time |  Scheduling the time (in mysql format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent. |
-| unicode | This parameter determines whether the SMS to be sent is Unicode or the normal SMS. (value "auto", "1" or "0") |
+| time |  Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent. |
+| sms_type | The SMS to be sent is Unicode, Normal or Auto detect. (value "A", "U" or "N") |
+| unicode | The SMS to be sent is Unicode or the normal SMS. (value "auto", "1" or "0") |
 | flash | This parameter can be used to send flash sms via API ( Values 1 or 0.) |
 | custom | any customised parameters can be passed  using this parameter |
 | custom1 | any customised parameter |
