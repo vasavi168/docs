@@ -9,18 +9,18 @@ You can send sms using `POST` method content in body.
 
 All params in send sms will support in JSON also.
 
-`root` entry holds the default values for each node. You can overwite the `root` values inside `nodes` value except `dlr_url` and `time`.
+`root` entry holds the default values for each node. You can overwite the `root` values inside `nodes` value except `dlr_url`, `service` and `time`.
 
 #### BODY
 
 ```json
 {
     "root": {
-        "unicode": "auto",
+        "type": "A",
         "flash": 0,
         "sender": "TXTSMS",
-        "service": "T",
         "message": "global message",
+        "service": "T",
         "dlr_url": "http://www.domainname.com/dlr?status={status}",
         "time": ""
     },

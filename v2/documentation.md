@@ -7,6 +7,7 @@
   - [Check Account Balance](/docs/{{version}}/balance)
 
 - Messaging
+  - [Overview](/docs/{{version}}/sms-overview)
   - [Send SMS](/docs/{{version}}/send-sms)
   - [Send SMS Using JSON](/docs/{{version}}/send-sms-json)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
@@ -16,3 +17,4 @@
   - [Setting Custom Domain](/docs/{{version}}/branding)
   - [SMPP Gateway](/docs/{{version}}/smpp-gateway)
   - [Schedule Message](/docs/{{version}}/schedule)
+  - [Smart Link](/docs/{{version}}/smart-link)

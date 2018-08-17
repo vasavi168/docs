@@ -49,7 +49,7 @@ You can send sms using `POST` or `GET` methods, GET method requires data should 
 |----------|--------------|
 | dlr_url | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. |
 | time |  Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent. |
-| type | The SMS to be sent is Unicode, Normal or Auto detect. (value "A", "U" or "N") |
+| type | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A") |
 | flash | This parameter can be used to send flash sms via API ( Values 1 or 0.) |
 | custom | Any customised parameters can be passed  using this parameter |
 | custom1 | Any customised parameter |
