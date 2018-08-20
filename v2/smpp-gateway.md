@@ -32,9 +32,7 @@ Set the system_type field to smpp.
 The client application should connect with the interface_version field set to 0x34 (52 decimal), if it is using SMPP v3.4, otherwise the Platformassumes that the application uses SMPP v3.3.
 
 **enquire_link:** The application should issue an enquire_link every minute. This will
-ensure the link stays active even when it is not in use. The RouteMobile
-Messaging Platform will automatically disconnect any link which is inactive for more
-than 5mins.
+ensure the link stays active even when it is not in use. The Messaging Platform will automatically disconnect any link which is inactive for more than 5mins.
 
 ## Submitting Messages
 
