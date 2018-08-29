@@ -158,6 +158,7 @@ Status and error code which can be returned by Messaging Platform.
 |099 | UNDELIV | Unknown Error|
 |400 | SERIES-BLOCK | Series has been temporary / permanently blocked.|
 |401 | NO-CREDITS | Credit exhausted.|
+|402 | NO-ACCOUNT | Invalid account.|
 |403 | SERVER-ERR | Unknown Error|
 |404 | INV-NUMBER | Invalid destination number |
 |405 | SERVER-ERR | ESME client error|
