@@ -22,3 +22,5 @@ You can test that your domain is setup correctly using `dig`:
 ```shell
 dig @8.8.8.8 +short CNAME my.example.com
 ```
+
+*Note:* Some hosting providers may take upto 12 hours to resolved the cname mapping.
