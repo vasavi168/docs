@@ -10,6 +10,7 @@
   - [Overview](/docs/{{version}}/sms-overview)
   - [Send SMS](/docs/{{version}}/send-sms)
   - [Send SMS Using JSON](/docs/{{version}}/send-sms-json)
+  - [Send SMS Using XML](/docs/{{version}}/send-sms-xml)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
   - [Push DLR](/docs/{{version}}/sms-push-dlr)
     
