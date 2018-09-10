@@ -66,11 +66,11 @@ curl -X POST \
    
    <nodes>
       <node>
-         <custom>9190199556xx</custom>
-         <custom1>9190199556xx</custom1>
          <message><![CDATA[this message will be used insted of root]]></message>
          <sender>SANKAR</sender>
-         <to>919019955622</to>
+         <to>9190199556xx</to>
+         <custom>9190199556xx</custom>
+         <custom1>9190199556xx</custom1>
       </node>
       <node>
          <custom>34</custom>
