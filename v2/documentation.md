@@ -13,6 +13,7 @@
   - [Send SMS Using XML](/docs/{{version}}/send-sms-xml)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
   - [Push DLR](/docs/{{version}}/sms-push-dlr)
+  - [OPTOUT API](/docs/{{version}}/OPTOUT)
     
 - Help
   - [Setting Custom Domain](/docs/{{version}}/branding)
