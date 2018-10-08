@@ -177,6 +177,6 @@ Status and error code which can be returned by Messaging Platform.
 |457 | PROMO-TMOUT | Promotional time exceeded|
 |458 | REJECTED | Unknown Error |
 |459 | NOTALLOWED | Country not allowed to send sms |
-|450 | DUPLICATE | Same content sent |
-|451 | UNDELIV | Unknown Error |
-|452 | FAILED | Unknown Error |
+|460 | DUPLICATE | Same content sent |
+|461 | UNDELIV | Unknown Error |
+|462 | FAILED | Unknown Error |
