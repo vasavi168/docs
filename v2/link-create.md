@@ -29,7 +29,36 @@ curl -X POST \
   -d 'title=smart%20link&long_url=https%3A%2F%2Fwww.google.com&advanced=1'
 ```
 
-Kindly replace the token with your respective access_token and other params.
+```
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "{domain}/rest/v1/link/create",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "title=Smart%20Link&long_url=https%3A%2F%2Fgoogle.com&advanced=1",
+  CURLOPT_HTTPHEADER => array(
+    "Accept: application/json",
+    "Content-Type: application/x-www-form-urlencoded",
+    "Authorization: Bearer 38e896f55670311982434e929559xxxx"
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+
+```
   
 #### Example Response
 
