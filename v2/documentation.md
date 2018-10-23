@@ -15,6 +15,11 @@
   - [Push DLR](/docs/{{version}}/sms-push-dlr)
   - [Optout](/docs/{{version}}/optout)
     
+- General
+  - [View Smart Links](/docs/{{version}}/links)
+  - [Create Smart Link](/docs/{{version}}/link-create)
+  - [View Link Visits](/docs/{{version}}/link-visits)
+
 - Help
   - [Setting Custom Domain](/docs/{{version}}/branding)
   - [SMPP Gateway](/docs/{{version}}/smpp-gateway)
