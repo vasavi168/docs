@@ -11,10 +11,11 @@
   - [Send SMS](/docs/{{version}}/send-sms)
   - [Send SMS Using JSON](/docs/{{version}}/send-sms-json)
   - [Send SMS Using XML](/docs/{{version}}/send-sms-xml)
+  - [Push DLR/Webhook](/docs/{{version}}/sms-push-dlr)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
-  - [Push DLR](/docs/{{version}}/sms-push-dlr)
   - [Optout](/docs/{{version}}/optout)
-    
+  - [SMPP Gateway](/docs/{{version}}/smpp-gateway)
+  
 - General
   - [View Smart Links](/docs/{{version}}/links)
   - [Create Smart Link](/docs/{{version}}/link-create)
@@ -22,7 +23,6 @@
 
 - Help
   - [Setting Custom Domain](/docs/{{version}}/branding)
-  - [SMPP Gateway](/docs/{{version}}/smpp-gateway)
   - [Schedule Message](/docs/{{version}}/schedule)
   - [Smart Link](/docs/{{version}}/smart-link)
   - [Sender Id](/docs/{{version}}/sender)

@@ -44,7 +44,8 @@ All params in send sms will support in JSON also.
 ```curl
 curl --request POST \
   --url {endpoint}/send/json \
-  --header 'Content-Type: application/json' \
+  -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
+  -H 'Content-Type: application/json' \
   --data '{
     "root": {
         "unicode": "auto",
@@ -60,7 +61,7 @@ curl --request POST \
             "to": "919019xxxx2",
             "custom": "346576-446565-45657-XFTR",
             "sender": "txtmes",
-            "message": "Message from & json api node 1"
+            "message": "Message from json api node 1"
         },
         {
             "to": "9188xxxxxxxxxx",

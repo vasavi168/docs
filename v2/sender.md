@@ -12,10 +12,10 @@ This SenderID will be used as often as possible but a major percentage of traffi
 
 ### Don'ts:
 
-* Do not choose commonly used English words or phrases like "COFFEE" or "SMSFORU"
+* Do not choose commonly used English words or phrases like "COFFEE" or "SMSFRU"
 * Do not use other company names or brands like "AIRTEL" or "LENOVO"'
 * Do not violate someone else's trademark
-* Avoid using numbers unless it is necessary (as it looks spammy). For ex: Avoid "BUY431".'
+* Avoid using numbers unless it is necessary and supports (as it looks spammy). For ex: Avoid "BUY431".'
 
 ### Do's:
 

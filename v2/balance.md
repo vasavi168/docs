@@ -2,7 +2,7 @@
 
 #### GET
 ```
-/account/balance
+{endpoint}/account/balance
 ```
 
 You can get the account balance of each service using this api.

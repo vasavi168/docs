@@ -1,6 +1,6 @@
 # API OVERVIEW
 
-API's are built on `POST` and `GET` method & REST standard that allows you to easily send messages to your end users and make your work easy. You can send alerts, reminders, and notifications, or you can send verification messages containing one-time passcodes (OTP) using this feature of ours. 
+API's are built on `POST` and `GET` method with `REST` standard that allows you to easily send messages to your end users and make your work easy. You can send alerts, reminders, and notifications, or you can send verification messages containing one-time passcodes (OTP) using this feature of ours. 
 
 This documentation gives you instructions on how to integrate our api through various *_HTTP_* API and *_JSON_* API.
 
@@ -20,9 +20,9 @@ Note: Few elements in endpoint may change for service to service.
 
 Each API request will have to contain request headers that include your access token to authenticate the request. 
 
-Don't have an access token? You will find your access token in the `API Tokens` in menu bar.
+Don't have an access token? You will find your access token in the `Manage Items -> API Keys` in menu bar.
 
-When your application can't send an Authorization header, you can use the GET parameter access_token to provide your access key.
+When your application can't send an Authorization header, you can use the GET parameter `access_token` to provide your access key.
 
 We do provide incoming request whitelisting on our platform for our REST API. You can whitelist the IP addressess while generating the access token.
 
@@ -71,7 +71,7 @@ In case of an error, the body of the response includes a JSON formatted response
 | 202 | Accepted - Request accepted. |
 | 400 | Bad Request - Something in your header or request body was malformed. |
 | 401 | Unauthorised - Necessary credentials were either missing or invalid. |
-| 403 | Your credentials are valid, but you don’t have access to the requested resource. |
+| 403 | Your credentials are valid, but you don't have access to the requested resource. |
 | 404 | The resources cannot be found |
 | 409 | Conflict - You might be trying to update the same resource concurrently.
 | 429 | Too Many Requests - You are calling our APIs more frequently than we allow.
