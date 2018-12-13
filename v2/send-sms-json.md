@@ -48,11 +48,11 @@ curl --request POST \
   -H 'Content-Type: application/json' \
   --data '{
     "root": {
-        "unicode": "auto",
+        "type": "A",
         "flash": 0,
         "sender": "TXTSMS",
-        "service": "T",
         "message": "global message",
+        "service": "T",
         "dlr_url": "http://www.domainname.com/dlr?status={status}",
         "time": ""
     },
@@ -61,7 +61,7 @@ curl --request POST \
             "to": "919019xxxx2",
             "custom": "346576-446565-45657-XFTR",
             "sender": "txtmes",
-            "message": "Message from json api node 1"
+            "message": "Message from & json api node 1"
         },
         {
             "to": "9188xxxxxxxxxx",
