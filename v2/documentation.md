@@ -27,3 +27,13 @@
   - [Smart Link](/docs/{{version}}/smart-link)
   - [Sender Id](/docs/{{version}}/sender)
   - [Message Templates](/docs/{{version}}/templates)
+  
+- Plugins And Libraries
+  - [Plugins Overview](/docs/{{version}}/pluginintro)
+  - [Excel Plugin](/docs/{{version}}/excel)
+  - [Wordpress Plugin](/docs/{{version}}/wordpress)
+  - [Magento Plugin](/docs/{{version}}/magento)
+  - [Woo Commerce Plugin](/docs/{{version}}/woocommerce)
+  - [Opencart Plugin](/docs/{{version}}/opencart)
+
+    
