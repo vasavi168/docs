@@ -1,6 +1,7 @@
-# Plugins Overview
+# Overview
 
-Third party integrations help you integrate your business service to another resource through an API. This enables you to use the third party service on your network application.
+Third party integrations help you integrate your business service to another resource through an API. 
+This enables you to use the third party service on your network application.
 
 #### You can integrate MOBtexting services to the following plugins:
   
@@ -8,7 +9,7 @@ Third party integrations help you integrate your business service to another res
 -  Magento
 -  Wordpress
 -  Woocommerce
--  Google Spreadsheet(Excel Plugin)
+-  Excel Plugin
   
 To know more and to download the above plugin files visit, [{domain}/plugins]({domain}/plugins)
 
@@ -18,8 +19,8 @@ To know more and to download the above plugin files visit, [{domain}/plugins]({d
 
 | Name     | Descriptions |
 |----------|--------------|
-| Sender_id | Specify your 6 character sender_id through which you want to send the sms. [Learn more]({domain}/docs/v2/sender)|
-| Access_token | The access_token that is generated under your account.[Learn more]({domain}/docs/v2#authentication)|
+| sender_id | Specify your sender_id through which you want to send the sms. [Learn more]({domain}/docs/v2/sender)|
+| access_token | The access_token that is generated under your account. [Learn more]({domain}/docs/v2#authentication)|
 
 ####  OPTIONAL PARAMETERS
 
@@ -30,4 +31,4 @@ Few plugins like Woocommerce and Wordpress uses the below parameters in the proc
 | Service type | Specify your service type through which you would like to send sms. [Learn more]({domain}/docs/v2/send-sms#services)|
 | Provider | Kindly select MOBtexting under the provider list in order to integrate.|
 
-For further queries on the integrations,Kindly contact our support team.
+For further queries on the integrations, Kindly contact our support team.
