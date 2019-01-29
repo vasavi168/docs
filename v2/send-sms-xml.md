@@ -47,7 +47,7 @@ You can send sms using `POST` method content in body.
 
 ```curl
 curl -X POST \
-  {endpoint}sms/send/xml \
+  "{endpoint}sms/send/xml" \
   -H 'Authorization: Bearer 425b8dec5d6b618fa9c08xxxx' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/xml' \

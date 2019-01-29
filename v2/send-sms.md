@@ -58,8 +58,8 @@ You can send sms using `POST` or `GET` methods, GET method requires data should 
 #### Example Request
 
 ```
-curl -X GET
-  {domain}/api/{{version}}/sms/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&message=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T
+curl -X GET \
+  "{domain}/api/{{version}}/sms/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&message=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T"
 ```
 
 #### Example Response

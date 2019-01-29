@@ -20,7 +20,7 @@ services. You can block the customer's number using our optout feature. Once the
 
 ```
 curl -X GET
-  {domain}/api/v2/optout?access_token=a19eb34810exxxxxxxxx&number=74114xxxxx,707856xxxx
+  '{domain}/api/v2/optout?access_token=a19eb34810exxxxxxxxx&number=74114xxxxx,707856xxxx'
 ```
 
 Kindly replace the token with your respective token and you can specify multiple mobile numbers by seperating it with ','(comma).
