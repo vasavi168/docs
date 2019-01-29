@@ -8,7 +8,7 @@ This is a bundle of powerful yet flexible modules and plugins that are tailor ma
 
 ## Features
 
-Using MOBtexting Magento2x SMS you can enjoy many features, You can
+Using WooCommerce SMS you can enjoy many features, You can
 
 *   Notify customers via SMS about their activities such as order placement or cancellation, invoice generation etc. in Magento store.
 *   Input mobile number of the admin in the backend to get SMS notification for customers' various activities.

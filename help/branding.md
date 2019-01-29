@@ -5,7 +5,7 @@ To setup your own domain name and theme colors follow the below steps:
 
 - Login to panel using primary domain name given by vendor
 - Click Resellers -> branding on left side menu
-- Enter your domain name in desired space. ex: my.example.com
+- Enter your domain name in desired space. ex: `my.example.com`
 - Name your product, will be used in all communication emails
 - Title will be displayed on brower window
 - Choose theme for your website, It's color themes for popular websites.
@@ -24,6 +24,16 @@ You can test that your domain is setup correctly using `dig`:
 
 ```shell
 dig @8.8.8.8 +short CNAME my.example.com
+```
+
+On successfull pointing, you can able to see the results similar to below
+
+```shell
+;; ANSWER SECTION:
+my.example.com.	984	IN	CNAME	cname-sms.txtsms.me.
+cname-sms.txtsms.me.	59	IN	A	52.76.163.53
+cname-sms.txtsms.me.	59	IN	A	52.221.80.168
+
 ```
 
 *Note:* Some hosting providers may take upto 12 hours to resolved the cname mapping.
