@@ -16,7 +16,13 @@
   - [Optout](/docs/{{version}}/optout)
   - [SMPP Gateway](/docs/{{version}}/smpp-gateway)
   
-- General
-  - [View Smart Links](/docs/{{version}}/links)
-  - [Create Smart Link](/docs/{{version}}/link-create)
-  - [View Link Visits](/docs/{{version}}/link-visits)
+- Verify
+  - [Overview](/docs/{{ version }}/verify)
+  - [Check](/docs/{{ version }}/verify/check)
+  - [Search](/docs/{{ version }}/verify/search)
+  - [Cancel](/docs/{{ version }}/verify/cancel)
+
+- Link
+  - [View Smart Links](/docs/{{version}}/link)
+  - [Create Smart Link](/docs/{{version}}/link/create)
+  - [View Link Visits](/docs/{{version}}/link/visits)
