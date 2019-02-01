@@ -1,4 +1,4 @@
-# SMPP Interface
+# SMPP Gateway
 
 SMPP (Short Message Peer-to-Peer) is a protocol used by the telecommunications industry for
 exchanging SMS messages between Short Message Service Centers (SMSC) and External Short
@@ -6,27 +6,40 @@ Messaging Entities (ESME). The SMPP protocol is sent through TCP/IP, which allow
 delivery of SMS messages.
 
 
-## Introduction
+## INTRODUCTION
 
 The Messaging Platform uses the SMPP v3.4 Protocol Specification Issue 1.5, However it has been designed to be backward compatible with SMPP v3.3.
 This document should be read in conjunction with SMPP v3.4 Specification v1.5 and
 assumes with SMPP a level of familiarity functionality.
 
-## Connectivity
+## SERVER LIST
 
-Clients may connect to the Messaging Platform Server multiple numbers of times. This may be of importance if the client wishes to deploy multiple applications simultaneously. To connect to the Messaging Platform, one needs to specify the following parameters:
+{app} has multiple SMPP servers for you to connect to. Each SMPP server offers the ability to connect to it via the regular (plaintext) method or via a TLS1.0 or better connection.
+
+Here is an overview of the available servers:
+
+| Hostname     | Port |
+|----------|--------------|
+| smpp3634.txtsms.me | 3634 |
+| smpp1.txtsms.me | 3634 |
+| smpp2.txtsms.me | 3634 |
+
+
+## CONNECTIVITY
+
+Clients may connect to the Messaging Platform Server multiple numbers of times. This may be of importance if the client wishes to deploy multiple applications simultaneously. To connect to the platform, one needs to specify the following parameters:
 
 **IP Address and Port:**
-This is the TCP/IP endpoint on which the ESME should connect to the Messaging Platform.
+This is the TCP/IP endpoint on which the ESME should connect to the platform.
 
 **Username:**
-This is the username of your account configured on the Messaging Platform
+This is the username (`system_id`) of your account configured on the Platform
 
 **Password:**
 Password for the above account. Required for security reasons to prevent unauthorized access to your account.
 
 **System_type:**
-Set the system_type field to smpp.
+Set the system_type field to `smpp`.
 
 **Interface_version:**
 The client application should connect with the interface_version field set to 0x34 (52 decimal), if it is using SMPP v3.4, otherwise the Platformassumes that the application uses SMPP v3.3.
@@ -34,15 +47,27 @@ The client application should connect with the interface_version field set to 0x
 **enquire_link:** The application should issue an enquire_link every minute. This will
 ensure the link stays active even when it is not in use. The Messaging Platform will automatically disconnect any link which is inactive for more than 5mins.
 
-## Submitting Messages
+## BINDINGS AND THROUGHPUT
+
+Whenever an SMPP account has been setup for you, you’ll receive the maximum amount of binds you’re allowed to set up as well as a maximum throughput. In most cases, these values will be something like 3 binds and 50 message per seconds.
+
+It might be interesting to note that these values are enforced on a per-server basis. That means that given the above example, you can set up 9 binds in total with a throughput of 150 messages per second when you connect to all servers.
+
+Be aware that for maintenance purposes we only guarantee either that one server is up at any given time. So we advise to connect to all of them.
+
+## BINDINGS AND RELAYING
+
+{app}’s message relaying system is connection and server agnostic. That means that when you send an MT via a `submit_sm` PDU on connection A, you might receive the matching DLR in the form of a  `deliver_sm` on connection B if both connections are bound with the same username. This is even true for connections made to different servers, so the above scenario would still be true if connection A is made to the smpp01 server and connection B to the smpp02 server.
+
+## SUBMITTING MESSAGES
 
 #### Submission Types:
-Messages may be submitted with either submit_sm or data_sm, using either the
+Messages may be submitted with either `submit_sm` or `data_sm`, using either the
 short_message or message_payload fields. The message length may not exceed the
 byte limit for the network that the message is being sent to (for example 140 bytes
 on GSM networks).
 
-The Messaging Platform does not support submit_multi. If the same message has to be sent to multiple destinations, each message must be sent separately.
+The Platform does not support submit_multi. If the same message has to be sent to multiple destinations, each message must be sent separately.
 
 Concatenated messages are supported by using the User Data Header (UDH), which is included in the message size byte limit.
 
