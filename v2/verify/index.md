@@ -20,13 +20,13 @@ Create a new Verify object through the API to start the verification process of 
 
 | Name     | Type | Description |
 |----------|------|----------|
-| recipient | int | The telephone number that you want to verify|
+| to | int | The telephone number that you want to verify|
 
 ####  OPTIONAL PARAMETERS
 
 | Name     | Type | Description |
 |----------|------|------------|
-| originator | string | Sender Id from which message should get delivered. default: VERIFY|
+| from | string | Sender Id from which message should get delivered. default: VERIFY|
 | reference | string | A client reference|
 | template | string | The template of the message body. Needs to contain {token} for the verification code to be included. default: {token} is your verification code|
 | timeout | int | The verification code expiry time in seconds. Default: 120|
@@ -37,7 +37,7 @@ Create a new Verify object through the API to start the verification process of 
 
 ```curl
 curl -X POST \
-  '{endpoint}verify?recipient=919019955xxx' \
+  '{endpoint}verify?to=919019955xxx' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 38e896f55670311982434e929xxx' \
 ```
@@ -48,7 +48,7 @@ curl -X POST \
 {
     "id": "fb5e1214-7c9f-4f54-b18f-78dc7a901dec",
     "status": "sent",
-    "recipient": "919019955xxx",
+    "to": "919019955xxx",
     "reference": null,
     "created_at": "2019-01-31 14:41:48",
     "expire_at": "2019-01-31 14:43:48"

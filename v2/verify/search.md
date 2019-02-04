@@ -30,7 +30,7 @@ curl -X GET \
 ```json
 {
     "id": "fb5e1214-7c9f-4f54-b18f-78dc7a901dec",
-    "recipient": "919019955xxx",
+    "to": "919019955xxx",
     "reference": null,
     "status": "sent",
     "created_at": "2019-01-31 14:41:48",
@@ -38,8 +38,8 @@ curl -X GET \
     "channels": [
         {
             "id": "38d70cec-1745-469d-80b3-19592a074ce2",
-            "recipient": "919019955622",
-            "originator": "VERIFY",
+            "to": "919019955622",
+            "from": "VERIFY",
             "channel": "sms",
             "event_id": "00a18bf7-dc06-4279-9ce6-068e3482eb51:1",
             "created_at": "2019-01-31 14:41:49",
