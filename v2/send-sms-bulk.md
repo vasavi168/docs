@@ -24,7 +24,7 @@ Before you start sending transactional SMS through this API, please test whether
 #### POST/GET
 
 ```
-{endpoint}sms/bulk?access_token=werfxxxxxxxxxmessage=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T
+{endpoint}sms/bulk?access_token=werfxxxxxxxxxmessage=Welcome&sender=TXTSMS&service=T
 ```
 
 You can send sms using `POST`  method only as uploading file will supporting in 
@@ -35,7 +35,6 @@ You can send sms using `POST`  method only as uploading file will supporting in
 
 | Name     | Descriptions |
 |----------|--------------|
-| to | Phone number to send with country prefix. (multiple numbers can be separated by comma.) |
 | message | The content of the SMS |
 | sender | The registered and approved Sender-id |
 | service | Determines whether the SMS to be sent is Transactional, Promotional or other. |
