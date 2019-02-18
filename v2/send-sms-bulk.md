@@ -59,10 +59,8 @@ You can send sms using `POST`  method only as uploading file will supporting in
 
 ```
 curl -X POST \
-  'http://portal.mobtexting.co/api/v2/sms/bulk?access_token=d9e1cacxxxxxxxxxxxxxx&sender=TXTSMS&message=Your message content&service=T' \
-  -H 'cache-control: no-cache' \
+  'http://portal.mobtexting.co/api/v2/sms/bulk?access_token=d9e1cacxxxxxxxxxxxxxx&sender=TXTSMS&message=Your+message+content&service=T' \
   -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -H 'postman-token: c9cccb6e-5b41-9b2c-e4d8-42935ca511ac' \
   -F file=@filename.txt
 ```
 
