@@ -60,7 +60,7 @@ In case of an error, the body of the response includes a JSON formatted response
 | Name | Value |
 | ----- | ----- |
 | status | This represents the error type. OK or 200 is success and rest everthing is failed.|
-| code | This represents the http code. This value is optional. May not be not all responses.|
+| code | This represents the http code. This value is optional. Not be avaliable in all responses.|
 | message | A human-readable description of the error. You can provide your users with this information to indicate what they can do about the error. |
 
 
