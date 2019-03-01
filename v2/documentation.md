@@ -27,3 +27,10 @@
   - [View Smart Links](/docs/{{version}}/link)
   - [Create Smart Link](/docs/{{version}}/link/create)
   - [View Link Visits](/docs/{{version}}/link/visits)
+  
+- Senders
+  - [View Senders](/docs/{{version}}/senders)
+  - [Create Sender](/docs/{{version}}/senders/create)
+  - [Edit Sender](/docs/{{version}}/senders/edit)
+  - [Delete Sender](/docs/{{version}}/senders/delete)
+

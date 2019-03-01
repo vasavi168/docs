@@ -10,7 +10,7 @@ Convert long url into short and smart url.
 
 #### PARAMETERS
 
-| Name     | Optinal | Descriptions |
+| Name     | Optional | Descriptions |
 |----------|--------------|----------|
 | title | yes |  Link title.|
 | long_url | | Long Url|
