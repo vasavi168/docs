@@ -33,4 +33,10 @@
   - [Create Sender](/docs/{{version}}/senders/create)
   - [Edit Sender](/docs/{{version}}/senders/edit)
   - [Delete Sender](/docs/{{version}}/senders/delete)
+  
+- Templates
+  - [View Templates](/docs/{{version}}/templates)
+  - [Create Template](/docs/{{version}}/templates/create)
+  - [Edit Template](/docs/{{version}}/templates/edit)
+  - [Delete Template](/docs/{{version}}/templates/delete)
 
