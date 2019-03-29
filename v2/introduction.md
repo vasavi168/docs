@@ -59,7 +59,8 @@ In case of an error, the body of the response includes a JSON formatted response
 #### ATTRIBUTES
 | Name | Value |
 | ----- | ----- |
-| status | This represents the error type. OK or 200 is success and rest everthing is failed|
+| status | This represents the error type. OK or 200 is success and rest everthing is failed.|
+| code | This represents the http code. This value is optional. Not be avaliable in all responses.|
 | message | A human-readable description of the error. You can provide your users with this information to indicate what they can do about the error. |
 
 
@@ -74,5 +75,6 @@ In case of an error, the body of the response includes a JSON formatted response
 | 403 | Your credentials are valid, but you don't have access to the requested resource. |
 | 404 | The resources cannot be found |
 | 409 | Conflict - You might be trying to update the same resource concurrently.
+| 412 | Validation error |
 | 429 | Too Many Requests - You are calling our APIs more frequently than we allow.
 | 5xx | Something went wrong on our end.	Please try again |
