@@ -75,6 +75,6 @@ In case of an error, the body of the response includes a JSON formatted response
 | 403 | Your credentials are valid, but you don't have access to the requested resource. |
 | 404 | The resources cannot be found |
 | 409 | Conflict - You might be trying to update the same resource concurrently.
-| 412 | Validation error |
+| 422 | Validation error |
 | 429 | Too Many Requests - You are calling our APIs more frequently than we allow.
 | 5xx | Something went wrong on our end.	Please try again |
