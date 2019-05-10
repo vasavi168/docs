@@ -15,7 +15,11 @@
   - [Push DLR/Webhook](/docs/{{version}}/sms-push-dlr)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
   - [Optout](/docs/{{version}}/optout)
-  - [SMPP Gateway](/docs/{{version}}/smpp-gateway)
+  - [Error Codes](/docs/{{version}}/smpp-gateway#delivery-reports)
+
+- SMPP
+  - [Gateway](/docs/{{version}}/smpp-gateway)
+  - [Error Codes](/docs/{{version}}/smpp-gateway#delivery-reports)
   
 - Verify
   - [Overview](/docs/{{ version }}/verify)
