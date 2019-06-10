@@ -76,3 +76,22 @@ In case of an error, the body of the response includes a JSON formatted response
 | 409 | Conflict - You might be trying to update the same resource concurrently.
 | 429 | Too Many Requests - You are calling our APIs more frequently than we allow.
 | 5xx | Something went wrong on our end.	Please try again |
+
+
+## SMS Length Summary
+
+####  Standard GSM Characters
+
+| No.of SMS     | No.of Characters |
+|----------|--------------|
+| 1 | 160 characters.|
+| 2 | (2 x 153) 306 characters.|
+| 3 | (3 x 153) 459 characters.|
+
+####  Unicode Characters
+
+| No.of SMS     | No.of Characters |
+|----------|--------------|
+| 1 | 70 characters.|
+| 2 | (2 x 67) 134 characters.|
+| 3 | (3 x 67) 201 characters.|
