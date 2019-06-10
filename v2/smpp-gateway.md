@@ -20,7 +20,6 @@ Here is an overview of the available servers:
 
 | Hostname     | Port |
 |----------|--------------|
-| smpp3634.txtsms.me | 3634 |
 | smpp1.txtsms.me | 3634 |
 | smpp2.txtsms.me | 3634 |
 
@@ -207,3 +206,4 @@ Status and error code which can be returned by Messaging Platform.
 |460 | DUPLICATE | Same content sent |
 |461 | UNDELIV | Unknown Error |
 |462 | FAILED | Unknown Error |
+|778 | REJ-MULTIPART | All message parts not delivrd to handset |
