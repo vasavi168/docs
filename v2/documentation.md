@@ -27,6 +27,9 @@
   - [Search](/docs/{{ version }}/verify/search)
   - [Cancel](/docs/{{ version }}/verify/cancel)
 
+- Voice
+  - [Overview](/docs/{{ version }}/voice)
+
 - Link
   - [View Smart Links](/docs/{{version}}/link)
   - [Create Smart Link](/docs/{{version}}/link/create)
