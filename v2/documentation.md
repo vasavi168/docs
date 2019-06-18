@@ -27,7 +27,7 @@
   - [Search](/docs/{{ version }}/verify/search)
   - [Cancel](/docs/{{ version }}/verify/cancel)
 
-- Voice
+- Voice Flow
   - [Overview](/docs/{{ version }}/voice)
 
 - Link
