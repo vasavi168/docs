@@ -29,7 +29,7 @@
 
 - Voice Flow
   - [Overview](/docs/{{ version }}/voice)
-  - [C2C](/docs/{{ version }}/voice/c2c)
+  - [Click2Call](/docs/{{ version }}/voice/c2c)
 
 - Link
   - [View Smart Links](/docs/{{version}}/link)

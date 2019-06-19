@@ -6,7 +6,7 @@
 We generate some of the variables in flow process, those can used to pass the information your system.
 
 All variables should be enclosed between `{}` braces. ex: `{to}`
-You can access the Array of the variables with `.` dot notation. Example if you want to access the caller name infomration from caller object `{caller.name}`
+You can access the Array of the variables with `.` dot notation. Example if you want to access the caller name information from caller object `{caller.name}`
 
 #### FLOW VARIABLES
 
@@ -27,6 +27,14 @@ You can access the Array of the variables with `.` dot notation. Example if you 
 | caller.email | global | Caller email if avaliable in contacts |
 
 
+You can also use our build in filters to change data while passing to your system.
+
+Buildin filters are `cut` and `data_format`. Filters are seperated by `|`
+
+Ex: if you want to get the last 10 digits of the `from` number: `{from|cut:-10}`
+
+Ex: Want to get `start_at` date in `DD/MM/YYYY` : `{start_at|date_format:d/m/Y}`
+
 ###  CALL STATUS
 
 #### Description of Status:
@@ -35,7 +43,9 @@ You can access the Array of the variables with `.` dot notation. Example if you 
 |----------|--------------|
 | ANSWER | Call is answered. A successful dial. The caller reached the callee.
 | BUSY | Busy signal. The dial command reached its number but the number is busy.
-| NOANSWER | No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
+| NOANSWER | The dial command reached its number, the number rang for too long, then the dial timed out.
 | CANCEL | Call is cancelled. The dial command reached its number but the caller hung up before the callee picked up.
-| CONGESTION | Congestion. This status is usually a sign that the dialled number is not recognised.
+| CONGESTION | This status is usually a sign that the dialled number is not recognised.
 | CHANUNAVAIL | Channel unavailable. On SIP, peer may not be registered.
+| RECEIVED | Call received in ivr system but not call forward happen.
+| MISSED | Call received in ivr system but not agent responsed to the call.
