@@ -25,3 +25,17 @@ You can access the Array of the variables with `.` dot notation. Example if you 
 | caller.region | global | Caller two letters region code. ex: `KA` (karnataka) |
 | caller.name | global | Caller name if avaliable in contacts |
 | caller.email | global | Caller email if avaliable in contacts |
+
+
+###  CALL STATUS
+
+#### Description of Status:
+
+| Name     | Descriptions |
+|----------|--------------|
+| ANSWER | Call is answered. A successful dial. The caller reached the callee.
+| BUSY | Busy signal. The dial command reached its number but the number is busy.
+| NOANSWER | No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
+| CANCEL | Call is cancelled. The dial command reached its number but the caller hung up before the callee picked up.
+| CONGESTION | Congestion. This status is usually a sign that the dialled number is not recognised.
+| CHANUNAVAIL | Channel unavailable. On SIP, peer may not be registered.
