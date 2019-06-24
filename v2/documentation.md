@@ -35,6 +35,7 @@
   - [View Smart Links](/docs/{{version}}/link)
   - [Create Smart Link](/docs/{{version}}/link/create)
   - [View Link Visits](/docs/{{version}}/link/visits)
+  - [Webhook](/docs/{{version}}/link/webhook)
   
 - Senders
   - [View Senders](/docs/{{version}}/senders)
