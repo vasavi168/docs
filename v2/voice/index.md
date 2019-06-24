@@ -49,3 +49,13 @@ Ex: Want to get `start_at` date in `DD/MM/YYYY` : `{start_at|date_format:d/m/Y}`
 | CHANUNAVAIL | Channel unavailable. On SIP, peer may not be registered.
 | RECEIVED | Call received in ivr system but not call forward happen.
 | MISSED | Call received in ivr system but not agent responsed to the call.
+
+
+#### Call Strategies
+
+| Name     | Descriptions |
+|----------|--------------|
+| parallel | call all available agents until one answers
+| sequential | Take turns calling each available agents
+| random | Call random agents who ever available
+| fewest | Call the one with fewest completed calls

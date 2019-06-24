@@ -23,6 +23,12 @@ To request such delivery reports, you need to pass `dlr_url` parameter in the AP
 | custom | Your custom id|
 | custom1 | Your custom id one|
 | custom2 | Your custom id two|
+| location | Mobile number country name. ex: `india`|
+| region | Mobile number region name. ex: `karnataka`|
+| provider | Operator name. ex: `jio`|
+| location_code | Mobile number country code. ex: `in`|
+| region_code | Mobile number region name. ex: `KA`|
+| provider_code | Operator name. ex: `RJ`|
 
 
 All params should be enclosed between `{}` braces. ex: `{mobile}`
