@@ -15,6 +15,7 @@
   - [Push DLR/Webhook](/docs/{{version}}/sms-push-dlr)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
   - [Optout](/docs/{{version}}/optout)
+  - [Check Account Usage](/docs/{{version}}/get-usage-report)
   - [Error Codes](/docs/{{version}}/smpp-gateway#delivery-reports)
 
 - SMPP
