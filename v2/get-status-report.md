@@ -11,7 +11,7 @@ This api will give status wise summary report for the given daterange
 
 | Name     | Descriptions |
 |----------|--------------|
-| daterange | Date Range : (in format i.e,yyyy-mm-dd|yyyy-mm-dd) Ex: 2019-06-02|2019-06-10 |
+| daterange | Date Range : (in format i.e, yyyy-mm-dd&#124;yyyy-mm-dd) Ex: 2019-06-19&#124;2019-06-22|
 
 you can pass any of the above params to get the report.
 
