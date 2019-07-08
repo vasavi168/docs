@@ -69,7 +69,9 @@ Callback is a functionality to get notified through an API call when a call is c
 | duration | Duration of the call in seconds (first call) |
 | billing | Duration of the call in seconds (second call) |
 | status | Call Status |
-| recording | Recording Url if call got recorded |
+| status1 | Call Status of first call |
+| status2 | Call Status of second call|
+| recording_url | Recording Url if call got recorded |
 
 
 You can also use our build in filters to change data while passing to your system.
