@@ -5,4 +5,5 @@
   - [Sender Id](/docs/{{version}}/sender)
   - [Message Templates](/docs/{{version}}/templates)
   - [IP Whitelisting](/docs/{{version}}/whitelisting)
+  - [Voice Flow](/docs/{{version}}/voice/)
 
