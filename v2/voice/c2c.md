@@ -33,7 +33,7 @@ C2C Using To as Flow ID
 | Name     | Descriptions |
 |----------|--------------|
 | mid |  Message id for reference |r |
-| callback | Callback url once call completed |
+| callback | Callback url once call completed (urlencoded) |
 | variables | `Array` of the variables which can be used in flow |
 | record | Record this conversation (default `0`). allowed: 0 or 1 |
 
