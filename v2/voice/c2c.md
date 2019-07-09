@@ -81,3 +81,19 @@ Buildin filters are `cut` and `data_format`. Filters are seperated by `|`
 Ex: if you want to get the last 10 digits of the `from` number: `{from|cut:-10}`
 
 Ex: Want to get `start_at` date in `DD/MM/YYYY` : `{start_at|date_format:d/m/Y}`
+
+
+#### Example Callback Url
+
+```
+  https://www.domain.com/ack/receive?status={status}&start={start_at}&recording_url={recording_url}
+```
+
+Append callback value with API
+
+```
+&callback=https%3A%2F%2Fwww.domain.com%2Fack%2Freceive%3Fstatus%3D%7Bstatus%7D%26start%3D%7Bstart_at%7D%26recording_url%3D%7Brecording_url%7D
+```
+
+- The response codes other than 200 or 202 are not taken into consideration and requests for such response codes are considered as failed.
+- The method used for sending the callback report onto the client’s URL is `GET`.
