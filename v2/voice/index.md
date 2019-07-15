@@ -51,6 +51,16 @@ Sometimes you want to get the default values if variable does not provide any va
 
 `#` can be used to pass the default values. ex: `{caller.mobile#9190199xxxx}`
 
+#### Other variable within variable
+
+Sometimes you want to use the other variable value with in variable to get the right value
+
+`[]` can used to pass the variable with in other variable. ex: `{questions.[jump].name}`
+
+Here we are using `jump` variable to get the original value of question.
+
+it will be `question.0.name`, `question.1.name`, `question.2.name`
+
 
 ###  CALL STATUS
 
