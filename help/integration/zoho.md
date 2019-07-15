@@ -26,14 +26,14 @@ and click on create button
 
 ![alt text](/images/docimages/integrations/zoho3.png)
 
-You'll get `client_id` and `client_secret`.
+You'll receive `client_id` and `client_secret`.
 
 
 ###  2. Obtain grant token code
 
-Hit this url in browser to obtain grant token code (replace `{client_id}` with client_id you obtained):
+Hit this url in browser to obtain grant token code (replace `(client_id)` with client_id you obtained):
 
-<https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.all&client_id={client_id}&response_type=code&access_type=offline&redirect_uri=http://cloud.mobtexting.com/test/dlr.php&prompt=consent>
+<https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.all&client_id=(client_id)&response_type=code&access_type=offline&redirect_uri=http://cloud.mobtexting.com/webhook/zoho.php&prompt=consent>
 
 ###  3. Generate Refresh Token
 
@@ -53,7 +53,7 @@ https://accounts.zoho.com/oauth/v2/token
 | redirect_uri | http://cloud.mobtexting.com/webhook/zoho.php |
 | code | Enter the grant token generated from previous step. |
 
-You'll get `refresh_token`.
+You'll receive `refresh_token`.
 
 
 ###  4. Setting Flow in MOBtexting
