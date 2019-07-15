@@ -27,6 +27,8 @@ You can access the Array of the variables with `.` dot notation. Example if you 
 | caller.email | global | Caller email if avaliable in contacts |
 
 
+#### Filters
+
 You can also use our build in filters to change data while passing to your system.
 
 Buildin filters are `cut` and `data_format`. Filters are seperated by `|`
@@ -34,6 +36,21 @@ Buildin filters are `cut` and `data_format`. Filters are seperated by `|`
 Ex: if you want to get the last 10 digits of the `from` number: `{from|cut:-10}`
 
 Ex: Want to get `start_at` date in `DD/MM/YYYY` : `{start_at|date_format:d/m/Y}`
+
+#### Conditional values
+
+Sometimes you want to get the second values if first value not exists.
+
+`||` can be used to evolute the conditonal statement. ex: `{caller.name||caller.email}`
+
+Take the caller email if caller name is empty
+
+#### Default values
+
+Sometimes you want to get the default values if variable does not provide any value
+
+`#` can be used to pass the default values. ex: `{caller.mobile#9190199xxxx}`
+
 
 ###  CALL STATUS
 
