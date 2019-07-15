@@ -18,7 +18,7 @@ Client Name : myclient
 
 Client Domain: mydomain.com
 
-Authorized redirect URIs: http://cloud.mobtexting.com/webhook/zoho.php
+Authorized redirect URIs: https://portal.mobtexting.com/api/v2/integration/zoho/code
 
 ![alt text](/images/docimages/integrations/zoho2.png)
 
@@ -33,7 +33,7 @@ You'll receive `client_id` and `client_secret`.
 
 Hit this url in browser to obtain grant token code (replace `(client_id)` with client_id you obtained):
 
-<https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.all&client_id=(client_id)&response_type=code&access_type=offline&redirect_uri=http://cloud.mobtexting.com/webhook/zoho.php&prompt=consent>
+<https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.all&client_id=(client_id)&response_type=code&access_type=offline&redirect_uri=https://portal.mobtexting.com/api/v2/integration/zoho/code&prompt=consent>
 
 ###  3. Generate Refresh Token
 
@@ -50,7 +50,7 @@ https://accounts.zoho.com/oauth/v2/token
 | grant_type | Enter the value as "authorization_code" |
 | client_id | Specify client-id obtained from the connected app. |
 | client_secret | Specify client-secret obtained from the connected app. |
-| redirect_uri | http://cloud.mobtexting.com/webhook/zoho.php |
+| redirect_uri | https://portal.mobtexting.com/api/v2/integration/zoho/code |
 | code | Enter the grant token generated from previous step. |
 
 You'll receive `refresh_token`.
