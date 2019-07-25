@@ -65,13 +65,13 @@ it will be `question.0.name`, `question.1.name`, `question.2.name`
 
 We can define how to treat the variables while playing.
 
-`digits` we want to say as digits, we can use `{otp:digits}`
+`digits` we want to say as digits, we can use `{otp@digits}`
 
-`number` we want to say as number, we can use `{otp:number}`
+`number` we want to say as number, we can use `{otp@number}`
 
-`play` we want to download the mp3 file and play, we can use `{clip:play}`
+`play` we want to download the mp3 file and play, we can use `{clip@play}`
 
-`sound` to play in build sound files, we can use `{clip:sound}`
+`sound` to play in build sound files, we can use `{clip@sound}`
 
 ###  CALL STATUS
 
