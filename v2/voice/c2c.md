@@ -12,11 +12,11 @@ This Voice API supports the following:
 
 C2C Using To as Mobile Number
 ```
-{endpoint}voice/c2c?bridge=80191912XX&from=80106077XX&to=901930XXX
+{endpoint}voice/c2c?bridge=80191912XX&from=9180106077XX&to=91901930XXX
 ```
 C2C Using To as Flow ID
 ```
-{endpoint}voice/c2c?bridge=80191912XX&from=80106077XX&to=flow:19
+{endpoint}voice/c2c?bridge=80191912XX&from=9180106077XX&to=flow:19
 ```
 
 ####  MANDATORY PARAMETERS
@@ -24,8 +24,8 @@ C2C Using To as Flow ID
 | Name     | Descriptions |
 |----------|--------------|
 | bridge | DID number for call initiation |
-| from | To whom call will connect first |
-| to | Phone number / IVR flow to which call has to connect |
+| from | Number To whom call will connect first with CountryCode|
+| to | Phone number with Country Code / IVR flow to which call has to connect |
 
 
 ####  OPTIONAL PARAMETERS
