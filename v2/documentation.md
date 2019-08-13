@@ -32,7 +32,8 @@
 - Engage (Voice)
   - [Overview](/docs/{{ version }}/voice)
   - [Click2Call](/docs/{{ version }}/voice/c2c)
-  - [Logs](/docs/{{ version }}/voice/logs)
+  - [Call Logs](/docs/{{ version }}/voice/logs)
+  - [Call Recordings](/docs/{{ version }}/voice/logs#recordings-report)
 
 - Link
   - [View Smart Links](/docs/{{version}}/link)
