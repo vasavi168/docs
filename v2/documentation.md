@@ -32,6 +32,7 @@
 - Engage (Voice)
   - [Overview](/docs/{{ version }}/voice)
   - [Click2Call](/docs/{{ version }}/voice/c2c)
+  - [Logs](/docs/{{ version }}/voice/logs)
 
 - Link
   - [View Smart Links](/docs/{{version}}/link)
