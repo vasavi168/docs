@@ -35,6 +35,10 @@
   - [Call Logs](/docs/{{ version }}/voice/logs)
   - [Call Recordings](/docs/{{ version }}/voice/logs#recordings-report)
 
+- Reach (Outgoing)
+  - [Create Sound File](/docs/{{ version }}/reach/sound)
+  - [Create Outgoing Call](/docs/{{ version }}/reach/call)
+
 - Link
   - [View Smart Links](/docs/{{version}}/link)
   - [Create Smart Link](/docs/{{version}}/link/create)
