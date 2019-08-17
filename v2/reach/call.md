@@ -30,7 +30,6 @@ This Voice API supports the following:
 |----------|--------------|
 | name |  name of the campaign |
 | interval | Retry interval time  Expected Values : 5, 15, 30, 45, 60 (Minutes) : Default 0|
-| capture_dtmf | DTMF capture required , if yes 1, default 0 |
 
 #### Example Request
 
