@@ -11,7 +11,7 @@ This Voice API supports the following:
 #### POST/GET
 
 ```
-{domain}/api/{{version}}/voice/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx
+{domain}/api/{{version}}/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx
 ```
 
 ####  MANDATORY PARAMETERS
