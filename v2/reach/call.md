@@ -11,7 +11,7 @@ This Voice API supports the following:
 #### POST/GET
 
 ```
-{domain}/api/{{version}}/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx
+{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx
 ```
 
 ####  MANDATORY PARAMETERS
@@ -36,7 +36,7 @@ This Voice API supports the following:
 With Audio File ID :
 ```
 curl -X GET \
-  "{domain}/api/{{version}}/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=8919525224&bridge=91123456789&audio=39888925-718e-43bb-a8b1-d4a37722e37"
+  "{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=8919525224&bridge=91123456789&audio=39888925-718e-43bb-a8b1-d4a37722e37"
 ```
 - Here `39888925-718e-43bb-a8b1-d4a37722e37`  is the sound file id uploaded to your voice account.
 
@@ -44,7 +44,7 @@ With Ivr Flow ID :
 
 ```
 curl -X GET \
-  "{domain}/api/{{version}}/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=8919525224&bridge=91123456789&ivr_id=23"
+  "{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=8919525224&bridge=91123456789&ivr_id=23"
 ```
 - Here `23` is the ivr flow id created in voice account
 #### Example Response

@@ -41,7 +41,7 @@ C2C Using To as Flow ID
 
 ```
 curl -X GET \
-  "{domain}/api/{{version}}/voice/c2c?access_token=209eccd40ee3a2e14af7fe45b21xxx&bridge=91801010XXX&from=9189195XXX&to=91901xxxxxx"
+  "{endpoint}voice/c2c?access_token=209eccd40ee3a2e14af7fe45b21xxx&bridge=91801010XXX&from=9189195XXX&to=91901xxxxxx"
 ```
 
 #### Example Response

@@ -36,12 +36,12 @@
                 "end_date": "2019-08-30 18:09:30"
             }
         ],
-        "first_page_url": "http://portal.mobtexting.co/api/v2/voice/conferences?page=1",
+        "first_page_url": "{endpoint}voice/conferences?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "http://portal.mobtexting.co/api/v2/voice/conferences?page=1",
+        "last_page_url": "{endpoint}voice/conferences?page=1",
         "next_page_url": null,
-        "path": "http://portal.mobtexting.co/api/v2/voice/conferences",
+        "path": "{endpoint}voice/conferences",
         "per_page": 15,
         "prev_page_url": null,
         "to": 3,
