@@ -11,7 +11,7 @@ This Voice API supports the following:
 #### POST
 
 ```
-{{domain}/api/{{version}}/voice/sound/create
+{{endpoint}voice/sound/create
 ```
 
 ####  MANDATORY PARAMETERS
@@ -31,7 +31,7 @@ This Voice API supports the following:
 
 ```
 curl -X POST \
-  "{domain}/api/{{version}}/voice/sound/create?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=myAudioFile&audio=<<youraudiofileHere>>"
+  "{endpoint}voice/sound/create?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=myAudioFile&audio=<<youraudiofileHere>>"
 ```
 
 #### Example Response

@@ -5,7 +5,7 @@ This Voice API supports the following:
 #### GET
 
 ```
-{domain}/api/{{version}}/voice/calls
+{endpoint}voice/calls
 ```
 
 ####  MANDATORY PARAMETERS
@@ -25,7 +25,7 @@ This Voice API supports the following:
 
 ```
 curl -X GET \
-  "{domain}/api/{{version}}/voice/calls?access_token=209eccd40ee3a2e14af7fe45b21xxx&datetime[end_at]=Aug 12, 2019 - Aug 12, 2019"
+  "{endpoint}voice/calls?access_token=209eccd40ee3a2e14af7fe45b21xxx&datetime[end_at]=Aug 12, 2019 - Aug 12, 2019"
 ```
 
 #### Example Response
@@ -59,12 +59,12 @@ curl -X GET \
                 "name": "Laxman ka"
             }
         ],
-        "first_page_url": "http://portal.mobtexting.co/api/v2/voice/calls?page=1",
+        "first_page_url": "{endpoint}voice/calls?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "http://portal.mobtexting.co/api/v2/voice/calls?page=1",
+        "last_page_url": "{endpoint}voice/calls?page=1",
         "next_page_url": null,
-        "path": "http://portal.mobtexting.co/api/v2/voice/calls",
+        "path": "{endpoint}voice/calls",
         "per_page": 15,
         "prev_page_url": null,
         "to": 1,
@@ -78,7 +78,7 @@ curl -X GET \
 #### GET
 
 ```
-{domain}/api/{{version}}/voice/recordings
+{endpoint}voice/recordings
 ```
 
 ####  MANDATORY PARAMETERS
@@ -98,7 +98,7 @@ curl -X GET \
 
 ```
 curl -X GET \
-  "{domain}/api/{{version}}/voice/recordings?access_token=209eccd40ee3a2e14af7fe45b21xxx&datetime[r.created_at]: Jun 07, 2019 - Aug 13, 2019"
+  "{endpoint}voice/recordings?access_token=209eccd40ee3a2e14af7fe45b21xxx&datetime[r.created_at]: Jun 07, 2019 - Aug 13, 2019"
 ```
 
 #### Example Response
@@ -128,12 +128,12 @@ curl -X GET \
                 "created_at": "2019-06-11 05:59:07"
             }
         ],
-        "first_page_url": "http://portal.mobtexting.co/api/v2/voice/recordings?page=1",
+        "first_page_url": "{endpoint}voice/recordings?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "http://portal.mobtexting.co/api/v2/voice/recordings?page=1",
+        "last_page_url": "{endpoint}voice/recordings?page=1",
         "next_page_url": null,
-        "path": "http://portal.mobtexting.co/api/v2/voice/recordings",
+        "path": "{endpoint}voice/recordings",
         "per_page": 15,
         "prev_page_url": null,
         "to": 2,
