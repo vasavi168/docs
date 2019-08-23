@@ -38,6 +38,7 @@
 - Reach (Outgoing)
   - [Create Sound File](/docs/{{ version }}/reach/sound)
   - [Create Outgoing Call](/docs/{{ version }}/reach/call)
+  - [Call Status](/docs/{{ version }}/reach/status)
 
 - Link
   - [View Smart Links](/docs/{{version}}/link)
