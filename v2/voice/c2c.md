@@ -36,6 +36,7 @@ C2C Using To as Flow ID
 | callback | Callback url once call completed (urlencoded) |
 | variables | `Array` of the variables which can be used in flow |
 | record | Record this conversation (default `0`). allowed: 0 or 1 |
+| duration | Limit the call duration in minutes. default (none) |
 
 #### Example Request
 
