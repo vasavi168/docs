@@ -39,6 +39,30 @@ All params in send sms will support in JSON also.
 }
 ```
 
+####  MANDATORY PARAMETERS
+
+| Name     | Descriptions |
+|----------|--------------|
+| to | Phone number to send with country prefix. (multiple numbers can be separated by comma.) |
+| message | The content of the SMS |
+| sender | The registered and approved Sender-id |
+| service | Determines whether the SMS to be sent is Transactional, Promotional or other. |
+
+
+####  OPTIONAL PARAMETERS
+
+
+| Name     | Descriptions |
+|----------|--------------|
+| dlr_url | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{{version}}/sms-push-dlr)|
+| time |  Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent. |
+| type | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A") |
+| flash | This parameter can be used to send flash sms via API ( Values 1 or 0.) |
+| custom | Any customised parameters can be passed  using this parameter |
+| custom1 | Any customised parameter |
+| port | Port number to which SMS has to be sent |
+
+
 #### Example Request
 
 ```curl
