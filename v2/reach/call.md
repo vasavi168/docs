@@ -44,7 +44,7 @@ With Ivr Flow ID :
 
 ```
 curl -X GET \
-  "{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=8919525224&bridge=91123456789&ivr_id=23"
+  "{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=918919525224&bridge=91123456789&ivr_id=23"
 ```
 - Here `23` is the ivr flow id created in voice account
 
@@ -52,7 +52,7 @@ With Custom Audio File Location :
 
 ```
 curl -X GET \
-  "{domain}/api/{{version}}/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=8919525224&bridge=91123456789&audio=http://youraudiofilelocation.mp3"
+  "{domain}/api/{{version}}/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=918919525224&bridge=91123456789&audio=http://youraudiofilelocation.mp3"
 ```
 - Here `audio` parameter requires location of audio file and must start with either `http` or `https`
 
