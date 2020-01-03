@@ -5,6 +5,7 @@
 
 - Account
   - [Check Account Balance](/docs/{{version}}/balance)
+  - [Adding Credits](/docs/{{version}}/add-credits)
 
 - Messaging
   - [Overview](/docs/{{version}}/sms-overview)
