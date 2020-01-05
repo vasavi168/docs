@@ -41,6 +41,9 @@
   - [Create Outgoing Call](/docs/{{ version }}/reach/call)
   - [Call Status](/docs/{{ version }}/reach/status)
 
+- Whatsapp 
+  - [Send a message](/docs/{{ version }}/whatsapp/send-message)
+
 - Link
   - [View Smart Links](/docs/{{version}}/link)
   - [Create Smart Link](/docs/{{version}}/link/create)
