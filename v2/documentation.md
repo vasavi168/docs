@@ -2,14 +2,14 @@
   - [Authentication](/docs/{{version}})
   - [Rate Limits](/docs/{{version}}#rate-limits)
   - [Status Code](/docs/{{version}}#http-status-codes)
+  - [SMS Length Summary](/docs/{{version}}/sms-length-summary)
 
 - Account
   - [Check Account Balance](/docs/{{version}}/balance)
   - [Adding Credits](/docs/{{version}}/add-credits)
 
 - Messaging
-  - [Overview](/docs/{{version}}/sms-overview)
-  - [SMS Length Summary](/docs/{{version}}/sms-length-summary)
+  - [Overview](/docs/{{version}}/sms-overview)  
   - [Send SMS](/docs/{{version}}/send-sms)
   - [Send SMS Using JSON](/docs/{{version}}/send-sms-json)
   - [Send SMS Using XML](/docs/{{version}}/send-sms-xml)
@@ -38,12 +38,12 @@
   - [Call Recordings](/docs/{{ version }}/voice/logs#recordings-report)
 
 - Reach (Outgoing)
-  - [Create Sound File](/docs/{{ version }}/reach/sound)
+  - [Create Sound File](/docs/{{ version }}/Reach)
   - [Create Outgoing Call](/docs/{{ version }}/reach/call)
   - [Call Status](/docs/{{ version }}/reach/status)
 
 - Whatsapp 
-  - [Send a message](/docs/{{ version }}/whatsapp/send-message)
+  - [Send a message](/docs/{{ version }}/whatsapp)
 
 - Link
   - [View Smart Links](/docs/{{version}}/link)
