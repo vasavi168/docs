@@ -73,7 +73,7 @@ Here {{1}}, {{2}}, {{3}} are replacement variables which is different for each m
 
 ```
 curl -X POST \
-  {endpoint}whatsapp/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'type=template&name=otp_message&from=918867XXXX&to=918867XXXXX&variables%5B%5D=Company&variables%5B%5D=123467&variables%5B%5D=30'
