@@ -9,6 +9,7 @@
 
 - Messaging
   - [Overview](/docs/{{version}}/sms-overview)
+  - [SMS Length Summary](/docs#sms-length-summary)
   - [Send SMS](/docs/{{version}}/send-sms)
   - [Send SMS Using JSON](/docs/{{version}}/send-sms-json)
   - [Send SMS Using XML](/docs/{{version}}/send-sms-xml)
