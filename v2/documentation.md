@@ -38,7 +38,7 @@
   - [Call Recordings](/docs/{{ version }}/voice/logs#recordings-report)
 
 - Reach (Outgoing)
-  - [Create Sound File](/docs/{{ version }}/Reach)
+  - [Create Sound File](/docs/{{ version }}/reach)
   - [Create Outgoing Call](/docs/{{ version }}/reach/call)
   - [Call Status](/docs/{{ version }}/reach/status)
 
