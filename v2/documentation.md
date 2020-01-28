@@ -43,7 +43,8 @@
   - [Call Status](/docs/{{ version }}/reach/status)
 
 - Whatsapp 
-  - [Send a message](/docs/{{ version }}/whatsapp)
+  - [Overview](/docs/{{ version }}/whatsapp)
+  - [Send a message](/docs/{{ version }}/whatsapp/send-message)
 
 - Link
   - [View Smart Links](/docs/{{version}}/link)

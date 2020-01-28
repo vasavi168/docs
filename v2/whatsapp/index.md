@@ -1,89 +1,75 @@
-# Whatsapp For Business API
+# Whatsapp For Business API - Getting Started
+
+Many of you are interested in WhatsApp Business and we totally get the point. WhatsApps approach to an API is a little bit more complicated than you’re used to.
+
+First of all: WhatsApp doesn’t host the API themselves. This is a necessary step to ensure end-to-end encryption and making sure that no unencrypted messages flow through the WhatsApp servers.
+
+To use the WhatsApp Business API you need a so called “Business Solution Provider” (BSP). Good news: We are one.
+
+To get access to the WhatsApp Business API your company / use case must be approved by WhatsApp first. There are a few steps and details that you must complete before getting your access
+
+## Step-1 Create a Facebook Business Manager ID
+
+If you don’t have a Facebook Business Manager, you can create one here:
+
+https://business.facebook.com
+
+## Step-2 Verify your business
+
+Everything you need to know is summarized in this article, created by Facebook
+
+https://www.facebook.com/business/help/2058515294227817?id=180505742745347
+
+## Step-3  Get the WhatsApp Approval. (1 - 2 business days)
+
+ We will create a WABA (WhatsApp Business Account) with the Facebook Business Manager ID provided.  
 
 
-#### HTTP Methods
+ IMPORTANT! The Facebook Business Manager ID MUST belong to the business that is asking for approval.
+
+ If you’re an agency / developer and build an integration on behalf of your customer, we need the FBM ID of your customer, since they must be approved.
+
+ Be aware that your use case must comply with the
+
   
-  It will support only `POST` requests.
+  Business Policies: https://www.whatsapp.com/legal/business-policy/
+
+  Commerce Policies: https://www.whatsapp.com/legal/commerce-policy/
+
+  Opt-In Requirements: https://developers.facebook.com/docs/whatsapp/guides/Opt-In
 
 
-## Sending Text Message
+## Step-4 : Give us permissions (< 5 minutes)
 
-```
-{endpoint}whatsapp/message/send
-```
+After you submitted your request we create the WABA. You will then receive a notification in your Facebook Business Manager, asking you for permission to send WhatsApp messages on your behalf.
 
-####  MANDATORY PARAMETERS
+https://business.facebook.com/settings/requests
 
-| Name     | Descriptions |
-|----------|--------------|
-| from | Whatsapp Number |
-| to | Destination mobile number with country code|
-| text | Message text you want to send |
+Accept this request. As soon as you accepted the request and your Business Verification is done, WhatsApp will start the approval process.
 
+Facebook also wrote an article about this topic. You can find it here 
 
-#### Example Request With Text Messgae
+https://www.facebook.com/business/help/524220081677109?id=2129163877102343
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -d 'from=91886713XXXX&to=91788788XXXX&text=checking%20sms%20for%20whatspp'
-```
+## Step 5: Waiting for approval
 
-#### Example Response
+WhatsApp is now checking your application. When you comply with the business policies and commerce policies, you will be approved. After the approval, we will send you an email.
 
-```json
-{
-    "status": "OK",
-    "message": "Message Queued successfully"
-}
-```
+## Step-6: Activating a phone number (< 5 minutes)
 
-## Template Message
+As soon as steps 1 - 5 are complete, we can create the actual account and register a phone number. We can use a phone number that you own or provide you with a (german +49) phone number.
 
-```
-{endpoint}whatsapp/message/send
-```
+In case you want to use your own phone number, we have to coordinate and find a time to activate the account together.
 
-####  MANDATORY PARAMETERS
+If you want to use your own phone number:
 
-| Name     | Descriptions |
-|----------|--------------|
-| from | Whatsapp Number |
-| to | Destination mobile number with country code|
-| type | Type of the message : template |
-| name | Name of the template |
+You can use land line or mobile phone numbers. Your number must be able to receive either international SMS or international calls.
 
-#### OPTIONAL PARAMETERS
+In case of voice activation: Your phone number may NOT be behind an IVR. The IVR needs to be deactivated for the activation call.
 
-| Name     | Descriptions |
-|----------|--------------|
-| variables[] | value of the variables used in template  |
+If you used WhatsApp on this number before, you must deactivate the account (not delete the app!) in the App via Settings - Account - Deactivate Account
+
+You must send the activation code to us, after you receive it.
 
 
-```
-Example of the template looks as follows :
-
-{{1}} code: {{2}}. Valid for {{3}} minutes.
-
-```
-Here {{1}}, {{2}}, {{3}} are replacement variables which is different for each message. Same needs to be for `variables[]` parameter.
-
-####  Example Request With Template
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'type=template&name=otp_message&from=918867XXXX&to=918867XXXXX&variables%5B%5D=Company&variables%5B%5D=123467&variables%5B%5D=30'
-
-  ```
-#### Example Response
-
-```json
-{
-    "status": "OK",
-    "message": "Message Queued successfully"
-}
-```
+#### Congratulations! You can now use the WhatsApp Business API!
