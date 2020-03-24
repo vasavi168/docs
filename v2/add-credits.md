@@ -7,6 +7,9 @@
 
 You can add the credits to your customers using this api.
 
+`access_token` of main reseller(admin) account should use for adding credits to your customers
+
+
 ####  MANDATORY PARAMETERS
 
 | Name     | Descriptions |
