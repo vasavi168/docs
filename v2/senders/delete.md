@@ -2,7 +2,7 @@
 
 Delete sender-id using post method under your account
 
-#### POST
+#### GET
 
 ```
 {domain}/rest/v1/sender/delete/{id}

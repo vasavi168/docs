@@ -2,7 +2,7 @@
 
 Delete template using post method under your account
 
-#### POST
+#### GET
 
 ```
 {domain}/rest/v1/template/delete/{id}
