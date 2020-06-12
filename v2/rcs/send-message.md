@@ -28,10 +28,10 @@ curl -X GET \
 
 ```json
 {
-    "code": "200",
+    "code": 200,
     "status": "OK",
     "data": {
-        "features": {
+        "features": [
             "RICHCARD_STANDALONE",
             "ACTION_CREATE_CALENDAR_EVENT",
             "ACTION_DIAL",
@@ -39,7 +39,7 @@ curl -X GET \
             "ACTION_SHARE_LOCATION",
             "ACTION_VIEW_LOCATION",
             "RICHCARD_CAROUSEL"
-        }
+        ]
     }
 }
 ```
@@ -95,7 +95,23 @@ curl -X POST \
       }'
 
   ```
-#### Example Response
+#### Example Response For Success
+
+```json
+{
+    "code": 200,
+    "status": "OK",
+    "data": {
+        "name": "phones/+918919525224/agentMessages/12900906r22",
+        "sendTime": "2020-06-12T03:56:08.464Z",
+        "contentMessage": {
+            "text": "Hello, world!"
+        }
+    }
+}
+```
+
+#### Example Response For Failure
 
 ```json
 {
@@ -136,9 +152,9 @@ curl -X POST \
   -d '{ 
         "content":{
           "contentMessage": {
-              'contentInfo': {
-                'fileUrl': 'http://yourdomain.com/images/richcard.png',
-                'forceRefresh': false
+              "contentInfo": {
+                "fileUrl": "http://yourdomain.com/images/richcard.png",
+                "forceRefresh": false
               }
             }
         },
@@ -185,27 +201,28 @@ curl -X POST \
   '{endpoint}rcs/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'content-type: application/json' \
-  -d '{ 
-        'contentMessage': {
-          'text': 'Hello, world!',
-          'suggestions': [
-            {
-              reply: {
-                'text': 'Suggestion #1',
-                'postbackData': 'Yes, Agreed',
-              },
-            },
-            {
-              reply: {
-                'text': 'Suggestion #2',
-                'postbackData': 'No',
-              },
-            }
-          ]
+  -d '{
+    "content" : {
+      "contentMessage": {
+      "text": "Dear Customer, Please choose your choice",
+      "suggestions": [{
+          "reply": {
+            "text": "Suggestion #1",
+            "postbackData": "Yes, I Am In"
+          }
         },
-        "to": "918919525224",
-        "id": "12900926r221223xxxxxx"
-      }'
+        {
+          "reply": {
+            "text": "Suggestion #2",
+            "postbackData": "No, Not interested"
+          }
+        }
+      ]
+    }
+    },
+    "to": "918919525224",
+    "id": "laxman12345"
+  }'
 
   ```
 #### Example Response
