@@ -136,3 +136,12 @@ We can define how to treat the variables while playing.
 `play` we want to download the mp3 file and play, we can use `{{clip@play}}`
 
 `sound` to play in build sound files, we can use `{{clip@sound}}`
+
+#### 3-way calling
+
+We can convert a 2-way call into 3-way.
+
+Press `#` while you are in call. Then enter the receiver number.
+
+After you are connected to the third person, press `**` to convert the call into conference.
+
