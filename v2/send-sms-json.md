@@ -67,7 +67,7 @@ All params in send sms will support in JSON also.
 
 ```curl
 curl --request POST \
-  --url {endpoint}/send/json \
+  --url {endpoint}sms/send/json \
   -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
   -H 'Content-Type: application/json' \
   --data '{
