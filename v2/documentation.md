@@ -47,17 +47,6 @@
   - [Overview](/docs/{{ version }}/whatsapp)
   - [Send a message](/docs/{{ version }}/whatsapp/send-message)
 
-- RCS Messaging
-  - [Overview](/docs/{{ version }}/rcs)
-  - [Send a message](/docs/{{ version }}/rcs/send-message)
-  - [Send Richcard message](/docs/{{ version }}/rcs/send-rich-card-message)
-  - [Revoke a message](/docs/{{ version }}/rcs/revoke-message)
-
-- JIO RCS Messaging
-  - [Overview](/docs/{{ version }}/jiorcs)
-  - [Send a message](/docs/{{ version }}/jiorcs/send-message)
-  - [Send Richcard message](/docs/{{ version }}/jiorcs/send-rich-card-message)
-
 - Link
   - [View Smart Links](/docs/{{version}}/link)
   - [Create Smart Link](/docs/{{version}}/link/create)
