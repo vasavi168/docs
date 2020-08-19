@@ -46,6 +46,7 @@
 - Whatsapp 
   - [Overview](/docs/{{ version }}/whatsapp)
   - [Send a message](/docs/{{ version }}/whatsapp/send-message)
+  - [Send Media message](/docs/{{ version }}/whatsapp/send-media-message)
 
 - RCS Messaging
   - [Overview](/docs/{{ version }}/rcs)
