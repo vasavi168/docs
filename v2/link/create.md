@@ -5,7 +5,7 @@ Convert long url into short and smart url.
 #### POST
 
 ```
-{domain}/rest/v1/link/create
+{domain}/api/v2/link/create
 ```
 
 #### PARAMETERS
@@ -69,6 +69,7 @@ if ($err) {
     "message": "Link Created Successfully",
     "token": "e",
     "link": "http://tx9.in/e"
+    "id" : <unique smartlink id>
   }
 }
 ```
