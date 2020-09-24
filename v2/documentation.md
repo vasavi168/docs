@@ -13,6 +13,7 @@
   - [Send SMS](/docs/{{version}}/send-sms)
   - [Send SMS Using JSON](/docs/{{version}}/send-sms-json)
   - [Send SMS Using XML](/docs/{{version}}/send-sms-xml)
+  - [Send SMS Using Template](/docs/{{version}}/send-template-sms)
   - [Bulk SMS Using File](/docs/{{version}}/send-sms-bulk)
   - [Push DLR/Webhook](/docs/{{version}}/sms-push-dlr)
   - [Pull DLR](/docs/{{version}}/sms-pull-dlr)
