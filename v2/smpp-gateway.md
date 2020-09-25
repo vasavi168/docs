@@ -207,3 +207,4 @@ Status and error code which can be returned by Messaging Platform.
 |461 | UNDELIV | Unknown Error |
 |462 | FAILED | Unknown Error |
 |778 | REJ-MULTIPART | All message parts not delivrd to handset |
+|777 | DLT-REJECTED | Invalid sender-id or invalid template |
