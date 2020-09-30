@@ -22,7 +22,9 @@ You can send sms using `POST` method content in body.
       <service>T</service>
       <time>2018-07-05 10:30AM</time>
       <type>N</type>
-      <flash>0</flash>
+      <entity_id>1233555XXXXXXXXX</entity_id>
+      <header_id>123380090XXXXXXX</header_id>
+      <template_id>9002929XXXXXXX</template_id>
    </root>
    
    <nodes>
@@ -65,7 +67,9 @@ You can send sms using `POST` method content in body.
 | custom | Any customised parameters can be passed  using this parameter |
 | custom1 | Any customised parameter |
 | port | Port number to which SMS has to be sent |
-
+| entity_id | Entityid registered in DLT portal |
+| header_id | HeaderId registered in DLT portal |
+| template_id | TemplateId registered in DLT portal|
 
 #### Example Request
 
@@ -86,6 +90,9 @@ curl -X POST \
       <time>2018-07-05 10:30AM</time>
       <type>N</type>
       <flash>0</flash>
+      <entity_id>1233555XXXXXXXXX</entity_id>
+      <header_id>123380090XXXXXXX</header_id>
+      <template_id>9002929XXXXXXX</template_id>
    </root>
    
    <nodes>

@@ -22,7 +22,10 @@ All params in send sms will support in JSON also.
         "message": "global message",
         "service": "T",
         "dlr_url": "http://www.domainname.com/dlr?status={status}",
-        "time": ""
+        "time": "",
+        "entity_id": "222343XXXXXX",
+        "header_id": "10333XXXXXX",
+        "template_id": "2290003XXXXXX"
     },
     "nodes": [
         {
@@ -61,7 +64,9 @@ All params in send sms will support in JSON also.
 | custom | Any customised parameters can be passed  using this parameter |
 | custom1 | Any customised parameter |
 | port | Port number to which SMS has to be sent |
-
+| entity_id | Entityid registered in DLT portal |
+| header_id | HeaderId registered in DLT portal |
+| template_id | TemplateId registered in DLT portal|
 
 #### Example Request
 
@@ -78,7 +83,10 @@ curl --request POST \
         "message": "global message",
         "service": "T",
         "dlr_url": "http://www.domainname.com/dlr?status={status}",
-        "time": ""
+        "time": "",
+        "entity_id": "222343XXXXXX",
+        "header_id": "10333XXXXXX",
+        "template_id": "2290003XXXXXX"
     },
     "nodes": [
         {

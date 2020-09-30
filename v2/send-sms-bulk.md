@@ -54,6 +54,9 @@ You can send sms using `POST`  method only as uploading file will supporting in
 | custom1 | Any customised parameter |
 | port | Port number to which SMS has to be sent |
 | column | Mobile number column name same as in customize sms |
+| entity_id | Entityid registered in DLT portal |
+| header_id | HeaderId registered in DLT portal |
+| template_id | TemplateId registered in DLT portal|
 
 #### Example Request
 
