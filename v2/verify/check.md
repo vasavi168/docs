@@ -7,7 +7,7 @@
 
 #### GET
 ```
-{endpoint}check/{id}/{token}
+{endpoint}verify/check/{id}/{token}
 ```
 
 #### MANDATORY PARAMETERS
@@ -34,3 +34,18 @@ curl -X GET \
     "status": "success"
 }
 ```
+
+####  SUCCESS CODES
+
+|Code|Status|Status Description|
+|--- |--- |--- |
+|200 | success | Verified successfully. |
+
+
+####  FAILURE CODES
+
+|Code|Status|Status Description|
+|--- |--- |--- |
+|401 | Unauthenticated | Authetication Error |
+|200 | failed | when you passed invalid `id` value |
+|200 | invalid | when you passed wrong `token` for verificaton |

@@ -54,3 +54,20 @@ curl -X POST \
     "expire_at": "2019-01-31 14:43:48"
 }
 ```
+
+
+## ERROR Codes
+
+####  SUCCESS CODES
+
+|Code|Status|Status Description|
+|--- |--- |--- |
+|200 | sent | OTP has been sent to device. |
+
+
+####  FAILURE CODES
+
+|Code|Status|Status Description|
+|--- |--- |--- |
+|401 | Unauthenticated | Authetication Error |
+|422 | error | missing required entities (ex: to parameter missing) |

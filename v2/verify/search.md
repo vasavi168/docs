@@ -7,7 +7,7 @@ To check the status of past or current verification requests:
 
 #### GET
 ```
-{endpoint}search/{id}
+{endpoint}verify/search/{id}
 ```
 
 #### MANDATORY PARAMETERS
