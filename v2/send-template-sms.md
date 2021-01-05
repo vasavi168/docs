@@ -57,8 +57,6 @@ All params in send sms will support in JSON also.
 
 ```json
 {
-    "name": "new template sms api",
-    "sender": "TXTSMS",
     "service": "T",
     "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
     "variables" : ["Laxman", "",  "New"],
@@ -74,7 +72,6 @@ All params in send sms will support in JSON also.
 |----------|--------------|
 | to | Phone number to send with country prefix. (multiple numbers need to be sent as array.) |
 | template_id | Id of the template |
-| sender | The registered and approved Sender-id |
 | service | Determines whether the SMS to be sent is Transactional, Promotional or other. |
 | variables | Varible values for replacing in template content (need to send as array) Ex:["name","891919XXX","new"]
 
@@ -100,8 +97,6 @@ All params in send sms will support in JSON also.
     'http://portal.mobtexting.co/api/v2/sms/template?access_token=d9e1cac3812186b353c50xxxxxxx' \
     -H 'content-type: application/json' \
     -d '{
-      "name": "new template sms api",
-      "sender": "TXTSMS",
       "service": "T",
       "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
       "variables" : ["Laxman", "myname@gmail.com",  "New"],
