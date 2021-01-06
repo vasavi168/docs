@@ -20,7 +20,7 @@ Note: Few elements in endpoint may change for service to service.
 
 Each API request will have to contain request headers that include your access token to authenticate the request. 
 
-Don't have an access token? You will find your access token in the `Manage Items -> API Keys` in menu bar.
+Don't have an access token? You will find your access token in the `Developers -> API Keys/Access Tokens` in menu bar.
 
 When your application can't send an Authorization header, you can use the GET parameter `access_token` to provide your access key.
 
