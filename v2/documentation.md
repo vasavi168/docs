@@ -67,3 +67,6 @@
   - [Edit Template](/docs/{{version}}/templates/edit)
   - [Delete Template](/docs/{{version}}/templates/delete)
 
+- HLR Lookup
+  - [Verify](/docs/{{version}}/lookup/verify)
+
