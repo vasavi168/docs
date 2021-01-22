@@ -2,6 +2,10 @@
 
 The SMS API supports the following:
 
+#### Note:
+
+As new DLT restrictions effective from Jan 31, we are suggesting to use the Template API for avoiding delivery issues related to DLT,  [Goto Template API](/docs/{{version}}/send-template-sms)
+
 #### HTTP Methods 
 
 `POST` - When you send a POST request with the end user's phone number to the messaging subresource, We sends the SMS message you specify.

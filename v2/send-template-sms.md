@@ -1,4 +1,4 @@
-# Messaging
+# Template SMS API
 
 The SMS API supports the following:
 
