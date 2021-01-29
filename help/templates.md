@@ -12,12 +12,12 @@ When creating a Message Temaple, you must have the following:
 Creating a welcome message where the Message Template name is welcome and the message is
 
 ```
-"Welcome {{1}}. We look forward to serving you." 
+"Welcome {#var1#}. We look forward to serving you." 
 ```
 
 Creating an order confirmation message where the Message Template name is `order_confirmation` and the message is
 
 ```
-"Your order {{1}} for a total of {{2}} is confirmed. The expected delivery is {{3}}." 
+"Your order {#var1#} for a total of {#var2#} is confirmed. The expected delivery is {#var3#}." 
 ```
 

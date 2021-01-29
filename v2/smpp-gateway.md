@@ -22,6 +22,23 @@ Here is an overview of the available servers:
 | smpp1.txtsms.me | 3634 |
 | smpp2.txtsms.me | 3634 |
 
+
+## Additional Mandatory TLV
+
+| Mandatory TLV  | Tag value Decimal | Tag value Hex |
+| ---------------| ----              |----          |
+| PE_ID          | 5120              |1400          |
+| Template_ID    | 5121              |1401          |
+
+
+## Additional Optional TLV
+
+
+| Mandatory TLV         | Tag value Decimal | Tag value Hex |
+| ---------------       | ----              |----           |
+| Telemarketer_ID(TM_ID) | 51212              |1402          |
+
+
 ## CONNECTIVITY
 
 Clients may connect to the Messaging Platform Server multiple numbers of times. This may be of importance if the client wishes to deploy multiple applications simultaneously. To connect to the platform, one needs to specify the following parameters:
