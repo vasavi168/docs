@@ -70,3 +70,6 @@
 - HLR Lookup
   - [Verify](/docs/{{version}}/lookup/verify)
 
+  - Locations
+  - [Coverage List](/docs/{{version}}/locations/coveragelist)
+
