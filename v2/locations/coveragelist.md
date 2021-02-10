@@ -11,9 +11,9 @@ View Coverage list of all enabled countries under your account
 
 | Name     | optional |Descriptions |
 |----------|----- |----------|
-| country |Yes | Enter the country name (multile countries are seperated by , )|
+| country |Yes | Enter the country name (multile countries are seperated by comma) Example:India,Albania|
 | mcc |Yes | Enter the mcc |
-| mnc |Yes | Enter the mnc (mnc is mandatory if mcc is entered)|
+| mnc |Yes | Enter the mnc |
 
 
 #### Example Request
@@ -24,6 +24,8 @@ curl -X POST \
   -H 'Authorization: Bearer 7160f04c05870ee8881xxxxxxxxxxxxx' \
   -H 'access_token: 7160f04c05870ee8881xxxxxxxxxxxxx' \
   -F country=India,Albania \
+  -F mcc=404 \
+  -F mnc=108  
 ```
 
 ```
@@ -40,7 +42,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS => array('country' => 'india','mcc' => '404','mnc' => '108'),
+  CURLOPT_POSTFIELDS => array('country' => 'India','mcc' => '404','mnc' => '108'),
   CURLOPT_HTTPHEADER => array(
     'Authorization: Bearer 7160f04c05870ee8881xxxxxxxxxxxxx',
     'access_token: 7160f04c05870ee8881xxxxxxxxxxxxx'
