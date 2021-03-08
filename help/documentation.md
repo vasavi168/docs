@@ -8,4 +8,7 @@
   - [IP Whitelisting](/docs/{{version}}/whitelisting)
   - [Advanced Options](/docs/{{version}}/options)
   - [Voice Flow](/docs/{{version}}/voice/)
+  - [DLT](/docs/{{version}}/dlt/)
+  - [DLT Registration](/docs/{{version}}/dlt/registration)
+  - [DLT Registration with Pingconnect](/docs/{{version}}/dlt/videocon)
 
