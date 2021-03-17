@@ -58,9 +58,9 @@ You can send sms using `POST` or `GET` methods, GET method requires data should 
 | custom | Any customised parameters can be passed  using this parameter |
 | custom1 | Any customised parameter |
 | port | Port number to which SMS has to be sent |
-| entity_id | Entityid registered in DLT portal |
-| header_id | HeaderId registered in DLT portal |
-| template_id | TemplateId registered in DLT portal|
+| entity_id | Entityid registered in DLT portal (applicable for indian routes only) |
+| header_id | HeaderId registered in DLT portal (applicable for indian routes only) |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)|
 
 #### Example Request
 
