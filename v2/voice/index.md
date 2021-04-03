@@ -84,27 +84,27 @@ Filters can also be chained together by adding additional filter statements (sta
 
 | Name     | Description |
 |----------|-------------|
-| append | append a string e.g. `{{ 'foo' | append:'bar' }} #=> 'foobar'` |
-| ceil | rounds a number up to the nearest integer, e.g. `{{ 4.6 | ceil }} #=> 5` |
-| date_format | reformat a date `{{start_at|date_format:'d/m/Y'}}` |
-| default | returns the given variable unless it is null or the empty string, when it will return the given value, e.g `{{ undefined_variable | default: "Default value" }} #=> "Default value"`|
-| divided_by | integer division e.g. `{{ 10 | divided_by:3 }} #=> 3` |
+| append | append a string e.g. `{{ 'foo' \| append:'bar' }} #=> 'foobar'` |
+| ceil | rounds a number up to the nearest integer, e.g. `{{ 4.6 \| ceil }} #=> 5` |
+| date_format | reformat a date `{{start_at \| date_format:'d/m/Y'}}` |
+| default | returns the given variable unless it is null or the empty string, when it will return the given value, e.g `{{ undefined_variable \| default: "Default value" }} #=> "Default value"`|
+| divided_by | integer division e.g. `{{ 10 \| divided_by:3 }} #=> 3` |
 | downcase | convert an input string to lowercase |
 | escape | html escape a string |
 | first | get the first element of the passed in array |
-| floor | rounds a number down to the nearest integer, e.g. `{{ 4.6 | floor }} #=> 4` |
+| floor | rounds a number down to the nearest integer, e.g. `{{ 4.6 \| floor }} #=> 4` |
 | lstrip | strips all whitespace from the beginning of a string |
-| minus | subtraction e.g. `{{ 4 | minus:2 }} #=> 2` |
-| modulo |  remainder, e.g. `{{ 3 | modulo:2 }} #=> 1` |
-| plus | addition e.g. `{{ '1' | plus:'1' }} #=> 2, {{ 1 | plus:1 }} #=> 2` |
-| prepend |  prepend a string e.g. `{{ 'bar' | prepend:'foo' }} #=> 'foobar'` |
-| round | rounds input to the nearest integer or specified number of decimals e.g. `{{ 4.5612 | round: 2 }} #=> 4.56` |
+| minus | subtraction e.g. `{{ 4 \| minus:2 }} #=> 2` |
+| modulo |  remainder, e.g. `{{ 3 \| modulo:2 }} #=> 1` |
+| plus | addition e.g. `{{ '1' \| plus:'1' }} #=> 2, {{ 1 \| plus:1 }} #=> 2` |
+| prepend |  prepend a string e.g. `{{ 'bar' \| prepend:'foo' }} #=> 'foobar'` |
+| round | rounds input to the nearest integer or specified number of decimals e.g. `{{ 4.5612 \| round: 2 }} #=> 4.56` |
 | rstrip | strips all whitespace from the end of a string|
 | size | return the size of an array or string |
-| slice | slice a string. Takes an offset and length, e.g. {{ "hello" | slice: -3, 3 }} #=> llo |
-| split | split a string on a matching pattern e.g. `{{ "a~b" | split:"~" }} #=> ['a','b']` |
+| slice | slice a string. Takes an offset and length, e.g. {{ "hello" \| slice: -3, 3 }} #=> llo |
+| split | split a string on a matching pattern e.g. `{{ "a~b" \| split:"~" }} #=> ['a','b']` |
 | strip | strips all whitespace from both ends of the string |
-| times | multiplication e.g `{{ 5 | times:4 }} #=> 20` |
+| times | multiplication e.g `{{ 5 \| times:4 }} #=> 20` |
 | upcase | convert an input string to uppercase |
 | url_encode | url encode a string |
 
