@@ -11,7 +11,7 @@ This Voice API supports the following:
 #### POST
 
 ```
-{{endpoint}voice/sound/create
+{endpoint}voice/sound/create
 ```
 
 ####  MANDATORY PARAMETERS
