@@ -30,8 +30,10 @@ This Voice API supports the following:
 #### Example Request
 
 ```
-curl -X POST \
-  "{endpoint}voice/sound/create?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=myAudioFile&audio=<<youraudiofileHere>>"
+curl -X POST '{endpoint}voice/sound/create?access_token=7160f04c05870ee88812a435xxxxxxxx' \
+--header 'Content-Type: application/json' \
+--form 'name=myaudiofile' \
+--form 'audio=@/home/mdigital/Desktop/testsms/welcome.mp3'
 ```
 
 #### Example Response
