@@ -77,6 +77,6 @@ Type of Messages:
 
 Note: All request will be received at Operator and post KYC request will be approve on DLT.
 
-For any further queries kindly contact at [support@mobtexting.com](support@mobtexting.com)
+For any further queries kindly contact us.
 
 
