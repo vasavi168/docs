@@ -1,8 +1,9 @@
 # Check Account Balance
 
 #### GET
+
 ```
-{endpoint}/account/balance
+{endpoint}/finance/balance
 ```
 
 You can get the account balance of each service using this api.
@@ -11,7 +12,7 @@ You can get the account balance of each service using this api.
 
 ```curl
   curl -X GET \
-  "{endpoint}account/balance" \
+  "{endpoint}finance/balance" \
   -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
 ```
 
@@ -19,23 +20,23 @@ You can get the account balance of each service using this api.
 
 ```json
 {
-    "status": 200,
-    "message": "OK",
-    "data": [
-        {
-            "service": "P",
-            "name": "Promotional SMS",
-            "postpaid": 0,
-            "credits": 69,
-            "charges": 1
-        },
-        {
-            "service": "T",
-            "name": "Transactional SMS",
-            "postpaid": 0,
-            "credits": 109,
-            "charges": 1
-        }
-    ]
+  "status": 200,
+  "message": "OK",
+  "data": [
+    {
+      "service": "P",
+      "name": "Promotional SMS",
+      "postpaid": 0,
+      "credits": 69,
+      "charges": 1
+    },
+    {
+      "service": "T",
+      "name": "Transactional SMS",
+      "postpaid": 0,
+      "credits": 109,
+      "charges": 1
+    }
+  ]
 }
 ```

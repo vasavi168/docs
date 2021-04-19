@@ -4,22 +4,22 @@ The SMS API supports the following:
 
 #### Note:
 
-As new DLT restrictions effective from Jan 31, we are suggesting to use the Template API for avoiding delivery issues related to DLT,  [Goto Template API](/docs/{{version}}/send-template-sms)
+As new DLT restrictions effective from Jan 31, we are suggesting to use the Template API for avoiding delivery issues related to DLT, [Goto Template API](/docs/{{version}}/send-template-sms)
 
-#### HTTP Methods 
+#### HTTP Methods
 
 `POST` - When you send a POST request with the end user's phone number to the messaging subresource, We sends the SMS message you specify.
 
-`GET` - You can retrieve the results of the message you sent using the GET method. You do this by sending a GET request containing the reference id for the message you sent. We return a response message in the form of a *__JSON__* object in the entity body.
+`GET` - You can retrieve the results of the message you sent using the GET method. You do this by sending a GET request containing the reference id for the message you sent. We return a response message in the form of a _**JSON**_ object in the entity body.
 
 ### Services
 
 Types of services and their values are listed below:
 
-* T - Transactional Messaging.
-* P - Promotional Messaging.
-* S - Transcrub Messaging.
-* G - Global Messaging
+- T - Transactional Messaging.
+- P - Promotional Messaging.
+- S - Transcrub Messaging.
+- G - Global Messaging
 
 Country code is mandatory to be included in the `to` paramenter for global messaging and optional for indian numbers. If country code not found, default `91` will get appended to mobile number.
 
@@ -35,32 +35,28 @@ Before you start sending transactional SMS through this API, please test whether
 
 You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.
 
+#### MANDATORY PARAMETERS
 
-####  MANDATORY PARAMETERS
+| Name    | Descriptions                                                                            |
+| ------- | --------------------------------------------------------------------------------------- |
+| to      | Phone number to send with country prefix. (multiple numbers can be separated by comma.) |
+| message | The content of the SMS                                                                  |
+| sender  | The registered and approved Sender-id                                                   |
+| service | Determines whether the SMS to be sent is Transactional, Promotional or other.           |
 
-| Name     | Descriptions |
-|----------|--------------|
-| to | Phone number to send with country prefix. (multiple numbers can be separated by comma.) |
-| message | The content of the SMS |
-| sender | The registered and approved Sender-id |
-| service | Determines whether the SMS to be sent is Transactional, Promotional or other. |
+#### OPTIONAL PARAMETERS
 
-
-####  OPTIONAL PARAMETERS
-
-
-| Name     | Descriptions |
-|----------|--------------|
-| dlr_url | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{{version}}/sms-push-dlr)|
-| time |  Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent. |
-| type | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A") |
-| flash | This parameter can be used to send flash sms via API ( Values 1 or 0.) |
-| custom | Any customised parameters can be passed  using this parameter |
-| custom1 | Any customised parameter |
-| port | Port number to which SMS has to be sent |
-| entity_id | Entityid registered in DLT portal (applicable for indian routes only) |
-| header_id | HeaderId registered in DLT portal (applicable for indian routes only) |
-| template_id | TemplateId registered in DLT portal (applicable for indian routes only)|
+| Name        | Descriptions                                                                                                                                           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                        |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                |
+| dlr_url     | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{{version}}/sms-push-dlr) |
+| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                     |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                          |
+| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                 |
+| custom      | Your own unique_id parameters                                                                                                                          |
+| custom1     | Any customised parameter                                                                                                                               |
+| port        | Port number to which SMS has to be delivered                                                                                                           |
 
 #### Example Request
 
