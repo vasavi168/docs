@@ -218,7 +218,7 @@ curl -X POST \
      },
     "payload" : {
         "image_payload": {
-            "url": "https://mobtexting.com/uploadpath/myfolder/voice.png",
+            "url": "https://mobtexting.com/your_image_path.png",
             "caption": "some caption for image"
         }
     }    
@@ -342,7 +342,7 @@ curl -X POST \
      },
     "payload" : {
         "audio_payload": {
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3",
+            "url": "https://mobtexting.com/audio_file.mp3",
             "caption": "some caption for audio file"
         }
     }    
@@ -402,7 +402,7 @@ curl -X POST \
      },
     "payload" : {
         "video_payload": {
-            "url": "https://file-examples-com.github.io/uploads/2017/11/demovideo.mp4",
+            "url": "https://mobtexting.com/uploads/2021/demo_video.mp4",
             "caption": "some caption for video file"
         }
     }    
