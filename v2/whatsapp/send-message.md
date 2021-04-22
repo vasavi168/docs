@@ -1,5 +1,11 @@
 # Whatsapp For Business API
 
+## Api Collection Postman link
+
+```
+https://www.getpostman.com/collections/6eaad21725156053df42
+```
+
 ## Channel Info
 
 ```
