@@ -1,10 +1,45 @@
 # Whatsapp For Business API
 
+## Channel Info
+
+```
+{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",  // String or array
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}",  // String or array 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     }
+}
+```
+
+#### PARAMETERS
+
+| Name     | Description | type | Required   |
+|----------|--------------| ---- | -----------|
+| channel | This block contains information realted messaging channel | N/A | Yes |
+| name | Name of Messaging Channel. Ex: `whatsapp`| `string` | Yes |
+| from| Sender or From Number | `number` | Yes |
+| recipient| This block contains contacts information related to channel |N/A | Yes |
+| group_id|Segment id which contain list of phone numbers | `string` or `array` | Yes if `to` param not present |
+| to | Receiver mobile numbers : `text` | `array` | Yes, if `group_id` not present |
+
+
+`Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
+
 
 #### HTTP Methods
   
   It will support only `POST` requests.
-
 
 ## Sending Text Message
 
@@ -20,11 +55,25 @@ curl -X POST \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "from": "919019120120",
-    "to": "918867135684",
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
     "payload" : {
-      "type": "text",
-      "text": "This is text message"
+       "text_payload": {
+            "text": "This is a simple text message from whatsapp channel"
+        }
     }
 }'
 ```
@@ -33,9 +82,9 @@ curl -X POST \
 
 | Name     | Description | Limits | Required   |
 |----------|--------------| ---- | -----------|
-| from | Whatsapp Number | N/A | Yes |
+| payload | Messaage Payload section | N/A | Yes |
 | to | Destination mobile number with country code| NA | Yes |
-| type| Message tpe. value : `text` | Max 4096 Characters | Yes |
+| text| Message Content you want to send  | Max 4096 Characters | Yes |
 
 #### Example Response
 
@@ -70,23 +119,33 @@ curl -X POST \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "from": "919019120120",
-    "to": "918867135684",
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
     "payload" : {
-      "type": "template",
-        "template": {
-          "name": "otp",
-          "language": "en",
-          "params": 
-              [
-                "MOBtexting",
-                  "223344", 
-                  "30",
-              ],
-          "ttl": 86400
+       "text_payload": {
+            "text": "This is a simple text message from whatsapp channel"
+        },
+        "template_payload" : {
+            "name": "otp",
+            "language": "en",
+            "params": ["name", "223344", "MOBtexting", "10"],
+            "header_params": ["Replacement Text"],
+            "body_params": ["name", "223344", "MOBtexting", "10"]
         }
     }
-    
 }'
 ```
 #### Example Response
@@ -102,9 +161,6 @@ curl -X POST \
 
 | Name     | Description | Limits | Required   |
 |----------|--------------| ---- | -----------|
-| from | Whatsapp Number | N/A | Yes |
-| to | Destination mobile number with country code| NA | Yes |
-| type| Type of message, value : `template` | Max 4096 Characters | Yes |
 | language | Language to send the template in. Default `en`| N/A | No |
 | params| Parameters to replace the variables in the template | can only be used for template messages with only a body| No |
 | header_params| Parameters to replace the variables in the template | Up to 60 characters for all parameters and predefined template header text| No |
@@ -114,7 +170,7 @@ curl -X POST \
 
 ## Send Image Message
 
-We can send Images as attachment in  whatsapp using below API. The maximum image size is limited to 5 MB.
+We can send Images as attachment in  whatsapp using below API. The maximum image size is limited to 64 MB.
 
 ```
 {endpoint}whatsapp/message/media
@@ -128,11 +184,23 @@ curl -X POST \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "from": "919019120120",
-    "to": "918867135684",
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
     "payload" : {
-      "type": "image",
-        "image": {
+        "image_payload": {
             "url": "https://mobtexting.com/uploadpath/myfolder/voice.png",
             "caption": "some caption for image"
         }
@@ -144,10 +212,7 @@ curl -X POST \
 
 | Name     | Description | Limits | Required   |
 |----------|--------------| ---- | -----------|
-| from | Whatsapp Number | N/A | Yes |
-| to | Destination mobile number with country code| NA | Yes |
-| type| Message tpe. value : `image` | Max File size 5MB | Yes |
-| url | Public url of the image file. Either HTTP or HTTPS link. | N/A | Yes |
+| url | Public url of the image file. Either HTTP or HTTPS link. | 64 MB | Yes |
 | caption | some text for image caption | N/A | No |
 
 #### Example Response
@@ -161,13 +226,13 @@ curl -X POST \
 
 ## Send Document Message
 
-We can send Document which is having valid MIME-type as attachment in whatsapp using below API. The maximum document size is limited to 100 MB. So anything not image, audio or video will be transmitted as document message.
+We can send Document which is having valid MIME-type as attachment in whatsapp using below API. The maximum document size is limited to 64 MB. So anything not image, audio or video will be transmitted as document message.
 
 ```
 {endpoint}whatsapp/message/media
 ```
 
-#### Example Request With Image Messgae
+#### Example Request With Document Messgae
 
 ```
 curl -X POST \
@@ -175,13 +240,26 @@ curl -X POST \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "from": "919019120120",
-    "to": "918867135684",
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
     "payload" : {
       "type": "document",
-        "document": {
+        "document_payload": {
             "url": "https://mobtexting.com/docs/uploads/voice.pdf",
-            "caption": "some caption for image"
+            "caption": "some caption for document"
         }
     }    
 }'
@@ -191,11 +269,272 @@ curl -X POST \
 
 | Name     | Description | Limits | Required   |
 |----------|--------------| ---- | -----------|
-| from | Whatsapp Number | N/A | Yes |
-| to | Destination mobile number with country code| NA | Yes |
-| type| Message tpe. value : `document` | Max File size 100MB | Yes |
+| type| Message tpe. value : `document` | Max File size 64MB | Yes |
 | url | Public url of the document file. Either HTTP or HTTPS link. | N/A | Yes |
 | caption | some text for document caption | N/A | No |
+
+#### Example Response
+
+```json
+{
+    "status": "OK",
+    "message": "Message Queued successfully"
+}
+```
+
+## Send Audio Message
+
+We can send Audio clips as attachment in whatsapp using below API. The maximum audio file size is limited to max 64 MB.
+
+```
+{endpoint}whatsapp/message/media
+```
+
+#### Example Request With Audio Messgae
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/media' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
+    "payload" : {
+        "audio_payload": {
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3",
+            "caption": "some caption for audio file"
+        }
+    }    
+}'
+```
+
+#### PARAMETERS
+
+| Name     | Description | Limits | Required   |
+|----------|--------------| ---- | -----------|
+| url | Public url of the audio file. Either HTTP or HTTPS link. | Upto 64MB | Yes |
+| caption | some text for audio caption | N/A | No |
+
+#### Example Response
+
+```json
+{
+    "status": "OK",
+    "message": "Message Queued successfully"
+}
+```
+## Send Video Message
+
+We can send Video clips as attachment in whatsapp using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}whatsapp/message/media
+```
+
+#### Example Request With Video Messgae
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/media' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
+    "payload" : {
+        "video_payload": {
+            "url": "https://file-examples-com.github.io/uploads/2017/11/demovideo.mp4",
+            "caption": "some caption for video file"
+        }
+    }    
+}'
+```
+
+#### PARAMETERS
+
+| Name     | Description | Limits | Required   |
+|----------|--------------| ---- | -----------|
+| url | Public url of the video file. Either HTTP or HTTPS link. | Max 64 MB | Yes |
+| caption | some text for video caption | N/A | No |
+
+#### Example Response
+
+```json
+{
+    "status": "OK",
+    "message": "Message Queued successfully"
+}
+```
+
+## Send Location Message
+
+We can send location in whatsapp using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### Example Request With Location Messgae
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
+    "payload" : {
+        "location_payload" : {
+            "longitude": 12.912985,
+            "latitude": 77.599505,
+            "name": "MOBtexting Pvt Ltd",
+            "address": "JP Nagar, Mini forest"
+        }
+    }    
+}'
+```
+
+#### PARAMETERS
+
+| Name     | Description | Limits | Required   |
+|----------|--------------| ---- | -----------|
+| longitude | Longitude of the location coordinates | N/A | Yes |
+| latitude | Latitude of the location coordinates | N/A | No |
+| name | Address name | N/A | No |
+| address | Textual representation of location | N/A | No |
+
+#### Example Response
+
+```json
+{
+    "status": "OK",
+    "message": "Message Queued successfully"
+}
+```
+
+## Send Carousel Message
+
+We can send Carousel in whatsapp using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### Example Request With Carousel Messgae
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
+    "payload" : {
+        "carousel_payload" : {
+            --Coming Soon ----
+        }
+    }    
+}'
+```
+
+## Send Card Message
+
+We can send Carousel in whatsapp using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### Example Request With Card Messgae
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
+    "payload" : {
+        "card_payload" : {
+            --Coming Soon ----
+        }
+    }    
+}'
+```
+
+#### PARAMETERS
+
+| Name     | Description | Limits | Required   |
+|----------|--------------| ---- | -----------|
 
 #### Example Response
 
