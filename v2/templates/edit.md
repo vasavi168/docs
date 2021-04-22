@@ -1,4 +1,4 @@
-## Edit Sender-ids
+## Edit Templates
 
 Edit template using post method under your account
 
