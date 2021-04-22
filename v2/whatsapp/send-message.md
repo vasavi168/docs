@@ -425,6 +425,104 @@ curl -X POST \
 }
 ```
 
+## Send Vcard / Contacts  Message
+
+#### API Endpoint
+```
+{domain}/api/{{version}}/
+```
+
+We can send location in whatsapp using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### Example Request With Vcard Messgae
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{{segment_id}}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{{segment_id}}", 
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
+    "payload" : {
+        "contacts_payload" : {
+            "options" : [
+                {
+                    "addresses": [
+                        {
+                            "city": "Bangalore",
+                            "country": "India",
+                            "country_code": "in",
+                            "state": "KA",
+                            "type": "Office",
+                            "zip": "560078"
+                        }
+                    ],
+                    "birthday": "1993-08-18",
+                    "emails": [
+                        {
+                            "email": "hello@mobtexting.com",
+                            "type": "WORK"
+                        }
+                    ],
+                    "name": {
+                        "first_name": "Laxman",
+                        "formatted_name": "Laxman Ka",
+                        "last_name": "Ka"
+                    },
+                    "phones": [
+                        {
+                            "phone": "919019120120",
+                            "type": "HOME"
+                        }
+                    ],
+                    "urls": [
+                        {
+                             "url": "https://www.mobtexting.com",
+                             "type": "WORK"
+                        }
+                    ]
+                }
+            ]
+        }
+    }    
+}'
+```
+
+#### PARAMETERS
+
+| Name     | Description | Limits | Required   |
+|----------|--------------| ---- | -----------|
+| phone | Mobile numbers saved in mobile | N/A | Yes |
+| name | Person name | N/A | No |
+| address | Address details of the contact | N/A | No |
+
+#### Example Response
+
+```json
+{
+    "status": "OK",
+    "message": "Message Queued successfully"
+}
+```
+
 ## Send Location Message
 
 #### API Endpoint
