@@ -2,13 +2,6 @@
 
 View all smart links created under your account
 
-
-#### API Endpoint
-
-```
-{domain}/api/{{version}}/
-```
-
 #### GET
 
 ```
@@ -16,7 +9,6 @@ View all smart links created under your account
 ```
 
 #### PARAMETERS
-
 
 #### Example Request
 
@@ -29,7 +21,7 @@ curl -X GET \
 ```
 
 Kindly replace the token with your respective access_token and other params.
-  
+
 #### Example Response
 
 ```json
