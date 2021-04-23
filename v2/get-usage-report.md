@@ -16,7 +16,6 @@ It will display account usage report
 
 #### PARAMETERS
 
-
 #### Example Request
 
 ```
@@ -28,7 +27,7 @@ curl -X GET \
 ```
 
 Kindly replace the token with your respective access_token and other params.
-  
+
 #### Example Response
 
 ```json
