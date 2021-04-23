@@ -1,5 +1,11 @@
 # Adding Credits to Customers
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST
 
 ```

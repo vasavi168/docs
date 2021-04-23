@@ -1,5 +1,11 @@
 # PULL DLR STATUS
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 ```
 {endpoint}sms/status?id=469ea920-ccd1-4a39-b728-c0b6f15f6aa6:1

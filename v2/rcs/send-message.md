@@ -1,6 +1,12 @@
 # RCS Messaging Api
 
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 ## Capabilities Check
 
 ```

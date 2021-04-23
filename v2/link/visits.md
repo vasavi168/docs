@@ -2,6 +2,13 @@
 
 Access the perticular Link Visits
 
+
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 
 ```

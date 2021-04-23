@@ -2,6 +2,13 @@
 
 Verify HLR of mubile numbers using post method under your account
 
+
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST
 
 ```

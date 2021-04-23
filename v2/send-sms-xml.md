@@ -1,5 +1,11 @@
 # Send SMS Using XML object
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST
 ```
 {endpoint}sms/send/xml

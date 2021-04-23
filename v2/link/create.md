@@ -2,6 +2,13 @@
 
 Convert long url into short and smart url.
 
+
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST
 
 ```

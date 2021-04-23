@@ -16,6 +16,12 @@ To integrate our SMS API, any HTTP recipient in any programming language can be 
 
 Note: Few elements in endpoint may change for service to service.
 
+## API Collection Postman link
+
+```
+https://www.getpostman.com/collections/6eaad21725156053df42
+```
+
 ## AUTHENTICATION
 
 Each API request will have to contain request headers that include your access token to authenticate the request.

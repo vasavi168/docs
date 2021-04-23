@@ -5,6 +5,12 @@ To check the status of past or current verification requests:
   - Send a Verify Search request containing the `id` of the verification requests you are interested in.
   - Check the `status` of the response to determine if the code the user supplied matches the one sent by {app}.
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 ```
 {endpoint}verify/search/{id}

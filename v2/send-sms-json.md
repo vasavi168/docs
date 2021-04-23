@@ -1,5 +1,11 @@
 # Send SMS Using JSON object
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST
 ```
 {endpoint}sms/send/json

@@ -2,6 +2,11 @@
 
 Deletes an existing Verify request. You only need to supply the unique id that was returned upon creation.
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
 
 #### GET
 ```

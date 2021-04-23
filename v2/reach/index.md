@@ -10,6 +10,13 @@ This Voice API supports the following:
 
 #### POST
 
+
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 ```
 {endpoint}voice/sound/create
 ```

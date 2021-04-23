@@ -2,6 +2,13 @@
 
 View all smart links created under your account
 
+
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 
 ```

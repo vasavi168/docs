@@ -8,6 +8,13 @@ This Voice API supports the following:
 
 ## Call Initiation
 
+
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST/GET
 
 ```

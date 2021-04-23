@@ -1,6 +1,12 @@
 # RCS Messaging Api
 
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 ## Sending Message Wirh RichCard
 
 Your agent can revoke messages that it has sent but that the RBM platform hasn't delivered to the user. If the RBM platform successfully revokes a message, the platform deletes the message from the user's message queue and doesn't deliver the message.

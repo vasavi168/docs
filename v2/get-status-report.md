@@ -2,6 +2,12 @@
     
 This api will give status wise summary report for the given daterange
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 ```
 {endpoint}sms/report

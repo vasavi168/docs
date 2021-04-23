@@ -27,13 +27,19 @@ Before you start sending transactional SMS through this API, please test whether
 
 ## Send SMS
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST/GET
+
+You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.
 
 ```
 {endpoint}sms/send?message=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T
 ```
-
-You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.
 
 #### MANDATORY PARAMETERS
 

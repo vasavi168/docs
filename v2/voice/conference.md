@@ -1,8 +1,15 @@
 # List Conferences
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### HTTP Methods
     
    `GET` method used to list all conferences.
+
 
 #### GET
 

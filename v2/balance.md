@@ -1,5 +1,11 @@
 # Check Account Balance
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 
 ```

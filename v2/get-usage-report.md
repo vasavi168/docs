@@ -2,6 +2,12 @@
 
 It will display account usage report
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 
 ```

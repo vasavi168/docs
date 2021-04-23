@@ -2,6 +2,12 @@
 
 This Voice API supports the following:
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### GET
 
 ```
@@ -74,6 +80,13 @@ curl -X GET \
 ```
 
 # Recordings Report
+
+
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
 
 #### GET
 

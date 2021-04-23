@@ -43,6 +43,12 @@ Before you start sending transactional SMS through this API, please test whether
 
 ## Send SMS
 
+#### API Endpoint
+
+```
+{domain}/api/{{version}}/
+```
+
 #### POST
 
 ```
