@@ -1,10 +1,8 @@
 # Whatsapp For Business API
 
-
 #### HTTP Methods
-  
-  It will support only `POST` requests.
 
+It will support only `POST` requests.
 
 ## Sending Media Message
 
@@ -12,15 +10,14 @@
 {endpoint}whatsapp/media
 ```
 
-####  MANDATORY PARAMETERS
+#### MANDATORY PARAMETERS
 
-| Name     | Descriptions |
-|----------|--------------|
-| from | Whatsapp Number |
-| to | Destination mobile number with country code|
-| text | Message text you want to send |
-| file | Attachment you want to send | 
-
+| Name | Descriptions                                |
+| ---- | ------------------------------------------- |
+| from | Whatsapp Number                             |
+| to   | Destination mobile number with country code |
+| text | Message text you want to send               |
+| file | Attachment you want to send                 |
 
 #### Example Request With Text Messgae
 
@@ -38,7 +35,7 @@ curl -X POST \
 
 ```json
 {
-    "status": "OK",
-    "message": "Message Queued successfully"
+  "status": "OK",
+  "message": "Message Queued successfully"
 }
 ```

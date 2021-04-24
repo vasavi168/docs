@@ -1,13 +1,6 @@
-## Create Smart Link 
+## Create Smart Link
 
 Convert long url into short and smart url.
-
-
-#### API Endpoint
-
-```
-{domain}/api/{{version}}/
-```
 
 #### POST
 
@@ -17,13 +10,12 @@ Convert long url into short and smart url.
 
 #### PARAMETERS
 
-| Name     | Optional | Descriptions |
-|----------|--------------|----------|
-| title | yes |  Link title.|
-| long_url | | Long Url|
-| webhook | yes | Long Url|
-| is_advanced | yes | Want to track mobile number |
-
+| Name        | Optional | Descriptions                |
+| ----------- | -------- | --------------------------- |
+| title       | yes      | Link title.                 |
+| long_url    |          | Long Url                    |
+| webhook     | yes      | Long Url                    |
+| is_advanced | yes      | Want to track mobile number |
 
 #### Example Request
 
@@ -66,7 +58,7 @@ if ($err) {
 }
 
 ```
-  
+
 #### Example Response
 
 ```json

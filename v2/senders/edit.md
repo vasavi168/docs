@@ -10,13 +10,12 @@ Edit sender-ids using post method under your account
 
 #### PARAMETERS
 
-| Name     | optional | Descriptions |
-|----------|-------|----------|
-| name |No | Edit the sender-id |
-| entity_name |No | Edit the entity_name|
-| message |No | edit the message|
-| document |yes | choose a optin file that matches the sender_id |
-
+| Name        | optional | Descriptions                                   |
+| ----------- | -------- | ---------------------------------------------- |
+| name        | No       | Edit the sender-id                             |
+| entity_name | No       | Edit the entity_name                           |
+| message     | No       | edit the message                               |
+| document    | yes      | choose a optin file that matches the sender_id |
 
 #### Example Request
 
@@ -64,13 +63,13 @@ if ($err) {
   echo $response;
 }
 ```
-  
+
 #### Example Response
 
 ```json
 {
-    "status": "OK",
-    "message": "Sender updated successfully",
-    "id": 1
+  "status": "OK",
+  "message": "Sender updated successfully",
+  "id": 1
 }
 ```

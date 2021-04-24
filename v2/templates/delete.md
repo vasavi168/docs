@@ -7,6 +7,7 @@ Delete template using post method under your account
 ```
 {domain}/rest/v1/template/delete/{id}
 ```
+
 Replace the {id} with the actual id of the template that you would like to delete.
 
 #### Example Request
@@ -48,12 +49,12 @@ if ($err) {
   echo $response;
 }
 ```
-  
+
 #### Example Response
 
 ```json
 {
-    "status": "OK",
-    "message": "Template deleted successfully"
+  "status": "OK",
+  "message": "Template deleted successfully"
 }
 ```

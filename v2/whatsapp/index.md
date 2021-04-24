@@ -20,24 +20,21 @@ Everything you need to know is summarized in this article, created by Facebook
 
 https://www.facebook.com/business/help/2058515294227817?id=180505742745347
 
-## Step-3  Get the WhatsApp Approval. (1 - 2 business days)
+## Step-3 Get the WhatsApp Approval. (1 - 2 business days)
 
- We will create a WABA (WhatsApp Business Account) with the Facebook Business Manager ID provided.  
+We will create a WABA (WhatsApp Business Account) with the Facebook Business Manager ID provided.
 
+IMPORTANT! The Facebook Business Manager ID MUST belong to the business that is asking for approval.
 
- IMPORTANT! The Facebook Business Manager ID MUST belong to the business that is asking for approval.
+If you’re an agency / developer and build an integration on behalf of your customer, we need the FBM ID of your customer, since they must be approved.
 
- If you’re an agency / developer and build an integration on behalf of your customer, we need the FBM ID of your customer, since they must be approved.
+Be aware that your use case must comply with the
 
- Be aware that your use case must comply with the
+Business Policies: https://www.whatsapp.com/legal/business-policy/
 
-  
-  Business Policies: https://www.whatsapp.com/legal/business-policy/
+Commerce Policies: https://www.whatsapp.com/legal/commerce-policy/
 
-  Commerce Policies: https://www.whatsapp.com/legal/commerce-policy/
-
-  Opt-In Requirements: https://developers.facebook.com/docs/whatsapp/guides/Opt-In
-
+Opt-In Requirements: https://developers.facebook.com/docs/whatsapp/guides/Opt-In
 
 ## Step-4 : Give us permissions (< 5 minutes)
 
@@ -47,7 +44,7 @@ https://business.facebook.com/settings/requests
 
 Accept this request. As soon as you accepted the request and your Business Verification is done, WhatsApp will start the approval process.
 
-Facebook also wrote an article about this topic. You can find it here 
+Facebook also wrote an article about this topic. You can find it here
 
 https://www.facebook.com/business/help/524220081677109?id=2129163877102343
 
@@ -70,6 +67,5 @@ In case of voice activation: Your phone number may NOT be behind an IVR. The IVR
 If you used WhatsApp on this number before, you must deactivate the account (not delete the app!) in the App via Settings - Account - Deactivate Account
 
 You must send the activation code to us, after you receive it.
-
 
 #### Congratulations! You can now use the WhatsApp Business API!

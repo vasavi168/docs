@@ -3,13 +3,12 @@
 This Voice API supports the following:
 
 #### HTTP Methods
-  
-  It will support only POST requests.
+
+It will support only POST requests.
 
 ## Call Initiation
 
 #### POST
-
 
 #### API Endpoint
 
@@ -21,18 +20,17 @@ This Voice API supports the following:
 {endpoint}voice/sound/create
 ```
 
-####  MANDATORY PARAMETERS
+#### MANDATORY PARAMETERS
 
-| Name     | Descriptions |
-|----------|--------------|
+| Name  | Descriptions                       |
+| ----- | ---------------------------------- |
 | audio | sound file that you want to upload |
 
+#### OPTIONAL PARAMETERS
 
-####  OPTIONAL PARAMETERS
-
-| Name     | Descriptions |
-|----------|--------------|
-| name |  name of the sound file for your response |
+| Name | Descriptions                             |
+| ---- | ---------------------------------------- |
+| name | name of the sound file for your response |
 
 #### Example Request
 
@@ -47,11 +45,11 @@ curl -X POST '{endpoint}voice/sound/create?access_token=7160f04c05870ee88812a435
 
 ```json
 {
-    "status": "OK",
-    "message": "Sound uploaded successfully",
-    "data": {
-        "id": "5d2c9c40-8f00-48f3-902e-d4c1f2a7b0a4"
-    }
+  "status": "OK",
+  "message": "Sound uploaded successfully",
+  "data": {
+    "id": "5d2c9c40-8f00-48f3-902e-d4c1f2a7b0a4"
+  }
 }
 ```
 
