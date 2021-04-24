@@ -74,3 +74,5 @@
 - HLR Lookup
 
   - [Verify](/docs/{{version}}/lookup/verify)
+
+  [Download API Collection](https://www.getpostman.com/collections/f7993e89da1255c640cc)
