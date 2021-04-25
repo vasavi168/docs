@@ -31,7 +31,6 @@ curl -X POST \
 ```
 
 ```
-<?php
 
 $curl = curl_init();
 
