@@ -21,7 +21,7 @@ Note: Few elements in endpoint may change for service to service.
 ## API Collection Postman link
 
 ```
-https://www.getpostman.com/collections/f7993e89da1255c640cc
+https://www.getpostman.com/collections/{collection}
 ```
 
 @endif
