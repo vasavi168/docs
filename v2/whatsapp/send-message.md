@@ -42,7 +42,7 @@ It will support only `POST` requests.
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 ## Sending Text Message
@@ -104,7 +104,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 Template message is the way of sending dynamic content using variables.
@@ -184,7 +184,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send Images as attachment in whatsapp using below API. The maximum image size is limited to 64 MB.
@@ -246,7 +246,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send Document which is having valid MIME-type as attachment in whatsapp using below API. The maximum document size is limited to 64 MB. So anything not image, audio or video will be transmitted as document message.
@@ -310,7 +310,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send Audio clips as attachment in whatsapp using below API. The maximum audio file size is limited to max 64 MB.
@@ -372,7 +372,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send Video clips as attachment in whatsapp using below API. The maximum audio file size is limited to 64 MB.
@@ -434,7 +434,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send location in whatsapp using below API. The maximum audio file size is limited to 64 MB.
@@ -533,7 +533,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send location in whatsapp using below API. The maximum audio file size is limited to 64 MB.
@@ -599,7 +599,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send Carousel in whatsapp using below API. The maximum audio file size is limited to 64 MB.
@@ -644,7 +644,7 @@ curl -X POST \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 We can send Carousel in whatsapp using below API. The maximum audio file size is limited to 64 MB.

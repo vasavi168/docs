@@ -5,11 +5,10 @@ You can send sms to leads as well as contacts.
 
 Follow the guide to learn how to use:
 
+### 1. Obtain access token
 
-###  1. Obtain access token
-Please follow this guide for getting your access token: 
-[Generating Access Token](/docs/{{version}}/access_token)
-
+Please follow this guide for getting your access token:
+[Generating Access Token](/docs/{version}/access_token)
 
 ### 2. Setup
 

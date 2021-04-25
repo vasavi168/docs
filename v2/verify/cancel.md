@@ -5,7 +5,7 @@ Deletes an existing Verify request. You only need to supply the unique id that w
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### GET

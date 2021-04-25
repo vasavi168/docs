@@ -15,7 +15,7 @@ Create a new Verify object through the API to start the verification process of 
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### POST

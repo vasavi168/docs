@@ -8,7 +8,7 @@ To check the status of past or current verification requests:
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### GET

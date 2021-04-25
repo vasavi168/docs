@@ -5,7 +5,7 @@ It will display account usage report
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### GET

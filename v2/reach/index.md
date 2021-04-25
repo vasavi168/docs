@@ -13,7 +13,7 @@ It will support only POST requests.
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 ```

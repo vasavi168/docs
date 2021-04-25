@@ -6,7 +6,7 @@ services. You can block the customer's number using our optout feature. Once the
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### POST/GET

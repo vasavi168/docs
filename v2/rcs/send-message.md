@@ -3,7 +3,7 @@
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 ## Capabilities Check

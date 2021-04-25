@@ -11,16 +11,20 @@ To integrate our SMS API, any HTTP recipient in any programming language can be 
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 Note: Few elements in endpoint may change for service to service.
+
+@if(isset($branding) && $branding->options['docs.tools'])
 
 ## API Collection Postman link
 
 ```
 https://www.getpostman.com/collections/f7993e89da1255c640cc
 ```
+
+@endif
 
 ## AUTHENTICATION
 

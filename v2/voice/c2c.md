@@ -11,7 +11,7 @@ It will support both GET and POST requests.
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### POST/GET

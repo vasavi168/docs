@@ -5,7 +5,7 @@ This Voice API supports the following:
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### GET
@@ -83,7 +83,7 @@ curl -X GET \
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### GET

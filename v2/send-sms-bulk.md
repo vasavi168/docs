@@ -24,7 +24,7 @@ Before you start sending transactional SMS through this API, please test whether
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### POST/GET

@@ -5,7 +5,7 @@ Registration api will support only `POST` method.
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### POST

@@ -4,7 +4,7 @@ The SMS API supports the following:
 
 #### Note:
 
-As new DLT restrictions effective from Jan 31, we are suggesting to use the Template API for avoiding delivery issues related to DLT, [Goto Template API](/docs/{{version}}/send-template-sms)
+As new DLT restrictions effective from Jan 31, we are suggesting to use the Template API for avoiding delivery issues related to DLT, [Goto Template API](/docs/{version}/send-template-sms)
 
 #### HTTP Methods
 
@@ -30,7 +30,7 @@ Before you start sending transactional SMS through this API, please test whether
 #### API Endpoint
 
 ```
-{domain}/api/{{version}}/
+{domain}/api/{version}/
 ```
 
 #### POST/GET
@@ -52,17 +52,17 @@ You can send sms using `POST` or `GET` methods, GET method requires data should 
 
 #### OPTIONAL PARAMETERS
 
-| Name        | Descriptions                                                                                                                                           |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                        |
-| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                |
-| dlr_url     | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{{version}}/sms-push-dlr) |
-| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                     |
-| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                          |
-| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                 |
-| custom      | Your own unique_id parameters                                                                                                                          |
-| custom1     | Any customised parameter                                                                                                                               |
-| port        | Port number to which SMS has to be delivered                                                                                                           |
+| Name        | Descriptions                                                                                                                                         |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                      |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                              |
+| dlr_url     | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{version}/sms-push-dlr) |
+| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                   |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                        |
+| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                               |
+| custom      | Your own unique_id parameters                                                                                                                        |
+| custom1     | Any customised parameter                                                                                                                             |
+| port        | Port number to which SMS has to be delivered                                                                                                         |
 
 #### Example Request
 
