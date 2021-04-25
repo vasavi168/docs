@@ -100,7 +100,7 @@ All params in send sms will support in JSON also.
 
 ```
   curl -X POST \
-    'http://portal.mobtexting.co/api/v2/sms/template?access_token=d9e1cac3812186b353c50xxxxxxx' \
+    '{endpoint}sms/template?access_token=d9e1cac3812186b353c50xxxxxxx' \
     -H 'content-type: application/json' \
     -d '{
       "service": "T",

@@ -28,7 +28,7 @@ Sending Message
 
 ```
 curl -X POST \
-  'http://portal.mobtexting.co/api/v2/jiorcs/message/send?access_token=d9e1cac3812186b353c50229a36e589d' \
+  '{endpoint}jiorcs/message/send?access_token=d9e1cac3812186b353c50229a36e589d' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: 6243f354-d2f7-b84d-0420-d54ade3716ba' \
@@ -44,7 +44,7 @@ curl -X POST \
                             "height": "SHORT_HEIGHT",
                             "mediaContentType": "image/png",
                             "mediaFileSize": 10,
-                            "mediaUrl": "https://www.mobtexting.com/ResponsiveSlides.js/images/ban-5.jpg",
+                            "mediaUrl": "https://www.domin-name.com/ResponsiveSlides.js/images/ban-5.jpg",
                             "thumbnailFileSize": 0
                         },
                         "title": "Subscription"

@@ -27,7 +27,6 @@ Verify HLR of mubile numbers using post method under your account
 curl -X POST \
   {domain}/api/v2/lookup/verify \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxxx' \
-  -H 'access_token: 5b02112fb7xxxxxxxxxxxxxxxxxxxxxxxx' \
   -F number=9194928xxxxx,9180743xxxxx \
 ```
 
@@ -47,7 +46,6 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => array('number' => '919492839930'),
   CURLOPT_HTTPHEADER => array(
     'Authorization: Bearer 7160f04c05870ee8881xxxxxxxxxxxxx',
-    'access_token: 7160f04c05870ee8881xxxxxxxxxxxxx'
   ),
 ));
 

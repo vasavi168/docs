@@ -218,7 +218,7 @@ curl -X POST \
      },
     "payload" : {
         "image_payload": {
-            "url": "https://mobtexting.com/your_image_path.png",
+            "url": "https://domin-name.com/your_image_path.png",
             "caption": "some caption for image"
         }
     }
@@ -281,7 +281,7 @@ curl -X POST \
     "payload" : {
       "type": "document",
         "document_payload": {
-            "url": "https://mobtexting.com/docs/uploads/voice.pdf",
+            "url": "https://domin-name.com/docs/uploads/voice.pdf",
             "caption": "some caption for document"
         }
     }
@@ -344,7 +344,7 @@ curl -X POST \
      },
     "payload" : {
         "audio_payload": {
-            "url": "https://mobtexting.com/audio_file.mp3",
+            "url": "https://domin-name.com/audio_file.mp3",
             "caption": "some caption for audio file"
         }
     }
@@ -406,7 +406,7 @@ curl -X POST \
      },
     "payload" : {
         "video_payload": {
-            "url": "https://mobtexting.com/uploads/2021/demo_video.mp4",
+            "url": "https://domin-name.com/uploads/2021/demo_video.mp4",
             "caption": "some caption for video file"
         }
     }
@@ -483,7 +483,7 @@ curl -X POST \
                     "birthday": "1993-08-18",
                     "emails": [
                         {
-                            "email": "hello@mobtexting.com",
+                            "email": "hello@domin-name.com",
                             "type": "WORK"
                         }
                     ],
@@ -500,7 +500,7 @@ curl -X POST \
                     ],
                     "urls": [
                         {
-                             "url": "https://www.mobtexting.com",
+                             "url": "https://www.domin-name.com",
                              "type": "WORK"
                         }
                     ]

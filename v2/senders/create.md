@@ -23,7 +23,6 @@ Create sender-ids using post method under your account
 curl -X POST \
   {domain}/rest/v1/sender/create \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxxx' \
-  -H 'access_token: 5b02112fb7xxxxxxxxxxxxxxxxxxxxxxxx' \
   -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   -F name=xxxxxx \
   -F entity_name=xxxxx \
@@ -45,7 +44,6 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"name\"\r\n\r\nvishal\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"entity_name\"\r\n\r\ntest\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"message\"\r\n\r\ntesting\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--",
   CURLOPT_HTTPHEADER => array(
     "Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxx",
-    "access_token: 5b02112fb7453xxxxxxxxxxxxxxxx",
     "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW"
   ),
 ));

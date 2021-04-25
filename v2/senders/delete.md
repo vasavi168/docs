@@ -16,7 +16,6 @@ Replace the {id} with the actual id of the sender that you would like to delete.
 curl -X GET \
   {domain}/rest/v1/sender/delete/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
-  -H 'access_token: 5b02112fb745380e489xxxxxxxxxxxxxxx'
 ```
 
 ```
@@ -32,7 +31,6 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
     "Authorization: Bearer 5b02112fb7xxxxxxxx",
-    "access_token: 5b02112fb745380e489xxxxxxxxxxxxxxx"
   ),
 ));
 

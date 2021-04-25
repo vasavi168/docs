@@ -26,7 +26,7 @@ It will support only `GET` Method
 
 ```
 curl -X GET \
-  'http://portal.mobtexting.co/api/v2/jiorcs/capabilities?access_token=d9e1cac3812186b353cxxxxxx&mobile=8919525224'
+  '{endpoint}jiorcs/capabilities?access_token=d9e1cac3812186b353cxxxxxx&mobile=8919525224'
 ```
 
 #### Example Response For Success
@@ -88,7 +88,7 @@ curl -X GET \
 
 ```
 curl -X POST \
-  'http://portal.mobtexting.co/api/v2/jiorcs/message/send?access_token=d9e1cac38121XXXXXX' \
+  '{endpoint}/jiorcs/message/send?access_token=d9e1cac38121XXXXXX' \
   -H 'content-type: application/json' \
   -d '  {
     "content": {
@@ -153,7 +153,7 @@ curl -X POST \
 
 ```
 curl -X POST \
-  'http://portal.mobtexting.co/api/v2/jiorcs/message/send?access_token=d9e1cac3812186b353c50229a36e589d' \
+  '{endpoint}jiorcs/message/send?access_token=d9e1cac3812186b353c50229a36e589d' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: 1f3191e9-d939-162f-750a-3541ddecd374' \

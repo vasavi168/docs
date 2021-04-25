@@ -22,7 +22,6 @@ Create templates using post method under your account
 curl -X POST \
   {domain}/rest/v1/template/create \
   -H 'Authorization: Bearer 81fe2ebd35xxxxxxx' \
-  -H 'access_token: 81fe2ebd35xxxxxxxxx' \
   -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   -F sender=TXTsms \
   -F name=test1 \

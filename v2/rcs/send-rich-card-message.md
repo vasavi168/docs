@@ -42,7 +42,7 @@ curl -X POST \
                   "media": {
                     "height": "TALL",
                     "contentInfo":{
-                      "fileUrl": "https://www.mobtexting.com/assets/images/sms-home.png",
+                      "fileUrl": "https://www.domin-name.com/assets/images/sms-home.png",
                       "forceRefresh": false
                     }
                   },

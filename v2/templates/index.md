@@ -20,7 +20,6 @@ View all templates created under your account
 curl -X GET \
   '{domain}/rest/v1/templates?filter[t.name]=test' \
   -H 'Authorization: Bearer 81fe2ebd35xxxxxxxxxx' \
-  -H 'access_token: 81fe2ebd35xxxxxxxxxx'
 ```
 
 Kindly replace the token with your respective access_token and other params.

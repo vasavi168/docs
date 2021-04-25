@@ -25,7 +25,7 @@ Your agent can revoke messages that it has sent but that the RBM platform hasn't
 
 ```
 curl -X DELETE \
-  'http://portal.mobtexting.co/api/v2/rcs/message/revoke?access_token=d9e1cac3812186b353c5022xxxxxxxxd&to=9640024149&id=1233444xxxxxxxx
+  '{endpoint}rcs/message/revoke?access_token=d9e1cac3812186b353c5022xxxxxxxxd&to=9640024149&id=1233444xxxxxxxx
 ```
 
 #### Example Response For Success
