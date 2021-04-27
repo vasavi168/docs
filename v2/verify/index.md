@@ -39,7 +39,9 @@ Create a new Verify object through the API to start the verification process of 
 | template   | string | The template of the message body. Needs to contain {token} for the verification code to be included. default: {token} is your verification code |
 | timeout    | int    | The verification code expiry time in seconds. Default: 120                                                                                      |
 | length     | string | The number of characters in the verification code. Must be between 4 and 10. Default: 6                                                         |
-| ip_address | string | The IP address used by your user when they entered the verification code.                                                                       |
+| ip_address | string | The IP address used by your user when they entered the verification code.  |
+| entity_id  | string | Entityid registered in DLT portal |
+| template_id | string | Templateid registered in DLT portal |
 
 #### Example Request
 
