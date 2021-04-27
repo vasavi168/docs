@@ -8,19 +8,31 @@ To request such delivery reports, first you need to create the Webhook in webhoo
 
 #### Example Webhook Request to your server
 
-```curl
-    https://www.domain.com/ack/receive
+```
 
-    `body` :
-
-    {
+  curl -X POST \ 
+  https://www.domain.com/ack/receive \
+  -H 'content-type: application/json' \
+  -d '{
       "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:1",
       "mobile": "918921269xxx",
       "status": "DELIVRD",
+      "credits": "2.0000",
+      "units": 2,
+      "deliv_time": "2021-04-09 16:27:51",
       "sent_time": "2021-04-09 16:27:35",
-      "deliv_time": "2021-04-09 16:27:35",
-      "cid": "1234444XXXX"
-    }
+      "submit_time": "2021-04-09 16:27:39",
+      "cid": "1234444XXXX",
+      "custom": "9882XXXX",
+      "custom1": "campaign-3344",
+      "custom2": "new-campXXX",
+      "location": "India",
+      "region" : "Bangalore",
+      "provider": "Jio",
+      "location_code": "in",
+      "region_code": "KA",
+      "provider_code": "RJ",
+    }'
 ```
 
 - The response codes other than 200 or 202 are not taken into consideration and requests for such response codes are considered as failed.
