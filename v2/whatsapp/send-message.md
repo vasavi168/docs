@@ -9,12 +9,12 @@
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",  // String or array
+                "group_id": "{segment_id}",  // String or array
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",  // String or array
+            "group_id": "{segment_id}",  // String or array
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -64,12 +64,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -135,12 +135,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -206,12 +206,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -268,12 +268,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -332,12 +332,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -394,12 +394,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -456,12 +456,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -555,12 +555,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -621,12 +621,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
@@ -666,12 +666,12 @@ curl -X POST \
             "name": "whatsapp",
             "from": "919019120120",
             "recipient": {
-                "group_id": "{{segment_id}}",
+                "group_id": "{segment_id}",
                 "to": ["918919525224", "918867135684"]
             }
         },
         "recipient": {
-            "group_id": "{{segment_id}}",
+            "group_id": "{segment_id}",
             "to": ["91XXXXXX", "91XXXXXX"]
         }
 
