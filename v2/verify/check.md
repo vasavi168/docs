@@ -1,21 +1,28 @@
 # Verify Token
 
-{appp} Verify a sent verification token. Can only be done once for each token.
+{app} Verify a sent verification token. Can only be done once for each token.
 
-  - Send the verification code that your user supplied, with the corresponding `id` from the Verify request.
-  - Check the `status` of the response to determine if the code the user supplied matches the one sent by {app}.
+- Send the verification code that your user supplied, with the corresponding `id` from the Verify request.
+- Check the `status` of the response to determine if the code the user supplied matches the one sent by {app}.
+
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
 
 #### GET
+
 ```
 {endpoint}verify/check/{id}/{token}
 ```
 
 #### MANDATORY PARAMETERS
 
-| Name     | Type | Description |
-|----------|------|----------|
-| id | string | The Verify request to check. This is the `id` you received in the response to the Verify request.|
-| token | int | The verification code entered by your user.|
+| Name  | Type   | Description                                                                                       |
+| ----- | ------ | ------------------------------------------------------------------------------------------------- |
+| id    | string | The Verify request to check. This is the `id` you received in the response to the Verify request. |
+| token | int    | The verification code entered by your user.                                                       |
 
 #### Example Request
 
@@ -30,22 +37,21 @@ curl -X GET \
 
 ```json
 {
-    "id": "41379328-d3a7-4fcd-be90-d5237f911d76",
-    "status": "success"
+  "id": "41379328-d3a7-4fcd-be90-d5237f911d76",
+  "status": "success"
 }
 ```
 
-####  SUCCESS CODES
+#### SUCCESS CODES
 
-|Code|Status|Status Description|
-|--- |--- |--- |
-|200 | success | Verified successfully. |
+| Code | Status  | Status Description     |
+| ---- | ------- | ---------------------- |
+| 200  | success | Verified successfully. |
 
+#### FAILURE CODES
 
-####  FAILURE CODES
-
-|Code|Status|Status Description|
-|--- |--- |--- |
-|401 | Unauthenticated | Authetication Error |
-|200 | failed | when you passed invalid `id` value |
-|200 | invalid | when you passed wrong `token` for verificaton |
+| Code | Status          | Status Description                            |
+| ---- | --------------- | --------------------------------------------- |
+| 401  | Unauthenticated | Authetication Error                           |
+| 200  | failed          | when you passed invalid `id` value            |
+| 200  | invalid         | when you passed wrong `token` for verificaton |

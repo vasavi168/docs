@@ -1,21 +1,27 @@
 # RCS Messaging Api
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
 
 ## Capabilities Check
 
 ```
 {endpoint}rcs/capabilities
 ```
+
 #### HTTP Methods
-  
-  It will support only `GET` Method
 
-####  MANDATORY PARAMETERS
+It will support only `GET` Method
 
-| Name     | Descriptions |
-|----------|--------------|
-| to | Mobile number of the user you want to send rcs message |
-| id | Request Id |
+#### MANDATORY PARAMETERS
+
+| Name | Descriptions                                           |
+| ---- | ------------------------------------------------------ |
+| to   | Mobile number of the user you want to send rcs message |
+| id   | Request Id                                             |
 
 #### Example Request With Text Messgae
 
@@ -28,19 +34,19 @@ curl -X GET \
 
 ```json
 {
-    "code": 200,
-    "status": "OK",
-    "data": {
-        "features": [
-            "RICHCARD_STANDALONE",
-            "ACTION_CREATE_CALENDAR_EVENT",
-            "ACTION_DIAL",
-            "ACTION_OPEN_URL",
-            "ACTION_SHARE_LOCATION",
-            "ACTION_VIEW_LOCATION",
-            "RICHCARD_CAROUSEL"
-        ]
-    }
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "features": [
+      "RICHCARD_STANDALONE",
+      "ACTION_CREATE_CALENDAR_EVENT",
+      "ACTION_DIAL",
+      "ACTION_OPEN_URL",
+      "ACTION_SHARE_LOCATION",
+      "ACTION_VIEW_LOCATION",
+      "RICHCARD_CAROUSEL"
+    ]
+  }
 }
 ```
 
@@ -48,19 +54,18 @@ curl -X GET \
 
 ```json
 {
-    "code": 404,
-    "status": "failed",
-    "message": null,
-    "data": {
-        "error": {
-            "code": 404,
-            "message": "The specified phone number cannot be reached by RBM at this time.",
-            "status": "NOT_FOUND"
-        }
+  "code": 404,
+  "status": "failed",
+  "message": null,
+  "data": {
+    "error": {
+      "code": 404,
+      "message": "The specified phone number cannot be reached by RBM at this time.",
+      "status": "NOT_FOUND"
     }
+  }
 }
 ```
-
 
 ## Sending Text Message
 
@@ -68,23 +73,22 @@ curl -X GET \
 {endpoint}rcs/message/send
 ```
 
-####  MANDATORY PARAMETERS
+#### MANDATORY PARAMETERS
 
-| Name     | Descriptions |
-|----------|--------------|
-| to | Receiver mobile number with country code|
-| id | Message Id for the request |
-| text | Message text you want to send |
+| Name | Descriptions                             |
+| ---- | ---------------------------------------- |
+| to   | Receiver mobile number with country code |
+| id   | Message Id for the request               |
+| text | Message text you want to send            |
 
-
-####  Example Request
+#### Example Request
 
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'content-type: application/json' \
-  -d '{ 
+  -d '{
         "content":{
           "contentMessage": {
               "text": "Hello, world!"
@@ -94,20 +98,21 @@ curl -X POST \
         "id": "12900926r221223xxxxxx"
       }'
 
-  ```
+```
+
 #### Example Response For Success
 
 ```json
 {
-    "code": 200,
-    "status": "OK",
-    "data": {
-        "name": "phones/+918919525224/agentMessages/12900906r22",
-        "sendTime": "2020-06-12T03:56:08.464Z",
-        "contentMessage": {
-            "text": "Hello, world!"
-        }
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "name": "phones/+918919525224/agentMessages/12900906r22",
+    "sendTime": "2020-06-12T03:56:08.464Z",
+    "contentMessage": {
+      "text": "Hello, world!"
     }
+  }
 }
 ```
 
@@ -115,15 +120,15 @@ curl -X POST \
 
 ```json
 {
-    "code": 404,
-    "status": "ERROR",
-    "data": {
-        "error": {
-            "code": 404,
-            "message": "Requested entity was not found.",
-            "status": "NOT_FOUND"
-        }
+  "code": 404,
+  "status": "ERROR",
+  "data": {
+    "error": {
+      "code": 404,
+      "message": "Requested entity was not found.",
+      "status": "NOT_FOUND"
     }
+  }
 }
 ```
 
@@ -133,23 +138,22 @@ curl -X POST \
 {endpoint}rcs/message/send
 ```
 
-####  MANDATORY PARAMETERS
+#### MANDATORY PARAMETERS
 
-| Name     | Descriptions |
-|----------|--------------|
-| to | Receiver mobile number with country code|
-| id | Message Id for the request |
+| Name    | Descriptions                                  |
+| ------- | --------------------------------------------- |
+| to      | Receiver mobile number with country code      |
+| id      | Message Id for the request                    |
 | fileUrl | Remote url of the media file you want to send |
 
-
-####  Example Request
+#### Example Request
 
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'content-type: application/json' \
-  -d '{ 
+  -d '{
         "content":{
           "contentMessage": {
               "contentInfo": {
@@ -162,20 +166,21 @@ curl -X POST \
         "id": "12900926r221223xxxxxx"
       }'
 
-  ```
+```
+
 #### Example Response
 
 ```json
 {
-    "code": 404,
-    "status": "ERROR",
-    "data": {
-        "error": {
-            "code": 404,
-            "message": "Requested entity was not found.",
-            "status": "NOT_FOUND"
-        }
+  "code": 404,
+  "status": "ERROR",
+  "data": {
+    "error": {
+      "code": 404,
+      "message": "Requested entity was not found.",
+      "status": "NOT_FOUND"
     }
+  }
 }
 ```
 
@@ -185,16 +190,15 @@ curl -X POST \
 {endpoint}rcs/message/send
 ```
 
-####  MANDATORY PARAMETERS
+#### MANDATORY PARAMETERS
 
-| Name     | Descriptions |
-|----------|--------------|
-| to | Receiver mobile number with country code|
-| id | Message Id for the request |
+| Name    | Descriptions                                  |
+| ------- | --------------------------------------------- |
+| to      | Receiver mobile number with country code      |
+| id      | Message Id for the request                    |
 | fileUrl | Remote url of the media file you want to send |
 
-
-####  Example Request
+#### Example Request
 
 ```
 curl -X POST \
@@ -224,19 +228,20 @@ curl -X POST \
     "id": "laxman12345"
   }'
 
-  ```
+```
+
 #### Example Response
 
 ```json
 {
-    "code": 404,
-    "status": "ERROR",
-    "data": {
-        "error": {
-            "code": 404,
-            "message": "Requested entity was not found.",
-            "status": "NOT_FOUND"
-        }
+  "code": 404,
+  "status": "ERROR",
+  "data": {
+    "error": {
+      "code": 404,
+      "message": "Requested entity was not found.",
+      "status": "NOT_FOUND"
     }
+  }
 }
 ```

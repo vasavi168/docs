@@ -3,46 +3,53 @@
 This Voice API supports the following:
 
 #### HTTP Methods
-  
-  It will support only POST requests.
+
+It will support only POST requests.
 
 ## Call Initiation
 
 #### POST
 
+#### API Endpoint
+
 ```
-{{endpoint}voice/sound/create
+{domain}/api/{version}/
 ```
 
-####  MANDATORY PARAMETERS
+```
+{endpoint}voice/sound/create
+```
 
-| Name     | Descriptions |
-|----------|--------------|
+#### MANDATORY PARAMETERS
+
+| Name  | Descriptions                       |
+| ----- | ---------------------------------- |
 | audio | sound file that you want to upload |
 
+#### OPTIONAL PARAMETERS
 
-####  OPTIONAL PARAMETERS
-
-| Name     | Descriptions |
-|----------|--------------|
-| name |  name of the sound file for your response |
+| Name | Descriptions                             |
+| ---- | ---------------------------------------- |
+| name | name of the sound file for your response |
 
 #### Example Request
 
 ```
-curl -X POST \
-  "{endpoint}voice/sound/create?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=myAudioFile&audio=<<youraudiofileHere>>"
+curl -X POST '{endpoint}voice/sound/create?access_token=7160f04c05870ee88812a435xxxxxxxx' \
+--header 'Content-Type: application/json' \
+--form 'name=myaudiofile' \
+--form 'audio=@/home/mdigital/Desktop/testsms/welcome.mp3'
 ```
 
 #### Example Response
 
 ```json
 {
-    "status": "OK",
-    "message": "Sound uploaded successfully",
-    "data": {
-        "id": "5d2c9c40-8f00-48f3-902e-d4c1f2a7b0a4"
-    }
+  "status": "OK",
+  "message": "Sound uploaded successfully",
+  "data": {
+    "id": "5d2c9c40-8f00-48f3-902e-d4c1f2a7b0a4"
+  }
 }
 ```
 

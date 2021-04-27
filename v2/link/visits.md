@@ -10,10 +10,9 @@ Access the perticular Link Visits
 
 #### PARAMETERS
 
-| Name     | Optinal | Descriptions |
-|----------|--------------|----------|
-| id |  | Smart Link id.|
-
+| Name | Optinal | Descriptions   |
+| ---- | ------- | -------------- |
+| id   |         | Smart Link id. |
 
 #### Example Request
 
@@ -26,7 +25,7 @@ curl -X GET \
 ```
 
 Kindly replace the token with your respective access_token and other params.
-  
+
 #### Example Response
 
 ```json
@@ -74,7 +73,7 @@ Kindly replace the token with your respective access_token and other params.
                 "created": "Aug 13, 2018 11:36 AM"
             },
         ----
- 
+
         ],
         "first_page_url": "{domain}/rest/v1/link/visits/20?page=1",
         "from": 1,

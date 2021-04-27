@@ -22,22 +22,18 @@ Here is an overview of the available servers:
 | smpp1.txtsms.me | 3634 |
 | smpp2.txtsms.me | 3634 |
 
-
 ## Additional Mandatory TLV
 
-| Mandatory TLV  | Tag value Decimal | Tag value Hex |
-| ---------------| ----              |----          |
-| PE_ID          | 5120              |1400          |
-| Template_ID    | 5121              |1401          |
-
+| Mandatory TLV | Tag value Decimal | Tag value Hex |
+| ------------- | ----------------- | ------------- |
+| PE_ID         | 5120              | 1400          |
+| Template_ID   | 5121              | 1401          |
 
 ## Additional Optional TLV
 
-
-| Mandatory TLV         | Tag value Decimal | Tag value Hex |
-| ---------------       | ----              |----           |
-| Telemarketer_ID(TM_ID) | 51212              |1402          |
-
+| Mandatory TLV          | Tag value Decimal | Tag value Hex |
+| ---------------------- | ----------------- | ------------- |
+| Telemarketer_ID(TM_ID) | 51212             | 1402          |
 
 ## CONNECTIVITY
 
@@ -221,3 +217,5 @@ Status and error code which can be returned by Messaging Platform.
 | 462  | FAILED             | Unknown Error                                       |
 | 778  | REJ-MULTIPART      | All message parts not delivrd to handset            |
 | 777  | DLT-REJECTED       | Invalid sender-id or invalid template               |
+| 780  | INV-TMID           | Invalid DLT telemarketer Id                         |
+| 781  | INV-ENTITY         | Invalid Entity DLT Id                               |

@@ -2,27 +2,31 @@
 
 Registration api will support only `POST` method.
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### POST
 
 ```
 {domain}/api/{version}/register
 ```
 
-####  MANDATORY PARAMETERS
+#### MANDATORY PARAMETERS
 
-| Name     | Descriptions |
-|----------|--------------|
-| name | Name of the user |
-| email | EmailId of the user |
-| password | Password must contain uppercase, lowercase characters and numbers. Lenght should be min 6, max 20 characters.|
+| Name     | Descriptions                                                                                                  |
+| -------- | ------------------------------------------------------------------------------------------------------------- |
+| name     | Name of the user                                                                                              |
+| email    | EmailId of the user                                                                                           |
+| password | Password must contain uppercase, lowercase characters and numbers. Lenght should be min 6, max 20 characters. |
 
+#### OPTIONAL PARAMETERS
 
-####  OPTIONAL PARAMETERS
-
-
-| Name     | Descriptions |
-|----------|--------------|
-| mobile | Mobile number with coutry code | 
+| Name   | Descriptions                   |
+| ------ | ------------------------------ |
+| mobile | Mobile number with coutry code |
 
 #### Example Request
 
@@ -38,12 +42,12 @@ curl -X POST \
 ```
 
 Kindly replace the name, email, mobile, password accroding to your details.
-  
+
 #### Example Response
 
 ```json
 {
-    "status": "OK",
-    "message": "User registered successfully"
+  "status": "OK",
+  "message": "User registered successfully"
 }
 ```
