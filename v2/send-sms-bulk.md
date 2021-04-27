@@ -49,7 +49,7 @@ You can send sms using `POST` method only as uploading file will supporting in
 
 | Name        | Descriptions                                                                                               |
 | ----------- | ---------------------------------------------------------------------------------------------------------- |
-| dlr_url     | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. |
+| webhook_id     | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. read more](/docs/{version}/sms-push-dlr)|
 | time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                         |
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                              |
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                     |

@@ -1,10 +1,47 @@
 # PUSH DLR
 
-The DLR Push API sends the delivery report of the sent message to the client’s URL in `GET` method.
+The DLR Push API sends the delivery report of the sent message to the client’s Webhok URL using `POST` method. [create here](/webhooks)
 
-To request such delivery reports, you need to pass `dlr_url` parameter in the API URL with any below mentioned replacable variables.
+To request such delivery reports, first you need to create the Webhook in webhooks Section. Then you will get `id` for the webhook you created.
 
-#### REPLACEABLE PARAMETERS
+ `wehook_id` parameter in the API URL with any below mentioned replacable variables.
+
+#### Example Webhook Request to your server
+
+```
+
+  curl -X POST \ 
+  https://www.domain.com/ack/receive \
+  -H 'content-type: application/json' \
+  -d '{
+      "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:1",
+      "mobile": "918921269xxx",
+      "status": "DELIVRD",
+      "credits": "2.0000",
+      "units": 2,
+      "deliv_time": "2021-04-09 16:27:51",
+      "sent_time": "2021-04-09 16:27:35",
+      "submit_time": "2021-04-09 16:27:39",
+      "cid": "1234444XXXX",
+      "custom": "9882XXXX",
+      "custom1": "campaign-3344",
+      "custom2": "new-campXXX",
+      "location": "India",
+      "region" : "Bangalore",
+      "provider": "Jio",
+      "location_code": "in",
+      "region_code": "KA",
+      "provider_code": "RJ",
+    }'
+```
+
+- The response codes other than 200 or 202 are not taken into consideration and requests for such response codes are considered as failed.
+
+- The method used for sending the delivery report onto the client’s URL is `POST`.
+
+We try 3 times with interval of 30 minutes for failed requests. Continues failure requests will be ignored.
+
+#### Below Parameters can be used while creating a webhook
 
 | Name          | Description                                             |
 | ------------- | ------------------------------------------------------- |
@@ -30,15 +67,5 @@ To request such delivery reports, you need to pass `dlr_url` parameter in the AP
 | region_code   | Mobile number region name. ex: `KA`                     |
 | provider_code | Operator name. ex: `RJ`                                 |
 
-All params should be enclosed between `{}` braces. ex: `{mobile}`
+All params using in request body should be enclosed between `{}` braces for replacement. ex: `{mobile}`
 
-#### Example Url
-
-```curl
-    https://www.domain.com/ack/receive?mobile={mobile}&status={status}&my_id={custom}
-```
-
-- The response codes other than 200 or 202 are not taken into consideration and requests for such response codes are considered as failed.
-- The method used for sending the delivery report onto the client’s URL is `GET`.
-
-We try 3 times with interval of 30 minutes for failed requests. Continues failure requests will be ignored.
