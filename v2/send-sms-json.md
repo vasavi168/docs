@@ -61,6 +61,7 @@ All params in send sms will support in JSON also.
 
 | Name        | Descriptions                                                                                                                                         |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name        | Name of the campaign |
 | dlr_url     | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{version}/sms-push-dlr) |
 | time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                   |
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                        |
@@ -126,6 +127,81 @@ curl --request POST \
     },
     {
       "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:1",
+      "mobile": "9188xxxxxxxxxx",
+      "status": "AWAITING-DLR",
+      "units": 1,
+      "length": 7,
+      "charges": 1,
+      "customid": "34",
+      "customid1": "",
+      "iso_code": null,
+      "submitted_at": "2018-07-09 16:27:35"
+    }
+  ]
+}
+```
+
+## Get GroupID In Response
+
+  You can get group_id of the SMS campaing when you sent `name` paramter in api as mentioned in below example.
+
+#### Example Request
+
+```curl
+curl --request POST \
+  --url {endpoint}sms/send/json \
+  -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
+  -H 'Content-Type: application/json' \
+  --data '{
+    "root": {
+        "name": "Name of the Campaing",
+        "type": "A",
+        "flash": 0,
+        "sender": "TXTSMS",
+        "message": "global message",
+        "service": "T",
+        "dlr_url": "http://www.domainname.com/dlr?status={status}",
+        "time": "",
+        "entity_id": "222343XXXXXX",
+        "template_id": "2290003XXXXXX"
+    },
+    "nodes": [
+        {
+            "to": "919019xxxx2",
+            "custom": "346576-446565-45657-XFTR",
+            "sender": "txtmes",
+            "message": "Message from & json api node 1"
+        },
+        {
+            "to": "9188xxxxxxxxxx",
+            "custom": "34"
+        }
+    ]
+}'
+```
+
+#### Example Response With group_id
+
+```json
+{
+  "status": 200,
+  "message": "2 numbers accepted for delivery.",
+  "group_id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6",
+  "data": [
+    {
+      "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:1",
+      "mobile": "919019xxxx2",
+      "status": "AWAITING-DLR",
+      "units": 1,
+      "length": 7,
+      "charges": 1,
+      "customid": "346576-446565-45657-XFTR",
+      "customid1": "",
+      "iso_code": null,
+      "submitted_at": "2018-07-09 16:27:35"
+    },
+    {
+      "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:2",
       "mobile": "9188xxxxxxxxxx",
       "status": "AWAITING-DLR",
       "units": 1,
