@@ -1,0 +1,14 @@
+{
+  "name": "mobtexting/docs",
+  "description": "MOBtexting docs",
+  "keywords": [],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.2"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}

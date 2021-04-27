@@ -1,6 +1,6 @@
 # DLT Registration with Ping Connect (Videocon) 
 
-## Registration with Ping Connect (Video con)
+## Registration with Ping Connect (Videocon)
 * Open the link [https://pingconnect.in/entity/register-with](https://pingconnect.in/entity/register-with).
 The below show page would appear.
 
@@ -75,7 +75,7 @@ All customers are required to register `senderIDs/Headers` with the operators fo
 
 ![alt text](/images/docimages/dlt/image13.png)
 
-## Video con’s Consent Template Registration Process
+## Videocon’s Consent Template Registration Process
 
 ### Consent Template Registration
 Consent Template is created to acquire prior consent from the customer to send commercial communication which is related to Service or Promotion of `Product/Services` of a Business Entity.
