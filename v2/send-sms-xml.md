@@ -14,7 +14,7 @@
 
 You can send sms using `POST` method content in body.
 
-`root` entry holds the default values for each node. You can overwite the `root` values inside `nodes` value except `dlr_url`, `service` and `time`.
+`root` entry holds the default values for each node. You can overwite the `root` values inside `nodes` value except `webhook_id`, `service` and `time`.
 
 #### BODY
 
@@ -23,7 +23,7 @@ You can send sms using `POST` method content in body.
 <data>
 
    <root>
-      <dlr_url><![CDATA[http://domain.com/status]]></dlr_url>
+      <webhook_id>1234a-1knnn-13XXXX</webhook_id>
       <message><![CDATA[global message]]></message>
       <sender>SANKAR</sender>
       <service>T</service>
@@ -64,7 +64,7 @@ You can send sms using `POST` method content in body.
 
 | Name        | Descriptions                                                                                                                                         |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dlr_url     | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{version}/sms-push-dlr) |
+| webhook_id     | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |
 | time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                   |
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                        |
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                               |
@@ -86,7 +86,7 @@ curl -X POST \
 <data>
 
    <root>
-      <dlr_url><![CDATA[http://domain.com/status]]></dlr_url>
+      <webhook_id>1234-afwrr-1sXXXx</webhook_id>
       <message><![CDATA[global message]]></message>
       <sender>SANKAR</sender>
       <service>T</service>

@@ -16,7 +16,7 @@ You can send sms using `POST` method content in body.
 
 All params in send sms will support in JSON also.
 
-`root` entry holds the default values for each node. You can overwite the `root` values inside `nodes` value except `dlr_url`, `service` and `time`.
+`root` entry holds the default values for each node. You can overwite the `root` values inside `nodes` value except `webhook_id`, `service` and `time`.
 
 #### BODY
 
@@ -28,7 +28,7 @@ All params in send sms will support in JSON also.
     "sender": "TXTSMS",
     "message": "global message",
     "service": "T",
-    "dlr_url": "http://www.domainname.com/dlr?status={status}",
+    "webhook_id": "1234a-3444-34444-XXxx",
     "time": "",
     "entity_id": "222343XXXXXX",
     "template_id": "2290003XXXXXX"
@@ -61,7 +61,7 @@ All params in send sms will support in JSON also.
 
 | Name        | Descriptions                                                                                                                                         |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dlr_url     | The Url for which the SMS response to be sent after sending the SMS can be specified using this parameter. [read more](/docs/{version}/sms-push-dlr) |
+| webhook_id     | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator.  [read more](/docs/{version}/sms-push-dlr) |
 | time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                   |
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                        |
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                               |
@@ -85,7 +85,7 @@ curl --request POST \
         "sender": "TXTSMS",
         "message": "global message",
         "service": "T",
-        "dlr_url": "http://www.domainname.com/dlr?status={status}",
+        "webhook_id": "1234-aabn13-23xxxxx",
         "time": "",
         "entity_id": "222343XXXXXX",
         "template_id": "2290003XXXXXX"
