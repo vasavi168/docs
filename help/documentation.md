@@ -11,3 +11,4 @@
   - [DLT](/docs/{version}/dlt/)
   - [DLT Registration](/docs/{version}/dlt/registration)
   - [DLT Registration with Pingconnect](/docs/{version}/dlt/videocon)
+  - [Verification of Webhook](/docs/{version}/verify-webhook)
