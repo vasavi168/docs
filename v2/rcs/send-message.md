@@ -6,7 +6,7 @@
 {
     "channels": {
         "channel" : {
-            "name": "whatsapp"
+            "name": "rcs"
         },
         "recipient": {
             "group_id": "{segment_id}",  // String or array
@@ -19,13 +19,12 @@
 
 #### PARAMETERS
 
-| Name      | Description                                                 | type                | Required                       |
-| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
-| channel   | This block contains information realted messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. Ex: `rcs`                   | `string`            | Yes                            |
-| recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
-| to        | Receiver mobile numbers : `text`                            | `array`             | Yes |
-
+| Name      | Description                                                 | type     | Required |
+| --------- | ----------------------------------------------------------- | -------- | -------- |
+| channel   | This block contains information realted messaging channel   | N/A      | Yes      |
+| name      | Name of Messaging Channel. Ex: `rcs`                        | `string` | Yes      |
+| recipient | This block contains contacts information related to channel | N/A      | Yes      |
+| to        | Receiver mobile numbers : `text`                            | `array`  | Yes      |
 
 #### API Endpoint
 
@@ -54,7 +53,7 @@ It will support only `GET` Method
 
 ```
 curl -X GET \
-  'http://portal.mobtexting.co/api/v2/rcs/capabilities?access_token=d9e1cac3812186b353c5022xxxxxxxxd&to=9640024149&id=1233444xxxxxxxx
+  '{endpoint}rcs/capabilities?access_token=d9e1cac3812186b353c5022xxxxxxxxd&to=9640024149&id=1233444xxxxxxxx
 ```
 
 #### Example Response For Success
@@ -119,8 +118,8 @@ curl -X GET \
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/json' \
+  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
+  -H 'Content-Type: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -136,7 +135,7 @@ curl -X POST \
         }
         "id": '1234a-1223jnkf-xxxx'
     }
-    
+
 }'
 
 ```
@@ -199,8 +198,8 @@ curl -X POST \
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/json' \
+  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
+  -H 'Content-Type: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -217,7 +216,7 @@ curl -X POST \
         },
         "id": '1234a-1223jnkf-xxxx'
     }
-    
+
 }'
 
 ```
@@ -255,19 +254,20 @@ Note : `forceRefresh` to true forces RBM to fetch new content from the specified
 
 #### MANDATORY PARAMETERS
 
-| Name    | Descriptions                                  |
-| ------- | --------------------------------------------- |
-| to      | Receiver mobile number with country code      |
-| id      | Message Id for the request                    |
-| url     | Remote url of the media file you want to send |
+| Name | Descriptions                                  |
+| ---- | --------------------------------------------- |
+| to   | Receiver mobile number with country code      |
+| id   | Message Id for the request                    |
+| url  | Remote url of the media file you want to send |
 
 #### Example Request
 
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+  -H 'Content-Type: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -300,9 +300,10 @@ curl -X POST \
             ]
         },
         "id": '1234a-1223jnkf-xxxx'
-    }    
+    }
 }
 ```
+
 #### Example Response
 
 ```json
@@ -334,18 +335,18 @@ curl -X POST \
 
 #### MANDATORY PARAMETERS
 
-| Name    | Descriptions                                  |
-| ------- | --------------------------------------------- |
-| to      | Receiver mobile number with country code      |
-| id      | Message Id for the request                    |
+| Name | Descriptions                             |
+| ---- | ---------------------------------------- |
+| to   | Receiver mobile number with country code |
+| id   | Message Id for the request               |
 
 #### Example Request with Dial Number action
 
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/json' \
+  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
+  -H 'Content-Type: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -368,9 +369,10 @@ curl -X POST \
             }
           },
           "id": '1234a-1223jnkf-xxxx'
-    }    
+    }
 }
 ```
+
 #### Example Response
 
 ```json
@@ -399,8 +401,8 @@ curl -X POST \
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/json' \
+  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
+  -H 'Content-Type: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -427,9 +429,10 @@ curl -X POST \
             }
           },
           "id": '1234a-1223jnkf-xxxx'
-    }    
+    }
 }
 ```
+
 #### Example Response
 
 ```json
@@ -458,8 +461,8 @@ curl -X POST \
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/json' \
+  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
+  -H 'Content-Type: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -485,9 +488,10 @@ curl -X POST \
             }
           },
           "id": '1234a-1223jnkf-xxxx'
-    }    
+    }
 }
 ```
+
 #### Example Response
 
 ```json
@@ -530,8 +534,8 @@ curl -X POST \
 ```
 curl -X POST \
   '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'content-type: application/json' \
+  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
+  -H 'Content-Type: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -575,7 +579,7 @@ curl -X POST \
         }
         "id": '1234a-1223jnkf-xxxx'
     }
-    
+
 }'
 
 ```
