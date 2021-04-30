@@ -2,17 +2,19 @@
 
 The DLR Push API sends the delivery report of the sent message to the client’s Webhok URL using `POST` method. [create here](/webhooks)
 
-To request such delivery reports, first you need to create the Webhook in webhooks Section. Then you will get `id` for the webhook you created.
+To request such delivery reports, first you need to create the Webhook in webhooks Section.
+Then you will get `id` for the webhook you created.
 
- `wehook_id` parameter in the API URL with any below mentioned replacable variables.
+`wehook_id` parameter in the API URL with any below mentioned replacable variables.
 
 #### Example Webhook Request to your server
 
 ```
 
-  curl -X POST \ 
+  curl -X POST \
   https://www.domain.com/ack/receive \
   -H 'content-type: application/json' \
+  -H "Authorization: Bearer %token%", \
   -d '{
       "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:1",
       "mobile": "918921269xxx",
@@ -66,6 +68,3 @@ We try 3 times with interval of 30 minutes for failed requests. Continues failur
 | location_code | Mobile number country code. ex: `in`                    |
 | region_code   | Mobile number region name. ex: `KA`                     |
 | provider_code | Operator name. ex: `RJ`                                 |
-
-All params using in request body should be enclosed between `{}` braces for replacement. ex: `{mobile}`
-
