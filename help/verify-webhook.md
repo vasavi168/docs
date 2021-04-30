@@ -20,15 +20,22 @@ Ex: While creating webhook validation key given as '9012XX' for the url `yourdom
 
 
 ```
-curl -X GET \
+curl -X POST \
   'yourdomain.com/receive/callback?token=9012XX' \
-  -H 'authorization: Bearer 1233XXX' 
+  -H 'authorization: Bearer 1233XXX'
+  -H 'Content-Type: application/json' \
+  -d '{
+    "validation_key": "9012XXXX",
+    "challenge": "a234qwe",
+  }'
 ```
 
 #### Expected Response From Customer End
 
 ```
-{"validation_key": "9012XX"}
+{
+  "validation_key": "9012XX"
+}
 ```
 
 

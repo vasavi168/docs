@@ -1,8 +1,10 @@
 # WEBHOOK
 
-The WEBHOOK Push API sends the report of the smart link visits to the client’s URL in `GET` method.
+The WEBHOOK Push API sends the report of the smart link visits to the client’s URL in `POST` method.
 
-To request such reports, you need to mention URL with any below mentioned replacable variables.
+To request such reports, you need to create webhook URL first in Webhooks section. Then select that particular webhook you created earlier while creating smart link.
+
+We will send a `POST` with json format to your webhook URL with below parameters
 
 #### REPLACEABLE PARAMETERS
 
@@ -23,14 +25,30 @@ To request such reports, you need to mention URL with any below mentioned replac
 | mobile          | Mobile number with country code `Ex:` 891952XXXX              |
 | created_at      | Visited Date in date format (yyyy-mm-dd H:i:s)                |
 
-All params should be enclosed between `{}` braces. `Ex:` `{region}`, `{browser}`, `{mobile}`
 
 #### Example Url
 
-```curl
-    https://www.domain.com/ack/receive?location={region}&mobile={mobile}&id={id}
+```curl -X POST \ 
+  https://www.domain.com/ack/receive \
+  -H 'content-type: application/json' \
+  -d '{
+      "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:1",
+      "link_id": 246,
+      "user_agent": "Mozilla/5.0)",
+      "browser": "Goole Chorme",
+      "browser_version": "23.3.1,
+      "platform": "Android",
+      "device_type": "smartphone",
+      "device_brand": "Redmi",
+      "country": "india",
+      "country_code": "IN",
+      "region" : "Karnataka",
+      "city" : "Bangalore",
+      "mobile": "9189195XXXXX",
+      "created_at": "2021-04-09 16:27:39",
+}'
 ```
 
-- The method used for sending the webhook report onto the client’s URL is `GET`.
+- The method used for sending the webhook report onto the client’s URL is `POST`.
 
 - The same replacement variables can be used for long url while creating smart link.
