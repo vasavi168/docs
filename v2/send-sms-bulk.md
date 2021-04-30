@@ -27,10 +27,10 @@ Before you start sending transactional SMS through this API, please test whether
 {domain}/api/{version}/
 ```
 
-#### POST/GET
+#### POST
 
 ```
-{endpoint}sms/bulk?access_token=werfxxxxxxxxxmessage=Welcome&sender=TXTSMS&service=T
+{endpoint}sms/bulk
 ```
 
 You can send sms using `POST` method only as uploading file will supporting in
@@ -47,26 +47,32 @@ You can send sms using `POST` method only as uploading file will supporting in
 
 #### OPTIONAL PARAMETERS
 
-| Name        | Descriptions                                                                                               |
-| ----------- | ---------------------------------------------------------------------------------------------------------- |
-| webhook_id     | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. read more](/docs/{version}/sms-push-dlr)|
-| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                         |
-| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                              |
-| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                     |
-| custom      | Any customised parameters can be passed using this parameter                                               |
-| custom1     | Any customised parameter                                                                                   |
-| port        | Port number to which SMS has to be sent                                                                    |
-| column      | Mobile number column name same as in customize sms                                                         |
-| entity_id   | Principal Entityid registered in DLT portal                                                                |
-| template_id | TemplateId registered in DLT portal                                                                        |
+| Name        | Descriptions                                                                                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| webhook_id  | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. read more](/docs/{version}/sms-push-dlr) |
+| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                     |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                          |
+| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                 |
+| custom      | Any customised parameters can be passed using this parameter                                                                                                           |
+| custom1     | Any customised parameter                                                                                                                                               |
+| port        | Port number to which SMS has to be sent                                                                                                                                |
+| column      | Mobile number column name same as in customize sms                                                                                                                     |
+| entity_id   | Principal Entityid registered in DLT portal                                                                                                                            |
+| template_id | TemplateId registered in DLT portal                                                                                                                                    |
 
 #### Example Request
 
 ```
 curl -X POST \
-  '{endpoint}sms/bulk?access_token=d9e1cacxxxxxxxxxxxxxx&sender=TXTSMS&message=Your+message+content&service=T' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -F file=@filename.txt
+  '{endpoint}sms/bulk' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+    -d 'sender=TXTSMS' \
+    -d 'to=917026267xxx' \
+    -d 'service=T' \
+    -d 'message=Your OTP is 123456'
+    -F file=@filename.txt
 ```
 
 #### Example Response

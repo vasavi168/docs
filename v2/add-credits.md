@@ -35,7 +35,9 @@ You can add the credits to your customers using this api.
 
 ```curl
   curl -X POST \
-  '{endpoint}finance/credits?access_token=46bab6277ca67daxxxxxx' \
+  '{endpoint}finance/credits' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'service=T&username=laxmanxxx&credits=100&notes=test%20from%20api'
 ```

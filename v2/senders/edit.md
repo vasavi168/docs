@@ -2,10 +2,16 @@
 
 Edit sender-ids using post method under your account
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### POST
 
 ```
-{domain}/rest/v1/sender/edit/{id}
+{endpoint}sms/sender/edit/{id}
 ```
 
 #### PARAMETERS
@@ -21,13 +27,14 @@ Edit sender-ids using post method under your account
 
 ```
 curl -X POST \
-  {domain}/rest/v1/sender/edit/93af9991-f1cc-4b36-abd5-xxxxxx \
+  {endpoint}sms/sender/edit/93af9991-f1cc-4b36-abd5-xxxxxx \
+  -H 'Accept: application/json' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: multipart/form-data; \
-  -F name=xxxxx \
-  -F entity_name=test \
-  -F message=testing \
-  -F document=@/xxxx/xxx/xxx/xxx/xxx/xxx/xxx/xxxx/xxxx.png
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d name=xxxxx \
+  -d entity_name=test \
+  -d message=testing \
+  -d document=@/xxxx/xxx/xxx/xxx/xxx/xxx/xxx/xxxx/xxxx.png
 ```
 
 #### Example Response

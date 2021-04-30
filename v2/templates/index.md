@@ -2,10 +2,16 @@
 
 View all templates created under your account
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### GET
 
 ```
-{domain}/rest/v1/templates
+{endpoint}sms/templates
 ```
 
 #### Filters
@@ -18,8 +24,9 @@ View all templates created under your account
 
 ```
 curl -X GET \
-  '{domain}/rest/v1/templates?filter[t.name]=test' \
-  -H 'Authorization: Bearer 81fe2ebd35xxxxxxxxxx' \
+  '{endpoint}sms/templates?filter[t.name]=test' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
 
 Kindly replace the token with your respective access_token and other params.
@@ -49,12 +56,12 @@ Kindly replace the token with your respective access_token and other params.
         "updated": "Mar 05, 2019 11:26 AM"
       }
     ],
-    "first_page_url": "{domain}/rest/v1/templates?page=1",
+    "first_page_url": "{endpoint}sms/templates?page=1",
     "from": 1,
     "last_page": 1,
-    "last_page_url": "{domain}/rest/v1/templates?page=1",
+    "last_page_url": "{endpoint}sms/templates?page=1",
     "next_page_url": null,
-    "path": "{domain}/rest/v1/templates",
+    "path": "{endpoint}sms/templates",
     "per_page": 25,
     "prev_page_url": null,
     "to": 1,

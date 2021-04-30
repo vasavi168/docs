@@ -2,7 +2,7 @@
 
 View Coverage list of all enabled countries under your account
 
-#### POST
+#### GET
 
 ```
 {domain}/api/v2/sms/locations/coveragelist
@@ -19,12 +19,13 @@ View Coverage list of all enabled countries under your account
 #### Example Request
 
 ```
-curl -X POST \
+curl -X GET \
   {domain}/api/v2/sms/locations/coveragelist \
-  -H 'Authorization: Bearer 7160f04c05870ee8881xxxxxxxxxxxxx' \
-  -F country=India,Albania \
-  -F mcc=404 \
-  -F mnc=108
+    -H 'Authorization: Bearer 7160f04c05870ee8881xxxxxxxxxxxxx' \
+    -H 'Accept: application/json' \
+    -F country=India,Albania \
+    -F mcc=404 \
+    -F mnc=108
 ```
 
 #### Example Response

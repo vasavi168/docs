@@ -5,13 +5,13 @@ It will display account usage report
 #### API Endpoint
 
 ```
-{domain}/api/{version}/
+{domain}/rest/v1/
 ```
 
 #### GET
 
 ```
-{domain}/rest/v1/account/activity
+{endpoint}account/activity
 ```
 
 #### PARAMETERS
@@ -20,10 +20,10 @@ It will display account usage report
 
 ```
 curl -X GET \
-  '{domain}/rest/v1/account/activity?access_token=38e896f55670311982434xxxx' \
+  '{endpoint}account/activity' \
   -H 'Accept: application/json' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -H 'cache-control: no-cache'
+  -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
+  -H 'Content-Type: application/x-www-form-urlencoded'
 ```
 
 Kindly replace the token with your respective access_token and other params.

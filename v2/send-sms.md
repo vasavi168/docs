@@ -33,12 +33,10 @@ Before you start sending transactional SMS through this API, please test whether
 {domain}/api/{version}/
 ```
 
-#### POST/GET
-
-You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.
+#### POST
 
 ```
-{endpoint}sms/send?message=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T
+{endpoint}sms/send
 ```
 
 #### MANDATORY PARAMETERS
@@ -52,23 +50,29 @@ You can send sms using `POST` or `GET` methods, GET method requires data should 
 
 #### OPTIONAL PARAMETERS
 
-| Name        | Descriptions                                                                                                                                         |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                      |
-| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                              |
-| webhook_id     | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |
-| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                   |
-| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                        |
-| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                               |
-| custom      | Your own unique_id parameters                                                                                                                        |
-| custom1     | Any customised parameter                                                                                                                             |
-| port        | Port number to which SMS has to be delivered                                                                                                         |
+| Name        | Descriptions                                                                                                                                                            |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                         |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                 |
+| webhook_id  | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |
+| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                      |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                           |
+| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
+| custom      | Your own unique_id parameters                                                                                                                                           |
+| custom1     | Any customised parameter                                                                                                                                                |
+| port        | Port number to which SMS has to be delivered                                                                                                                            |
 
 #### Example Request
 
 ```
-curl -X GET \
-  "{endpoint}sms/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&message=Welcome&sender=TXTSMS&to=91901xxxxxx&service=T"
+curl -X POST '{endpoint}sms/send' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'sender=TXTSMS' \
+    -d 'to=917026267xxx' \
+    -d 'service=T' \
+    -d 'message=Your OTP is 123456'
 ```
 
 #### Example Response

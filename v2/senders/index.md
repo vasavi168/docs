@@ -2,10 +2,16 @@
 
 View all Sender-ids created under your account
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### GET
 
 ```
-{domain}/rest/v1/senders
+{endpoint}sms/senders
 ```
 
 #### PARAMETERS
@@ -18,9 +24,9 @@ View all Sender-ids created under your account
 
 ```
 curl -X GET \
-  '{domain}//rest/v1/senders?access_token=38e896f55670311982434xxxx' \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
+  '{endpoint}sms/senders \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
 
 Kindly replace the token with your respective access_token and other params.
@@ -48,12 +54,12 @@ Kindly replace the token with your respective access_token and other params.
         "updated": "Mar 01, 2019 11:13 AM"
       }
     ],
-    "first_page_url": "{domain}/rest/v1/senders?page=1",
+    "first_page_url": "{endpoint}sms/senders?page=1",
     "from": 1,
     "last_page": 1,
-    "last_page_url": "{domain}/rest/v1/senders?page=1",
+    "last_page_url": "{endpoint}sms/senders?page=1",
     "next_page_url": null,
-    "path": "{domain}/rest/v1/senders",
+    "path": "{endpoint}sms/senders",
     "per_page": 25,
     "prev_page_url": null,
     "to": 1,

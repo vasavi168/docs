@@ -2,10 +2,16 @@
 
 Create templates using post method under your account
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### POST
 
 ```
-{domain}/rest/v1/template/create
+{endpoint}sms/template/create
 ```
 
 #### PARAMETERS
@@ -20,12 +26,13 @@ Create templates using post method under your account
 
 ```
 curl -X POST \
-  {domain}/rest/v1/template/create \
-  -H 'Authorization: Bearer 81fe2ebd35xxxxxxx' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -F sender=TXTsms \
-  -F name=test1 \
-  -F 'body=testing sms 1'
+  {endpoint}sms/template/create \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d sender=TXTsms \
+    -d name=test1 \
+    -d 'body=testing sms 1'
 ```
 
 #### Example Response

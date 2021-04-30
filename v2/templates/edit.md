@@ -2,10 +2,16 @@
 
 Edit template using post method under your account
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### POST
 
 ```
-{domain}/rest/v1/template/edit/{id}
+{endpoint}sms/template/edit/{id}
 ```
 
 Replace the {id} with the actual id of the template that you would like to Edit.
@@ -21,12 +27,12 @@ Replace the {id} with the actual id of the template that you would like to Edit.
 
 ```
 curl -X POST \
- {domain}/rest/v1/template/edit/b10a9c3c-33bd-42f4-9e68-31c2216e5bcf \
-  -H 'Authorization: Bearer 81fe2ebd35xxxxxxxxxx' \
-  -H 'Content-Type: application/x-www-form-urlencoded'
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -F sender=txtme \
-  -F body=testing-2
+ {endpoint}sms/template/edit/b10a9c3c-33bd-42f4-9e68-31c2216e5bcf \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
+    -H 'Content-Type: application/x-www-form-urlencoded'
+    -F sender=txtme \
+    -F body=testing-2
 
 ```
 

@@ -33,8 +33,7 @@ Registration api will support only `POST` method.
 ```
 curl -X POST \
   {domain}/api/{version}/register \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
   -F name=Lakshman \
   -F email=youremailid@mail.com \
   -F mobile=918867135684 \
