@@ -40,7 +40,7 @@
 
 #### HTTP Methods
 
-It will support only `GET` Method
+It will support only `POST` Method
 
 #### MANDATORY PARAMETERS
 
@@ -49,12 +49,15 @@ It will support only `GET` Method
 | to   | Mobile number of the user you want to send rcs message |
 | id   | Request Id                                             |
 
-#### Example Request With Text Messgae
+#### Example Request
 
 ```
-curl -X GET \
-  '{endpoint}rcs/capabilities?access_token=d9e1cac3812186b353c5022xxxxxxxxd&to=9640024149&id=1233444xxxxxxxx
-```
+curl -X POST '{endpoint}rcs/capabilities' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'to=917026267xxx' \
+    -d 'id=123456-89992-XXXXX'
+``` 
 
 #### Example Response For Success
 
@@ -80,16 +83,8 @@ curl -X GET \
 
 ```json
 {
-  "code": 404,
-  "status": "failed",
-  "message": null,
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "The specified phone number cannot be reached by RBM at this time.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "status": "ERROR",
+  "message": "An error occured. pleae try again"
 }
 ```
 
@@ -116,8 +111,8 @@ curl -X GET \
 #### Example Request
 
 ```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
+curl --request POST \
+  --url {endpoint}rcs/message/send \
   -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -144,15 +139,8 @@ curl -X POST \
 
 ```json
 {
-  "code": 200,
   "status": "OK",
-  "data": {
-    "name": "phones/+918919525224/agentMessages/12900906r22",
-    "sendTime": "2020-06-12T03:56:08.464Z",
-    "contentMessage": {
-      "text": "Hello, world!"
-    }
-  }
+  "message": "Message Queued successfully"
 }
 ```
 
@@ -160,15 +148,8 @@ curl -X POST \
 
 ```json
 {
-  "code": 404,
   "status": "ERROR",
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "Requested entity was not found.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "message": "An error occured. pleae try again"
 }
 ```
 
@@ -176,7 +157,6 @@ curl -X POST \
 
 ```
 {domain}/api/{version}/
-
 ```
 
 ## Sending Media Message
@@ -196,8 +176,8 @@ curl -X POST \
 #### Example Request
 
 ```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
+curl --request POST \
+  --url {endpoint}rcs/message/send \
   -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -227,15 +207,8 @@ Note : `forceRefresh` to true forces RBM to fetch new content from the specified
 
 ```json
 {
-  "code": 404,
-  "status": "ERROR",
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "Requested entity was not found.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "status": "OK",
+  "message": "Message Queued successfully"
 }
 ```
 
@@ -243,10 +216,9 @@ Note : `forceRefresh` to true forces RBM to fetch new content from the specified
 
 ```
 {domain}/api/{version}/
-
 ```
 
-## Sending Message With Suggested Replies
+## Sending Message With Suggestions
 
 ```
 {endpoint}rcs/message/send
@@ -263,8 +235,8 @@ Note : `forceRefresh` to true forces RBM to fetch new content from the specified
 #### Example Request
 
 ```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
+curl --request POST \
+  --url {endpoint}rcs/message/send \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
   -H 'Content-Type: application/json' \
@@ -308,15 +280,8 @@ curl -X POST \
 
 ```json
 {
-  "code": 404,
-  "status": "ERROR",
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "Requested entity was not found.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "status": "OK",
+  "message": "Message Queued successfully"
 }
 ```
 
@@ -324,10 +289,9 @@ curl -X POST \
 
 ```
 {domain}/api/{version}/
-
 ```
 
-## Sending Message With Suggested Actions
+## Sending Message With Actions
 
 ```
 {endpoint}rcs/message/send
@@ -343,8 +307,8 @@ curl -X POST \
 #### Example Request with Dial Number action
 
 ```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
+curl --request POST \
+  --url {endpoint}rcs/message/send \
   -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -357,15 +321,15 @@ curl -X POST \
         }
     },
     "payload" : {
-        "suggestions_payload": {
+        "actions_payload": {
             "text": "This is the main message",
             'action': {
-              'text': 'Call',
-              'postbackData': 'postback_data_1234',
-              'fallbackUrl': 'https://www.google.com/contact/',
+              'text': 'Call',              
               'dialAction': {
                 'phoneNumber': '+918919525XXXX'
-              }
+              },
+              'postbackData': 'postback_data_1234',
+              'fallbackUrl': 'https://www.google.com/contact/'s
             }
           },
           "id": '1234a-1223jnkf-xxxx'
@@ -377,15 +341,8 @@ curl -X POST \
 
 ```json
 {
-  "code": 404,
-  "status": "ERROR",
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "Requested entity was not found.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "status": "OK",
+  "message": "Message Queued successfully"
 }
 ```
 
@@ -393,14 +350,13 @@ curl -X POST \
 
 ```
 {domain}/api/{version}/
-
 ```
 
 #### Example Request with Share Location action
 
 ```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
+curl --request POST \
+  --url {endpoint}rcs/message/send \
   -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -413,22 +369,21 @@ curl -X POST \
         }
     },
     "payload" : {
-        "suggestions_payload": {
-            "text": "This is the main message",
+      "text": "some text messae here",
+      "id": '1234a-1223jnkf-xxxx',
+      "actions_payload": [{
             'action': {
-              'text': 'Share Your Location',
-              'postbackData': 'postback_data_1234',
-              'fallbackUrl': 'https://www.google.com/maps/@37.4220188,-122.0844786,15z',
+              'text': 'Share Your Location',              
               'shareLocationAction': {
                   'latLong': {
                     'latitude': "37.4220188',
                     'longitude': "-122.0844786'
                   },
                   'label': 'Googleplex'
-                }
+                },
+              'fallbackUrl': 'https://www.google.com/maps/@37.4220188,-122.0844786,15z'
             }
-          },
-          "id": '1234a-1223jnkf-xxxx'
+          }]
     }
 }
 ```
@@ -437,15 +392,8 @@ curl -X POST \
 
 ```json
 {
-  "code": 404,
-  "status": "ERROR",
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "Requested entity was not found.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "status": "OK",
+  "message": "Message Queued successfully"
 }
 ```
 
@@ -453,14 +401,13 @@ curl -X POST \
 
 ```
 {domain}/api/{version}/
-
 ```
 
 #### Example Request with Calendar Event action
 
 ```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
+curl --request POST \
+  --url {endpoint}rcs/message/send \
   -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -473,18 +420,17 @@ curl -X POST \
         }
     },
     "payload" : {
-        "suggestions_payload": {
-            "text": "This is the main message",
+        "actions_payload": {
             'action': {
-              'text': 'Save to calendar',
-              'postbackData': 'postback_data_1234',
-              'fallbackUrl': 'https://www.google.com/calendar',
+              'text': 'Save to calendar',              
               'createCalendarEventAction': {
                   'startTime': '2021-06-30T19:00:00Z',
                   'endTime': '2021-06-30T20:00:00Z',
                   'title': 'My calendar event',
                   'description': 'Description of the calendar event'
-                }
+              },
+              'postbackData': 'postback_data_1234',
+              'fallbackUrl': 'https://www.google.com/calendar',
             }
           },
           "id": '1234a-1223jnkf-xxxx'
@@ -496,15 +442,8 @@ curl -X POST \
 
 ```json
 {
-  "code": 404,
-  "status": "ERROR",
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "Requested entity was not found.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "status": "OK",
+  "message": "Message Queued successfully"
 }
 ```
 
@@ -512,7 +451,6 @@ curl -X POST \
 
 ```
 {domain}/api/{version}/
-
 ```
 
 ## Sending Rich Card Message
@@ -532,10 +470,10 @@ curl -X POST \
 #### Example Request
 
 ```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
+curl --request POST \
+  --url {endpoint}rcs/message/send \
   -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
   -d '{
     "channels": {
         "channel" : {
@@ -546,8 +484,10 @@ curl -X POST \
         }
     },
     "payload" : {
+        "id": '1234a-1223jnkf-xxxx',
         "richCard_payload": {
-            'standaloneCard': {
+            '
+            ': {
             'thumbnailImageAlignment': 'RIGHT',
             'cardOrientation': 'VERTICAL',
             'cardContent': {
@@ -577,7 +517,6 @@ curl -X POST \
             }
           }
         }
-        "id": '1234a-1223jnkf-xxxx'
     }
 
 }'
@@ -590,14 +529,7 @@ Note : `forceRefresh` to true forces RBM to fetch new content from the specified
 
 ```json
 {
-  "code": 404,
-  "status": "ERROR",
-  "data": {
-    "error": {
-      "code": 404,
-      "message": "Requested entity was not found.",
-      "status": "NOT_FOUND"
-    }
-  }
+  "status": "OK",
+  "message": "Message Queued successfully"
 }
 ```

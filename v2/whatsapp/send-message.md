@@ -429,6 +429,78 @@ curl -X POST \
 }
 ```
 
+## Send Message With Suggestions
+
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
+We can send Video clips as attachment in whatsapp using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### Example Request With Suggestions Messgae
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": {
+        "channel" : {
+            "name": "whatsapp",
+            "from": "919019120120",
+            "recipient": {
+                "group_id": "{segment_id}",
+                "to": ["918919525224", "918867135684"]
+            }
+        },
+        "recipient": {
+            "group_id": "{segment_id}",
+            "to": ["91XXXXXX", "91XXXXXX"]
+        }
+
+     },
+    "payload" : {
+        "text": "Sample text message",
+        "suggestions_payload": {
+            buttons": [
+              {
+                  "type": "url",
+                  "payload": "https://example.com",
+                  "caption": "Click Here"
+              },
+              {
+                  "type": "text",
+                  "payload": "__unsubscribe",
+                  "caption": "Unsubscribe"
+              }
+          ]
+        }
+    }
+}'
+```
+
+#### PARAMETERS
+
+| Name    | Description                                              | Limits    | Required |
+| ------- | -------------------------------------------------------- | --------- | -------- |
+| buttons | this block contains actions for suggestions of the message| N/A       | Yes       |
+
+#### Example Response
+
+```json
+{
+  "status": "OK",
+  "message": "Message Queued successfully"
+}
+```
+
 ## Send Vcard / Contacts Message
 
 #### API Endpoint

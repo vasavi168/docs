@@ -64,7 +64,6 @@
 
   - [Overview](/docs/{version}/whatsapp)
   - [Send a message](/docs/{version}/whatsapp/send-message)
-  - [Send Media message](/docs/{version}/whatsapp/send-media-message)
   - [Status Info](/docs/{version}/whatsapp/status)
 
 - Link
