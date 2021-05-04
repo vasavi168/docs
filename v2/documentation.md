@@ -1,5 +1,5 @@
 @if(isset($branding) && $branding->options['docs.tools'])
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection})
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5666176-8916ebcb-cdc8-4891-9174-46d0218f8425)
 @endif
 
 - Overview

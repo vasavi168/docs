@@ -34,7 +34,7 @@ curl -X POST \
 
 ```
 {
-  "validation_key": "9012XX"
+  "challenge": "a234qwe"
 }
 ```
 
