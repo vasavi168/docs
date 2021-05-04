@@ -1,5 +1,5 @@
 @if(isset($branding) && $branding->options['docs.tools'])
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5666176-8916ebcb-cdc8-4891-9174-46d0218f8425)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection}?action=collection%2Ffork&collection-url=entityId%3D{collection}%26entityType%3Dcollection)
 @endif
 
 - Overview
@@ -26,7 +26,7 @@
   - [Optout](/docs/{version}/optout)
   - [Service Usage](/docs/{version}/sms/usage)
   - [Status Summary](/docs/{version}/sms/status-report)
-  - [Coverage List](/docs/{version}/locations/coveragelist)
+  - [Coverage List](/docs/{version}/sms/coverage-list)
   - [View Senders](/docs/{version}/senders)
   - [Create Sender](/docs/{version}/senders/create)
   - [Edit Sender](/docs/{version}/senders/edit)

@@ -1,6 +1,6 @@
 # Verify Token
 
-{app} Verify a sent verification token. Can only be done once for each token.
+Verify a sent verification token. Can only be done once for each token.
 
 - Send the verification code that your user supplied, with the corresponding `id` from the Verify request.
 - Check the `status` of the response to determine if the code the user supplied matches the one sent by {app}.
@@ -19,10 +19,10 @@
 
 #### MANDATORY PARAMETERS
 
-| Name  | Type   | Description                                                                                       |
-| ----- | ------ | ------------------------------------------------------------------------------------------------- |
-| id    | string | The Verify request to check. This is the `id` you received in the response to the Verify request. |
-| token | int    | The verification code entered by your user.                                                       |
+| Name  | Type   | Description                                                          |
+| ----- | ------ | -------------------------------------------------------------------- |
+| id    | string | This is the `id` you received in the response to the Verify request. |
+| token | int    | The verification code entered by your user.                          |
 
 #### Example Request
 
@@ -54,4 +54,5 @@ curl -X GET \
 | ---- | --------------- | --------------------------------------------- |
 | 401  | Unauthenticated | Authetication Error                           |
 | 200  | failed          | when you passed invalid `id` value            |
+| 200  | expired         | `token` expired                               |
 | 200  | invalid         | when you passed wrong `token` for verificaton |

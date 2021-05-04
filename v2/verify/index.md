@@ -1,6 +1,6 @@
 # Verify Api
 
-{app}'s Verify API enables you to verify a mobile phone number with two-factor authentication.
+Verify API enables you to verify a mobile phone number with two-factor authentication.
 
 This is useful for:
 
@@ -8,7 +8,7 @@ This is useful for:
 - Monitoring suspicious activity, by forcing an account user to verify ownership of a number
 - Ensuring that you can reach your users at any time because you have their correct phone number
 
-Create a new Verify object through the API to start the verification process of a recipient. {app} will take care of creating a token and making sure that the message gets delivered to the user's handset.
+Create a new Verify object through the API to start the verification process of a recipient. We will take care of creating a token and making sure that the message gets delivered to the user's handset.
 
 ## Verify Request
 
@@ -32,16 +32,16 @@ Create a new Verify object through the API to start the verification process of 
 
 #### OPTIONAL PARAMETERS
 
-| Name       | Type   | Description                                                                                                                                     |
-| ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| from       | string | Sender Id from which message should get delivered. default: VERIFY                                                                              |
-| reference  | string | A client reference                                                                                                                              |
-| template   | string | The template of the message body. Needs to contain {token} for the verification code to be included. default: {token} is your verification code |
-| timeout    | int    | The verification code expiry time in seconds. Default: 120                                                                                      |
-| length     | string | The number of characters in the verification code. Must be between 4 and 10. Default: 6                                                         |
-| ip_address | string | The IP address used by your user when they entered the verification code.  |
-| entity_id  | string | Entityid registered in DLT portal |
-| template_id | string | Templateid registered in DLT portal |
+| Name        | Type   | Description                                                                                                                                     |
+| ----------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| from        | string | Sender Id from which message should get delivered. default: VERIFY                                                                              |
+| reference   | string | A client reference                                                                                                                              |
+| template    | string | The template of the message body. Needs to contain {token} for the verification code to be included. default: {token} is your verification code |
+| timeout     | int    | The verification code expiry time in seconds. Default: 120                                                                                      |
+| length      | string | The number of characters in the verification code. Must be between 4 and 10. Default: 6                                                         |
+| ip_address  | string | The IP address used by your user when they entered the verification code.                                                                       |
+| entity_id   | string | Entityid registered in DLT portal (for indian routes)                                                                                           |
+| template_id | string | Templateid registered in DLT portal (for indian routes)                                                                                         |
 
 #### Example Request
 
@@ -64,18 +64,3 @@ curl -X POST \
   "expire_at": "2019-01-31 14:43:48"
 }
 ```
-
-## ERROR Codes
-
-#### SUCCESS CODES
-
-| Code | Status | Status Description           |
-| ---- | ------ | ---------------------------- |
-| 200  | sent   | OTP has been sent to device. |
-
-#### FAILURE CODES
-
-| Code | Status          | Status Description                                   |
-| ---- | --------------- | ---------------------------------------------------- |
-| 401  | Unauthenticated | Authetication Error                                  |
-| 422  | error           | missing required entities (ex: to parameter missing) |
