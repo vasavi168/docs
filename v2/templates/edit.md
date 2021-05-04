@@ -18,10 +18,11 @@ Replace the {id} with the actual id of the template that you would like to Edit.
 
 #### PARAMETERS
 
-| Name   | Optinal | Descriptions                                   |
-| ------ | ------- | ---------------------------------------------- |
-| sender | No      | Edit the approved sender-id under your account |
-| body   | No      | Edit the body of the sms(template)             |
+| Name        | Optinal | Descriptions                                                     |
+| ----------- | ------- | ---------------------------------------------------------------- |
+| name        | Yes     | Input the name of the template that you would like to refer with |
+| body        | No      | Input the body of the sms(template)                              |
+| template_id | Mixed   | DLT Template id (required for india)                             |
 
 #### Example Request
 
@@ -31,7 +32,6 @@ curl -X POST \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
     -H 'Content-Type: application/x-www-form-urlencoded'
-    -F sender=txtme \
     -F body=testing-2
 
 ```

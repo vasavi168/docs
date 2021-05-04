@@ -2,10 +2,16 @@
 
 Delete sender-id using post method under your account
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### DELETE
 
 ```
-{domain}/rest/v1/sender/delete/{id}
+{endpoint}sms/sender/delete/{id}
 ```
 
 Replace the {id} with the actual id of the sender that you would like to delete.
@@ -14,7 +20,7 @@ Replace the {id} with the actual id of the sender that you would like to delete.
 
 ```
 curl -X DELETE \
-  {domain}/rest/v1/sender/delete/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
+  {endpoint}sms/sender/delete/{id}/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
 ```
 
@@ -23,7 +29,7 @@ curl -X DELETE \
 ```json
 {
   "status": "OK",
-  "message": "Sender deleted successfully",
-  "id": 1
+  "code": 200,
+  "message": "Sender deleted successfully"
 }
 ```

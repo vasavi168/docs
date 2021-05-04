@@ -39,20 +39,23 @@ Kindly replace the token with your respective access_token and other params.
     "current_page": 1,
     "data": [
       {
-        "id": "b7a85301-dd60-4834-9c2a-xxxxxxxxxxx",
-        "user_id": "72",
-        "name": "test",
-        "entity_name": "test",
-        "message": "smstxt",
+        "id": "f66b983b-713a-4818-a691-2c684eb4eccd",
+        "user_id": 26,
+        "name": "SENDER",
+        "entity_name": "SAMPLE COMPANY",
+        "entity_id": "123233434355345555",
+        "header_id": null,
+        "country_code": "IN",
+        "message": null,
         "document": null,
-        "status": "1",
-        "is_open": "0",
-        "created_at": "2019-03-01 11:13:09",
-        "updated_at": "2019-03-01 11:13:56",
-        "serial": 1,
-        "created": "Mar 01, 2019 11:13 AM",
-        "updated": "Mar 01, 2019 11:13 AM"
+        "status": 1,
+        "is_open": 0,
+        "purpose": null,
+        "created_at": "2021-05-04 17:46:58",
+        "updated_at": "2021-05-04 17:46:58",
+        "serial": 1
       }
+      ....
     ],
     "first_page_url": "{endpoint}sms/senders?page=1",
     "from": 1,

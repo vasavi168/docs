@@ -8,7 +8,7 @@ Edit sender-ids using post method under your account
 {domain}/api/{version}/
 ```
 
-#### POST
+#### PUT
 
 ```
 {endpoint}sms/sender/edit/{id}
@@ -16,25 +16,23 @@ Edit sender-ids using post method under your account
 
 #### PARAMETERS
 
-| Name        | optional | Descriptions                                   |
-| ----------- | -------- | ---------------------------------------------- |
-| name        | No       | Edit the sender-id                             |
-| entity_name | No       | Edit the entity_name                           |
-| message     | No       | edit the message                               |
-| document    | yes      | choose a optin file that matches the sender_id |
+| Name         | optional | Descriptions                                                  |
+| ------------ | -------- | ------------------------------------------------------------- |
+| country_code | No       | For which country this sender belongs to. 2 letters           |
+| entity_id    | Mixed    | Input the entity id (required for india)                      |
+| entity_name  | Mixed    | Company name whom this sender belongs to (required for india) |
 
 #### Example Request
 
 ```
-curl -X POST \
+curl -X PUT \
   {endpoint}sms/sender/edit/93af9991-f1cc-4b36-abd5-xxxxxx \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d name=xxxxx \
-  -d entity_name=test \
-  -d message=testing \
-  -d document=@/xxxx/xxx/xxx/xxx/xxx/xxx/xxx/xxxx/xxxx.png
+  -d entity_name=xxxxx \
+  -d entity_id=xxxxx \
+  -d country_code=IN
 ```
 
 #### Example Response

@@ -16,11 +16,12 @@ Create templates using post method under your account
 
 #### PARAMETERS
 
-| Name   | Optional | Descriptions                                                     |
-| ------ | -------- | ---------------------------------------------------------------- |
-| sender | No       | Enter the approved sender-id under your account                  |
-| name   | Yes      | Input the name of the template that you would like to refer with |
-| body   | No       | Input the body of the sms(template)                              |
+| Name        | Optional | Descriptions                                                     |
+| ----------- | -------- | ---------------------------------------------------------------- |
+| sender      | No       | Enter the approved sender-id under your account                  |
+| name        | Yes      | Input the name of the template that you would like to refer with |
+| body        | No       | Input the body of the sms(template)                              |
+| template_id | Mixed    | DLT Template id (required for india)                             |
 
 #### Example Request
 
