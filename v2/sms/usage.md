@@ -5,13 +5,13 @@ It will display account usage report
 #### API Endpoint
 
 ```
-{domain}/rest/v1/
+{domain}/api/{version}/
 ```
 
 #### GET
 
 ```
-{endpoint}account/activity
+{endpoint}sms/activity
 ```
 
 #### PARAMETERS
@@ -20,7 +20,7 @@ It will display account usage report
 
 ```
 curl -X GET \
-  '{endpoint}account/activity' \
+  '{endpoint}sms/activity' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
   -H 'Content-Type: application/x-www-form-urlencoded'
@@ -57,12 +57,12 @@ Kindly replace the token with your respective access_token and other params.
             },
         ---
         ],
-        "first_page_url": "{domain}/rest/v1/account/activty?page=1",
+        "first_page_url": "{endpoint}sms/activty?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "{domain}/rest/v1/account/activity?page=1",
+        "last_page_url": "{endpoint}sms/activity?page=1",
         "next_page_url": null,
-        "path": "{domain}/rest/v1/account/activity",
+        "path": "{endpoint}sms/activity",
         "per_page": 25,
         "prev_page_url": null,
         "to": 16,

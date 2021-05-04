@@ -16,16 +16,16 @@
 
 - Messaging
 
-  - [Overview](/docs/{version}/sms-overview)
-  - [Send SMS](/docs/{version}/send-sms)
-  - [Send SMS Using JSON](/docs/{version}/send-sms-json)
-  - [Send SMS Using Template](/docs/{version}/send-template-sms)
-  - [Bulk SMS Using File](/docs/{version}/send-sms-bulk)
-  - [Push DLR/Webhook](/docs/{version}/sms-push-dlr)
-  - [Pull DLR](/docs/{version}/sms-pull-dlr)
+  - [Overview](/docs/{version}/sms)
+  - [Send SMS](/docs/{version}/sms/send)
+  - [Send SMS Using JSON](/docs/{version}/sms/json)
+  - [Send SMS Using Template](/docs/{version}/sms/template)
+  - [Bulk SMS Using File](/docs/{version}/sms/bulk)
+  - [Push DLR/Webhook](/docs/{version}/sms/push-dlr)
+  - [Pull DLR](/docs/{version}/sms/pull-dlr)
   - [Optout](/docs/{version}/optout)
-  - [Account Usage](/docs/{version}/get-usage-report)
-  - [Get Status Summary](/docs/{version}/get-status-report)
+  - [Service Usage](/docs/{version}/sms/usage)
+  - [Status Summary](/docs/{version}/sms/status-report)
   - [Coverage List](/docs/{version}/locations/coveragelist)
   - [View Senders](/docs/{version}/senders)
   - [Create Sender](/docs/{version}/senders/create)
@@ -37,8 +37,8 @@
   - [Delete Template](/docs/{version}/templates/delete)
 
 - SMPP
-  - [Gateway](/docs/{version}/smpp-gateway)
-  - [Error Codes](/docs/{version}/smpp-gateway#delivery-reports)
+  - [Gateway](/docs/{version}/sms/smpp)
+  - [Error Codes](/docs/{version}/sms/smpp#delivery-reports)
 - Verify
 
   - [Overview](/docs/{version}/verify)
