@@ -4,7 +4,7 @@ This Voice API supports the following:
 
 #### HTTP Methods
 
-It will support both GET and POST requests.
+It will support only `POST` method.
 
 ## Call Initiation
 
@@ -14,18 +14,34 @@ It will support both GET and POST requests.
 {domain}/api/{version}/
 ```
 
-#### POST/GET
+#### POST Method
 
-C2C Using To as Mobile Number
-
-```
-{endpoint}voice/c2c?bridge=80191912XX&from=9180106077XX&to=91901930XXX
-```
-
-C2C Using To as Flow ID
+#### Example C2C  Request Using to as Mobile Number
 
 ```
-{endpoint}voice/c2c?bridge=80191912XX&from=9180106077XX&to=flow:19
+curl -X POST '{endpoint}voice/c2c' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'bridge=91806828XXXX' \
+    -d 'from=918867135XXXX' \
+    -d 'to=91702626XXXX' \
+    -d 'webhook_id=124555-78787-XXXXX' \
+    -d 'record=1'
+```
+
+#### Example C2C Request to as Flow ID
+
+```
+curl -X POST '{endpoint}voice/c2c' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'bridge=91806828XXXX' \
+    -d 'from=918867135XXXX' \
+    -d 'to=flow:220' \
+    -d 'webhook_id=124555-78787-XXXXX' \
+    -d 'record=1'
 ```
 
 #### MANDATORY PARAMETERS
@@ -40,18 +56,12 @@ C2C Using To as Flow ID
 
 | Name      | Descriptions                                            |
 | --------- | ------------------------------------------------------- |
-| mid       | Message id for reference                                | r |
+| mid       | Message id for reference                                | 
 | callback  | Callback url once call completed (urlencoded)           |
+| webhook_id| Webhook ID for pushing the call data once call completed |
 | variables | `Array` of the variables which can be used in flow      |
 | record    | Record this conversation (default `0`). allowed: 0 or 1 |
 | duration  | Limit the call duration in minutes. default (none)      |
-
-#### Example Request
-
-```
-curl -X GET \
-  "{endpoint}voice/c2c?access_token=209eccd40ee3a2e14af7fe45b21xxx&bridge=91801010XXX&from=9189195XXX&to=91901xxxxxx"
-```
 
 #### Example Response
 
@@ -71,6 +81,7 @@ Callback is a functionality to get notified through an API call when a call is c
 | bridge        | DID number for call initiation                       |
 | from          | To whom call will connect first                      |
 | to            | Phone number / IVR flow to which call has to connect |
+| source        | C2C (click2Call) |
 | start_at      | Call Start time in `YYYY-MM-DD h:i:s` format         |
 | end_at        | Call end time in `YYYY-MM-DD h:i:s` format           |
 | date          | Current time in `YYYY-MM-DD h:i:s` format            |
@@ -80,7 +91,8 @@ Callback is a functionality to get notified through an API call when a call is c
 | status        | Call Status                                          |
 | status1       | Call Status of first call                            |
 | status2       | Call Status of second call                           |
-| recording_url | Recording Url if call got recorded                   |
+| recording_url | Recording Url if call got recorded
+| hangup_by     | Call Hangup By either agent or caller                |
 
 You can also use our build in filters to change data while passing to your system.
 
@@ -90,7 +102,7 @@ Ex: if you want to get the last 10 digits of the `from` number: `{from|cut:-10}`
 
 Ex: Want to get `start_at` date in `DD/MM/YYYY` : `{start_at|date_format:d/m/Y}`
 
-#### Example Callback Url
+#### Example Callback Url 
 
 ```
   https://www.domain.com/ack/receive?status={status}&start={start_at}&recording_url={recording_url}
@@ -101,6 +113,47 @@ Append callback value with API
 ```
 &callback=https%3A%2F%2Fwww.domain.com%2Fack%2Freceive%3Fstatus%3D%7Bstatus%7D%26start%3D%7Bstart_at%7D%26recording_url%3D%7Brecording_url%7D
 ```
-
 - The response codes other than 200 or 202 are not taken into consideration and requests for such response codes are considered as failed.
 - The method used for sending the callback report onto the client’s URL is `GET`.
+
+
+## Callback URL with Webhook ID
+
+The WEBHOOK Push API sends the report of the Click2Call to the client’s URL in `POST` method.
+
+To request such reports, you need to create webhook URL first in Webhooks section. Then pass that particular `webhook_id` you created earlier while making a call through API.
+
+We will send a `POST` with json format to your webhook URL with below parameters
+
+#### Example Parameter
+
+ Name          | Descriptions                                         |
+| ------------- | ---------------------------------------------------- |
+| webhook_id        | ID of the webhook created in Webhooks section   |
+
+
+- The response codes other than 200 or 202 are not taken into consideration and requests for such response codes are considered as failed.
+- The method used for sending the callback report onto the client’s URL is `POST`.
+
+#### Example Request to Client's URL
+
+```curl -X POST \ 
+  https://www.domain.com/ack/receive \
+  -H 'content-type: application/json' \
+  -d '{
+      "bridge": 91806828XXXX,
+      "from": 91891952XXXX,
+      "to": 91886713XXXX,
+      "source": "C2C",
+      "start_at": "2021-04-09 16:27:39",
+      "end_at": "2021-04-09 16:27:55",
+      "date": "2021-04-09 16:27:55",
+      "unixtime": "1653455555",
+      "duration": "23",
+      "billing": "23",
+      "status": "COMPLETED",
+      "status1": "RECEIVED",
+      "status2": "ANSWER",
+      "recording_url": "https://youraudiofilelocation/",
+      "hangup_by": "caller"
+}'

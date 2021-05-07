@@ -1,38 +1,59 @@
 #### WEBHOOK (OR) CALLBACK URL
 
-Callback is a functionality to get notified through an API call when a call is completed. One needs to follow below steps to achieve valid callback
+The WEBHOOK Push API sends the report of the Click2Call to the client’s URL in `POST` method.
 
+To request such reports, you need to create webhook URL first in Webhooks section. Then pass that particular `webhook_id` you created earlier while making a call through API.
+
+We will send a `POST` with json format to your webhook URL with below parameters
+
+#### Example Parameter
+
+ Name          | Descriptions                                         |
+| ------------- | ---------------------------------------------------- |
+| webhook_id        | ID of the webhook created in Webhooks section   |
 | Name          | Descriptions                                 |
 | ------------- | -------------------------------------------- |
+| bridge        | DID number for call initiation                       |
+| from          | From number for call initiation                       |
 | to            | Phone number to which call has connected     |
 | start_at      | Call Start time in `YYYY-MM-DD h:i:s` format |
 | end_at        | Call end time in `YYYY-MM-DD h:i:s` format   |
 | duration      | Duration of the call in seconds (first call) |
+| mid           | message id of the campaign    |
+| flow_id       | Flowid for the campaign used    |
 | status        | Call Status                                  |
+| source        | OBD                                          |
 | recording_url | Recording Url if call got recorded           |
 
-You can also use our build in filters to change data while passing to your system.
-
-Buildin filters are `cut` and `data_format`. Filters are seperated by `|`
-
-Ex: if you want to get the last 10 digits of the `from` number: `{from|cut:-10}`
-
-Ex: Want to get `start_at` date in `DD/MM/YYYY` : `{start_at|date_format:d/m/Y}`
-
-#### Example Callback Url
+#### Example Webhook Url
 
 ```
-  https://www.domain.com/ack/receive?status={status}&start={start_at}&recording_url={recording_url}&endat={end_at}
+  https://www.domain.com/ack/receive
 ```
 
-Webook value can be provided while doing the campaign from panel.
+WebookID value can be provided while doing the campaign from panel.
 
-If you are doing OBD using api, we need to send `callback` paramater to send webhook url.
-
-```
-&callback=https%3A%2F%2Fwww.domain.com%2Fack%2Freceive%3Fstatus%3D%7Bstatus%7D%26start%3D%7Bstart_at%7D%26recording_url%3D%7Brecording_url%7D
-```
+If you are doing OBD using api, we need to send `webhook_id` paramater to send id of webhook.
 
 - The response codes other than 200 or 202 are not taken into consideration and requests for such response codes are considered as failed.
 
-- The method used for sending the callback report onto the client’s URL is `GET`.
+- The method used for sending the callback report onto the client’s URL is `POST`.
+
+#### Example Request to Client's URL
+
+```curl -X POST \ 
+  https://www.domain.com/ack/receive \
+  -H 'content-type: application/json' \
+  -d '{
+      "bridge": 91806828XXXX,
+      "from": 91891952XXXX,
+      "to": 91886713XXXX,
+      "source": "OBD",
+      "mid": "1234-1333-XXXXX",
+      "flow_id": 123,
+      "start_at": "2021-04-09 16:27:39",
+      "end_at": "2021-04-09 16:27:55",
+      "duration": "23",
+      "status": "ANSWER",
+      "recording_url": "https://youraudiofilelocation/",
+}'
