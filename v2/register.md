@@ -16,11 +16,11 @@ Registration api will support only `POST` method.
 
 #### MANDATORY PARAMETERS
 
-| Name     | Descriptions                                                                                                  |
-| -------- | ------------------------------------------------------------------------------------------------------------- |
-| name     | Name of the user                                                                                              |
-| email    | EmailId of the user                                                                                           |
-| password | Password must contain uppercase, lowercase characters and numbers. Lenght should be min 6, max 20 characters. |
+| Name     | Descriptions                                                                                    |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| name     | Name of the user                                                                                |
+| email    | EmailId of the user                                                                             |
+| password | Password must contain uppercase, lowercase characters and numbers. Lenght between 6 to 20 chars |
 
 #### OPTIONAL PARAMETERS
 

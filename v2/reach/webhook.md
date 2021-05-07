@@ -8,22 +8,20 @@ We will send a `POST` with json format to your webhook URL with below parameters
 
 #### Example Parameter
 
- Name          | Descriptions                                         |
-| ------------- | ---------------------------------------------------- |
-| webhook_id        | ID of the webhook created in Webhooks section   |
-| Name          | Descriptions                                 |
-| ------------- | -------------------------------------------- |
-| bridge        | DID number for call initiation                       |
-| from          | From number for call initiation                       |
-| to            | Phone number to which call has connected     |
-| start_at      | Call Start time in `YYYY-MM-DD h:i:s` format |
-| end_at        | Call end time in `YYYY-MM-DD h:i:s` format   |
-| duration      | Duration of the call in seconds (first call) |
-| mid           | message id of the campaign    |
-| flow_id       | Flowid for the campaign used    |
-| status        | Call Status                                  |
-| source        | OBD                                          |
-| recording_url | Recording Url if call got recorded           |
+| Name          | Description                                   |
+| ------------- | --------------------------------------------- |
+| webhook_id    | ID of the webhook created in Webhooks section |
+| bridge        | DID number for call initiation                |
+| from          | From number for call initiation               |
+| to            | Phone number to which call has connected      |
+| start_at      | Call Start time in `YYYY-MM-DD h:i:s` format  |
+| end_at        | Call end time in `YYYY-MM-DD h:i:s` format    |
+| duration      | Duration of the call in seconds (first call)  |
+| mid           | message id of the campaign                    |
+| flow_id       | Flowid for the campaign used                  |
+| status        | Call Status                                   |
+| source        | OBD                                           |
+| recording_url | Recording Url if call got recorded            |
 
 #### Example Webhook Url
 
@@ -41,7 +39,8 @@ If you are doing OBD using api, we need to send `webhook_id` paramater to send i
 
 #### Example Request to Client's URL
 
-```curl -X POST \ 
+```
+curl -X POST \
   https://www.domain.com/ack/receive \
   -H 'content-type: application/json' \
   -d '{
@@ -57,3 +56,4 @@ If you are doing OBD using api, we need to send `webhook_id` paramater to send i
       "status": "ANSWER",
       "recording_url": "https://youraudiofilelocation/",
 }'
+```

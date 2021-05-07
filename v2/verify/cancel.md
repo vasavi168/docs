@@ -26,7 +26,7 @@ Deletes an existing Verify request. You only need to supply the unique id that w
 curl -X GET \
   '{endpoint}verify/cancel/41379328-d3a7-4fcd-be90-d5237f911d76' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx' \
+  -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx'
 ```
 
 #### Example Response
