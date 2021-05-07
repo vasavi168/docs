@@ -2,7 +2,7 @@
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection}?action=collection%2Ffork&collection-url=entityId%3D{collection}%26entityType%3Dcollection)
 @endif
 
-- Overview
+- Introduction
 
   - [Authentication](/docs/{version})
   - [Rate Limits](/docs/{version}#rate-limits)
@@ -15,7 +15,7 @@
 
 - Messaging
 
-  - [Overview](/docs/{version}/sms)
+  - [Introduction](/docs/{version}/sms)
   - [SMS Length Summary](/docs/{version}/sms/length-summary)
   - [Send SMS](/docs/{version}/sms/send)
   - [Send SMS Using JSON](/docs/{version}/sms/json)
@@ -41,38 +41,35 @@
   - [Error Codes](/docs/{version}/sms/smpp#delivery-reports)
 - Verify
 
-  - [Overview](/docs/{version}/verify)
+  - [Introduction](/docs/{version}/verify)
   - [Check](/docs/{version}/verify/check)
   - [Search](/docs/{version}/verify/search)
   - [Cancel](/docs/{version}/verify/cancel)
 
 - Engage (Voice)
 
-  - [Overview](/docs/{version}/voice)
+  - [Introduction](/docs/{version}/voice)
   - [Click2Call](/docs/{version}/voice/c2c)
+  - [Outgoing Call](/docs/{version}/reach/call)
+  - [Upload Sound File](/docs/{version}/reach)
   - [Call Logs](/docs/{version}/voice/logs)
   - [Call Recordings](/docs/{version}/voice/logs#recordings-report)
-
-- Reach (Outgoing)
-
-  - [Create Sound File](/docs/{version}/reach)
-  - [Create Outgoing Call](/docs/{version}/reach/call)
   - [Call Status](/docs/{version}/reach/status)
   - [Webhook](/docs/{version}/reach/webhook)
 
 - Whatsapp
 
-  - [Overview](/docs/{version}/whatsapp)
+  - [Introduction](/docs/{version}/whatsapp)
   - [Send a message](/docs/{version}/whatsapp/send-message)
   - [Status Info](/docs/{version}/whatsapp/status)
 
 - Link
 
-  - [View Smart Links](/docs/{version}/link)
-  - [Create Smart Link](/docs/{version}/link/create)
-  - [View Link Visits](/docs/{version}/link/visits)
+  - [View Links](/docs/{version}/link)
+  - [Create Link](/docs/{version}/link/create)
+  - [View Visits](/docs/{version}/link/visits)
   - [Webhook](/docs/{version}/link/webhook)
 
-- HLR Lookup
+- Number Lookup
 
   - [Verify](/docs/{version}/lookup/verify)
