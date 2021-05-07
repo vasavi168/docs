@@ -1,13 +1,5 @@
 # CREATE OUTBOUND CALL
 
-This Voice API supports the following:
-
-#### HTTP Methods
-
-It will support both GET and POST requests.
-
-## Call Initiation
-
 #### API Endpoint
 
 ```
@@ -17,7 +9,7 @@ It will support both GET and POST requests.
 #### POST/GET
 
 ```
-{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx
+{endpoint}outgoing/send
 ```
 
 #### MANDATORY PARAMETERS
@@ -42,7 +34,7 @@ With Audio File ID :
 
 ```
 curl -X GET \
-  "{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=8919525224&bridge=91123456789&audio=39888925-718e-43bb-a8b1-d4a37722e37"
+  "{endpoint}outgoing/send?name=api&to=8919525224&bridge=91123456789&audio=39888925-718e-43bb-a8b1-d4a37722e37"
 ```
 
 - Here `39888925-718e-43bb-a8b1-d4a37722e37` is the sound file id uploaded to your voice account.
@@ -51,7 +43,7 @@ With Ivr Flow ID :
 
 ```
 curl -X GET \
-  "{endpoint}outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=918919525224&bridge=91123456789&ivr_id=23"
+  "{endpoint}outgoing/send?name=api&to=918919525224&bridge=91123456789&ivr_id=23"
 ```
 
 - Here `23` is the ivr flow id created in voice account
@@ -60,7 +52,7 @@ With Custom Audio File Location :
 
 ```
 curl -X GET \
-  "{domain}/api/{version}/outgoing/send?access_token=209eccd40ee3a2e14af7fe45b21xxx&name=api obd&to=918919525224&bridge=91123456789&audio=http://youraudiofilelocation.mp3"
+  "{domain}/api/{version}/outgoing/send?name=api_obd&to=918919525224&bridge=91123456789&audio=http://youraudiofilelocation.mp3"
 ```
 
 - Here `audio` parameter requires location of audio file and must start with either `http` or `https`

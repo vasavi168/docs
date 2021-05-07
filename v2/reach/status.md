@@ -7,7 +7,7 @@ This Voice API supports the following:
 It will support `GET` request.
 
 ```
-{domain}/api/{version}/outgoing/callstatus?access_token=209eccd40ee3a2e14af7fe45b21xxx
+{domain}/api/{version}/outgoing/callstatus
 ```
 
 #### MANDATORY PARAMETERS
@@ -23,7 +23,7 @@ It will support `GET` request.
 
 ```
 curl -X GET \
-  "{domain}/api/{version}/outgoing/callstatus?access_token=209eccd40ee3a2e14af7fe45b21xxx&id=047d8cfc-77d1-4f6c-bfb5-e81f1a1343a7:1"
+  "{domain}/api/{version}/outgoing/callstatus&id=047d8cfc-77d1-4f6c-bfb5-e81f1a1343a7:1"
 ```
 
 #### Example Response

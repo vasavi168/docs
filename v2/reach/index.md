@@ -2,19 +2,13 @@
 
 This Voice API supports the following:
 
-#### HTTP Methods
-
-It will support only POST requests.
-
-## Call Initiation
-
-#### POST
-
 #### API Endpoint
 
 ```
 {domain}/api/{version}/
 ```
+
+#### POST
 
 ```
 {endpoint}voice/sound/create
@@ -36,7 +30,7 @@ It will support only POST requests.
 
 ```
 curl -X POST '{endpoint}voice/sound/create?access_token=7160f04c05870ee88812a435xxxxxxxx' \
---header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
 --form 'name=myaudiofile' \
 --form 'audio=@/home/mdigital/Desktop/testsms/welcome.mp3'
 ```

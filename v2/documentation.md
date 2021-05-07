@@ -7,7 +7,6 @@
   - [Authentication](/docs/{version})
   - [Rate Limits](/docs/{version}#rate-limits)
   - [Status Code](/docs/{version}#http-status-codes)
-  - [SMS Length Summary](/docs/{version}/sms-length-summary)
 
 - Account
 
@@ -17,6 +16,7 @@
 - Messaging
 
   - [Overview](/docs/{version}/sms)
+  - [SMS Length Summary](/docs/{version}/sms/length-summary)
   - [Send SMS](/docs/{version}/sms/send)
   - [Send SMS Using JSON](/docs/{version}/sms/json)
   - [Send SMS Using Template](/docs/{version}/sms/template)
