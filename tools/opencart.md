@@ -24,8 +24,8 @@ When an order is placed, shipped or status changed in opencart you can confirm w
 
 ![alt text](/images/docimages/opencart2.png)
 
-* Under New orders tab, draft a message that needs to be sent to the customer when a new order is placed. You can customize your SMS using variable parameters within {{}}
-* Under Orders Status tab, draft a messages that needs to be sent to the customer on each status change. You can customize your SMS using variable parameters within {{}}
+* Under New orders tab, draft a message that needs to be sent to the customer when a new order is placed. You can customize your SMS using variable parameters within {{1}}
+* Under Orders Status tab, draft a messages that needs to be sent to the customer on each status change. You can customize your SMS using variable parameters within {{2}}
 * Under Additional Options tab, select if or not message has to be sent to the store admin, store admin number and the conditions when it has to be sent
 * Click Save.
 

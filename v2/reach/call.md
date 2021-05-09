@@ -6,7 +6,7 @@
 {domain}/api/{version}/
 ```
 
-#### POST/GET
+#### POST Request URL
 
 ```
 {endpoint}outgoing/send
@@ -27,35 +27,54 @@
 | -------- | ----------------------------------------------------------------------------- |
 | name     | name of the campaign                                                          |
 | interval | Retry interval time Expected Values : 5, 15, 30, 45, 60 (Minutes) : Default 0 |
+| webhook_id| Id of the webhook created in webhook section [View Webhooks Page](/webhooks) |
 
-#### Example Request
-
-With Audio File ID :
-
-```
-curl -X GET \
-  "{endpoint}outgoing/send?name=api&to=8919525224&bridge=91123456789&audio=39888925-718e-43bb-a8b1-d4a37722e37"
-```
-
-- Here `39888925-718e-43bb-a8b1-d4a37722e37` is the sound file id uploaded to your voice account.
-
-With Ivr Flow ID :
+## Example Request Using Audio File ID
 
 ```
-curl -X GET \
-  "{endpoint}outgoing/send?name=api&to=918919525224&bridge=91123456789&ivr_id=23"
+curl -X POST '{endpoint}outgoing/send' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'bridge=91806828XXXX' \
+    -d 'to=918867135XXXX' \
+    -d 'audio=39888925-718e-43bb-a8b1-d4a3XXXXX' \
+    -d 'name=obd_api_call'
 ```
 
-- Here `23` is the ivr flow id created in voice account
+- Here `39888925-718e-43bb-a8b1-d4a3XXXXX` is the sound file id uploaded in Reach > Sounds Section.
 
-With Custom Audio File Location :
+
+## Example Request Using IVR Flow ID
 
 ```
-curl -X GET \
-  "{domain}/api/{version}/outgoing/send?name=api_obd&to=918919525224&bridge=91123456789&audio=http://youraudiofilelocation.mp3"
+curl -X POST '{endpoint}outgoing/send' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'bridge=91806828XXXX' \
+    -d 'to=918867135XXXX' \
+    -d 'ivr_id=23' \
+    -d 'name=obd_api_call'
 ```
 
-- Here `audio` parameter requires location of audio file and must start with either `http` or `https`
+- Here `ivr_id`  `23` is the ivr flow id created in Engage > Studio Section
+
+## Example Request Using Custom Audio File Location
+
+```
+curl -X POST '{endpoint}outgoing/send' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'bridge=91806828XXXX' \
+    -d 'to=918867135XXXX' \
+    -d 'audio==http://youraudiofilelocation.mp3' \
+    -d 'name=obd_api_call'
+```
+
+- Here `audio`  parameter accepts publicly accessable audio file location and must start with either `http` or `https`.
+
 
 #### Example Response
 
