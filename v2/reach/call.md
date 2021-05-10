@@ -6,7 +6,7 @@
 {domain}/api/{version}/
 ```
 
-#### POST Request URL
+#### POST
 
 ```
 {endpoint}outgoing/send
@@ -23,11 +23,11 @@
 
 #### OPTIONAL PARAMETERS
 
-| Name     | Descriptions                                                                  |
-| -------- | ----------------------------------------------------------------------------- |
-| name     | name of the campaign                                                          |
-| interval | Retry interval time Expected Values : 5, 15, 30, 45, 60 (Minutes) : Default 0 |
-| webhook_id| Id of the webhook created in webhook section [View Webhooks Page](/webhooks) |
+| Name       | Descriptions                                                                  |
+| ---------- | ----------------------------------------------------------------------------- |
+| name       | name of the campaign                                                          |
+| interval   | Retry interval time Expected Values : 5, 15, 30, 45, 60 (Minutes) : Default 0 |
+| webhook_id | Id of the webhook created in webhook section [View Webhooks Page](/webhooks)  |
 
 ## Example Request Using Audio File ID
 
@@ -44,7 +44,6 @@ curl -X POST '{endpoint}outgoing/send' \
 
 - Here `39888925-718e-43bb-a8b1-d4a3XXXXX` is the sound file id uploaded in Reach > Sounds Section.
 
-
 ## Example Request Using IVR Flow ID
 
 ```
@@ -58,7 +57,7 @@ curl -X POST '{endpoint}outgoing/send' \
     -d 'name=obd_api_call'
 ```
 
-- Here `ivr_id`  `23` is the ivr flow id created in Engage > Studio Section
+- Here `ivr_id` `23` is the ivr flow id created in Engage > Studio Section
 
 ## Example Request Using Custom Audio File Location
 
@@ -73,8 +72,7 @@ curl -X POST '{endpoint}outgoing/send' \
     -d 'name=obd_api_call'
 ```
 
-- Here `audio`  parameter accepts publicly accessable audio file location and must start with either `http` or `https`.
-
+- Here `audio` parameter accepts publicly accessable audio file location and must start with either `http` or `https`.
 
 #### Example Response
 
