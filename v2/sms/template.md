@@ -25,7 +25,7 @@ Now you can send message using template id of the predefined template created in
 
 Example template as follows:
 
-Dear {{1}}, Thanks for registering with us. Your details as follows {{2}}, {{3}}.
+Dear @{{1}}, Thanks for registering with us. Your details as follows @{{2}}, @{{3}}.
 
 While sending sms we need to pass the variables in the api url then content will be replaced automatically in the template as below.
 

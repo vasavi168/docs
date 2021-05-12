@@ -112,11 +112,11 @@ Template message is the way of sending dynamic content using variables.
 ```
 Example of the template looks as follows :
 
-Otp For verifying your account is {{1}} code: {{2}}. Valid for {{3}} minutes.
+Otp For verifying your account is @{{1}} code: @{{2}}. Valid for @{{3}} minutes.
 
 ```
 
-Here {{1}}, {{2}}, {{3}} are replacement variables which is different for each message. Same needs to be for `params` or `body_params` parameters.
+Here @{{1}}, @{{2}}, @{{3}} are replacement variables which is different for each message. Same needs to be for `params` or `body_params` parameters.
 
 ```
 {endpoint}whatsapp/message/send
@@ -488,9 +488,9 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name    | Description                                              | Limits    | Required |
-| ------- | -------------------------------------------------------- | --------- | -------- |
-| buttons | this block contains actions for suggestions of the message| N/A       | Yes       |
+| Name    | Description                                                | Limits | Required |
+| ------- | ---------------------------------------------------------- | ------ | -------- |
+| buttons | this block contains actions for suggestions of the message | N/A    | Yes      |
 
 #### Example Response
 

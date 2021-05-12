@@ -6,8 +6,8 @@ We generate some of the variables in flow process, those can used to pass the in
 
 Varibles consist of alphanumeric characters and underscores, should always start with a letter, and do not have any kind of leading sigil (that is, they look like var_name, not \$var_name).
 
-All variables should be enclosed between a set of double curly braces `{{}}` braces. ex: `{{to}}`
-You can access the Array of the variables with `.` dot notation. Example if you want to access the caller name information from caller object `{{caller.name}}`
+All variables should be enclosed between a set of double curly braces `@{{}}` braces. ex: `@{{to}}`
+You can access the Array of the variables with `.` dot notation. Example if you want to access the caller name information from caller object `@{{caller.name}}`
 
 ### Freshdesk FLOW VARIABLES
 

@@ -21,9 +21,9 @@ Step 2 : Configuring audio
      Add a play a widget, configure the message you want to play as follows
 
 
-     Example: Dear {{name}} , your emailid is {{emailid}} and address is  {{address}}. If it is correct then press 1 to continue...
+     Example: Dear @{{name}} , your emailid is @{{emailid}} and address is  @{{address}}. If it is correct then press 1 to continue...
 
-     Here {{name}} must match with column name in the uploaded file.
+     Here @{{name}} must match with column name in the uploaded file.
 
 Step 3 : Call Initiation
 
