@@ -2,10 +2,16 @@
 
 Access the perticular Link Visits
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### GET
 
 ```
-{domain}/rest/v1/link/visits/{id}
+{endpoint}link/visits/{id}
 ```
 
 #### PARAMETERS
@@ -18,10 +24,9 @@ Access the perticular Link Visits
 
 ```
 curl -X GET \
-  '{domain}/rest/v1/link/visits/20?access_token=38e896f55670311982434exxx' \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -H 'cache-control: no-cache'
+  '{endpoint}link/visits/4' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
 
 Kindly replace the token with your respective access_token and other params.

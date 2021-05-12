@@ -2,10 +2,16 @@
 
 View all smart links created under your account
 
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
 #### GET
 
 ```
-{domain}/rest/v1/link
+{endpoint}link
 ```
 
 #### PARAMETERS
@@ -14,10 +20,9 @@ View all smart links created under your account
 
 ```
 curl -X GET \
-  '{domain}/rest/v1/link?access_token=38e896f55670311982434xxxx' \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -H 'cache-control: no-cache'
+  '{endpoint}link' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
 
 Kindly replace the token with your respective access_token and other params.
