@@ -16,9 +16,9 @@ Verify HLR of mubile numbers using post method under your account
 
 #### PARAMETERS
 
-| Name   | optional | Descriptions                                                                    |
-| ------ | -------- | ------------------------------------------------------------------------------- |
-| number | No       | Enter the mobile number with country code (multile numbers are seperated by , ) |
+| Name | optional | Descriptions                              |
+| ---- | -------- | ----------------------------------------- |
+| to   | No       | Enter the mobile number with country code |
 
 #### Example Request
 
@@ -27,7 +27,7 @@ Verify HLR of mubile numbers using post method under your account
 curl -X POST \
   {endpoint}lookup/verify \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxxx' \
-  -F number=9194928xxxxx \
+  -F to=9194928xxxxx \
 ```
 
 #### Example Response
@@ -36,7 +36,7 @@ curl -X POST \
 {
   "status": 200,
   "message": "Verified Successfully",
-  "results": [
+  "data": [
     {
       "phone": "919492xxxxx",
       "mcc_mnc": "40xxx",

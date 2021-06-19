@@ -1,4 +1,4 @@
-# Whatsapp For Business API
+# Unified API
 
 ## Channel Info
 
@@ -44,7 +44,7 @@
 | Name      | Description                                                 | type                | Required                       |
 | --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
 | channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. Ex: `whatsapp`                   | `string`            | Yes                            |
+| name      | Name of Messaging Channel. `whatsapp|rcs|ip_message`        | `string`            | Yes                            |
 | from      | Sender or From Number                                       | `number`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
@@ -600,3 +600,83 @@ curl -X POST \
 | latitude  | Latitude of the location coordinates  | N/A    | No       |
 | name      | Address name                          | N/A    | No       |
 | address   | Textual representation of location    | N/A    | No       |
+
+## Send Carousel Message
+
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
+We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}messenger/message/send
+```
+
+#### Example Request With Carousel Messgae
+
+```
+curl -X POST \
+  '{endpoint}messenger/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "whatsapp",
+		"from": "919019120120"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+    "message" : {
+        "payload" : {
+            --Coming Soon ----
+        }
+    }
+}'
+```
+
+## Send Card Message
+
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
+We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}messenger/message/send
+```
+
+#### Example Request With Card Messgae
+
+```
+curl -X POST \
+  '{endpoint}messenger/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "whatsapp",
+		"from": "919019120120"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+    "message" : {
+        "payload" : {
+            --Coming Soon ----
+        }
+    }
+}'
+```
+
+#### PARAMETERS
+
+| Name | Description | Limits | Required |
+| ---- | ----------- | ------ | -------- |
+
