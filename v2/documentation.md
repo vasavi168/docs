@@ -62,12 +62,14 @@
   - [Introduction](/docs/{version}/whatsapp)
   - [Send a message](/docs/{version}/whatsapp/send-message)
   - [Status Info](/docs/{version}/whatsapp/status)
+  - [Webhook](/docs/{version}/whatsapp/webhooks)
 
 * MIP
 
   - [Introduction](/docs/{version}/mip)
   - [Send a message](/docs/{version}/mip/send-message)
   - [Status Info](/docs/{version}/mip/status)
+  - [Webhook](/docs/{version}/whatsapp/webhooks)
 
 * Link
 

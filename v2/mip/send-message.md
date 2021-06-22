@@ -33,7 +33,8 @@
       "to": "9190199xxxxx",
       "credits": 1,
       "created_at": "2021-06-18T14:48:06.886358Z",
-      "status": "queued"
+      "status": "queued",
+      "foreign_id": "your-message-id"
     }
   ]
 }
