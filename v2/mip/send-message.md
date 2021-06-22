@@ -28,7 +28,7 @@
   "data": [
     {
       "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-      "channel": "whatsapp",
+      "channel": "mip",
       "from": "919019120120",
       "to": "9190199xxxxx",
       "credits": 1,
@@ -100,26 +100,6 @@ curl -X POST \
 | to      | Destination mobile number with country code | NA                  | Yes      |
 | text    | Message Content you want to send            | Max 4096 Characters | Yes      |
 
-#### Example Response
-
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully",
-  "data": [
-    {
-      "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-      "channel": "mip",
-      "from": "919019120120",
-      "to": "9190199xxxxx",
-      "credits": 1,
-      "created_at": "2021-06-18T14:48:06.886358Z",
-      "status": "SENT"
-    }
-  ]
-}
-```
-
 ## Sending Template Message
 
 #### API Endpoint
@@ -127,17 +107,6 @@ curl -X POST \
 ```
 {domain}/api/{version}/
 ```
-
-Template message is the way of sending dynamic content using variables.
-
-```
-Example of the template looks as follows :
-
-Otp For verifying your account is @{{1}} code: @{{2}}. Valid for @{{3}} minutes.
-
-```
-
-Here @{{1}}, @{{2}}, @{{3}} are replacement variables which is different for each message. Same needs to be for `params` or `body_params` parameters.
 
 ```
 {endpoint}mip/message/send
