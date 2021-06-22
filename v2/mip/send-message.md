@@ -1,11 +1,11 @@
-# Whatsapp For Business API
+# MOBtexting Ip (mip) Messaging Service
 
 ## Channel Info
 
 ```
 {
 	"channels": [{
-		"name": "whatsapp",
+		"name": "mip",
 		"from": "919019120120",
 		"recipient": {
 			"group_id": "{segment_id}",
@@ -44,7 +44,7 @@
 | Name      | Description                                                 | type                | Required                       |
 | --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
 | channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. Ex: `whatsapp`                   | `string`            | Yes                            |
+| name      | Name of Messaging Channel. `whatsapp|rcs|ip_message`        | `string`            | Yes                            |
 | from      | Sender or From Number                                       | `number`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
@@ -65,19 +65,19 @@ It will support only `POST` requests.
 ## Sending Text Message
 
 ```
-{endpoint}whatsapp/message/send
+{endpoint}mip/message/send
 ```
 
-#### Example Request With Text Message
+#### Example Request With Text Messgae
 
 ```
 curl -X POST \
-  '{endpoint}whatsapp/message/send' \
+  '{endpoint}mip/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
-		"name": "whatsapp",
+		"name": "mip",
 		"from": "919019120120"
 	}],
 	"recipient": {
@@ -86,7 +86,7 @@ curl -X POST \
 	"message": {
         "type": "text",
 		"payload": {
-			"text": "This is a simple text message from whatsapp channel"
+			"text": "This is a simple text message from mip channel"
 		}
 	}
 }'
@@ -109,7 +109,7 @@ curl -X POST \
   "data": [
     {
       "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-      "channel": "whatsapp",
+      "channel": "mip",
       "from": "919019120120",
       "to": "9190199xxxxx",
       "credits": 1,
@@ -140,19 +140,19 @@ Otp For verifying your account is @{{1}} code: @{{2}}. Valid for @{{3}} minutes.
 Here @{{1}}, @{{2}}, @{{3}} are replacement variables which is different for each message. Same needs to be for `params` or `body_params` parameters.
 
 ```
-{endpoint}whatsapp/message/send
+{endpoint}mip/message/send
 ```
 
 #### Example Request With Template
 
 ```
 curl -X POST \
-  '{endpoint}whatsapp/message/send' \
+  '{endpoint}mip/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
-		"name": "whatsapp",
+		"name": "mip",
 		"from": "919019120120"
 	}],
 	"recipient": {
@@ -185,151 +185,7 @@ curl -X POST \
 | body_params   | Up to 1024 characters for all parameters and predefined template text.                                                                                                                              | Up to 1024 characters for all parameters and predefined template text      | No       |
 | ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                       | No       |
 
-## Send Image Message
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-We can send Images as attachment using below API. The maximum image size is limited to 64 MB.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### Example Request With Image Message
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120120"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "image",
-		"payload": {
-			"url": "https://domin-name.com/your_image_path.png",
-			"caption": "some caption for image",
-            "filename": ""
-		}
-	}
-}'
-```
-
-#### PARAMETERS
-
-| Name     | Description                                           | Limits | Required |
-| -------- | ----------------------------------------------------- | ------ | -------- |
-| url      | Public url of the image file. Either HTTP/HTTPS link. | 64 MB  | Yes      |
-| caption  | some text for image caption                           | N/A    | No       |
-| filename | Media file name                                       | N/A    | No       |
-
-## Send Document Message
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-We can send Document which is having valid MIME-type as attachment using below API. The maximum document size is limited to 64 MB. So anything not image, audio or video will be transmitted as document message.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### Example Request With Document Message
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120120"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "document",
-		"payload": {
-			"url": "https://domin-name.com/docs/uploads/voice.pdf",
-			"caption": "some caption for document",
-			"filename": ""
-		}
-	}
-}'
-```
-
-#### PARAMETERS
-
-| Name     | Description                                                 | Limits             | Required |
-| -------- | ----------------------------------------------------------- | ------------------ | -------- |
-| url      | Public url of the document file. Either HTTP or HTTPS link. | Max File size 64MB | Yes      |
-| caption  | some text for document caption                              | N/A                | No       |
-| filename | Media file name                                             | N/A                | No       |
-
-## Send Audio Message
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-We can send Audio clips as attachment using below API. The maximum audio file size is limited to max 64 MB.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### Example Request With Audio Message
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120120"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "audio",
-		"payload": {
-			"url": "https://domin-name.com/docs/uploads/voice.pdf",
-			"caption": "some caption for document",
-			"filename": ""
-		}
-	}
-}'
-```
-
-#### PARAMETERS
-
-| Name     | Description                                              | Limits    | Required |
-| -------- | -------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the audio file. Either HTTP or HTTPS link. | Upto 64MB | Yes      |
-| caption  | some text for audio caption                              | N/A       | No       |
-| filename | Media file name                                          | N/A       | No       |
-
-## Send Video Message
+## Send Interactive Message
 
 #### API Endpoint
 
@@ -340,67 +196,19 @@ curl -X POST \
 We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}whatsapp/message/send
+{endpoint}mip/message/send
 ```
 
-#### Example Request With Video Message
+#### Example Request With Interactive Choice Messgae
 
 ```
 curl -X POST \
-  '{endpoint}whatsapp/message/send' \
+  '{endpoint}mip/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120120"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "video",
-		"payload": {
-			"url": "https://domin-name.com/docs/uploads/voice.pdf",
-			"caption": "some caption for document",
-			"filename": ""
-		}
-	}
-}'
-```
-
-#### PARAMETERS
-
-| Name     | Description                                              | Limits    | Required |
-| -------- | -------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the audio file. Either HTTP or HTTPS link. | Upto 64MB | Yes      |
-| caption  | some text for audio caption                              | N/A       | No       |
-| filename | Media file name                                          | N/A       | No       |
-
-## Send Message With Interactive Suggestions
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### Example Request With Interactive Choice Message
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
+		"name": "mip",
 		"from": "919019120120"
 	}],
 	"recipient": {
@@ -409,6 +217,7 @@ curl -X POST \
 	"message": {
 		"type": "interactive",
 		"payload": {
+            "category" : "",
 			"header": {
 				"type": "text",
 				"payload": {
@@ -427,11 +236,54 @@ curl -X POST \
 					"text": "header text"
 				}
 			},
-			"choices": [
+			"choices": [{
+					"type": "url",
+					"payload": {
+						"url": "https://example.com",
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "text",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
 				{
 					"type": "reply",
 					"payload": {
 						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "call",
+					"payload": {
+						"title": "Click Here",
+						"phone_number": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "copy",
+					"payload": {
+						"title": "Click Here to copy",
+						"content": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "calendar",
+					"payload": {
+						"title": "Add to Calendar",
+						"event": {
+                            "date": "2020-01-31",
+                            "time": "23:30",
+                            "title": "Title of the event",
+                            "description": "Description of the event"
+                        },
 						"id": "unique-id"
 					}
 				},
@@ -458,7 +310,7 @@ curl -X POST \
 | ------- | ---------------------------------------------------------- | ------ | -------- |
 | choices | this block contains actions for suggestions of the message | N/A    | Yes      |
 
-## Send Vcard / Contacts Message
+## Send Card Message
 
 #### API Endpoint
 
@@ -466,115 +318,111 @@ curl -X POST \
 {domain}/api/{version}/
 ```
 
-We can send location using below API. The maximum audio file size is limited to 64 MB.
+We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}whatsapp/message/send
+{endpoint}mip/message/send
 ```
 
-#### Example Request With Vcard Message
+#### Example Request With Card Messgae
 
 ```
 curl -X POST \
-  '{endpoint}whatsapp/message/send' \
+  '{endpoint}mip/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
-		"name": "whatsapp",
+		"name": "mip",
 		"from": "919019120120"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
 	},
 	"message": {
-		"type": "contacts",
-		"payload": [{
-			"addresses": [{
-				"city": "Bangalore",
-				"country": "India",
-				"country_code": "in",
-				"state": "KA",
-				"type": "Office",
-				"zip": "560078"
-			}],
-			"birthday": "1993-08-18",
-			"emails": [{
-				"email": "hello@domin-name.com",
-				"type": "WORK"
-			}],
-			"name": {
-				"first_name": "Laxman",
-				"formatted_name": "Laxman Ka",
-				"last_name": "Ka"
+        "type": "card",
+		"payload": {
+			"title": "This is the card title",
+			"description": "This is the card description",
+			"body": {
+                "type": "image",
+                "payload": {
+                    "url": "https://domin-name.com/your_image_path.png",
+                    "caption": "some caption for image",
+                    "filename": ""
+                }
 			},
-			"phones": [{
-				"phone": "919019120120",
-				"type": "HOME"
-			}],
-			"urls": [{
-				"url": "https://www.domin-name.com",
-				"type": "WORK"
-			}]
-		}]
+            "choices": [
+                {
+					"type": "url",
+					"payload": {
+						"url": "https://example.com",
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "text",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "reply",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "call",
+					"payload": {
+						"title": "Click Here",
+						"phone_number": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "copy",
+					"payload": {
+						"title": "Click Here to copy",
+						"content": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "calendar",
+					"payload": {
+						"title": "Add to Calendar",
+						"event": {
+                            "date": "2020-01-31",
+                            "time": "23:30",
+                            "title": "Title of the event",
+                            "description": "Description of the event"
+                        },
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "section",
+					"payload": {
+						"title": "Click Here",
+						"rows": [{
+							"id": "unique-row-identifier-here",
+							"title": "row-title-content-here",
+							"description": "row-description-content-here"
+						}]
+					}
+				}
+			]
+		}
 	}
 }'
 ```
 
 #### PARAMETERS
 
-| Name    | Description                    | Limits | Required |
-| ------- | ------------------------------ | ------ | -------- |
-| phone   | Mobile numbers saved in mobile | N/A    | Yes      |
-| name    | Person name                    | N/A    | No       |
-| address | Address details of the contact | N/A    | No       |
+| Name | Description | Limits | Required |
+| ---- | ----------- | ------ | -------- |
 
-## Send Location Message
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-We can send location using below API. The maximum audio file size is limited to 64 MB.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### Example Request With Location Message
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120120"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-    "message" : {
-        "type": "location",
-        "payload" : {
-            "longitude": 12.912985,
-            "latitude": 77.599505,
-            "name": "MOBtexting Pvt Ltd",
-            "address": "JP Nagar, Mini forest"
-        }
-    }
-}'
-```
-
-#### PARAMETERS
-
-| Name      | Description                           | Limits | Required |
-| --------- | ------------------------------------- | ------ | -------- |
-| longitude | Longitude of the location coordinates | N/A    | Yes      |
-| latitude  | Latitude of the location coordinates  | N/A    | No       |
-| name      | Address name                          | N/A    | No       |
-| address   | Textual representation of location    | N/A    | No       |

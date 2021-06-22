@@ -63,13 +63,19 @@
   - [Send a message](/docs/{version}/whatsapp/send-message)
   - [Status Info](/docs/{version}/whatsapp/status)
 
-- Link
+* MIP
+
+  - [Introduction](/docs/{version}/mip)
+  - [Send a message](/docs/{version}/mip/send-message)
+  - [Status Info](/docs/{version}/mip/status)
+
+* Link
 
   - [View Links](/docs/{version}/link)
   - [Create Link](/docs/{version}/link/create)
   - [View Visits](/docs/{version}/link/visits)
   - [Webhook](/docs/{version}/link/webhook)
 
-- Number Lookup
+* Number Lookup
 
   - [Verify](/docs/{version}/lookup/verify)

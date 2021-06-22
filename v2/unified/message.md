@@ -361,9 +361,10 @@ curl -X POST \
 	"message": {
 		"type": "video",
 		"payload": {
-			"url": "https://domin-name.com/docs/uploads/voice.pdf",
-			"caption": "some caption for document",
-			"filename": ""
+			"url": "https://domin-name.com/docs/uploads/voice.mp4",
+			"caption": "some caption for video",
+			"filename": "myvideo",
+            "cover": "https://domin-name.com/docs/uploads/cover.png"
 		}
 	}
 }'
@@ -409,6 +410,7 @@ curl -X POST \
 	"message": {
 		"type": "interactive",
 		"payload": {
+            "category" : "",
 			"header": {
 				"type": "text",
 				"payload": {
@@ -438,22 +440,43 @@ curl -X POST \
 				{
 					"type": "text",
 					"payload": {
-						"text": "Click Here",
+						"title": "Click Here",
 						"id": "unique-id"
 					}
 				},
 				{
 					"type": "reply",
 					"payload": {
-						"text": "Click Here",
+						"title": "Click Here",
 						"id": "unique-id"
 					}
 				},
 				{
 					"type": "call",
 					"payload": {
-						"text": "Click Here",
+						"title": "Click Here",
 						"phone_number": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "copy",
+					"payload": {
+						"title": "Click Here to copy",
+						"content": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "calendar",
+					"payload": {
+						"title": "Add to Calendar",
+						"event": {
+                            "date": "2020-01-31",
+                            "time": "23:30",
+                            "title": "Title of the event",
+                            "description": "Description of the event"
+                        },
 						"id": "unique-id"
 					}
 				},
@@ -667,11 +690,85 @@ curl -X POST \
 	"recipient": {
 		"to": "91XXXXXX"
 	},
-    "message" : {
-        "payload" : {
-            --Coming Soon ----
-        }
-    }
+	"message": {
+        "type": "card",
+		"payload": {
+			"title": "This is the card title",
+			"description": "This is the card description",
+			"body": {
+                "type": "image",
+                "payload": {
+                    "url": "https://domin-name.com/your_image_path.png",
+                    "caption": "some caption for image",
+                    "filename": ""
+                }
+			},
+            "choices": [
+                {
+					"type": "url",
+					"payload": {
+						"url": "https://example.com",
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "text",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "reply",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "call",
+					"payload": {
+						"title": "Click Here",
+						"phone_number": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "copy",
+					"payload": {
+						"title": "Click Here to copy",
+						"content": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "calendar",
+					"payload": {
+						"title": "Add to Calendar",
+						"event": {
+                            "date": "2020-01-31",
+                            "time": "23:30",
+                            "title": "Title of the event",
+                            "description": "Description of the event"
+                        },
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "section",
+					"payload": {
+						"title": "Click Here",
+						"rows": [{
+							"id": "unique-row-identifier-here",
+							"title": "row-title-content-here",
+							"description": "row-description-content-here"
+						}]
+					}
+				}
+			]
+		}
+	}
 }'
 ```
 
