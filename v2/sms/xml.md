@@ -36,7 +36,6 @@ You can send sms using `POST` method content in body.
    <nodes>
       <node>
          <custom>9190199556xx</custom>
-         <custom1>9190199556xx</custom1>
          <message><![CDATA[this message will be used insted of root]]></message>
          <sender>SANKAR</sender>
          <to>919019955622</to>
@@ -62,17 +61,16 @@ You can send sms using `POST` method content in body.
 
 #### OPTIONAL PARAMETERS
 
-| Name        | Descriptions                                                                                                                                         |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| webhook_id     | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |
-| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                   |
-| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                        |
-| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                               |
-| custom      | Any customised parameters can be passed using this parameter                                                                                         |
-| custom1     | Any customised parameter                                                                                                                             |
-| port        | Port number to which SMS has to be sent                                                                                                              |
-| entity_id   | Entityid registered in DLT portal                                                                                                                    |
-| template_id | TemplateId registered in DLT portal                                                                                                                  |
+| Name        | Descriptions                                                                                                                                                            |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| webhook_id  | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |
+| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                      |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                           |
+| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
+| custom      | Any customised parameters can be passed using this parameter                                                                                                            |
+| port        | Port number to which SMS has to be sent                                                                                                                                 |
+| entity_id   | Entityid registered in DLT portal                                                                                                                                       |
+| template_id | TemplateId registered in DLT portal                                                                                                                                     |
 
 #### Example Request
 
@@ -103,7 +101,6 @@ curl -X POST \
          <sender>SANKAR</sender>
          <to>9190199556xx</to>
          <custom>9190199556xx</custom>
-         <custom1>9190199556xx</custom1>
       </node>
       <node>
          <custom>34</custom>
@@ -130,7 +127,6 @@ curl -X POST \
       "length": 7,
       "charges": 1,
       "customid": "346576-446565-45657-XFTR",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2018-07-09 16:27:35"
     },
@@ -142,7 +138,6 @@ curl -X POST \
       "length": 7,
       "charges": 1,
       "customid": "34",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2018-07-09 16:27:35"
     }
