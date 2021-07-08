@@ -61,13 +61,12 @@ All params in send sms will support in JSON also.
 
 | Name        | Descriptions                                                                                                                                                            |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name        | Name of the campaign (`group_id` will be returned in response)                                                                                                            |
+| name        | Name of the campaign (`group_id` will be returned in response)                                                                                                          |
 | webhook_id  | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |
 | time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                      |
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                           |
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
 | custom      | Any customised parameters can be passed using this parameter                                                                                                            |
-| custom1     | Any customised parameter                                                                                                                                                |
 | port        | Port number to which SMS has to be sent                                                                                                                                 |
 | entity_id   | Principal Entityid registered in DLT portal                                                                                                                             |
 | template_id | TemplateId registered in DLT portal                                                                                                                                     |
@@ -121,7 +120,6 @@ curl --request POST \
       "length": 7,
       "charges": 1,
       "customid": "346576-446565-45657-XFTR",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2018-07-09 16:27:35"
     },
@@ -133,7 +131,6 @@ curl --request POST \
       "length": 7,
       "charges": 1,
       "customid": "34",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2018-07-09 16:27:35"
     }
@@ -196,7 +193,6 @@ curl --request POST \
       "length": 7,
       "charges": 1,
       "customid": "346576-446565-45657-XFTR",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2018-07-09 16:27:35"
     },
@@ -208,7 +204,6 @@ curl --request POST \
       "length": 7,
       "charges": 1,
       "customid": "34",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2018-07-09 16:27:35"
     }

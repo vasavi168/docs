@@ -64,3 +64,4 @@ node_modules
 # ignore backup 
 backup
 ENV
+.DS_Store

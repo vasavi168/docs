@@ -59,8 +59,8 @@ Before you start sending transactional SMS through this API, please test whether
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                           |
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
 | custom      | Your own unique_id parameters                                                                                                                                           |
-| custom1     | Any customised parameter                                                                                                                                                |
-| port        | Port number to which SMS has to be delivered                                                                                                                            |
+
+| port | Port number to which SMS has to be delivered |
 
 #### Example Request
 
@@ -90,7 +90,6 @@ curl -X POST '{endpoint}sms/send' \
       "length": 7,
       "charges": 1,
       "customid": "",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2018-07-09 16:27:35"
     }

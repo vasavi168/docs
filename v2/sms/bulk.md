@@ -54,7 +54,6 @@ You can send sms using `POST` method only as uploading file will supporting in
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                          |
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                 |
 | custom      | Any customised parameters can be passed using this parameter                                                                                                           |
-| custom1     | Any customised parameter                                                                                                                                               |
 | port        | Port number to which SMS has to be sent                                                                                                                                |
 | column      | Mobile number column name same as in customize sms                                                                                                                     |
 | entity_id   | Principal Entityid registered in DLT portal                                                                                                                            |

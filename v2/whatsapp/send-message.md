@@ -132,7 +132,7 @@ curl -X POST \
         "type": "template",
 		"payload": {
 			"name": "otp",
-            "namespace: "",
+            "namespace": "",
 			"language": "en",
 			"header_params": ["Replacement Text"],
 			"body_params": ["223344", "10"],

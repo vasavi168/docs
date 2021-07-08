@@ -26,8 +26,6 @@ Then you will get `id` for the webhook you created.
       "submit_time": "2021-04-09 16:27:39",
       "cid": "1234444XXXX",
       "custom": "9882XXXX",
-      "custom1": "campaign-3344",
-      "custom2": "new-campXXX",
       "location": "India",
       "region" : "Bangalore",
       "provider": "Jio",
@@ -60,8 +58,6 @@ We try 3 times with interval of 30 minutes for failed requests. Continues failur
 | submit_time   | Sent to operator time in unixtimestamp                  |
 | cid           | Your custom id                                          |
 | custom        | Your custom id                                          |
-| custom1       | Your custom id one                                      |
-| custom2       | Your custom id two                                      |
 | location      | Mobile number country name. ex: `india`                 |
 | region        | Mobile number region name. ex: `karnataka`              |
 | provider      | Operator name. ex: `jio`                                |

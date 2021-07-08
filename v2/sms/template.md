@@ -83,7 +83,6 @@ All params in send sms will support in JSON also.
 | type       | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                           |
 | flash      | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
 | custom     | Any customised parameters can be passed using this parameter                                                                                                            |
-| custom1    | Any customised parameter                                                                                                                                                |
 | port       | Port number to which SMS has to be sent                                                                                                                                 |
 
 #### Example Request
@@ -117,7 +116,6 @@ All params in send sms will support in JSON also.
       "length": 152,
       "charges": "1.0000",
       "customid": "",
-      "customid1": "",
       "iso_code": null,
       "submitted_at": "2020-09-24 15:42:56"
     },
@@ -129,7 +127,6 @@ All params in send sms will support in JSON also.
       "length": 152,
       "charges": "1.0000",
       "customid": null,
-      "customid1": null,
       "iso_code": null,
       "submitted_at": "2020-09-24 15:42:56"
     }
