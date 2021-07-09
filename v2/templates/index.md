@@ -18,13 +18,13 @@ View all templates created under your account
 
 | name           | Optional | value                 |
 | -------------- | -------- | --------------------- |
-| filter[t.name] | Yes      | Name of the template. |
+| filter[name] | Yes      | Name of the template. |
 
 #### Example Request
 
 ```
 curl -X GET \
-  '{endpoint}sms/templates?filter[t.name]=test' \
+  '{endpoint}sms/templates?filter[name]=test' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
