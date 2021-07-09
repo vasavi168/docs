@@ -21,6 +21,7 @@
   - [Send SMS Using JSON](/docs/{version}/sms/json)
   - [Send SMS Using Template](/docs/{version}/sms/template)
   - [Bulk SMS Using File](/docs/{version}/sms/bulk)
+  - [Unified SMS Api](/docs/{version}/unified/sms)
   - [Push DLR/Webhook](/docs/{version}/sms/push-dlr)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
   - [Optout](/docs/{version}/optout)
