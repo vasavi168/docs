@@ -10,8 +10,15 @@
 		"recipient": {
 			"group_id": "{segment_id}",
 			"to": ["9189195xxxx", "91886713xxxx"]
+		},
+		"meta": {
+			"service": "T",
+			"template_id": "1234XXXXXXX",
+			"entity_id":"89XXXXXXXXXXX",
+			"foreign_id":"your-custom-id",
+			"type":"U"
 		}
-	}]
+	}],
 	"recipient": {
 		"group_id": "{segment_id}",
 		"to": ["91XXXXXX", "91XXXXXX"]
@@ -45,7 +52,14 @@
 | --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
 | channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
 | name      | Name of Messaging Channel. Ex: `sms`                   | `string`            | Yes                            |
-| from      | Sender or From Number                                       | `number`            | Yes                            |
+| from      | Sender or From Number                                       | `number`            | Yes  
+| meta      | This block contains additional information related to messaging channel                          | N/A | Yes
+| service   | Sms Service like Transactional, promotional, global. Ex: T, P, G or S  | `string` | Yes
+| template_id   | DLT registered template id.  | `int` | Yes
+| entity_id   | DLT registered entity id.  | `int` | Yes
+| foreign_id   | Custom id for reference from customer.  | N/A | No
+| type   | The SMS to be sent is Unicode, Normal or Auto detect. (value “U”, “N” or “A”)
+  | `string` | No
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
 | to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |
