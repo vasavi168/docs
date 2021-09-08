@@ -1,8 +1,8 @@
 ## Webhooks
 
-Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the MIP API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message.
+Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the RCS API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message.
 
-> It is important that your Webhook returns an HTTPS 2xx OK response to notifications. Otherwise the MIP API client considers that notification as failed and tries again after a delay.
+> It is important that your Webhook returns an HTTPS 2xx OK response to notifications. Otherwise the RCS API client considers that notification as failed and tries again after a delay.
 
 ## Retrying failed webhooks
 
@@ -24,11 +24,11 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "mip:message:status",
+  "event": "rcs:message:status",
   "payload": {
     "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-    "channel": "mip",
-    "from": "919019120120",
+    "channel": "rcs",
+    "from": "700969ca-0cb2-11ec-a2cxxxx",
     "to": "9190199xxxxx",
     "status": "sent|delivered|read|failed|deleted",
     "delivered_at": "2021-06-18T14:48:06.886358Z",

@@ -1,92 +1,61 @@
-# RCS Messaging Api
+# MOBtexting RCS Messaging Service
 
 ## Channel Info
 
 ```
 {
-    "channels": {
-        "channel" : {
-            "name": "rcs"
-        },
-        "recipient": {
-            "group_id": "{segment_id}",  // String or array
-            "to": ["91XXXXXX", "91XXXXXX"]
-        }
+	"channels": [{
+		"name": "rcs",
+		"from": "700969ca-0cb2-11ec-a2cxxxx", //Agent ID
+		"recipient": {
+			"group_id": "{segment_id}",
+			"to": ["9189195xxxx", "91886713xxxx"]
+		}
+	}]
+	"recipient": {
+		"group_id": "{segment_id}",
+		"to": ["91XXXXXX", "91XXXXXX"]
+	}
+}
+```
 
-     }
+#### Example Response
+
+```json
+{
+  "status": "OK",
+  "message": "Message Queued successfully",
+  "data": [
+    {
+      "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
+      "channel": "rcs",
+      "from": "700969ca-0cb2-11ec-a2cxxxx",
+      "to": "9190199xxxxx",
+      "credits": 1,
+      "created_at": "2021-06-18T14:48:06.886358Z",
+      "status": "queued",
+      "foreign_id": "your-message-id"
+    }
+  ]
 }
 ```
 
 #### PARAMETERS
 
-| Name      | Description                                                 | type     | Required |
-| --------- | ----------------------------------------------------------- | -------- | -------- |
-| channel   | This block contains information realted messaging channel   | N/A      | Yes      |
-| name      | Name of Messaging Channel. Ex: `rcs`                        | `string` | Yes      |
-| recipient | This block contains contacts information related to channel | N/A      | Yes      |
-| to        | Receiver mobile numbers : `text`                            | `array`  | Yes      |
+| Name      | Description                                                 | type                | Required                       |
+| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
+| channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
+| name      | Name of Messaging Channel. `whatsapp|rcs|ip_message`        | `string`            | Yes                            |
+| from      | RCS Agent Reference ID                           | `string`            | Yes                            |
+| recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
+| group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
+| to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |
 
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-## Capabilities Check
-
-```
-{endpoint}rcs/capabilities
-```
+`Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
 #### HTTP Methods
 
-It will support only `POST` Method
-
-#### MANDATORY PARAMETERS
-
-| Name | Descriptions                                           |
-| ---- | ------------------------------------------------------ |
-| to   | Mobile number of the user you want to send rcs message |
-| id   | Request Id                                             |
-
-#### Example Request
-
-```
-curl -X POST '{endpoint}rcs/capabilities' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-    -d 'to=917026267xxx' \
-    -d 'id=123456-89992-XXXXX'
-``` 
-
-#### Example Response For Success
-
-```json
-{
-  "code": 200,
-  "status": "OK",
-  "data": {
-    "features": [
-      "RICHCARD_STANDALONE",
-      "ACTION_CREATE_CALENDAR_EVENT",
-      "ACTION_DIAL",
-      "ACTION_OPEN_URL",
-      "ACTION_SHARE_LOCATION",
-      "ACTION_VIEW_LOCATION",
-      "RICHCARD_CAROUSEL"
-    ]
-  }
-}
-```
-
-#### Example Response For Failure
-
-```json
-{
-  "status": "ERROR",
-  "message": "An error occured. pleae try again"
-}
-```
+It will support only `POST` requests.
 
 #### API Endpoint
 
@@ -100,58 +69,39 @@ curl -X POST '{endpoint}rcs/capabilities' \
 {endpoint}rcs/message/send
 ```
 
-#### MANDATORY PARAMETERS
-
-| Name | Descriptions                             |
-| ---- | ---------------------------------------- |
-| to   | Receiver mobile number with country code |
-| id   | Message Id for the request               |
-| text | Message text you want to send            |
-
-#### Example Request
+#### Example Request With Text Messgae
 
 ```
-curl --request POST \
-  --url {endpoint}rcs/message/send \
-  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'Content-Type: application/json' \
+curl -X POST \
+  '{endpoint}rcs/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
   -d '{
-    "channels": {
-        "channel" : {
-            "name": "rcs"
-        },
-        "recipient": {
-            "to": ["9189195XXXX"]
-        }
-    },
-    "payload" : {
-        "text_payload": {
-            "text": "Hello From Google RCS"
-        }
-        "id": '1234a-1223jnkf-xxxx'
-    }
-
+	"channels": [{
+		"name": "rcs",
+		"from": "700969ca-0cb2-11ec-a2cxxxx"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+        "type": "text",
+		"payload": {
+			"text": "This is a simple text message from rcs channel"
+		}
+	}
 }'
-
 ```
 
-#### Example Response For Success
+#### PARAMETERS
 
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully"
-}
-```
+| Name    | Description                                 | Limits              | Required |
+| ------- | ------------------------------------------- | ------------------- | -------- |
+| payload | Messaage Payload section                    | N/A                 | Yes      |
+| to      | Destination mobile number with country code | NA                  | Yes      |
+| text    | Message Content you want to send            | Max 4096 Characters | Yes      |
 
-#### Example Response For Failure
-
-```json
-{
-  "status": "ERROR",
-  "message": "An error occured. pleae try again"
-}
-```
+## Sending Template Message
 
 #### API Endpoint
 
@@ -159,58 +109,53 @@ curl --request POST \
 {domain}/api/{version}/
 ```
 
-## Sending Media Message
-
 ```
 {endpoint}rcs/message/send
 ```
 
-#### MANDATORY PARAMETERS
-
-| Name    | Descriptions                                  |
-| ------- | --------------------------------------------- |
-| to      | Receiver mobile number with country code      |
-| id      | Message Id for the request                    |
-| fileUrl | Remote url of the media file you want to send |
-
-#### Example Request
+#### Example Request With Template
 
 ```
-curl --request POST \
-  --url {endpoint}rcs/message/send \
-  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'Content-Type: application/json' \
+curl -X POST \
+  '{endpoint}rcs/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
   -d '{
-    "channels": {
-        "channel" : {
-            "name": "rcs"
-        },
-        "recipient": {
-            "to": ["9189195XXXX"]
-        }
-    },
-    "payload" : {
-        "media_payload": {
-            "url": "http://yourdomain.com/images/richcard.png",
-            "forceRefresh": "false"
-        },
-        "id": '1234a-1223jnkf-xxxx'
-    }
+	"channels": [{
+		"name": "rcs",
+		"from": "700969ca-0cb2-11ec-a2cxxxx"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+        "type": "template",
+		"payload": {
+			"name": "otp",
+            "namespace: "",
+			"language": "en",
+			"header_params": ["Replacement Text"],
+			"body_params": ["223344", "10"],
+            "components": {
 
+            }
+		}
+	}
 }'
-
 ```
 
-Note : `forceRefresh` to true forces RBM to fetch new content from the specified URL, even if the URL content is cached
+#### PARAMETERS
 
-#### Example Response
+| Name          | Description                                                                                                                                                                                         | Limits                                                                     | Required |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
+| name          | Template Name                                                                                                                                                                                       | N/A                                                                        | yes      |
+| namespace     | Namespace of the template                                                                                                                                                                           | N/A                                                                        | yes      |
+| language      | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                        | No       |
+| header_params | Can only used when there is a header of type text in the template. Up to 60 characters for all parameters and predefined template header text.                                                      | Up to 60 characters for all parameters and predefined template header text | No       |
+| body_params   | Up to 1024 characters for all parameters and predefined template text.                                                                                                                              | Up to 1024 characters for all parameters and predefined template text      | No       |
+| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                       | No       |
 
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully"
-}
-```
+## Send Interactive Message
 
 #### API Endpoint
 
@@ -218,318 +163,236 @@ Note : `forceRefresh` to true forces RBM to fetch new content from the specified
 {domain}/api/{version}/
 ```
 
-## Sending Message With Suggestions
+We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
 
 ```
 {endpoint}rcs/message/send
 ```
 
-#### MANDATORY PARAMETERS
-
-| Name | Descriptions                                  |
-| ---- | --------------------------------------------- |
-| to   | Receiver mobile number with country code      |
-| id   | Message Id for the request                    |
-| url  | Remote url of the media file you want to send |
-
-#### Example Request
+#### Example Request With Interactive Choice Messgae
 
 ```
-curl --request POST \
-  --url {endpoint}rcs/message/send \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-  -H 'Content-Type: application/json' \
+curl -X POST \
+  '{endpoint}rcs/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
   -d '{
-    "channels": {
-        "channel" : {
-            "name": "rcs",
-            "from": "9190191XXXXX",
-            "recipient": {
-                "contact_id": "9d702140-b9b5-4827-b485-XXXX",
-                "to": ["91891952XXXX", "91886713XXXX"]
-            }
-        },
-        "recipient": {
-            "to": ["9189195XXXX"]
-        }
-    },
-    "payload" : {
-        "suggestions_payload": {
-            "text": "This is the main message",
-            'replies': [{
-                "reply": {
-                  "text": "Suggestion #1",
-                  "postbackData": "Yes, I Am In"
-                }
-              },
-              {
-                "reply": {
-                  "text": "Suggestion #2",
-                  "postbackData": "No, Not interested"
-                }
-              }
-            ]
-        },
-        "id": '1234a-1223jnkf-xxxx'
-    }
-}
-```
-
-#### Example Response
-
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully"
-}
-```
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-## Sending Message With Actions
-
-```
-{endpoint}rcs/message/send
-```
-
-#### MANDATORY PARAMETERS
-
-| Name | Descriptions                             |
-| ---- | ---------------------------------------- |
-| to   | Receiver mobile number with country code |
-| id   | Message Id for the request               |
-
-#### Example Request with Dial Number action
-
-```
-curl --request POST \
-  --url {endpoint}rcs/message/send \
-  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "channels": {
-        "channel" : {
-            "name": "rcs"
-        },
-        "recipient": {
-            "to": ["9189195XXXX"]
-        }
-    },
-    "payload" : {
-        "actions_payload": {
-            "text": "This is the main message",
-            'action': {
-              'text': 'Call',              
-              'dialAction': {
-                'phoneNumber': '+918919525XXXX'
-              },
-              'postbackData': 'postback_data_1234',
-              'fallbackUrl': 'https://www.google.com/contact/'s
-            }
-          },
-          "id": '1234a-1223jnkf-xxxx'
-    }
-}
-```
-
-#### Example Response
-
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully"
-}
-```
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-#### Example Request with Share Location action
-
-```
-curl --request POST \
-  --url {endpoint}rcs/message/send \
-  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "channels": {
-        "channel" : {
-            "name": "rcs"
-        },
-        "recipient": {
-            "to": ["9189195XXXX"]
-        }
-    },
-    "payload" : {
-      "text": "some text messae here",
-      "id": '1234a-1223jnkf-xxxx',
-      "actions_payload": [{
-            'action': {
-              'text': 'Share Your Location',              
-              'shareLocationAction': {
-                  'latLong': {
-                    'latitude': "37.4220188',
-                    'longitude': "-122.0844786'
-                  },
-                  'label': 'Googleplex'
-                },
-              'fallbackUrl': 'https://www.google.com/maps/@37.4220188,-122.0844786,15z'
-            }
-          }]
-    }
-}
-```
-
-#### Example Response
-
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully"
-}
-```
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-#### Example Request with Calendar Event action
-
-```
-curl --request POST \
-  --url {endpoint}rcs/message/send \
-  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "channels": {
-        "channel" : {
-            "name": "rcs"
-        },
-        "recipient": {
-            "to": ["9189195XXXX"]
-        }
-    },
-    "payload" : {
-        "actions_payload": {
-            'action': {
-              'text': 'Save to calendar',              
-              'createCalendarEventAction': {
-                  'startTime': '2021-06-30T19:00:00Z',
-                  'endTime': '2021-06-30T20:00:00Z',
-                  'title': 'My calendar event',
-                  'description': 'Description of the calendar event'
-              },
-              'postbackData': 'postback_data_1234',
-              'fallbackUrl': 'https://www.google.com/calendar',
-            }
-          },
-          "id": '1234a-1223jnkf-xxxx'
-    }
-}
-```
-
-#### Example Response
-
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully"
-}
-```
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-## Sending Rich Card Message
-
-```
-{endpoint}rcs/message/send
-```
-
-#### MANDATORY PARAMETERS
-
-| Name    | Descriptions                                  |
-| ------- | --------------------------------------------- |
-| to      | Receiver mobile number with country code      |
-| id      | Message Id for the request                    |
-| fileUrl | Remote url of the media file you want to send |
-
-#### Example Request
-
-```
-curl --request POST \
-  --url {endpoint}rcs/message/send \
-  -H 'Authorization: Bearer d9e1cac3812186b353c50229a36e589d' \
-  -H 'Accept: application/json' \
-  -d '{
-    "channels": {
-        "channel" : {
-            "name": "rcs"
-        },
-        "recipient": {
-            "to": ["9189195XXXX"]
-        }
-    },
-    "payload" : {
-        "id": '1234a-1223jnkf-xxxx',
-        "richCard_payload": {
-            '
-            ': {
-            'thumbnailImageAlignment': 'RIGHT',
-            'cardOrientation': 'VERTICAL',
-            'cardContent': {
-                'title': 'Hello, world!',
-                'description': 'RBM is awesome!',
-                'media_payload': {
-                    'height': 'TALL',
-                    'fileUrl': 'http://www.yourdomain.com/document.gif',
-                    'forceRefresh': 'false'
-                },
-                'suggestions_payload': {
-                    'replies' : [
-                      {
-                        'reply': {
-                          'text': 'Suggestion #1',
-                          'postbackData': 'suggestion_1'
-                        }
-                      },
-                      {
-                        'reply': {
-                          'text': 'Suggestion #2',
-                          'postbackData': 'suggestion_2'
-                        }
-                      }
-                    ]
-                }
-            }
-          }
-        }
-    }
-
+	"channels": [{
+		"name": "rcs",
+		"from": "700969ca-0cb2-11ec-a2cxxxx"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+		"type": "interactive",
+		"payload": {
+            "category" : "",
+			"header": {
+				"type": "text",
+				"payload": {
+					"text": "header text"
+				}
+			},
+			"body": {
+				"type": "text",
+				"payload": {
+					"text": "header text"
+				}
+			},
+			"footer": {
+				"type": "text",
+				"payload": {
+					"text": "header text"
+				}
+			},
+			"choices": [{
+					"type": "url",
+					"payload": {
+						"url": "https://example.com",
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "text",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "reply",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "call",
+					"payload": {
+						"title": "Click Here",
+						"phone_number": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "copy",
+					"payload": {
+						"title": "Click Here to copy",
+						"content": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "calendar",
+					"payload": {
+						"title": "Add to Calendar",
+						"event": {
+                            "date": "2020-01-31",
+                            "time": "23:30",
+                            "title": "Title of the event",
+                            "description": "Description of the event"
+                        },
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "section",
+					"payload": {
+						"title": "Click Here",
+						"rows": [{
+							"id": "unique-row-identifier-here",
+							"title": "row-title-content-here",
+							"description": "row-description-content-here"
+						}]
+					}
+				}
+			]
+		}
+	}
 }'
-
 ```
 
-Note : `forceRefresh` to true forces RBM to fetch new content from the specified URL, even if the URL content is cached
+#### PARAMETERS
 
-#### Example Response
+| Name    | Description                                                | Limits | Required |
+| ------- | ---------------------------------------------------------- | ------ | -------- |
+| choices | this block contains actions for suggestions of the message | N/A    | Yes      |
 
-```json
-{
-  "status": "OK",
-  "message": "Message Queued successfully"
-}
+## Send Card Message
+
+#### API Endpoint
+
 ```
+{domain}/api/{version}/
+```
+
+We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
+
+```
+{endpoint}rcs/message/send
+```
+
+#### Example Request With Card Messgae
+
+```
+curl -X POST \
+  '{endpoint}rcs/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "rcs",
+		"from": "700969ca-0cb2-11ec-a2cxxxx"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+        "type": "card",
+		"payload": {
+			"title": "This is the card title",
+			"description": "This is the card description",
+			"body": {
+                "type": "image",
+                "payload": {
+                    "url": "https://domin-name.com/your_image_path.png",
+                    "caption": "some caption for image",
+                    "filename": ""
+                }
+			},
+            "choices": [
+                {
+					"type": "url",
+					"payload": {
+						"url": "https://example.com",
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "text",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "reply",
+					"payload": {
+						"title": "Click Here",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "call",
+					"payload": {
+						"title": "Click Here",
+						"phone_number": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "copy",
+					"payload": {
+						"title": "Click Here to copy",
+						"content": "+91901995xxxx",
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "calendar",
+					"payload": {
+						"title": "Add to Calendar",
+						"event": {
+                            "date": "2020-01-31",
+                            "time": "23:30",
+                            "title": "Title of the event",
+                            "description": "Description of the event"
+                        },
+						"id": "unique-id"
+					}
+				},
+				{
+					"type": "section",
+					"payload": {
+						"title": "Click Here",
+						"rows": [{
+							"id": "unique-row-identifier-here",
+							"title": "row-title-content-here",
+							"description": "row-description-content-here"
+						}]
+					}
+				}
+			]
+		}
+	}
+}'
+```
+
+#### PARAMETERS
+
+| Name | Description | Limits | Required |
+| ---- | ----------- | ------ | -------- |
+

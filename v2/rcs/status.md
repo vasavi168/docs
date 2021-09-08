@@ -1,4 +1,4 @@
-## MIP Status Info
+## RCS Status Info
 
 #### Description of Status:
 
