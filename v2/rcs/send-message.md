@@ -319,7 +319,8 @@ curl -X POST \
                 "payload": {
                     "url": "https://domin-name.com/your_image_path.png",
                     "caption": "some caption for image",
-                    "filename": ""
+                    "filename": "",
+                    "height": "TALL"
                 }
 			},
             "choices": [
