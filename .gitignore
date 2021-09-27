@@ -19,9 +19,10 @@
 *.zip
 *.bak
 *.retry
- 
+
 # OS or Editor folders
 .DS_Store
+*.DS_Store
 Thumbs.db
 .cache
 .project
@@ -31,15 +32,15 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
- 
+
 # Dreamweaver added files
 _notes
 dwsync.xml
- 
+
 # Komodo
 *.komodoproject
 .komodotools
- 
+
 # Folders to ignore
 .ssh
 .hg
@@ -53,7 +54,7 @@ table-schema
 redartapireports
 SiteCatalyst_API_reporting_Java
 Philips\ Dashboard
- 
+
 # build script local files
 build/buildinfo.properties
 build/config/buildinfo.properties
@@ -61,7 +62,7 @@ build/config/buildinfo.properties
 # ignore node_modules
 node_modules
 
-# ignore backup 
+# ignore backup
 backup
 ENV
 .DS_Store

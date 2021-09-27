@@ -65,20 +65,27 @@
   - [Status Info](/docs/{version}/whatsapp/status)
   - [Webhook](/docs/{version}/whatsapp/webhooks)
 
-* MIP
+- MIP
 
   - [Introduction](/docs/{version}/mip)
   - [Send a message](/docs/{version}/mip/send-message)
   - [Status Info](/docs/{version}/mip/status)
-  - [Webhook](/docs/{version}/whatsapp/webhooks)
+  - [Webhook](/docs/{version}/mip/webhooks)
 
-* Link
+- RCS
+
+  - [Introduction](/docs/{version}/rcs)
+  - [Send a message](/docs/{version}/rcs/send-message)
+  - [Status Info](/docs/{version}/rcs/status)
+  - [Webhook](/docs/{version}/rcs/webhooks)
+
+<!-- * Link
 
   - [View Links](/docs/{version}/link)
   - [Create Link](/docs/{version}/link/create)
   - [View Visits](/docs/{version}/link/visits)
-  - [Webhook](/docs/{version}/link/webhook)
+  - [Webhook](/docs/{version}/link/webhook) -->
 
-* Number Lookup
+- Number Lookup
 
   - [Verify](/docs/{version}/lookup/verify)

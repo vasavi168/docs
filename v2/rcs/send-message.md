@@ -1,4 +1,4 @@
-# MOBtexting RCS Messaging Service
+# RCS Messaging Service
 
 ## Channel Info
 
@@ -46,7 +46,7 @@
 | --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
 | channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
 | name      | Name of Messaging Channel. `whatsapp|rcs|ip_message`        | `string`            | Yes                            |
-| from      | RCS Agent Reference ID                           | `string`            | Yes                            |
+| from      | RCS Agent Reference ID                                      | `string`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
 | to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |

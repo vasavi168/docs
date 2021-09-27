@@ -1,4 +1,4 @@
-# MOBtexting RCS Messaging Service
+# RCS Messaging Service
 
 RCS Messaging is evolution of SMS enabling enterprises and individuals to exchange rich media like images, videos and interactive content with the same ease as SMS.
 
