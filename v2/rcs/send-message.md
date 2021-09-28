@@ -101,59 +101,6 @@ curl -X POST \
 | to      | Destination mobile number with country code | NA                  | Yes      |
 | text    | Message Content you want to send            | Max 4096 Characters | Yes      |
 
-## Sending Template Message
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
-
-```
-{endpoint}rcs/message/send
-```
-
-#### Example Request With Template
-
-```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "rcs",
-		"from": "700969ca-0cb2-11ec-a2cxxxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-        "type": "template",
-		"payload": {
-			"name": "otp",
-            "namespace: "",
-			"language": "en",
-			"header_params": ["Replacement Text"],
-			"body_params": ["223344", "10"],
-            "components": {
-
-            }
-		}
-	}
-}'
-```
-
-#### PARAMETERS
-
-| Name          | Description                                                                                                                                                                                         | Limits                                                                     | Required |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
-| name          | Template Name                                                                                                                                                                                       | N/A                                                                        | yes      |
-| namespace     | Namespace of the template                                                                                                                                                                           | N/A                                                                        | yes      |
-| language      | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                        | No       |
-| header_params | Can only used when there is a header of type text in the template. Up to 60 characters for all parameters and predefined template header text.                                                      | Up to 60 characters for all parameters and predefined template header text | No       |
-| body_params   | Up to 1024 characters for all parameters and predefined template text.                                                                                                                              | Up to 1024 characters for all parameters and predefined template text      | No       |
-| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                       | No       |
 
 ## Send Interactive Message
 
@@ -288,7 +235,7 @@ curl -X POST \
 {domain}/api/{version}/
 ```
 
-We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
+We can send Card Message using below API. The maximum audio file size is limited to 64 MB.
 
 ```
 {endpoint}rcs/message/send
@@ -307,7 +254,7 @@ curl -X POST \
 		"from": "700969ca-0cb2-11ec-a2cxxxx"
 	}],
 	"recipient": {
-		"to": "91XXXXXX"
+		"to": "91886713XXXX"
 	},
 	"message": {
         "type": "card",
@@ -367,11 +314,11 @@ curl -X POST \
 					"payload": {
 						"title": "Add to Calendar",
 						"event": {
-                            "date": "2020-01-31",
-                            "time": "23:30",
-                            "title": "Title of the event",
-                            "description": "Description of the event"
-                        },
+                "date": "2020-01-31",
+                "time": "23:30",
+                "title": "Title of the event",
+                "description": "Description of the event"
+            },
 						"id": "unique-id"
 					}
 				},
@@ -391,9 +338,107 @@ curl -X POST \
 	}
 }'
 ```
+#### PARAMETERS
+
+| Name | Description | Limits | Required |
+| ---- | ----------- | ------ | -------- |
+
+| type | Type of the message Ex: "card" | NA | Yes |
+| payload | Actual message data | NA | Yes |
+| title | Title of the card | NA | Yes |
+| description | Description of the card  | NA | Yes |
+| body | This section contains media file information  | NA | Yes |
+| choices | This section contains choices for selection  | NA | Yes |
+
+
+## Send Carousel Message
+
+Carousels may contain a minimum of two and a maximum of ten rich cards.
+
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
+We can send Carousel using below API.
+
+```
+{endpoint}rcs/message/send
+```
+
+#### Example Request With Carousel Messgae
+
+```
+curl -X POST \
+  '{endpoint}rcs/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+   "channels": [{
+      "name": "rcs",
+      "from": "700969ca-0cb2-11ec-a2c0-xxxxx"
+   }],
+   "recipient": {
+      "to": "91886713XXXX"
+   },
+   "message": {
+      "type": "carousel",
+      "payload": [{
+         "title": "This is the card1 title",
+         "description": "This is the card1 description",
+            "choices": [
+            {
+               "type": "reply",
+               "payload": {
+                  "text": "Click Here For No",
+                  "content": "send No"
+               }
+            }
+         ],
+         "body": {
+              "type": "image",
+              "payload": {
+                  "url": "https://mobtexting.com/assets/images/mob-logo.png",
+                  "caption": "This is the Header",
+                  "filename": "",
+                  "height": "MEDIUM"
+              }
+         }
+      },
+      {
+         "title": "This is the card2 title",
+         "description": "This is the card2 description",
+         "choices": [
+            {
+               "type": "reply",
+               "payload": {
+                  "text": "Click Here For Yes",
+                  "content": "send Yes"
+               }
+            }
+         ],
+         "body": {
+             "type": "image",
+             "payload": {
+                 "url": "https://mobtexting.com/assets/images/sms-home.png",
+                 "caption": "This is the Header2",
+                 "height": "MEDIUM"
+             }
+         }
+      }]
+   }
+}'
+```
 
 #### PARAMETERS
 
 | Name | Description | Limits | Required |
 | ---- | ----------- | ------ | -------- |
 
+| type | Type of the message Ex: "carousel" | NA | Yes |
+| payload | Actual message data | NA | Yes |
+| title | Title of the card | NA | Yes |
+| description | Description of the card  | NA | Yes |
+| body | This section contains media file information  | NA | Yes |
+| choices | This section contains choices for selection  | NA | Yes |
