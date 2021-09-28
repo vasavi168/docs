@@ -342,7 +342,6 @@ curl -X POST \
 
 | Name | Description | Limits | Required |
 | ---- | ----------- | ------ | -------- |
-
 | type | Type of the message Ex: "card" | NA | Yes |
 | payload | Actual message data | NA | Yes |
 | title | Title of the card | NA | Yes |
@@ -435,7 +434,6 @@ curl -X POST \
 
 | Name | Description | Limits | Required |
 | ---- | ----------- | ------ | -------- |
-
 | type | Type of the message Ex: "carousel" | NA | Yes |
 | payload | Actual message data | NA | Yes |
 | title | Title of the card | NA | Yes |
