@@ -205,7 +205,7 @@ curl -X POST \
 				{
 					"type": "text",
 					"payload": {
-						"title": "Click Here For Yes",
+						"text": "Click Here For Yes",
 						"id": "unique-id",
 						"content": "Yes"
 					}
@@ -213,7 +213,7 @@ curl -X POST \
 				{
 					"type": "text",
 					"payload": {
-						"title": "Click Here For No",
+						"text": "Click Here For No",
 						"id": "unique-id",
 						"content": "No"
 					}
@@ -371,14 +371,14 @@ curl -X POST \
 				{
 					"type": "text",
 					"payload": {
-						"title": "Click Here",
+						"text": "Click Here",
 						"id": "unique-id"
 					}
 				},
 				{
 					"type": "reply",
 					"payload": {
-						"title": "Click Here",
+						"text": "Click Here",
 						"id": "unique-id"
 					}
 				},
