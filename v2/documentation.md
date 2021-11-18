@@ -1,4 +1,4 @@
-@if(isset($branding) && $branding->options['docs.tools'])
+@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.tools']))
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection}?action=collection%2Ffork&collection-url=entityId%3D{collection}%26entityType%3Dcollection)
 @endif
 

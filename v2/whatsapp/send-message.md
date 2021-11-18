@@ -132,13 +132,12 @@ curl -X POST \
         "type": "template",
 		"payload": {
 			"name": "otp",
-            "namespace": "",
+       "namespace": "",
 			"language": "en",
-			"header_params": ["Replacement Text"],
 			"body_params": ["223344", "10"],
-            "components": {
+      "components": {
 
-            }
+      }
 		}
 	}
 }'
@@ -151,8 +150,10 @@ curl -X POST \
 | name          | Template Name                                                                                                                                                                                       | N/A                                                                        | yes      |
 | namespace     | Namespace of the template                                                                                                                                                                           | N/A                                                                        | yes      |
 | language      | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                        | No       |
-| header_params | Can only used when there is a header of type text in the template. Up to 60 characters for all parameters and predefined template header text.                                                      | Up to 60 characters for all parameters and predefined template header text | No       |
-| body_params   | Up to 1024 characters for all parameters and predefined template text.                                                                                                                              | Up to 1024 characters for all parameters and predefined template text      | No       |
+
+| body_params   | Up to 1024 characters for all parameters that are predefined template text.                                                                                                                              | Up to 1024 characters for all parameters and predefined template text      | Yes incase only template contains body with no headers |
+| components   | This block contains header, body, footer sections payload as per predefined template.  | Up to 1024 characters for all parameters and predefined template text      | Yes incase Template contains headers and footers       |
+
 | ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                       | No       |
 
 ## Send Image Message
