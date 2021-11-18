@@ -16,7 +16,7 @@ To integrate our SMS API, any HTTP recipient in any programming language can be 
 
 Note: Few elements in endpoint may change for service to service.
 
-@if(isset($branding) && $branding->options['docs.tools'])
+@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.tools']))
 
 ## API Collection Postman link
 
