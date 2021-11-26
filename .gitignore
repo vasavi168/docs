@@ -61,6 +61,7 @@ build/config/buildinfo.properties
 
 # ignore node_modules
 node_modules
+vendor
 
 # ignore backup
 backup

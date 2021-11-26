@@ -129,15 +129,175 @@ curl -X POST \
 		"to": "91XXXXXX"
 	},
 	"message": {
-        "type": "template",
+		"type": "template",
 		"payload": {
 			"name": "otp",
-       "namespace": "",
+			"namespace": "",
 			"language": "en",
 			"body_params": ["223344", "10"],
-      "components": {
+			"components": []
+		}
+	}
+}'
+```
 
-      }
+#### Example Request With Template "HSM" (Highly Structured Message)
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "whatsapp",
+		"from": "919019120120"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+		"type": "template",
+		"payload": {
+			"name": "otp",
+			"namespace": "",
+			"language": "en",
+			"components": [{
+					"type": "header",
+					"parameters": [{
+						"type": "text",
+						"text": "replacement_text"
+					}]
+				},
+				{
+					"type": "body",
+					"parameters": [{
+							"type": "text",
+							"text": "replacement_text"
+						},
+						{
+							"type": "currency",
+							"currency": {
+								"fallback_value": "$100.99",
+								"code": "USD",
+								"amount_1000": 100990
+							}
+						},
+						{
+							"type": "date_time",
+							"date_time": {
+								"fallback_value": "February 25, 1977",
+								"day_of_week": 5,
+								"day_of_month": 25,
+								"year": 1977,
+								"month": 2,
+								"hour": 15,
+								"minute": 33
+							}
+						},
+						{
+							"...": "..."
+						}
+					]
+				},
+				{
+					"type": "button",
+					"sub_type": "quick_reply",
+					"index": "0",
+					"parameters": [{
+						"type": "payload",
+						"payload": "aGlzIHRoaXMgaXMgY29vZHNhc2phZHdpcXdlMGZoIGFTIEZISUQgV1FEV0RT"
+					}]
+				},
+				{
+					"type": "button",
+					"sub_type": "url",
+					"index": "1",
+					"parameters": [{
+						"type": "text",
+						"text": "9rwnB8RbYmPF5t2Mn09x4h"
+					}]
+				},
+				{
+					"type": "button",
+					"sub_type": "url",
+					"index": "2",
+					"parameters": [{
+						"type": "text",
+						"text": "ticket.pdf"
+					}]
+				}
+			]
+		}
+	}
+}'
+```
+
+#### Example Product Shipment Request With Template
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "whatsapp",
+		"from": "919019120120"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+		"type": "template",
+		"payload": {
+			"name": "oculus_shipment_update",
+			"namespace": "88b39973_f0d5_54e1_29cf_e80f1e3da4f2",
+			"language": "en",
+			"components": "components": [{
+				"type": "header",
+				"parameters": [{
+					"type": "image",
+					"image": {
+						"link": "link-to-your-image"
+					}
+				}]
+			},
+			{
+				"type": "body",
+				"parameters": [{
+						"type": "text",
+						"text": "Anand"
+					},
+					{
+						"type": "text",
+						"text": "Quest"
+					},
+					{
+						"type": "text",
+						"text": "113-0921387"
+					},
+					{
+						"type": "date_time",
+						"date_time": {
+							"fallback_value": "23rd Nov 2019",
+							"day_of_month": "20",
+							"year": "2019",
+							"month": "9"
+						}
+					}
+				]
+			},
+			{
+				"type": "button",
+				"index": "0",
+				"sub_type": "url",
+				"parameters": [{
+					"type": "text",
+					"text": "1Z999AA10123456784"
+				}]
+			}
+		]
 		}
 	}
 }'
@@ -145,16 +305,14 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name          | Description                                                                                                                                                                                         | Limits                                                                     | Required |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
-| name          | Template Name                                                                                                                                                                                       | N/A                                                                        | yes      |
-| namespace     | Namespace of the template                                                                                                                                                                           | N/A                                                                        | yes      |
-| language      | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                        | No       |
-
-| body_params   | Up to 1024 characters for all parameters that are predefined template text.                                                                                                                              | Up to 1024 characters for all parameters and predefined template text      | Yes incase only template contains body with no headers |
-| components   | This block contains header, body, footer sections payload as per predefined template.  | Up to 1024 characters for all parameters and predefined template text      | Yes incase Template contains headers and footers       |
-
-| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                       | No       |
+| Name        | Description                                                                                                                                                                                         | Limits                                                                | Required                                               |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
+| name        | Template Name                                                                                                                                                                                       | N/A                                                                   | yes                                                    |
+| namespace   | Namespace of the template                                                                                                                                                                           | N/A                                                                   | yes                                                    |
+| language    | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                   | No                                                     |
+| body_params | Up to 1024 characters for all parameters that are predefined template text.                                                                                                                         | Up to 1024 characters for all parameters and predefined template text | Yes incase only template contains body with no headers |
+| components  | This block contains header, body, footer sections payload as per predefined template.                                                                                                               | Up to 1024 characters for all parameters and predefined template text | Yes incase Template contains headers and footers       |
+| ttl         | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                  | No                                                     |
 
 ## Send Image Message
 
