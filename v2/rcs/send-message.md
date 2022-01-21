@@ -137,13 +137,12 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name    | Description                                 | Limits              | Required |
-| ------- | ------------------------------------------- | ------------------- | -------- |
-| payload | Messaage Payload section                    | N/A                 | Yes      |
-| to      | Destination mobile number with country code | NA                  | Yes      |
-| type   | Media types Ex: image, video, audio, document | NA                  | Yes      |
-| url    | Publicly available Image/ Media URL           | Max 100 MB | Yes      |
-
+| Name    | Description                                   | Limits     | Required |
+| ------- | --------------------------------------------- | ---------- | -------- |
+| payload | Messaage Payload section                      | N/A        | Yes      |
+| to      | Destination mobile number with country code   | NA         | Yes      |
+| type    | Media types Ex: image, video, audio, document | NA         | Yes      |
+| url     | Publicly available Image/ Media URL           | Max 100 MB | Yes      |
 
 ## Send Interactive Message
 
@@ -156,7 +155,6 @@ curl -X POST \
 We can send interactive messages like suggested replies and suggested actions using this api.
 
 Suggested replies[text] have a maximum of 25 characters.
-
 
 ```
 {endpoint}rcs/message/send
@@ -205,7 +203,7 @@ curl -X POST \
 				{
 					"type": "text",
 					"payload": {
-						"text": "Click Here For Yes",
+						"title": "Click Here For Yes",
 						"id": "unique-id",
 						"content": "Yes"
 					}
@@ -213,7 +211,7 @@ curl -X POST \
 				{
 					"type": "text",
 					"payload": {
-						"text": "Click Here For No",
+						"title": "Click Here For No",
 						"id": "unique-id",
 						"content": "No"
 					}
@@ -226,14 +224,14 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name    | Description                                                | Limits | Required |
-| ------- | ---------------------------------------------------------- | ------ | -------- |
-| header | Optional | N/A    | No      |
-| body | this block contains acutal content for the message | N/A    | Yes      |
-| footer | Optional | N/A    | No      |
-| choices | this block contains actions for suggestions of the message | N/A    | Yes      |
-| text | this parameter holds suggested reply text | Max 25 Chars.    | Yes      |
-| content | this parameter holds suggested reply text's identification for your reference | N/A    | Yes      |
+| Name    | Description                                                                   | Limits        | Required |
+| ------- | ----------------------------------------------------------------------------- | ------------- | -------- |
+| header  | Optional                                                                      | N/A           | No       |
+| body    | this block contains acutal content for the message                            | N/A           | Yes      |
+| footer  | Optional                                                                      | N/A           | No       |
+| choices | this block contains actions for suggestions of the message                    | N/A           | Yes      |
+| text    | this parameter holds suggested reply text                                     | Max 25 Chars. | Yes      |
+| content | this parameter holds suggested reply text's identification for your reference | N/A           | Yes      |
 
 #### Example Request with suggested actions:
 
@@ -305,16 +303,15 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name    | Description                                                | Limits | Required |
-| ------- | ---------------------------------------------------------- | ------ | -------- |
-| header | Optional | N/A    | No      |
-| body | this block contains acutal content for the message | N/A    | Yes      |
-| footer | Optional | N/A    | No      |
-| choices | this block contains actions for suggestions of the message | N/A    | Yes      |
-| latitude | The latitude in degrees. | must be in the range  [-90.0, +90.0]    | Yes      |
-| longitude | The longitude in degrees. | must be in the range  [-180.0, +180.0]    | Yes      |
-| calender | creates user's calender event upon click | N/A    | Yes      |
-
+| Name      | Description                                                | Limits                                | Required |
+| --------- | ---------------------------------------------------------- | ------------------------------------- | -------- |
+| header    | Optional                                                   | N/A                                   | No       |
+| body      | this block contains acutal content for the message         | N/A                                   | Yes      |
+| footer    | Optional                                                   | N/A                                   | No       |
+| choices   | this block contains actions for suggestions of the message | N/A                                   | Yes      |
+| latitude  | The latitude in degrees.                                   | must be in the range [-90.0, +90.0]   | Yes      |
+| longitude | The longitude in degrees.                                  | must be in the range [-180.0, +180.0] | Yes      |
+| calender  | creates user's calender event upon click                   | N/A                                   | Yes      |
 
 ## Send Card Message
 
@@ -371,15 +368,17 @@ curl -X POST \
 				{
 					"type": "text",
 					"payload": {
-						"text": "Click Here",
+						"title": "Click Here For Yes",
 						"id": "unique-id"
+                        "content": "Yes"
 					}
 				},
 				{
 					"type": "reply",
 					"payload": {
-						"text": "Click Here",
+						"title": "No",
 						"id": "unique-id"
+                        "content": "No"
 					}
 				},
 				{
@@ -427,18 +426,18 @@ curl -X POST \
 	}
 }'
 ```
+
 #### PARAMETERS
 
-| Name | Description | Limits | Required |
-| ---- | ----------- | ------ | -------- |
-| type | Type of the message Ex: "card" | NA | Yes |
-| payload | Actual message data | NA | Yes |
-| title | Title of the card | NA | Yes |
-| description | Description of the card  | NA | Yes |
-| body | This section contains media file information  | NA | Yes |
-| body.payload.height | Height of the card SHORT [112 DP], MEDIUM [168 DP], TALL[264 DP] | Yes |
-| choices | This section contains choices for selection  | Max of 4 choices | No |
-
+| Name                | Description                                                      | Limits           | Required |
+| ------------------- | ---------------------------------------------------------------- | ---------------- | -------- |
+| type                | Type of the message Ex: "card"                                   | NA               | Yes      |
+| payload             | Actual message data                                              | NA               | Yes      |
+| title               | Title of the card                                                | NA               | Yes      |
+| description         | Description of the card                                          | NA               | Yes      |
+| body                | This section contains media file information                     | NA               | Yes      |
+| body.payload.height | Height of the card SHORT [112 DP], MEDIUM [168 DP], TALL[264 DP] | Yes              |
+| choices             | This section contains choices for selection                      | Max of 4 choices | No       |
 
 ## Send Carousel Message
 
@@ -522,14 +521,14 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name | Description | Limits | Required |
-| ---- | ----------- | ------ | -------- |
-| type | Type of the message Ex: "carousel" | NA | Yes |
-| payload | Actual message data | NA | Yes |
-| title | Title of the card | Max of 200 chars | Yes |
-| description | Description of the card  | Max of 200 chars | Yes |
-| body | This section contains media file information  | NA | Yes |
-| choices | This section contains choices for selection  | Max of 4 choices | No |
-| body.payload.height | Height of the card SHORT [112 DP], MEDIUM [168 DP], TALL[264 DP] | Yes |
+| Name                | Description                                                      | Limits           | Required |
+| ------------------- | ---------------------------------------------------------------- | ---------------- | -------- |
+| type                | Type of the message Ex: "carousel"                               | NA               | Yes      |
+| payload             | Actual message data                                              | NA               | Yes      |
+| title               | Title of the card                                                | Max of 200 chars | Yes      |
+| description         | Description of the card                                          | Max of 200 chars | Yes      |
+| body                | This section contains media file information                     | NA               | Yes      |
+| choices             | This section contains choices for selection                      | Max of 4 choices | No       |
+| body.payload.height | Height of the card SHORT [112 DP], MEDIUM [168 DP], TALL[264 DP] | Yes              |
 
 Note: TALL cannot be used for rich card carousels when the card width is set to SMALL
