@@ -6,3 +6,4 @@
   - [Woo Commerce Plugin](/docs/{version}/woocommerce)
   - [Opencart Plugin](/docs/{version}/opencart)
   - [webengage Plugin](/docs/{version}/webengage)
+  - [Clevertap Plugin](/docs/{version}/clevertap)
