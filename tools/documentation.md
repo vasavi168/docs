@@ -5,5 +5,7 @@
   - [Magento Plugin](/docs/{version}/magento)
   - [Woo Commerce Plugin](/docs/{version}/woocommerce)
   - [Opencart Plugin](/docs/{version}/opencart)
-  - [webengage Plugin](/docs/{version}/webengage)
-  - [Clevertap Plugin](/docs/{version}/clevertap)
+
+- Integrations
+  - [webengage](/docs/{version}/webengage)
+  - [Clevertap](/docs/{version}/clevertap)

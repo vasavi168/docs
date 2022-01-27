@@ -1,4 +1,4 @@
-# Clevertap SMS Integration with MOBtexting
+# Clevertap SMS Integration
 
 ## Integration Steps for send sms
 To integrate Mobtexting as an SMS provider, perform the following steps:

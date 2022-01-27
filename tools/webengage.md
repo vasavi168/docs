@@ -1,4 +1,4 @@
-# Webengage SMS Integration with MOBtexting
+# Webengage SMS Integration
 
 ## Set up your account with the required credentials in - Update Account Info
 
