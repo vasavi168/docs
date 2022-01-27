@@ -9,3 +9,4 @@
 - Integrations
   - [webengage](/docs/{version}/webengage)
   - [Clevertap](/docs/{version}/clevertap)
+  - [moengage](/docs/{version}/moengage)
