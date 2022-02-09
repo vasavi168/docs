@@ -64,6 +64,7 @@
   - [Send a message](/docs/{version}/whatsapp/send-message)
   - [Status Info](/docs/{version}/whatsapp/status)
   - [Webhook](/docs/{version}/whatsapp/webhooks)
+  - [Pull DLR](/docs/{version}/whatsapp/pull-status)
 
 - MIP
 
@@ -71,6 +72,7 @@
   - [Send a message](/docs/{version}/mip/send-message)
   - [Status Info](/docs/{version}/mip/status)
   - [Webhook](/docs/{version}/mip/webhooks)
+  - [Pull DLR](/docs/{version}/mip/pull-status)
 
 - RCS
 
@@ -78,6 +80,7 @@
   - [Send a message](/docs/{version}/rcs/send-message)
   - [Status Info](/docs/{version}/rcs/status)
   - [Webhook](/docs/{version}/rcs/webhooks)
+  - [Pull DLR](/docs/{version}/rcs/pull-status)
 
 <!-- * Link
 
