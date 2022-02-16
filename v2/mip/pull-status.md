@@ -38,10 +38,9 @@ curl -X GET \
         {
             "id": "cdf829fd-5148-44bb-8433-xxxxx",
             "channel": "mip",
-            "sender": 91901912XXXX,
-            "recipient": "918867135684",
+            "from": "91901912XXXX",
+            "to": "918867135684",
             "credits": "1.0000",
-            "service": "O",
             "created_at": "2021-09-07T00:07:50.000000Z",
             "foreign_id": "MsT356dI2hRzm9fTdBJeodbw",
             "status": "delivered",
