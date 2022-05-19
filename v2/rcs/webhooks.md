@@ -24,18 +24,98 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "rcs:message:status",
-  "payload": {
-    "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-    "channel": "rcs",
-    "from": "700969ca-0cb2-11ec-a2cxxxx",
-    "to": "9190199xxxxx",
-    "status": "sent|delivered|read|failed|deleted",
-    "delivered_at": "2021-06-18T14:48:06.886358Z",
-    "read_at": "2021-06-18T14:48:06.886358Z",
-    "processed_at": "2021-06-18T14:48:06.886358Z",
-    "timestamp": "2021-06-18T14:48:06.886358Z",
-    "foreign_id": "your-business-identifier"
-  }
+    "event": "rcs:message:status",
+    "payload": {
+        "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
+        "channel": "rcs",
+        "from": "700969ca-0cb2-11ec-a2cxxxx",
+        "to": "9190199xxxxx",
+        "status": "sent|delivered|read|failed|deleted",
+        "delivered_at": "2021-06-18T14:48:06.886358Z",
+        "read_at": "2021-06-18T14:48:06.886358Z",
+        "processed_at": "2021-06-18T14:48:06.886358Z",
+        "timestamp": "2021-06-18T14:48:06.886358Z",
+        "foreign_id": "your-business-identifier"
+    }
+}
+```
+
+### Message Incoming Notification
+
+```json
+{
+    "event": "rcs:message:in",
+    "payload": {
+        "id": "our-message-id",
+        "channels": [
+            {
+                "name": "rcs",
+                "to": "919019120120"
+            }
+        ],
+        "recipient": {
+            "from": "91XXXXXX",
+            "user": {
+                "id": "unique-user-id",
+                "username": "username",
+                "first_name": "user first name",
+                "last_name": "user last name",
+                "email": null,
+                "phone": "user phone number",
+                "user_info": {
+                    "picture": "url-of-profile-picture",
+                    "gender": null,
+                    "title": "user status or designation"
+                }
+            }
+        },
+        "message": {
+            "type": "text",
+            "payload": {
+                "text": "This is a simple text message from whatsapp channel"
+            }
+        }
+    }
+}
+```
+
+### Incoming Media
+
+```json
+{
+    "event": "rcs:message:in",
+    "payload": {
+        "id": "our-message-id",
+        "channels": [
+            {
+                "name": "rcs",
+                "to": "919019120120"
+            }
+        ],
+        "recipient": {
+            "from": "91XXXXXX",
+            "user": {
+                "id": "unique-user-id",
+                "username": "username",
+                "first_name": "user first name",
+                "last_name": "user last name",
+                "email": null,
+                "phone": "user phone number",
+                "user_info": {
+                    "picture": "url-of-profile-picture",
+                    "gender": null,
+                    "title": "user status or designation"
+                }
+            }
+        },
+        "message": {
+            "type": "image",
+            "payload": {
+                "url": "https://domin-name.com/your_image_path.png",
+                "caption": "some caption for image",
+                "filename": ""
+            }
+        }
+    }
 }
 ```
