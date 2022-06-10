@@ -21,36 +21,51 @@ Create a new Verify object through the API to start the verification process of 
 #### POST
 
 ```
-{endpoint}verify
+{endpoint}verify/send
 ```
 
-#### MANDATORY PARAMETERS
+#### Payload
 
-| Name | Type | Description                                  |
-| ---- | ---- | -------------------------------------------- |
-| to   | int  | The telephone number that you want to verify |
-
-#### OPTIONAL PARAMETERS
-
-| Name        | Type   | Description                                                                                                                                     |
-| ----------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| from        | string | Sender Id from which message should get delivered. default: VERIFY                                                                              |
-| reference   | string | A client reference                                                                                                                              |
-| template    | string | The template of the message body. Needs to contain {token} for the verification code to be included. default: {token} is your verification code |
-| timeout     | int    | The verification code expiry time in seconds. Default: 120                                                                                      |
-| length      | string | The number of characters in the verification code. Must be between 4 and 10. Default: 6                                                         |
-| ip_address  | string | The IP address used by your user when they entered the verification code.                                                                       |
-| entity_id   | string | Entityid registered in DLT portal (for indian routes)                                                                                           |
-| template_id | string | Templateid registered in DLT portal (for indian routes)                                                                                         |
-
-#### Example Request
-
-```curl
-curl -X POST \
-  '{endpoint}verify?to=919019955xxx' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 38e896f55670311982434e929xxx' \
+```json
+{
+  "channels": [
+    {
+      "name": "whatsapp",
+      "from": "91901912xxx",
+      "recipient": {
+        "to": "9189195xxxx"
+      },
+      "order": 0,
+      "wait": 60
+    },
+    {
+      "name": "sms",
+      "from": "91901912xxx",
+      "recipient": {
+        "to": "9189195xxxx"
+      },
+      "order": 1,
+      "wait": 60
+    }
+  ],
+  "payload": {
+    "ip_address": "192.168.*.*",
+    "length": 6,
+    "timeout": 6,
+    "template": null
+  }
+}
 ```
+
+#### PARAMETERS
+
+| Name       | Type   | Description                                                                                                                                     |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| foreign_id | string | A client reference                                                                                                                              |
+| template   | string | The template of the message body. Needs to contain {token} for the verification code to be included. default: {token} is your verification code |
+| timeout    | int    | The verification code expiry time in seconds. Default: 120                                                                                      |
+| length     | string | The number of characters in the verification code. Must be between 4 and 10. Default: 6                                                         |
+| ip_address | string | The IP address used by your user when they entered the verification code.                                                                       |
 
 #### Example Response
 
