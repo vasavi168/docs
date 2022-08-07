@@ -8,6 +8,10 @@ Our SMS API allows you to send text messages to users around the globe through s
 - Receive SMS for free using SMS-enabled local numbers in countries around the world.
 - Only pay for what you use, nothing more.
 
+#### Available HTTP methods
+
+Our API uses HTTP verbs to understand if you want to read (`GET`), delete (`DELETE`) or create (`POST`) an object. When your web application cannot do a `POST` or `DELETE`, we provide the ability to set the method through the query parameter `_method`.
+
 #### Number format
 
 Numbers are a key concept to understand when working with the API. The following points should be considered before developing your Application.

@@ -7,10 +7,6 @@
 	"channels": [{
 		"name": "sms",
 		"from": "MOBTXT",
-		"recipient": {
-			"group_id": "{segment_id}",
-			"to": ["9189195xxxx", "91886713xxxx"]
-		},
 		"meta": {
 			"service": "T",
 			"template_id": "1234XXXXXXX",
@@ -41,6 +37,7 @@
       "credits": 1,
       "created_at": "2021-06-18 14:48:06",
       "status": "AWAITING-DLR",
+      "foreign_id": "your-message-id"
     }
   ]
 }
@@ -48,21 +45,20 @@
 
 #### PARAMETERS
 
-| Name      | Description                                                 | type                | Required                       |
-| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
-| channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. Ex: `sms`                   | `string`            | Yes                            |
-| from      | Sender or From Number                                       | `number`            | Yes  
-| meta      | This block contains additional information related to messaging channel                          | N/A | Yes
-| service   | Sms Service like Transactional, promotional, global. Ex: T, P, G or S  | `string` | Yes
-| template_id   | DLT registered template id.  | `int` | Yes
-| entity_id   | DLT registered entity id.  | `int` | Yes
-| foreign_id   | Custom id for reference from customer.  | N/A | No
-| type   | The SMS to be sent is Unicode, Normal or Auto detect. (value “U”, “N” or “A”)
-  | `string` | No
-| recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
-| group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
-| to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |
+| Name        | Description                                                                   | type                | Required                       |
+| ----------- | ----------------------------------------------------------------------------- | ------------------- | ------------------------------ |
+| channels    | This block contains information realted messaging channel                     | N/A                 | Yes                            |
+| name        | Name of Messaging Channel. Ex: `sms`                                          | `string`            | Yes                            |
+| from        | Sender or From Number                                                         | `number`            | Yes                            |
+| meta        | This block contains additional information related to messaging channel       | N/A                 | Yes                            |
+| service     | Sms Service Name. Default takes the first enabled sms service.                | `string`            | Yes                            |
+| template_id | DLT registered template id.                                                   | `int`               | Yes                            |
+| entity_id   | DLT registered entity id.                                                     | `int`               | Yes                            |
+| foreign_id  | Custom id for reference from customer.                                        | N/A                 | No                             |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value “U”, “N” or “A”) | `string`            | No                             |
+| recipient   | This block contains contacts information related to channel                   | N/A                 | Yes                            |
+| group_id    | Segment id which contain list of phone numbers                                | `string` or `array` | Yes if `to` param not present  |
+| to          | Receiver mobile numbers : `text`                                              | `array`             | Yes, if `group_id` not present |
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
@@ -145,13 +141,10 @@ curl -X POST \
         "type": "template",
 		"payload": {
 			"name": "otp",
-      "namespace: "",
+            "namespace: "",
 			"language": "en",
 			"header_params": ["Replacement Text"],
-			"body_params": ["223344", "10"],
-      "components": {
-
-            }
+			"body_params": ["223344", "10"]
 		}
 	}
 }'
@@ -159,10 +152,10 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name          | Description                                                                                                                                                                                         | Limits                                                                     | Required |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
-| name          | Template Name                                                                                                                                                                                       | N/A                                                                        | yes      |
-| namespace     | Namespace of the template                                                                                                                                                                           | N/A                                                                        | yes      |
-| language      | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                        | No       |
-| header_params | Can only used when there is a header of type text in the template. Up to 60 characters for all parameters and predefined template header text.                                                      | Up to 60 characters for all parameters and predefined template header text | No       |
-| body_params   | Up to 1024 characters for all parameters and predefined template text.                                                                                                                              | Up to 1024 characters for all parameters and predefined template text      | No       |
+| Name          | Description                                                                                                                                    | Limits                                                                     | Required |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
+| name          | Template Name                                                                                                                                  | N/A                                                                        | yes      |
+| namespace     | Namespace of the template                                                                                                                      | N/A                                                                        | yes      |
+| language      | Language to send the template in. Default `en`                                                                                                 | N/A                                                                        | No       |
+| header_params | Can only used when there is a header of type text in the template. Up to 60 characters for all parameters and predefined template header text. | Up to 60 characters for all parameters and predefined template header text | No       |
+| body_params   | Up to 1024 characters for all parameters and predefined template text.                                                                         | Up to 1024 characters for all parameters and predefined template text      | No       |

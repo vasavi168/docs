@@ -12,7 +12,7 @@
 {endpoint}sms/status?id=469ea920-ccd1-4a39-b728-c0b6f15f6aa6:1
 ```
 
-You can send sms using `POST` or `GET` methods, GET method requires data should be url_encoded.
+You can send sms using `GET` method. GET method requires data should be url_encoded.
 
 #### ACCEPTED PARAMETERS
 
