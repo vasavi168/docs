@@ -36,7 +36,7 @@ Create a new Verify object through the API to start the verification process of 
         "to": "9189195xxxx"
       },
       "order": 0,
-      "wait": 60
+      "wait": 60 // seconds
     },
     {
       "name": "sms",
