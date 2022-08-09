@@ -26,7 +26,7 @@
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
   - [Optout](/docs/{version}/sms/optout)
   - [Service Usage](/docs/{version}/sms/usage)
-  - [View Senders](/docs/{version}/senders)
+  - [View Senders](/docs/{version}/sms/senders)
   - [Create Sender](/docs/{version}/sms/senders/create)
   - [Edit Sender](/docs/{version}/sms/senders/edit)
   - [Delete Sender](/docs/{version}/sms/senders/delete)
