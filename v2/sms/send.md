@@ -8,16 +8,7 @@ The SMS API supports the following:
 
 `GET` - You can retrieve the results of the message you sent using the GET method. You do this by sending a GET request containing the reference id for the message you sent. We return a response message in the form of a _**JSON**_ object in the entity body.
 
-### Services
-
-Types of services and their values are listed below:
-
-- T - Transactional Messaging.
-- P - Promotional Messaging.
-- S - Transcrub Messaging.
-- G - Global Messaging
-
-Country code is mandatory to be included in the `to` paramenter for global messaging and optional for indian numbers. If country code not found, default `91` will get appended to mobile number.
+Country code is mandatory to be included in the `to` paramenter for global messaging.
 
 Before you start sending SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
 
@@ -48,14 +39,14 @@ Before you start sending SMS through this API, please test whether your content 
 
 | Name        | Descriptions                                                                                                                                                           |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                        |
-| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                |
 | webhook_id  | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms/webhook) |
 | time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                     |
 | type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                          |
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                 |
 | custom      | Your own unique_id                                                                                                                                                     |
 | port        | Port number to which SMS has to be delivered                                                                                                                           |
+| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                        |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                |
 
 #### Example Request
 

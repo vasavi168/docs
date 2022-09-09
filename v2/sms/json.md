@@ -68,8 +68,8 @@ All params in send sms will support in JSON also.
 | flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
 | custom      | Any customised parameters can be passed using this parameter                                                                                                            |
 | port        | Port number to which SMS has to be sent                                                                                                                                 |
-| entity_id   | Principal Entityid registered in DLT portal                                                                                                                             |
-| template_id | TemplateId registered in DLT portal                                                                                                                                     |
+| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                         |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                 |
 
 #### Example Request
 

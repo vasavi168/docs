@@ -6,7 +6,7 @@
 {
 	"channels": [{
 		"name": "sms",
-		"from": "MOBTXT",
+		"from": "SENDER",
 		"meta": {
 			"service": "T",
 			"template_id": "1234XXXXXXX",
@@ -32,7 +32,7 @@
     {
       "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
       "channel": "sms",
-      "from": "MOBTXT",
+      "from": "SENDER",
       "to": "9190199xxxxx",
       "credits": 1,
       "created_at": "2021-06-18 14:48:06",
@@ -45,20 +45,20 @@
 
 #### PARAMETERS
 
-| Name        | Description                                                                   | type                | Required                       |
-| ----------- | ----------------------------------------------------------------------------- | ------------------- | ------------------------------ |
-| channels    | This block contains information realted messaging channel                     | N/A                 | Yes                            |
-| name        | Name of Messaging Channel. Ex: `sms`                                          | `string`            | Yes                            |
-| from        | Sender or From Number                                                         | `number`            | Yes                            |
-| meta        | This block contains additional information related to messaging channel       | N/A                 | Yes                            |
-| service     | Sms Service Name. Default takes the first enabled sms service.                | `string`            | Yes                            |
-| template_id | DLT registered template id.                                                   | `int`               | Yes                            |
-| entity_id   | DLT registered entity id.                                                     | `int`               | Yes                            |
-| foreign_id  | Custom id for reference from customer.                                        | N/A                 | No                             |
-| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value “U”, “N” or “A”) | `string`            | No                             |
-| recipient   | This block contains contacts information related to channel                   | N/A                 | Yes                            |
-| group_id    | Segment id which contain list of phone numbers                                | `string` or `array` | Yes if `to` param not present  |
-| to          | Receiver mobile numbers : `text`                                              | `array`             | Yes, if `group_id` not present |
+| Name        | Description                                                                   | type                | Required                               |
+| ----------- | ----------------------------------------------------------------------------- | ------------------- | -------------------------------------- |
+| channels    | This block contains information realted messaging channel                     | `array`             | Yes                                    |
+| name        | Name of Messaging Channel. Ex: `sms`                                          | `string`            | Yes                                    |
+| from        | Sender or From Number                                                         | `number`            | Yes                                    |
+| meta        | This block contains additional information related to messaging channel       | `map`               | Yes                                    |
+| service     | Sms Service Name. Default takes the first enabled sms service.                | `string`            | Yes                                    |
+| foreign_id  | Custom id for reference from customer.                                        | `string`            | No                                     |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value “U”, “N” or “A”) | `string`            | No                                     |
+| recipient   | This block contains contacts information related to channel                   | `list`              | Yes                                    |
+| group_id    | Segment id which contain list of phone numbers                                | `string` or `array` | Yes if `to` param not present          |
+| to          | Receiver mobile numbers : `text`                                              | `array`             | Yes, if `group_id` not present         |
+| template_id | DLT registered template id.                                                   | `int`               | No (applicable for indian routes only) |
+| entity_id   | DLT registered entity id.                                                     | `int`               | No (applicable for indian routes only) |
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
@@ -88,7 +88,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "sms",
-		"from": "MOBTXT"
+		"from": "SENDER"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -132,7 +132,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "sms",
-		"from": "MOBTXT"
+		"from": "SENDER"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"

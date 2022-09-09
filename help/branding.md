@@ -1,7 +1,8 @@
 # Setting Custom Domain
 
 ## App Setup
-To setup your own domain name and theme colors follow the below steps: 
+
+To setup your own domain name and theme colors follow the below steps:
 
 - Login to panel using primary domain name given by vendor
 - Click Resellers -> branding on left side menu
@@ -13,9 +14,10 @@ To setup your own domain name and theme colors follow the below steps:
 
 ## CNAME Setup
 
-Login to your domain register and create an CNAME record for your domain point to 
+Login to your domain register and create an CNAME record for your domain point to
+
 ```code
-cname-sms.txtsms.me
+{cname_domain}
 ```
 
 ## Have you setup your CNAME?
@@ -30,10 +32,10 @@ On successfull pointing, you can able to see the results similar to below
 
 ```shell
 ;; ANSWER SECTION:
-my.example.com.	984	IN	CNAME	cname-sms.txtsms.me.
-cname-sms.txtsms.me.	59	IN	A	52.76.163.53
-cname-sms.txtsms.me.	59	IN	A	52.221.80.168
+my.example.com.	984	IN	CNAME	{cname_domain}.
+{cname_domain}.	59	IN	A	52.76.163.53
+{cname_domain}.	59	IN	A	52.221.80.168
 
 ```
 
-*Note:* Some hosting providers may take upto 12 hours to resolved the cname mapping.
+_Note:_ Some hosting providers may take upto 12 hours to resolved the cname mapping.

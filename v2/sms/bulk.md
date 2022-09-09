@@ -6,18 +6,9 @@ The SMS API supports the following:
 
 `POST` - When you send a POST request with file containing mobile numbers of customers, We send SMS message you specify to all the numbers exist in file.
 
-### Services
+Country code is mandatory to be included in the `to` paramenter for global messaging.
 
-Types of services and their values are listed below:
-
-- T - Transactional Messaging.
-- P - Promotional Messaging.
-- S - Transcrub Messaging.
-- G - Global Messaging
-
-Country code is mandatory to be included in the `to` paramenter for global messaging and optional for indian numbers. If country code not found, default `91` will get appended to mobile number.
-
-Before you start sending transactional SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
+Before you start sending SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
 
 ## Send SMS
 
@@ -56,8 +47,8 @@ You can send sms using `POST` method only as uploading file will supporting in
 | custom      | Any customised parameters can be passed using this parameter                                                                                                           |
 | port        | Port number to which SMS has to be sent                                                                                                                                |
 | column      | Mobile number column name same as in customize sms                                                                                                                     |
-| entity_id   | Principal Entityid registered in DLT portal                                                                                                                            |
-| template_id | TemplateId registered in DLT portal                                                                                                                                    |
+| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                        |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                |
 
 #### Example Request
 

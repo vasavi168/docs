@@ -6,18 +6,9 @@ The SMS API supports the following:
 
 `POST` - When you send a POST request with the end user's phone number to the messaging subresource, We sends the SMS message you specify.
 
-### Services
+Country code is mandatory to be included in the `to` paramenter for global messaging.
 
-Types of services and their values are listed below:
-
-- T - Transactional Messaging.
-- P - Promotional Messaging.
-- S - Transcrub Messaging.
-- G - Global Messaging
-
-Country code is mandatory to be included in the `to` paramenter for global messaging and optional for indian numbers. If country code not found, default `91` will get appended to mobile number.
-
-Before you start sending transactional SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
+Before you start sending SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
 
 ### Templates
 

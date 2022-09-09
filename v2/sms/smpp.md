@@ -17,22 +17,17 @@ assumes with SMPP a level of familiarity functionality.
 
 Here is an overview of the available servers:
 
-| Hostname        | Port |
-| --------------- | ---- |
-| smpp1.txtsms.me | 3634 |
-| smpp2.txtsms.me | 3634 |
+| Hostname            | Port |
+| ------------------- | ---- |
+| smpp1.{smpp_domain} | 3634 |
+| smpp2.{smpp_domain} | 3634 |
 
-## Additional Mandatory TLV
-
-| Mandatory TLV | Tag value Decimal | Tag value Hex |
-| ------------- | ----------------- | ------------- |
-| PE_ID         | 5120              | 1400          |
-| Template_ID   | 5121              | 1401          |
-
-## Additional Optional TLV
+## Additional TLV (For Indian Routes)
 
 | Mandatory TLV          | Tag value Decimal | Tag value Hex |
 | ---------------------- | ----------------- | ------------- |
+| PE_ID                  | 5120              | 1400          |
+| Template_ID            | 5121              | 1401          |
 | Telemarketer_ID(TM_ID) | 51212             | 1402          |
 
 ## CONNECTIVITY
