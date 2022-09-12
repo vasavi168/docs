@@ -157,68 +157,68 @@ to retrieve the delivery report from our server the client will have to connect 
 
 Status and error code which can be returned by Messaging Platform.
 
-| Code | Status                 | Status Description                                  |
-| ---- | ------------------     | --------------------------------------------------- |
-| 000  | DELIVRD                | Delivered to SIM.                                   |
-| 001  | INVALID-SUB            | Unidentified subscriber.                            |
-| 002  | INVALID-SUB            | Illegal subscriber                                  |
-| 003  | ABSENT-SUB             | Unidentified subscriber.                            |
-| 004  | HANDSET-ERR            | Illegal equipment                                   |
-| 005  | BARRED                 | SMS is prohibited                                   |
-| 006  | HANDSET-ERR            | MS does not support SMS                             |
-| 007  | HANDSET-ERR            | MS receiving error                                  |
-| 008  | NET-ERR                | Facility not supported.                             |
-| 009  | MEMEXEC                | Handset memory full                                 |
-| 010  | ABSENT-SUB             | Absent subscriber                                   |
-| 011  | FAILED                 | SMSC system failure                                 |
-| 012  | NET-ERR                | Gateway mobile switching error                      |
-| 013  | MOB-OFF                | Mobile handset switched off                         |
-| 014  | FAILED                 | SMS undelivered due to roaming limitation           |
-| 015  | INVALID-SUB            | Unidentified subscriber                             |
-| 016  | HANDSET-BUSY           | Subscriber is busy.                                 |
-| 017  | NET-ERR                | Resource cannot be used at GMSC level               |
-| 018  | SERIES-BLK             | Series blocked                                      |
-| 019  | NET-ERR                | Submission error or invalid input data              |
-| 020  | BARRED                 | CUG reject                                          |
-| 021  | EXPIRED                | SMS timeout                                         |
-| 034  | UNDELIV                | Unknown Error                                       |
-| 045  | FAILED                 | Unknown Error                                       |
-| 099  | UNDELIV                | Unknown Error                                       |
-| 400  | SERIES-BLOCK           | Series has been temporary / permanently blocked.    |
-| 401  | NO-CREDITS             | Credit exhausted.                                   |
-| 402  | NO-ACCOUNT             | Invalid account.                                    |
-| 403  | SERVER-ERR             | Unknown Error                                       |
-| 404  | INV-NUMBER             | Invalid destination number                          |
-| 405  | SERVER-ERR             | ESME client error                                   |
-| 406  | SERVER-ERR             | ESME client error                                   |
-| 407  | SPAM                   | Sent illigal content                                |
-| 408  | DNDNUMB                | Number registered in dnd database.                  |
-| 430  | SERVER-ERR             | Unknown Error                                       |
-| 431  | SERVER-ERR             | Unknown Error                                       |
-| 432  | SERVER-ERR             | Unknown Error                                       |
-| 433  | SERVER-ERR             | Unknown Error                                       |
-| 450  | BLACKLST               | Number blocklisted to receive messages              |
-| 451  | SNDR-NOT-ALLOTED       | Sender Id been blocked                              |
-| 452  | TEMPLATE-NOT-FOUND     | No matching templates                               |
-| 453  | INV-TEMPLATE           | Message rejected as template not allotted for ESME  |
-| 454  | INV-SENDER             | Message rejected as sender id not allotted for ESME |
-| 455  | NOT-OPTIN              | Message rejected as number not in optin list        |
-| 456  | OPTOUT-REJ             | Rejected as number optout to receive messages       |
-| 457  | PROMO-TMOUT            | Promotional time exceeded                           |
-| 458  | REJECTED               | Unknown Error                                       |
-| 459  | NOTALLOWED             | Country not allowed to send sms                     |
-| 460  | DUPLICATE              | Same content sent                                   |
-| 461  | UNDELIV                | Unknown Error                                       |
-| 462  | FAILED                 | Unknown Error                                       |
-| 778  | DLT-REJ-MULTIPART      | All message parts not delivrd to handset            |
-| 777  | DLT-REJECTED           | Invalid Sender-Id or Invalid Template               |
-| 780  | DLT-INV-TMID           | Invalid DLT telemarketer Id                         |
-| 781  | DLT-INV-ENTITY         | Invalid Entity DLT Id                               |
-| 782  | DLT-INV-TM-ID          | Invalid DLT Template Id                             |
-| 783  | DLT-TM-VAR-EXECEED     | Template variable exceeded 30 chars                 |
-| 784  | DLT-ENTITY-NOT-FOUND   | Entity Id not found                                 |
-| 785  | DLT-TM-BLACKLST        | Template Id blacklisted                             |
-| 786  | DLT-ENTITY-BLACKLST    | Entity Id blacklisted                               |
-| 787  | DLT-HEADER-INACTIVE    | Sender Inactive                                     |
-| 788  | DLT-TM-INACTIVE        | Template is Inactive                                |
-| 789  | DLT-SENDER-NOT-REG-TM  | Sender not registered for Template                  |
+| Code | Status                | Status Description                                  |
+| ---- | --------------------- | --------------------------------------------------- |
+| 000  | DELIVRD               | Delivered to SIM.                                   |
+| 001  | INVALID-SUB           | Unidentified subscriber.                            |
+| 002  | INVALID-SUB           | Illegal subscriber                                  |
+| 003  | ABSENT-SUB            | Unidentified subscriber.                            |
+| 004  | HANDSET-ERR           | Illegal equipment                                   |
+| 005  | BARRED                | SMS is prohibited                                   |
+| 006  | HANDSET-ERR           | MS does not support SMS                             |
+| 007  | HANDSET-ERR           | MS receiving error                                  |
+| 008  | NET-ERR               | Facility not supported.                             |
+| 009  | MEMEXEC               | Handset memory full                                 |
+| 010  | ABSENT-SUB            | Absent subscriber                                   |
+| 011  | FAILED                | SMSC system failure                                 |
+| 012  | NET-ERR               | Gateway mobile switching error                      |
+| 013  | MOB-OFF               | Mobile handset switched off                         |
+| 014  | FAILED                | SMS undelivered due to roaming limitation           |
+| 015  | INVALID-SUB           | Unidentified subscriber                             |
+| 016  | HANDSET-BUSY          | Subscriber is busy.                                 |
+| 017  | NET-ERR               | Resource cannot be used at GMSC level               |
+| 018  | SERIES-BLK            | Series blocked                                      |
+| 019  | NET-ERR               | Submission error or invalid input data              |
+| 020  | BARRED                | CUG reject                                          |
+| 021  | EXPIRED               | SMS timeout                                         |
+| 034  | UNDELIV               | Unknown Error                                       |
+| 045  | FAILED                | Unknown Error                                       |
+| 099  | UNDELIV               | Unknown Error                                       |
+| 400  | SERIES-BLOCK          | Series has been temporary / permanently blocked.    |
+| 401  | NO-CREDITS            | Credit exhausted.                                   |
+| 402  | NO-ACCOUNT            | Invalid account.                                    |
+| 403  | SERVER-ERR            | Unknown Error                                       |
+| 404  | INV-NUMBER            | Invalid destination number                          |
+| 405  | SERVER-ERR            | ESME client error                                   |
+| 406  | SERVER-ERR            | ESME client error                                   |
+| 407  | SPAM                  | Sent illigal content                                |
+| 408  | DNDNUMB               | Number registered in dnd database.                  |
+| 430  | SERVER-ERR            | Unknown Error                                       |
+| 431  | SERVER-ERR            | Unknown Error                                       |
+| 432  | SERVER-ERR            | Unknown Error                                       |
+| 433  | SERVER-ERR            | Unknown Error                                       |
+| 450  | BLACKLST              | Number blocklisted to receive messages              |
+| 451  | SNDR-NOT-ALLOTED      | Sender Id been blocked                              |
+| 452  | TEMPLATE-NOT-FOUND    | No matching templates                               |
+| 453  | INV-TEMPLATE          | Message rejected as template not allotted for ESME  |
+| 454  | INV-SENDER            | Message rejected as sender id not allotted for ESME |
+| 455  | NOT-OPTIN             | Message rejected as number not in optin list        |
+| 456  | OPTOUT-REJ            | Rejected as number optout to receive messages       |
+| 457  | PROMO-TMOUT           | Promotional time exceeded                           |
+| 458  | REJECTED              | Unknown Error                                       |
+| 459  | NOTALLOWED            | Country not allowed to send sms                     |
+| 460  | DUPLICATE             | Same content sent                                   |
+| 461  | UNDELIV               | Unknown Error                                       |
+| 462  | FAILED                | Unknown Error                                       |
+| 778  | REJ-MULTIPART         | All message parts are not delivrd to handset        |
+| 777  | DLT-REJECTED          | Invalid Sender-Id or Invalid Template               |
+| 780  | DLT-INV-TMID          | Invalid DLT telemarketer Id                         |
+| 781  | DLT-INV-ENTITY        | Invalid Entity DLT Id                               |
+| 782  | DLT-INV-TM-ID         | Invalid DLT Template Id                             |
+| 783  | DLT-TM-VAR-EXECEED    | Template variable exceeded 30 chars                 |
+| 784  | DLT-ENTITY-NOT-FOUND  | Entity Id not found                                 |
+| 785  | DLT-TM-BLACKLST       | Template Id blacklisted                             |
+| 786  | DLT-ENTITY-BLACKLST   | Entity Id blacklisted                               |
+| 787  | DLT-HEADER-INACTIVE   | Sender Inactive                                     |
+| 788  | DLT-TM-INACTIVE       | Template is Inactive                                |
+| 789  | DLT-SENDER-NOT-REG-TM | Sender not registered for template                  |
