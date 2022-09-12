@@ -210,15 +210,15 @@ Status and error code which can be returned by Messaging Platform.
 | 460  | DUPLICATE              | Same content sent                                   |
 | 461  | UNDELIV                | Unknown Error                                       |
 | 462  | FAILED                 | Unknown Error                                       |
-| 778  | REJ-MULTIPART          | All message parts not delivrd to handset            |
-| 777  | DLT-REJECTED           | Invalid sender-id or invalid template               |
-| 780  | INV-TMID               | Invalid DLT telemarketer Id                         |
-| 781  | INV-ENTITY             | Invalid Entity DLT Id                               |
-| 782  | INV-TM-ID              | Invalid DLT Template Id                             |
-| 783  | TM-VAR-EXECEED         | Template variable exceeded 30 char                  |
-| 784  | ENTITY-NOT-FOUND       | Entity Id not found                                 |
-| 785  | TM-BLACKLST            | Template Id blacklisted                             |
-| 786  | ENTITY-BLACKLST        | Entity Id blacklisted                               |
-| 787  | HEADER-INACTIVE        | Sender Inactive                                     |
-| 788  | TM-INACTIVE            | Template is inactive                                |
-| 789  | SENDER-NOT-REG-TM      | sender not registered for Template                  |
+| 778  | DLT-REJ-MULTIPART      | All message parts not delivrd to handset            |
+| 777  | DLT-REJECTED           | Invalid Sender-Id or Invalid Template               |
+| 780  | DLT-INV-TMID           | Invalid DLT telemarketer Id                         |
+| 781  | DLT-INV-ENTITY         | Invalid Entity DLT Id                               |
+| 782  | DLT-INV-TM-ID          | Invalid DLT Template Id                             |
+| 783  | DLT-TM-VAR-EXECEED     | Template variable exceeded 30 chars                 |
+| 784  | DLT-ENTITY-NOT-FOUND   | Entity Id not found                                 |
+| 785  | DLT-TM-BLACKLST        | Template Id blacklisted                             |
+| 786  | DLT-ENTITY-BLACKLST    | Entity Id blacklisted                               |
+| 787  | DLT-HEADER-INACTIVE    | Sender Inactive                                     |
+| 788  | DLT-TM-INACTIVE        | Template is Inactive                                |
+| 789  | DLT-SENDER-NOT-REG-TM  | Sender not registered for Template                  |
