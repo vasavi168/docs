@@ -64,13 +64,13 @@
   - [Webhook](/docs/{version}/whatsapp/webhooks)
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
 
-- MIP
+<!-- - MIP
 
   - [Introduction](/docs/{version}/mip)
   - [Send a message](/docs/{version}/mip/send-message)
   - [Status Info](/docs/{version}/mip/status)
   - [Webhook](/docs/{version}/mip/webhooks)
-  - [Pull DLR](/docs/{version}/mip/pull-status)
+  - [Pull DLR](/docs/{version}/mip/pull-status) -->
 
 - RCS
 
@@ -87,9 +87,9 @@
   - [View Visits](/docs/{version}/link/visits)
   - [Webhook](/docs/{version}/link/webhook) -->
 
-- Number Lookup
+<!-- - Number Lookup
 
-  - [Verify](/docs/{version}/lookup/verify)
+  - [Verify](/docs/{version}/lookup/verify) -->
 
 - Webhook
 
