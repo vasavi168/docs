@@ -41,6 +41,7 @@ curl -X POST \
 ```json
 {
   "status": "OK",
+  "code": 200,
   "message": "Template updated successfully"
 }
 ```

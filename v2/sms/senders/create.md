@@ -22,6 +22,7 @@ Create sender-ids using post method under your account
 | country_code | No       | For which country this sender belongs to. 2 letters           |
 | entity_id    | Mixed    | Input the entity id (required for india)                      |
 | entity_name  | Mixed    | Company name whom this sender belongs to (required for india) |
+| service      | no       | Input the Service like (T, P, MKT, A2P)                       |
 
 #### Example Request
 
@@ -35,6 +36,7 @@ curl -X POST \
   -d entity_name=xxxxx \
   -d entity_id=xxxxx \
   -d country_code=IN \
+  -d service=T \
 ```
 
 #### Example Response
