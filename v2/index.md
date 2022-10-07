@@ -4,9 +4,25 @@ API's are built with `REST` standard that allows you to easily send messages to 
 
 This documentation gives you instructions on how to integrate our api through various _*HTTP*_ API and _*JSON*_ API.
 
-We'll be helping you configure, access and use the API for SMS.
+We'll be helping you configure, access and use the API for our services.
 
-To integrate our SMS API, any HTTP recipient in any programming language can be used.
+To integrate our API, any HTTP recipient in any programming language can be used.
+
+@if(isset($products))
+
+## PRODUCTS
+
+List the products and codes
+
+@foreach($products as $key => $name)
+@if ($loop->index == 0)
+| Product Code | Product Name |
+| ---- | ---- |
+@endif
+| {{ $key }} | {{ $name }} |
+@endforeach
+
+@endif
 
 #### API Endpoint
 
