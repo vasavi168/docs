@@ -55,7 +55,7 @@ All params in send sms will support in JSON also.
 | to      | Phone number to send with country prefix. (multiple numbers can be separated by comma.) |
 | message | The content of the SMS                                                                  |
 | sender  | The registered and approved Sender-id                                                   |
-| service | Determines whether the SMS to be sent is Transactional, Promotional, SMS A2P Enterprise,  SMS A2P Marketing or other.           |
+| service | The short code of the service name. EX: (T, P, MKT, A2P)                                |
 
 #### OPTIONAL PARAMETERS
 

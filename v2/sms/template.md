@@ -61,7 +61,7 @@ All params in send sms will support in JSON also.
 | ----------- | ------------------------------------------------------------------------------------------------------ |
 | to          | Phone number to send with country prefix. (multiple numbers need to be sent as array.)                 |
 | template_id | Id of the template                                                                                     |
-| service     | Determines whether the SMS to be sent is Transactional, Promotional,SMS A2P Enterprise, SMS A2P Marketing or other.                          |
+| service     | The short code of the service name. EX: (T, P, MKT, A2P)                     |
 | variables   | Varible values for replacing in template content (need to send as array) Ex:["name","891919XXX","new"] |
 
 #### OPTIONAL PARAMETERS

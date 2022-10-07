@@ -22,7 +22,7 @@ Create sender-ids using post method under your account
 | country_code | No       | For which country this sender belongs to. 2 letters           |
 | entity_id    | Mixed    | Input the entity id (required for india)                      |
 | entity_name  | Mixed    | Company name whom this sender belongs to (required for india) |
-| service      | no       | Input the Service like (T, P, MKT, A2P)                       |
+| service      | no       | The short code of the service name. EX: (T, P, MKT, A2P)      |
 
 #### Example Request
 

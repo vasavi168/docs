@@ -33,7 +33,7 @@ You can send sms using `POST` method only as uploading file will supporting in
 | ------- | ----------------------------------------------------------------------------------------------------------- |
 | message | The content of the SMS                                                                                      |
 | sender  | The registered and approved Sender-id                                                                       |
-| service | Determines whether the SMS to be sent is Transactional, Promotional, SMS A2P Enterprise, SMS A2P Marketing or other.                               |
+| service | The short code of the service name. EX: (T, P, MKT, A2P)            |
 | file    | Request body form-data you need to select file parameter and need to upload file containing mobile numbers. |
 
 #### OPTIONAL PARAMETERS

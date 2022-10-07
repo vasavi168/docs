@@ -19,10 +19,19 @@ Create templates using post method under your account
 | Name        | Optional | Descriptions                                                     |
 | ----------- | -------- | ---------------------------------------------------------------- |
 | sender      | No       | Enter the approved sender-id under your account                  |
-| name        | Yes      | Input the name of the template that you would like to refer with |
+| name        | No       | Input the name of the template that you would like to refer with |
 | body        | No       | Input the body of the sms(template)                              |
 | template_id | Mixed    | DLT Template id (required for india)                             |
-| type        | Mixed    | Template type like (P, T, SI, SE)(required for india)            |
+| type        | Mixed    | Type of the template  like (P, T, SI, SE)(required for india)    |
+
+#### Template types
+
+| Template type | Description  |
+| -----------   | -------------|
+|  T  | Transactional          |
+|  P  | Promotional            |
+|  SI | Service Explicit       |
+|  SE | Service Implicit       |
 
 #### Example Request
 
