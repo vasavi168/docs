@@ -20,7 +20,7 @@ Replace the {id} with the actual id of the template that you would like to Edit.
 
 | Name        | Optinal | Descriptions                                                     |
 | ----------- | ------- | ---------------------------------------------------------------- |
-| name        | Yes     | Input the name of the template that you would like to refer with |
+| name        | No      | Input the name of the template that you would like to refer with |
 | body        | No      | Input the body of the sms(template)                              |
 | template_id | Mixed   | DLT Template id (required for india)                             |
 
@@ -33,6 +33,7 @@ curl -X POST \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
     -H 'Content-Type: application/x-www-form-urlencoded'
     -F body=testing-2
+    -F name=welcome
 
 ```
 
@@ -41,6 +42,7 @@ curl -X POST \
 ```json
 {
   "status": "OK",
+  "code": 200,
   "message": "Template updated successfully"
 }
 ```

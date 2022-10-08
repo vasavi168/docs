@@ -21,6 +21,7 @@ Edit sender-ids using post method under your account
 | country_code | No       | For which country this sender belongs to. 2 letters           |
 | entity_id    | Mixed    | Input the entity id (required for india)                      |
 | entity_name  | Mixed    | Company name whom this sender belongs to (required for india) |
+| service      | no       | The short code of the service name. EX: (T, P, MKT, A2P)      |
 
 #### Example Request
 
@@ -32,6 +33,7 @@ curl -X PUT \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d entity_name=xxxxx \
   -d entity_id=xxxxx \
+  -d service=T \
   -d country_code=IN
 ```
 
@@ -40,7 +42,7 @@ curl -X PUT \
 ```json
 {
   "status": "OK",
-  "message": "Sender updated successfully",
-  "id": 1
+  "code": 200,
+  "message": "Sender updated successfully"
 }
 ```
