@@ -11,7 +11,7 @@ Edit sender-ids using post method under your account
 #### PUT
 
 ```
-{endpoint}sms/sender/edit/{id}
+{endpoint}sms/senders/{id}
 ```
 
 #### PARAMETERS
@@ -27,7 +27,7 @@ Edit sender-ids using post method under your account
 
 ```
 curl -X PUT \
-  {endpoint}sms/sender/edit/93af9991-f1cc-4b36-abd5-xxxxxx \
+  {endpoint}sms/senders/93af9991-f1cc-4b36-abd5-xxxxxx \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'Content-Type: application/x-www-form-urlencoded' \

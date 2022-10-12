@@ -11,7 +11,7 @@ Create templates using post method under your account
 #### POST
 
 ```
-{endpoint}sms/template/create
+{endpoint}sms/templates
 ```
 
 #### PARAMETERS
@@ -22,22 +22,22 @@ Create templates using post method under your account
 | name        | No       | Input the name of the template that you would like to refer with |
 | body        | No       | Input the body of the sms(template)                              |
 | template_id | Mixed    | DLT Template id (required for india)                             |
-| type        | Mixed    | Type of the template  like (P, T, SI, SE)(required for india)    |
+| type        | Mixed    | Type of the template like (P, T, SI, SE)(required for india)     |
 
 #### Template types
 
-| Template type | Description  |
-| -----------   | -------------|
-|  T  | Transactional          |
-|  P  | Promotional            |
-|  SI | Service Explicit       |
-|  SE | Service Implicit       |
+| Template type | Description      |
+| ------------- | ---------------- |
+| T             | Transactional    |
+| P             | Promotional      |
+| SI            | Service Explicit |
+| SE            | Service Implicit |
 
 #### Example Request
 
 ```
 curl -X POST \
-  {endpoint}sms/template/create \
+  {endpoint}sms/templates \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
     -H 'Content-Type: application/x-www-form-urlencoded' \
