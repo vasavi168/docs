@@ -48,7 +48,7 @@ All params in send sms will support in JSON also.
 
 ```json
 {
-  "service": "T",
+  "service": "MKT",
   "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
   "variables": ["Laxman", "", "New"],
   "to": ["91891952xxxxx", "918919xxxxxx"]
@@ -61,7 +61,7 @@ All params in send sms will support in JSON also.
 | ----------- | ------------------------------------------------------------------------------------------------------ |
 | to          | Phone number to send with country prefix. (multiple numbers need to be sent as array.)                 |
 | template_id | Id of the template                                                                                     |
-| service     | The short code of the service name. EX: (T, P, MKT, A2P)                     |
+| service     | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products)           |
 | variables   | Varible values for replacing in template content (need to send as array) Ex:["name","891919XXX","new"] |
 
 #### OPTIONAL PARAMETERS
@@ -85,7 +85,7 @@ All params in send sms will support in JSON also.
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
     -H 'content-type: application/x-www-form-urlencoded' \
     -d '{
-      "service": "T",
+      "service": "MKT",
       "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
       "variables" : ["Laxman", "myname@gmail.com",  "New"],
       "to": ["918919525224","8919555555"]

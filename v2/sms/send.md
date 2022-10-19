@@ -28,12 +28,12 @@ Before you start sending SMS through this API, please test whether your content 
 
 #### MANDATORY PARAMETERS
 
-| Name    | Descriptions                                                                  |
-| ------- | ----------------------------------------------------------------------------- |
-| to      | Phone number to send with country prefix.                                     |
-| message | The content of the SMS                                                        |
-| sender  | The registered and approved Sender-id                                         |
-| service | The short code of the service name.  EX: (T, P, MKT, A2P) |
+| Name    | Descriptions                                                                                 |
+| ------- | -------------------------------------------------------------------------------------------- |
+| to      | Phone number to send with country prefix.                                                    |
+| message | The content of the SMS                                                                       |
+| sender  | The registered and approved Sender-id                                                        |
+| service | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products) |
 
 #### OPTIONAL PARAMETERS
 
@@ -57,7 +57,7 @@ curl -X POST '{endpoint}sms/send' \
     -H 'Content-Type: application/x-www-form-urlencoded' \
     -d 'sender=TXTSMS' \
     -d 'to=917026267xxx' \
-    -d 'service=T' \
+    -d 'service=MKT' \
     -d 'message=Your OTP is 123456'
 ```
 

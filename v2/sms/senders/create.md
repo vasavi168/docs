@@ -16,14 +16,13 @@ Create sender-ids using post method under your account
 
 #### PARAMETERS
 
-| Name         | optional | Descriptions                                                  |
-| ------------ | -------- | ------------------------------------------------------------- |
-| name         | No       | Enter the sender-id that you want to create                   |
-| country_code | No       | For which country this sender belongs to. 2 letters           |
-| service      | No       | Enter the name of the sms service                             |
-| entity_id    | Mixed    | Input the entity id (required for india)                      |
-| entity_name  | Mixed    | Company name whom this sender belongs to (required for india) |
-| service      | no       | The short code of the service name. EX: (T, P, MKT, A2P)      |
+| Name         | optional | Descriptions                                                                                 |
+| ------------ | -------- | -------------------------------------------------------------------------------------------- |
+| name         | No       | Enter the sender-id that you want to create                                                  |
+| country_code | No       | For which country this sender belongs to. 2 letters                                          |
+| entity_id    | Mixed    | Input the entity id (required for india)                                                     |
+| entity_name  | Mixed    | Company name whom this sender belongs to (required for india)                                |
+| service      | No       | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products) |
 
 #### Example Request
 
@@ -38,7 +37,6 @@ curl -X POST \
   -d entity_name=xxxxx \
   -d entity_id=xxxxx \
   -d country_code=IN \
-  -d service=T \
 ```
 
 #### Example Response

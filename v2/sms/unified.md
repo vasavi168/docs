@@ -8,7 +8,7 @@
 		"name": "sms",
 		"from": "SENDER",
 		"meta": {
-			"service": "T",
+			"service": "MKT",
 			"template_id": "1234XXXXXXX",
 			"entity_id":"89XXXXXXXXXXX",
 			"foreign_id":"your-custom-id",

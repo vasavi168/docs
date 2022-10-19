@@ -36,8 +36,10 @@
   - [Delete Template](/docs/{version}/sms/templates/delete)
 
 - SMPP
+
   - [Gateway](/docs/{version}/sms/smpp)
   - [Error Codes](/docs/{version}/sms/smpp#delivery-reports)
+
 - Verify
 
   - [Introduction](/docs/{version}/verify)
@@ -64,13 +66,15 @@
   - [Webhook](/docs/{version}/whatsapp/webhooks)
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
 
-<!-- - MIP
+<!--
+- MIP
 
   - [Introduction](/docs/{version}/mip)
   - [Send a message](/docs/{version}/mip/send-message)
   - [Status Info](/docs/{version}/mip/status)
   - [Webhook](/docs/{version}/mip/webhooks)
-  - [Pull DLR](/docs/{version}/mip/pull-status) -->
+  - [Pull DLR](/docs/{version}/mip/pull-status)
+-->
 
 - RCS
 
@@ -80,16 +84,18 @@
   - [Webhook](/docs/{version}/rcs/webhooks)
   - [Pull DLR](/docs/{version}/rcs/pull-status)
 
-<!-- * Link
+<!--
+- Link
 
   - [View Links](/docs/{version}/link)
   - [Create Link](/docs/{version}/link/create)
   - [View Visits](/docs/{version}/link/visits)
-  - [Webhook](/docs/{version}/link/webhook) -->
+  - [Webhook](/docs/{version}/link/webhook)
 
-<!-- - Number Lookup
+- Number Lookup
 
-  - [Verify](/docs/{version}/lookup/verify) -->
+  - [Verify](/docs/{version}/lookup/verify)
+-->
 
 - Webhook
 
