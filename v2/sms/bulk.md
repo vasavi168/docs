@@ -6,9 +6,7 @@ The SMS API supports the following:
 
 `POST` - When you send a POST request with file containing mobile numbers of customers, We send SMS message you specify to all the numbers exist in file.
 
-Country code is mandatory to be included in the `to` paramenter for global messaging.
-
-Before you start sending SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
+> Country code is mandatory to be included in the `to` paramenter for global messaging.
 
 ## Send SMS
 
@@ -24,8 +22,7 @@ Before you start sending SMS through this API, please test whether your content 
 {endpoint}sms/bulk
 ```
 
-You can send sms using `POST` method only as uploading file will supporting in
-`POST`.
+You can send sms using `POST` method only as uploading file will supporting in `POST`.
 
 #### MANDATORY PARAMETERS
 

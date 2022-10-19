@@ -1,17 +1,5 @@
 # Template SMS API
 
-The SMS API supports the following:
-
-#### HTTP Methods
-
-`POST` - When you send a POST request with the end user's phone number to the messaging subresource, We sends the SMS message you specify.
-
-Country code is mandatory to be included in the `to` paramenter for global messaging.
-
-Before you start sending SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
-
-### Templates
-
 Now you can send message using template id of the predefined template created in your account.
 
 Example template as follows:
@@ -20,11 +8,11 @@ Dear @{{1}}, Thanks for registering with us. Your details as follows @{{2}}, @{{
 
 While sending sms we need to pass the variables in the api url then content will be replaced automatically in the template as below.
 
-Ex: variables=["laxman","laxman46XXXXXX@gmail.com","891952XXXX"]
+Ex: variables=["laxman","laxman46XXXXXX@gmail.com","91891952XXXX"]
 
 Note: Variables in array must be in order created in template. Even blank values also will replace if we specify in variables array.
 
-Dear laxman, Thanks for regisitering with us. Your details as follows laxman46XXXX@gmail.com, 891952XXXX.
+Dear laxman, Thanks for regisitering with us. Your details as follows laxman46XXXX@gmail.com, 91891952XXXX.
 
 ## Send SMS
 

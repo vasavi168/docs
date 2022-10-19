@@ -1,5 +1,11 @@
 # Send Message Using SMS Channel
 
+#### HTTP Methods
+
+`POST` - When you send a POST request with the end user's phone number to the messaging subresource, We sends the SMS message you specify.
+
+> Country code is mandatory to be included in the `to` paramenter.
+
 ## Channel Info
 
 ```

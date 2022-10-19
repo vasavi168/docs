@@ -10,9 +10,9 @@ To integrate our API, any HTTP recipient in any programming language can be used
 
 @if(isset($products))
 
-## PRODUCTS
+## PRODUCTS/SERVICES
 
-List the products and codes
+List of product names and product codes
 
 @foreach($products as $key => $name)
 @if ($loop->index == 0)
@@ -42,6 +42,10 @@ https://www.getpostman.com/collections/{collection}
 
 @endif
 
+#### Available HTTP methods
+
+Our API uses HTTP verbs to understand if you want to read (`GET`), delete (`DELETE`) or create (`POST`) an object. When your web application cannot do a `POST` or `DELETE`, we provide the ability to set the method through the query parameter `_method`.
+
 ## AUTHENTICATION
 
 Each API request will have to contain request headers that include your access token to authenticate the request.
@@ -50,7 +54,7 @@ Don't have an access token? You will find your access token in the `Developers -
 
 When your application can't send an Authorization header, you can use the GET parameter `access_token` to provide your access key.
 
-> "Your API keys carry significant privileges. Please ensure to keep them 100% secure and be sure to not share your secret API keys in areas that are publicly accessible like GitHub. See [API Access Key Security](#api-access-key-security) for more information."
+> "Your API keys carry significant privileges. Please ensure to keep them 100% secure and be sure to not share your secret API keys in areas that are publicly accessible like GitHub. See [API Access Key Security](#content-api-access-key-security) for more information."
 
 We do provide incoming request whitelisting on our platform for our REST API. You can whitelist the IP addressess while generating the access token.
 
