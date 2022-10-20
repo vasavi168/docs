@@ -40,7 +40,6 @@ Kindly replace the token with your respective access_token.
     "data": [
       {
         "id": "02238e36-a4c0-4231-b2be-87f96303133a",
-        "user_id": 1,
         "name": "webhoook name",
         "uri": "https://demo.mobtext.info/api/messageupdate",
         "secret": null,
@@ -49,7 +48,6 @@ Kindly replace the token with your respective access_token.
         "status": 1,
         "created_at": "2021-05-04 17:46:58",
         "updated_at": "2021-05-04 17:46:58",
-        "deleted_at": null,
         "serial": 1
       }
     ],
@@ -81,7 +79,7 @@ Create a Webhook using post method under your account
 #### POST
 
 ```
-{endpoint}developer/webhook/create
+{endpoint}developer/webhooks
 ```
 
 #### PARAMETERS
@@ -115,23 +113,18 @@ Create a Webhook using post method under your account
 
 ```json
 {
-  "status": "OK",
-  "code": 200,
-  "message": "Sender saved successfully",
-  "id": "f66b983b-713a-4818-a691-2c684eb4eccd"
-}
-
-{
     "status": "OK",
     "code": 200,
-    "message": "Webhook saved successfully",
+    "message": "Created successfully",
     "data": {
+        "id": "180ebbb5-9b6f-4c51-a98a-**********",
         "name": "name of webhook",
         "uri": "https://example.com/",
         "secret": "*****",
         "verification_code": "*****",
         "status": "1",
-        "id": "180ebbb5-9b6f-4c51-a98a-**********",
+        "created_at": "2022-10-19T07:40:13.000000Z",
+        "updated_at": "2022-10-19T12:11:06.000000Z"
     }
 }
 ```
@@ -149,7 +142,7 @@ Edit a Webhook using put method under your account
 #### PUT
 
 ```
-{endpoint}developer/webhook/edit/{id}
+{endpoint}developer/webhooks/{id}
 ```
 
 #### PARAMETERS
@@ -165,7 +158,7 @@ Edit a Webhook using put method under your account
 
 ```
 curl -X PUT \
-  {endpoint}developer/webhook/edit/93af9991-f1cc-4b36-abd5-xxxxxx \
+  {endpoint}developer/webhooks/93af9991-f1cc-4b36-abd5-xxxxxx \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
@@ -177,10 +170,44 @@ curl -X PUT \
 
 ```json
 {
-  "status": "OK",
-  "code": 200,
-  "message": "Webhook updated successfully"
+    "status": "OK",
+    "code": 200,
+    "message": "Updated successfully",
+    "data": {
+        "id": "180ebbb5-9b6f-4c51-a98a-**********",
+        "name": "name of webhook",
+        "uri": "https://example.com/",
+        "secret": "*****",
+        "verification_code": "*****",
+        "status": "1",
+        "created_at": "2022-10-19T07:40:13.000000Z",
+        "updated_at": "2022-10-19T12:11:06.000000Z"
+    }
 }
 ```
 
+## DELETE
 
+```
+{endpoint}developer/webhooks/{id}
+```
+
+Replace the {id} with the actual id of the webhook that you would like to delete.
+
+#### Example Request
+
+```
+curl -X DELETE \
+  {endpoint}developer/webhooks/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
+  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
+```
+
+#### Example Response
+
+```json
+{
+  "status": "OK",
+  "code": 200,
+  "message": "Deleted successfully"
+}
+```
