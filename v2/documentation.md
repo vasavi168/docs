@@ -5,13 +5,15 @@
 - Introduction
 
   - [Authentication](/docs/{version})
-  - [Rate Limits](/docs/{version}#rate-limits)
-  - [Status Code](/docs/{version}#http-status-codes)
+  - [Rate Limits](/docs/{version}#content-rate-limits)
+  - [Status Code](/docs/{version}#content-http-status-codes)
 
+<!--
 - Account
 
   - [Check Account Balance](/docs/{version}/balance)
   - [Adding Credits](/docs/{version}/add-credits)
+-->
 
 - Messaging
 
@@ -25,7 +27,6 @@
   - [Webhook](/docs/{version}/sms/webhook)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
   - [Optout](/docs/{version}/sms/optout)
-  - [Service Usage](/docs/{version}/sms/usage)
   - [View Senders](/docs/{version}/sms/senders)
   - [Create Sender](/docs/{version}/sms/senders/create)
   - [Edit Sender](/docs/{version}/sms/senders/edit)
@@ -35,10 +36,13 @@
   - [Edit Template](/docs/{version}/sms/templates/edit)
   - [Delete Template](/docs/{version}/sms/templates/delete)
   - [Pricing List](/docs/{version}/sms/pricing)
+  <!-- [Service Usage](/docs/{version}/sms/usage) -->
 
 - SMPP
+
   - [Gateway](/docs/{version}/sms/smpp)
-  - [Error Codes](/docs/{version}/sms/smpp#delivery-reports)
+  - [Error Codes](/docs/{version}/sms/smpp#content-delivery-reports)
+
 - Verify
 
   - [Introduction](/docs/{version}/verify)
@@ -53,7 +57,7 @@
   - [Outgoing Call](/docs/{version}/reach/call)
   - [Upload Sound File](/docs/{version}/reach)
   - [Call Logs](/docs/{version}/voice/logs)
-  - [Call Recordings](/docs/{version}/voice/logs#recordings-report)
+  - [Call Recordings](/docs/{version}/voice/logs#content-recordings-report)
   - [Call Status](/docs/{version}/reach/status)
   - [Webhook](/docs/{version}/reach/webhook)
 
@@ -66,6 +70,7 @@
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
   - [Optout](/docs/{version}/whatsapp/optout)
 
+<!--
 - MIP
 
   - [Introduction](/docs/{version}/mip)
@@ -73,6 +78,7 @@
   - [Status Info](/docs/{version}/mip/status)
   - [Webhook](/docs/{version}/mip/webhooks)
   - [Pull DLR](/docs/{version}/mip/pull-status)
+-->
 
 - RCS
 
@@ -83,16 +89,18 @@
   - [Pull DLR](/docs/{version}/rcs/pull-status)
   - [Optout](/docs/{version}/rcs/optout)
 
-<!-- * Link
+<!--
+- Link
 
   - [View Links](/docs/{version}/link)
   - [Create Link](/docs/{version}/link/create)
   - [View Visits](/docs/{version}/link/visits)
-  - [Webhook](/docs/{version}/link/webhook) -->
+  - [Webhook](/docs/{version}/link/webhook)
 
 - Number Lookup
 
   - [Verify](/docs/{version}/lookup/verify)
+-->
 
 - Webhook
 
