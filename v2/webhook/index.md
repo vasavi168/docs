@@ -271,6 +271,7 @@ curl -X DELETE \
 {
   "status": "OK",
   "code": 200,
-  "message": "Deleted successfully"
+  "message": "Deleted successfully",
+  "data": []
 }
 ```

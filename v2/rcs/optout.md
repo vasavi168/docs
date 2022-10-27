@@ -49,3 +49,39 @@ On triggering the above API the specified numbers will be added to your optout l
     },
 }
 ```
+## Delete Number from optout list
+
+Delete number using delete method under your optout list
+
+#### API Endpoint
+
+```
+{domain}/api/{version}/
+```
+
+#### DELETE
+
+```
+{endpoint}rcs/optout/{number}
+```
+
+Replace the {number} with the actual number of the RCS that you would like to delete.
+
+#### Example Request
+
+```
+curl -X DELETE \
+  {endpoint}rcs/optout/91873650xxxx \
+  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
+```
+
+#### Example Response
+
+```json
+{
+  "status": "OK",
+  "code": 200,
+  "message": "Deleted successfully",
+  "data": []
+}
+```
