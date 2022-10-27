@@ -51,8 +51,8 @@ Kindly replace the token with your respective access_token.
     }
   ],
   "links": {
-    "first": "{endpoint}/developer/webhooks?page=1",
-    "last": "{endpoint}/developer/webhooks?page=1",
+    "first": "{endpoint}developer/webhooks?page=1",
+    "last": "{endpoint}developer/webhooks?page=1",
     "prev": null,
     "next": null
   },
@@ -67,7 +67,7 @@ Kindly replace the token with your respective access_token.
         "active": false
       },
       {
-        "url": "{endpoint}/developer/webhooks?page=1",
+        "url": "{endpoint}developer/webhooks?page=1",
         "label": "1",
         "active": true
       },
@@ -77,7 +77,7 @@ Kindly replace the token with your respective access_token.
         "active": false
       }
     ],
-    "path": "{endpoint}/developer/webhooks",
+    "path": "{endpoint}developer/webhooks",
     "per_page": 15,
     "to": 10,
     "total": 10
