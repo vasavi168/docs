@@ -141,9 +141,6 @@ curl -X POST \
         "type": "template",
 		"payload": {
 			"name": "otp",
-            "namespace: "",
-			"language": "en",
-			"header_params": ["Replacement Text"],
 			"body_params": ["223344", "10"]
 		}
 	}
@@ -152,10 +149,7 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name          | Description                                                                                                                                    | Limits                                                                     | Required |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
-| name          | Template Name                                                                                                                                  | N/A                                                                        | yes      |
-| namespace     | Namespace of the template                                                                                                                      | N/A                                                                        | yes      |
-| language      | Language to send the template in. Default `en`                                                                                                 | N/A                                                                        | No       |
-| header_params | Can only used when there is a header of type text in the template. Up to 60 characters for all parameters and predefined template header text. | Up to 60 characters for all parameters and predefined template header text | No       |
-| body_params   | Up to 1024 characters for all parameters and predefined template text.                                                                         | Up to 1024 characters for all parameters and predefined template text      | No       |
+| Name |Description| Required |
+| ------------- | --- | ------- | -------- |
+| name          | Template Name | yes      |
+| body_params   | Varible values for replacing in template content (need to send as array) Ex:[“name”,“891919XXX”,“new”]                                                                        | yes if variables present in template       |

@@ -141,7 +141,7 @@ curl -X POST \
 | ------- | --------------------------------------------- | ---------- | -------- |
 | payload | Messaage Payload section                      | N/A        | Yes      |
 | to      | Destination mobile number with country code   | NA         | Yes      |
-| type    | Media types Ex: image, video, audio, document | NA         | Yes      |
+| type    | Media types supported image/jpeg, image/jpg, image/gif, image/png, video/h263, video/m4v, video/mp4, video/mpeg, video/mpeg4, video/webm | NA         | Yes      |
 | url     | Publicly available Image/ Media URL           | Max 100 MB | Yes      |
 
 ## Send Interactive Message
