@@ -60,6 +60,7 @@
   - [Call Recordings](/docs/{version}/voice/logs#content-recordings-report)
   - [Call Status](/docs/{version}/reach/status)
   - [Webhook](/docs/{version}/reach/webhook)
+  - [Pricing List](/docs/{version}/voice/pricing)
 
 - Whatsapp
 
@@ -69,6 +70,7 @@
   - [Webhook](/docs/{version}/whatsapp/webhooks)
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
   - [Optout](/docs/{version}/whatsapp/optout)
+  - [Pricing List](/docs/{version}/whatsapp/pricing)
 
 <!--
 - MIP
@@ -88,6 +90,7 @@
   - [Webhook](/docs/{version}/rcs/webhooks)
   - [Pull DLR](/docs/{version}/rcs/pull-status)
   - [Optout](/docs/{version}/rcs/optout)
+  - [Pricing List](/docs/{version}/rcs/pricing)
 
 <!--
 - Link
