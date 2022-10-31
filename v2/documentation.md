@@ -1,5 +1,5 @@
 @if(isset($branding) && isset($branding->options) && isset($branding->options['docs.tools']))
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection}?action=collection%2Ffork&collection-url=entityId%3D{collection}%26entityType%3Dcollection)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection})
 @endif
 
 - Introduction
@@ -101,7 +101,7 @@
   - [Show](/docs/{version}/link/show)
   - [Visits](/docs/{version}/link/visits)
   - [Webhook](/docs/{version}/link/webhook)
-  
+
 <!--
 - Number Lookup
 
