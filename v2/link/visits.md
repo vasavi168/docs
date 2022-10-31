@@ -1,6 +1,6 @@
 ## View Smart Link Visits
 
-Access the perticular Link Visits
+Access the particular Link Visits
 
 #### API Endpoint
 
@@ -11,7 +11,7 @@ Access the perticular Link Visits
 #### GET
 
 ```
-{endpoint}link/visits/{id}
+{endpoint}link/urls/{id}/visits
 ```
 
 #### PARAMETERS
@@ -24,7 +24,7 @@ Access the perticular Link Visits
 
 ```
 curl -X GET \
-  '{endpoint}link/visits/4' \
+  '{endpoint}link/urls/{id}/visits' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
@@ -36,11 +36,11 @@ Kindly replace the token with your respective access_token and other params.
 ```json
 {
     "status": "OK",
-    "rows": {
-        "current_page": 1,
-        "data": [
+    "code": 200,
+    "message": "Visits",
+    "data": [
             {
-                "id": "835b7433-0aaf-457c-88e7-7433b00d6a80",
+                "id": "835b7433-0aaf-457c-88e7-7433b00d****",
                 "user_id": "26",
                 "link_id": "20",
                 "client_ip": "127.0.0.1",
@@ -69,28 +69,44 @@ Kindly replace the token with your respective access_token and other params.
                 "zipcode": "",
                 "timezone": "",
                 "options": null,
-                "created_at": "2018-08-13 11:36:18",
+                "created_at": "2022-10-31 10:07:27",
                 "visit_id": "58a26f02-73e2-40ef-ab35-de427e9a6c6b",
                 "token": "JFlCjw",
                 "message_id": "JFlCjw",
-                "mobile": "9019955622",
-                "serial": 1,
-                "created": "Aug 13, 2018 11:36 AM"
+                "mobile": "9019955***"
             },
-        ----
-
         ],
-        "first_page_url": "{domain}/rest/v1/link/visits/20?page=1",
+       "links": {
+        "first": "{endpoint}link/urls/21/visits?page=1",
+        "last": "{endpoint}link/urls/21/visits?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
         "from": 1,
         "last_page": 1,
-        "last_page_url": "{domain}/rest/v1/link/visits/20?page=1",
-        "next_page_url": null,
-        "path": "{domain}/rest/v1/link/visits/20",
-        "per_page": 25,
-        "prev_page_url": null,
-        "to": 21,
-        "total": 21
-    },
-    "id": "20"
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "{endpoint}link/urls/21/visits?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "{endpoint}link/urls/21/visits",
+        "per_page": 15,
+        "to": 1,
+        "total": 1
+    }
 }
 ```

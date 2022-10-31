@@ -92,18 +92,21 @@
   - [Optout](/docs/{version}/rcs/optout)
   - [Pricing List](/docs/{version}/rcs/pricing)
 
-<!--
 - Link
 
   - [View Links](/docs/{version}/link)
   - [Create Link](/docs/{version}/link/create)
-  - [View Visits](/docs/{version}/link/visits)
+  - [Edit Link](/docs/{version}/link/edit)
+  - [Delete Link](/docs/{version}/link/delete)
+  - [Show](/docs/{version}/link/show)
+  - [Visits](/docs/{version}/link/visits)
   - [Webhook](/docs/{version}/link/webhook)
-
+  
+<!--
 - Number Lookup
 
   - [Verify](/docs/{version}/lookup/verify)
--->
+    -->
 
 - Webhook
 

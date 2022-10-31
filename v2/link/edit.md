@@ -1,4 +1,4 @@
-## Create Smart Link
+## Edit Smart Link
 
 Convert long url into short and smart url.
 
@@ -8,10 +8,10 @@ Convert long url into short and smart url.
 {domain}/api/{version}/
 ```
 
-#### POST
+#### PUT
 
 ```
-{endpoint}link/urls
+{endpoint}link/urls/{id}
 ```
 
 #### PARAMETERS
@@ -27,7 +27,7 @@ Convert long url into short and smart url.
 
 ```
 curl -X POST \
-  '{endpoint}link/urls' \
+  '{endpoint}link/urls/{id}' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
     -H 'Content-Type: application/x-www-form-urlencoded' \
@@ -38,22 +38,22 @@ curl -X POST \
 
 ```json
 {
-    "status": "OK",
-    "code": 200,
-    "message": "Link Created Successfully",
-    "data": {
-        "id": 5,
-        "title": "testing",
-        "short_url": "https://tx3.in/",
-        "long_url": "https://o5o4o6.com/?a=1457&c=298748&s1=TN(air(40_50)",
-        "webhook_id": "5558",
-        "token": null,
-        "visits": [],
-        "last_visited": null,
-        "is_advanced": "1",
-        "status": 1,
-        "created_at": "2022-10-28T12:37:43.000000Z",
-        "updated_at": "2022-10-28T12:37:43.000000Z"
-    }
+  "status": "OK",
+  "code": 200,
+  "message": "Link Updated Successfully",
+  "data": {
+    "id": 5,
+    "title": "testing",
+    "short_url": "https://tx3.in/",
+    "long_url": "https://o5o4o6.com/?a=1457&c=298748&s1=TN(air(40_50)",
+    "webhook_id": "5558",
+    "token": null,
+    "visits": [],
+    "last_visited": null,
+    "is_advanced": "1",
+    "status": 1,
+    "created_at": "2022-10-28T12:37:43.000000Z",
+    "updated_at": "2022-10-28T12:37:43.000000Z"
+  }
 }
 ```
