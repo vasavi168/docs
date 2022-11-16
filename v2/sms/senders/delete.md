@@ -20,7 +20,7 @@ Replace the {id} with the actual id of the sender that you would like to delete.
 
 ```
 curl -X DELETE \
-  {endpoint}sms/senders/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
+  {endpoint}sms/senders/ff467e28-7170-4a72-952e-c999cxxxxxx \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
 ```
 
@@ -28,8 +28,9 @@ curl -X DELETE \
 
 ```json
 {
-  "status": "OK",
-  "code": 200,
-  "message": "Sender deleted successfully"
+    "status": "OK",
+    "code": 200,
+    "message": "Deleted Successfully",
+    "data": []
 }
 ```

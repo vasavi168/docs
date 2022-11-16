@@ -52,21 +52,24 @@ curl -X POST \
 {
     "status": "OK",
     "code": 200,
-    "message": "Template saved successfully",
+    "message": "Template Saved Successfully",
     "data": {
-        "body": "Your Verification codes",
-        "sender_id": "13e35ad0-2455-4a42-87bd-8709638XXXXX",
-        "sender": "satis1",
-        "status": 1,
-        "body_length": 23,
-        "template_type": "T",
+        "id": "b23769e6-019f-48f4-aae9-ec00a5xxxxxx",
+        "sender_id": "015c2f82-1352-4d19-9f8f-b8449xxxxxx",
+        "template_id": "1107161521283358301",
+        "template_type": "Transactional",
+        "sender": "SENDER",
+        "name": "hind-number",
+        "body": "Your Verification code is:@{{1}} is code @{{2}}",
+        "content": null,
+        "body_length": 53,
+        "match_count": 0,
+        "percentage": 0,
+        "is_complete": 0,
         "is_english": 1,
-        "name": "satis1",
-        "created_at": "2022-10-06T18:37:22.000000Z",
-        "template_id": "123456787",
-        "id": "efe3ad4a-6c54-4e98-95c6-960bd22XXXXX",
-        "user_id": XXXXX,
-        "updated_at": "2022-10-06T18:37:22.000000Z"
+        "status": 1,
+        "created_at": "2022-11-16T04:41:32.000000Z",
+        "updated_at": "2022-11-16T04:41:32.000000Z"
     }
 }
 ```
