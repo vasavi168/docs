@@ -34,8 +34,9 @@ curl -X POST \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
     -H 'Content-Type: application/x-www-form-urlencoded'
-    -F body=testing-2
-    -F name=welcome
+    -F body=xxxxx xxxxx xxxxx \
+    -F name=xxxxx \
+    -F is_english=1
 
 ```
 
