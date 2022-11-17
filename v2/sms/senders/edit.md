@@ -1,6 +1,6 @@
 ## Edit Sender-ids
 
-Edit sender-ids using post method under your account
+Edit sender-ids using put method under your account
 
 #### API Endpoint
 

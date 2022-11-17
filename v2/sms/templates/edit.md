@@ -1,6 +1,6 @@
 ## Edit Templates
 
-Edit template using post method under your account
+Edit template using put method under your account
 
 #### API Endpoint
 
@@ -8,7 +8,7 @@ Edit template using post method under your account
 {domain}/api/{version}/
 ```
 
-#### POST
+#### PUT
 
 ```
 {endpoint}sms/templates/{id}
@@ -29,7 +29,7 @@ Replace the {id} with the actual id of the template that you would like to Edit.
 #### Example Request
 
 ```
-curl -X POST \
+curl -X PUT \
  {endpoint}sms/templates/b23769e6-019f-48f4-aae9-ec00a5xxxxxx \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'

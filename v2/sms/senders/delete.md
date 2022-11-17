@@ -1,6 +1,6 @@
 ## Delete Sender-id
 
-Delete sender-id using post method under your account
+Delete sender-id using delete method under your account
 
 #### API Endpoint
 
