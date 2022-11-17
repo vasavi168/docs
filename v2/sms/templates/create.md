@@ -30,8 +30,8 @@ Create templates using post method under your account
 | ------------- | ---------------- |
 | T             | Transactional    |
 | P             | Promotional      |
-| SI            | Service Explicit |
-| SE            | Service Implicit |
+| SI            | Service Implicit |
+| SE            | Service Explicit |
 
 #### Example Request
 
