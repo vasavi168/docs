@@ -36,7 +36,7 @@ curl -X POST \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -F name=Lakshman \
   -F email=youremailid@mail.com \
-  -F mobile=918867135684 \
+  -F mobile=91886713xxxx \
   -F password=Qwe@12334
 ```
 

@@ -48,7 +48,9 @@ Our API uses HTTP verbs to understand if you want to read (`GET`), delete (`DELE
 
 ## AUTHENTICATION
 
-Each API request will have to contain request headers that include your access token to authenticate the request.
+Each API request will have to contain request headers that include your Bearer token to authenticate the request.
+
+You can generate Bearer Token from existing access tokens generate once from application panel.
 
 Don't have an access token? You will find your access token in the `Developers -> API Keys/Access Tokens` in menu bar.
 
@@ -58,22 +60,38 @@ When your application can't send an Authorization header, you can use the GET pa
 
 We do provide incoming request whitelisting on our platform for our REST API. You can whitelist the IP addressess while generating the access token.
 
-### CURL Example
+## Get Bearer Token
 
 ```shell
-$ curl {endpoint}finance/balance \
+$ curl {endpoint}auth/token/generate \
 -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx' \
 -H 'Accept: application/json'
 ```
 
-### GET Example
+If the client exists and the secret is valid, the server will send the following response:
 
-```shell
-$ curl {endpoint}finance/balance?access_token=38e896f55670311982434e92955xxxx \
--H 'Accept: application/json'
+```
+{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BvcnRhbC5tb2J0ZXh0aW5nLmNvL2FwaS92My9hdXRoL3Rva2VuL2dlbmVyYXRlIiwiaWF0IjoxNjcwMjQ0OTI2LCJleHAiOjE2NzAyNDg1MjYsIm5iZiI6MTY3MDI0NDkyNiwianRpIjoiZ0lrQ1F3SWFKdFhSOEV6MCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jJTZ61sHrT-yDx0rKyN03a7Z_uFHdMV63wieVWwRI-FllaIl_Nm8xxtJujVaXNcBWa6FRg6BNDvjfqpUSo0dPn2mQ6FF2C_gb7QSE66zTRao3dEdJL2AslLgaLejqcqgBxB8JSzIQqlDQxBnjvPJG6rbYWPhuaOFw_clkRjkd_kynyf9kOT59pGcCPJnmDUfNAQrjU77bopKuOkGIXUjid-SmYDsQaihcgZytXkR7xiPBJ5G8qMuTKF_Bt0wTkw2WFR4DaFusXEK7uysGhK7TZERCfRqtACex36kYrVU8zbLXcR7Is-cJ3S_a_QpJmKCyJrKMVmUZ-IZwuuTc_DgitXPQvpzWZiXLUEtCaETJ_wrKiezpVZr1thcwtj1XNADk0--mSSrQzLEMZwxgEaDrHh7KpbtuvtfjTgAoFgweCcnHcRnIMDDGz__y_XlAO33JetZVj1WBFGn34VvYETuw2s_T6Z4ZlSECwNR3HWn_Js89DG8YntDtWTs89E12RlODPSS6Ywa_To459bW97WozdWlhfm3VYr-877oBj9L1CBlKBTAhEBjB_I3DOXTrQaBc_Z8UZwi3nYmQkdXUk0x0alxxxxx.......",
+    "token_type": "bearer",
+    "expires_in": 3600
+}
+
 ```
 
-If possible, please use the Authorization header.
+The `access_token` field contains the access token used to authenticate to the actual API, the `expires_in` field contains the number of seconds until the token becomes invalid as an integer.
+
+Do not rely on this value being exactly an hour like in the example above: We may tweak the expiration at any time depending on security observations: It might very well be that this comes down to 10 minutes at some point.
+
+This means that your application will need to keep track of the expiration and perform the above POST call again to obtain a new token in time.
+
+After you’ve got your token, you can perform actual API requests by including it in the Authorization header of your requests, with the authorization type set to Bearer:
+
+```shell
+$ curl {endpoint}finance/balance \
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BvcnRhbC5tb2J0ZXh0aW5nLmNvL2FwaS92My9hdXRoL3Rva2VuL2dlbmVyYXRlIiwiaWF0IjoxNjcwMjQ0OTI2LCJleHAiOjE2NzAyNDg1MjYsIm5iZiI6MTY3MDI0NDkyNiwianRpIjoiZ0lrQ1F3SWFKdFhSOEV6MCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jJTZ61sHrT-yDx0rKyN03a7Z_uFHdMV63wieVWwRI-FllaIl_Nm8xxtJujVaXNcBWa6FRg6BNDvjfqpUSo0dPn2mQ6FF2C_gb7QSE66zTRao3dEdJL2AslLgaLejqcqgBxB8JSzIQqlDQxBnjvPJG6rbYWPhuaOFw_clkRjkd_kynyf9kOT59pGcCPJnmDUfNAQrjU77bopKuOkGIXUjid-SmYDsQaihcgZytXkR7xiPBJ5G8qMuTKF_Bt0wTkw2WFR4DaFusXEK7uysGhK7TZERCfRqtACex36kYrVU8zbLXcR7Is-cJ3S_a_QpJmKCyJrKMVmUZ-IZwuuTc_DgitXPQvpzWZiXLUEtCaETJ_wrKiezpVZr1thcwtj1XNADk0--mSSrQzLEMZwxgEaDrHh7KpbtuvtfjTgAoFgweCcnHcRnIMDDGz__y_XlAO33JetZVj1WBFGn34VvYETuw2s_T6Z4ZlSECwNR3HWn_Js89DG8YntDtWTs89E12RlODPSS6Ywa_To459bW97WozdWlhfm3VYr-877oBj9L1CBlKBTAhEBjB_I3DOXTrQaBc_Z8UZwi3nYmQkdXUk0x0alxxxxx.......' \
+-H 'Accept: application/json'
+```
 
 ## IP ADDRESSES
 

@@ -11,8 +11,8 @@
 <!--
 - Account
 
-  - [Check Account Balance](/docs/{version}/account/balance)
-  - [Adding Credits](/docs/{version}/account/add-credits)
+  - [Check Account Balance](/docs/{version}/balance)
+  - [Adding Credits](/docs/{version}/add-credits)
 -->
 
 - Messaging
