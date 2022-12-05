@@ -35,38 +35,59 @@ Kindly replace the token with your respective access_token and other params.
 
 ```json
 {
-  "rows": {
-    "current_page": 1,
+    "status": "OK",
+    "code": 200,
+    "message": "Senders List",
     "data": [
-      {
-        "id": "f66b983b-713a-4818-a691-2c684eb4eccd",
-        "user_id": 26,
-        "name": "SENDER",
-        "entity_name": "SAMPLE COMPANY",
-        "entity_id": "123233434355345555",
-        "header_id": null,
-        "country_code": "IN",
-        "message": null,
-        "document": null,
-        "status": 1,
-        "is_open": 0,
-        "purpose": null,
-        "created_at": "2021-05-04 17:46:58",
-        "updated_at": "2021-05-04 17:46:58",
-        "serial": 1
-      }
+        {
+            "id": "ff467e28-7170-4a72-952e-c999cxxxxxx",
+            "name": "SENDER",
+            "service": {
+                "id": 55,
+                "display_name": "Global SMS",
+                "name": "G"
+            },
+            "entity_name": "SAMPLE COMPANY",
+            "entity_id": "123233434355345555",
+            "header_id": null,
+            "iso": "IN",
+            "message": null,
+            "document": null,
+            "is_open": 0,
+            "purpose": 1,
+            "status": 1,
+            "created_at": "2022-11-16T06:53:26.000000Z",
+            "updated_at": "2022-11-16T06:55:55.000000Z"
+        },
       ....
     ],
-    "first_page_url": "{endpoint}sms/senders?page=1",
-    "from": 1,
-    "last_page": 1,
-    "last_page_url": "{endpoint}sms/senders?page=1",
-    "next_page_url": null,
-    "path": "{endpoint}sms/senders",
-    "per_page": 25,
-    "prev_page_url": null,
-    "to": 1,
-    "total": 1
+        "links": {
+        "first": "{endpoint}sms/senders?page=1",
+        "last": "{endpoint}sms/senders?page=7",
+        "prev": null,
+        "next": "{endpoint}sms/senders?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 7,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "{endpoint}sms/senders?page=1",
+                "label": "1",
+                "active": true
+            },
+      ....
+        ],
+        "path": "{endpoint}sms/senders",
+        "per_page": 15,
+        "to": 15,
+        "total": 92
   }
 }
 ```

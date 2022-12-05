@@ -1,6 +1,6 @@
 ## Delete Template
 
-Delete template using post method under your account
+Delete template using delete method under your account
 
 #### API Endpoint
 
@@ -8,7 +8,7 @@ Delete template using post method under your account
 {domain}/api/{version}/
 ```
 
-#### GET
+#### DELETE
 
 ```
 {endpoint}sms/templates/{id}
@@ -19,8 +19,8 @@ Replace the {id} with the actual id of the template that you would like to delet
 #### Example Request
 
 ```
-curl -X GET \
-  {endpoint}sms/templates/b10a9c3c-33bd-42f4-9e68-31c2216e5bcf \
+curl -X DELETE \
+  {endpoint}sms/templates/b23769e6-019f-48f4-aae9-ec00a5xxxxxx \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
@@ -29,7 +29,9 @@ curl -X GET \
 
 ```json
 {
-  "status": "OK",
-  "message": "Template deleted successfully"
+    "status": "OK",
+    "code": 200,
+    "message": "Deleted Successfully",
+    "data": []
 }
 ```

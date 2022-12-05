@@ -43,9 +43,28 @@ curl -X POST \
 
 ```json
 {
-  "status": "OK",
-  "code": 200,
-  "message": "Sender saved successfully",
-  "id": "f66b983b-713a-4818-a691-2c684eb4eccd"
+    "status": "OK",
+    "code": 200,
+    "message": "Sender Saved Successfully",
+    "data": {
+        "id": "ff467e28-7170-4a72-952e-c999cxxxxxx",
+        "name": "SENDER",
+        "service": {
+            "id": 55,
+            "display_name": "Global SMS",
+            "name": "G"
+        },
+        "entity_name": "SAMPLE COMPANY",
+        "entity_id": "123233434355345555",
+        "header_id": null,
+        "iso": "IN",
+        "message": null,
+        "document": null,
+        "is_open": 0,
+        "purpose": 1,
+        "status": 1,
+        "created_at": "2022-11-16T06:53:26.000000Z",
+        "updated_at": "2022-11-16T06:55:55.000000Z"
+    }
 }
 ```
