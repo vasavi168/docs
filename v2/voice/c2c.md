@@ -30,7 +30,7 @@
 | record     | Record this conversation (default `0`). allowed: 0 or 1  |
 | duration   | Limit the call duration in minutes. default (none)       |
 
-#### Example C2C Request Using to as Mobile Number
+#### Example C2C Using to as Mobile Number
 
 ```
 curl -X POST '{endpoint}voice/c2c' \
@@ -44,7 +44,7 @@ curl -X POST '{endpoint}voice/c2c' \
     -d 'record=1'
 ```
 
-#### Example C2C Request to as Flow ID
+#### Example C2C Using to as Flow ID
 
 ```
 curl -X POST '{endpoint}voice/c2c' \
@@ -57,6 +57,37 @@ curl -X POST '{endpoint}voice/c2c' \
     -d 'webhook_id=124555-78787-XXXXX' \
     -d 'record=1'
 ```
+
+#### Example Response
+
+```json
+{
+  "status": 200,
+  "message": "Call initiated successfully"
+}
+```
+
+#### Example C2C with to as Flow ID & Variables
+
+```
+curl -X POST '{endpoint}voice/c2c' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'bridge=91806828XXXX' \
+    -d 'from=918867135XXXX' \
+    -d 'to=flow:220' \
+    -d 'variable[Name]="YourName"' \
+    -d 'variable[otp]=12344' \
+    -d 'record=1'
+```
+- Here `flow_id` `220` is the Ivr Journey ID created in Engage > Studio Section
+
+    The journey created should have a play widget with text to speech containing variables as follows:
+
+    `Hello {Name}, your otp for login is {otp}`
+
+    The above message contains two variables, this varaible values will replace from the API parameters when customer answers the click2call
 
 #### Example Response
 

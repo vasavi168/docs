@@ -18,7 +18,7 @@
 | ------ | ----------------------------------------------------------- |
 | bridge | Bridge number for call initiation                           |
 | to     | Phone number with country code to which call has to connect |
-| ivr_id | Id of the IVR flow created in your voice account `OR`       |
+| flow_id | Id of the IVR flow created in your voice account `OR`       |
 | audio  | Audio file id incase ivr is not provided                    |
 
 #### OPTIONAL PARAMETERS
@@ -28,6 +28,7 @@
 | name       | name of the campaign                                                          |
 | interval   | Retry interval time Expected Values : 5, 15, 30, 45, 60 (Minutes) : Default 0 |
 | webhook_id | Id of the webhook created in webhook section [View Webhooks Page](/webhooks)  |
+| variables  | Array of the variables which can be used in flow  |
 
 ## Example Request Using Audio File ID
 
@@ -44,7 +45,7 @@ curl -X POST '{endpoint}outgoing/send' \
 
 - Here `39888925-718e-43bb-a8b1-d4a3XXXXX` is the sound file id uploaded in Reach > Sounds Section.
 
-## Example Request Using IVR Flow ID
+## Example Request Using IVR Journey ID
 
 ```
 curl -X POST '{endpoint}outgoing/send' \
@@ -53,13 +54,36 @@ curl -X POST '{endpoint}outgoing/send' \
     -H 'Content-Type: application/x-www-form-urlencoded' \
     -d 'bridge=91806828XXXX' \
     -d 'to=918867135XXXX' \
-    -d 'ivr_id=23' \
+    -d 'flow_id=23' \
     -d 'name=obd_api_call'
 ```
 
-- Here `ivr_id` `23` is the ivr flow id created in Engage > Studio Section
+- Here `flow_id` `23` is the ivr Jouney Id created in Engage > Studio Section
 
-## Example Request Using Custom Audio File Location
+## Example of IVR Journey ID and variables
+
+```
+curl -X POST '{endpoint}outgoing/send' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -d 'bridge=91806828XXXX' \
+    -d 'to=918867135XXXX' \
+    -d 'flow_id=24' \
+    -d 'variables[Name]="YourName"' \
+    -d 'variables[otp]=123456'
+```
+
+- Here `flow_id` `24` is the Ivr Journey ID created in Engage > Studio Section
+
+    The journey created should have a play widget with text to speech containing variables as follows:
+
+    `Hello {Name}, your otp for login is {otp}`
+
+    The above message contains two variables, this varaible values will replace from the API parameters when customer answers the outgoing call
+
+
+## Example of Custom Audio File Location
 
 ```
 curl -X POST '{endpoint}outgoing/send' \
