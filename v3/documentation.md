@@ -110,6 +110,7 @@
   - [Verify](/docs/{version}/lookup/verify)
     -->
 
-- Webhook
+- Developers
 
-  - [Webhook](/docs/{version}/webhook)
+  - [Webhooks](/docs/{version}/webhook)
+  - [Subscriptions](/docs/{version}/subscriptions)
