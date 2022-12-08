@@ -11,9 +11,9 @@
 <!--
 - Account
 
-  - [Check Account Balance](/docs/{version}/balance)
-  - [Adding Credits](/docs/{version}/add-credits)
--->
+  - [Check Account Balance](/docs/{version}/account/balance)
+  - [Adding Credits](/docs/{version}/account/add-credits)
+  -->
 
 - Messaging
 
@@ -55,7 +55,7 @@
 - Engage (Voice)
 
   - [Introduction](/docs/{version}/voice)
-  - [Click2Call](/docs/{version}/voice/c2c)
+  - [Click2Call/Number Masking](/docs/{version}/voice/c2c)
   - [Outgoing Call](/docs/{version}/reach/call)
   - [Upload Sound File](/docs/{version}/reach)
   - [Call Logs](/docs/{version}/voice/logs)

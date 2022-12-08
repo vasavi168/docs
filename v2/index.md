@@ -61,7 +61,7 @@ We do provide incoming request whitelisting on our platform for our REST API. Yo
 ### CURL Example
 
 ```shell
-$ curl {endpoint}finance/balance \
+$ curl {endpoint}auth/me \
 -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx' \
 -H 'Accept: application/json'
 ```
@@ -69,7 +69,7 @@ $ curl {endpoint}finance/balance \
 ### GET Example
 
 ```shell
-$ curl {endpoint}finance/balance?access_token=38e896f55670311982434e92955xxxx \
+$ curl {endpoint}auth/me?access_token=38e896f55670311982434e92955xxxx \
 -H 'Accept: application/json'
 ```
 

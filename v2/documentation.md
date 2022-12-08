@@ -55,7 +55,7 @@
 - Engage (Voice)
 
   - [Introduction](/docs/{version}/voice)
-  - [Click2Call](/docs/{version}/voice/c2c)
+  - [Click2Call/Number Masking](/docs/{version}/voice/c2c)
   - [Outgoing Call](/docs/{version}/reach/call)
   - [Upload Sound File](/docs/{version}/reach)
   - [Call Logs](/docs/{version}/voice/logs)

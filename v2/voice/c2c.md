@@ -1,4 +1,4 @@
-# Click2Call
+# Click2Call/Number Masking
 
 #### API Endpoint
 
@@ -81,13 +81,14 @@ curl -X POST '{endpoint}voice/c2c' \
     -d 'variable[otp]=12344' \
     -d 'record=1'
 ```
+
 - Here `flow_id` `220` is the Ivr Journey ID created in Engage > Studio Section
 
-    The journey created should have a play widget with text to speech containing variables as follows:
+  The journey created should have a play widget with text to speech containing variables as follows:
 
-    `Hello {Name}, your otp for login is {otp}`
+  `Hello {Name}, your otp for login is {otp}`
 
-    The above message contains two variables, this varaible values will replace from the API parameters when customer answers the click2call
+  The above message contains two variables, this varaible values will replace from the API parameters when customer answers the click2call
 
 #### Example Response
 
