@@ -514,13 +514,11 @@ curl -X POST \
 {domain}/api/{version}/
 ```
 
-We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
-
 ```
 {endpoint}whatsapp/message/send
 ```
 
-#### Example Request With Interactive Choice Message
+#### Example Request With Interactive Reply Message
 
 ```
 curl -X POST \
@@ -538,6 +536,7 @@ curl -X POST \
 	"message": {
 		"type": "interactive",
 		"payload": {
+			"type": "reply"
 			"header": {
 				"type": "text",
 				"payload": {
@@ -560,17 +559,79 @@ curl -X POST \
 				{
 					"type": "reply",
 					"payload": {
-						"title": "Click Here",
-						"id": "unique-id"
+						"title": "Yes I am in",
+						"id": "1"
+					}
+				},
+				{
+					"type": "reply",
+					"payload": {
+						"title": "No",
+						"id": "2"
+					}
+				}
+			]
+		}
+	}
+}'
+```
+
+#### Example Request With Interactive List Messages
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "whatsapp",
+		"from": "919019120120"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+		"type": "interactive",
+		"payload": {
+			"type": "list"
+			"header": {
+				"type": "text",
+				"payload": {
+					"text": "header text"
+				}
+			},
+			"body": {
+				"type": "text",
+				"payload": {
+					"text": "header text"
+				}
+			},
+			"footer": {
+				"type": "text",
+				"payload": {
+					"text": "header text"
+				}
+			},
+			"choices": [
+				{
+					"type": "section",
+					"payload": {
+						"title": "Section1 Title",
+						"rows": [{
+							"id": "15",
+							"title": "first product",
+							"description": "row-description-content-here"
+						}]
 					}
 				},
 				{
 					"type": "section",
 					"payload": {
-						"title": "Click Here",
+						"title": "Section2 Title",
 						"rows": [{
-							"id": "unique-row-identifier-here",
-							"title": "row-title-content-here",
+							"id": "16",
+							"title": "second message",
 							"description": "row-description-content-here"
 						}]
 					}
@@ -585,7 +646,7 @@ curl -X POST \
 
 | Name    | Description                                                | Limits | Required |
 | ------- | ---------------------------------------------------------- | ------ | -------- |
-| choices | this block contains actions for suggestions of the message | N/A    | Yes      |
+| choices | this block contains options list of the message | N/A    | Yes      |
 
 ## Send Vcard / Contacts Message
 
