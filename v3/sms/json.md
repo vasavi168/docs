@@ -69,7 +69,8 @@ All params in send sms will support in JSON also.
 | custom      | Any customised parameters can be passed using this parameter                                                                                                            |
 | port        | Port number to which SMS has to be sent                                                                                                                                 |
 | entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                         |
-| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                 |
+| template_id | TemplateId registered in DLT portal (applicable for indian routes only)|
+| max_units | The maximum number of units to be sent in the message ex:(value 2 or 3) |
 
 #### Example Request
 

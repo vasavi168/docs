@@ -61,8 +61,9 @@ All params in send sms will support in JSON also.
 | time       | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                      |
 | type       | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                           |
 | flash      | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
-| custom     | Any customised parameters can be passed using this parameter                                                                                                            |
-| port       | Port number to which SMS has to be sent                                                                                                                                 |
+| custom     | Any customised parameters can be passed using this parameter|
+| port       | Port number to which SMS has to be sent|
+| max_units | The maximum number of units to be sent in the message ex:(value 2 or 3) |
 
 #### Example Request
 
