@@ -65,6 +65,7 @@
 | to          | Receiver mobile numbers : `text`                                              | `array`             | Yes, if `group_id` not present         |
 | template_id | DLT registered template id.                                                   | `int`               | No (applicable for indian routes only) |
 | entity_id   | DLT registered entity id.                                                     | `int`               | No (applicable for indian routes only) |
+| max_units | The maximum number of units to be sent in the message ex:(value 2 or 3)| `int` | No |
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
