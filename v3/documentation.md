@@ -57,6 +57,7 @@
   - [Introduction](/docs/{version}/voice)
   - [Click2Call/Number Masking](/docs/{version}/voice/c2c)
   - [Outgoing Call](/docs/{version}/reach/call)
+  - [Text2Speech API](/docs/{version}/reach/tts)
   - [Upload Sound File](/docs/{version}/reach)
   - [Call Logs](/docs/{version}/voice/logs)
   - [Call Recordings](/docs/{version}/voice/logs#content-recordings-report)
