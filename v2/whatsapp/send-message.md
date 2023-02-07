@@ -506,7 +506,7 @@ curl -X POST \
 | caption  | some text for audio caption                              | N/A       | No       |
 | filename | Media file name                                          | N/A       | No       |
 
-## Send Message With Interactive Suggestions
+## Send Notification With Interactive Suggestions
 
 #### API Endpoint
 
@@ -644,8 +644,8 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name    | Description                                                | Limits | Required |
-| ------- | ---------------------------------------------------------- | ------ | -------- |
+| Name    | Description                                     | Limits | Required |
+| ------- | ----------------------------------------------- | ------ | -------- |
 | choices | this block contains options list of the message | N/A    | Yes      |
 
 ## Send Vcard / Contacts Message

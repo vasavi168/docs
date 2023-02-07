@@ -1,16 +1,77 @@
-# Messaging
-
-The SMS API supports the following:
+# Send Notification Using SMS Channel
 
 #### HTTP Methods
 
 `POST` - When you send a POST request with the end user's phone number to the messaging subresource, We sends the SMS message you specify.
 
-Country code is mandatory to be included in the `to` paramenter for global messaging.
+> Country code is mandatory to be included in the `to` paramenter.
 
-Before you start sending SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
+## Channel Info
 
-## Send SMS
+```
+{
+	"channels": [{
+		"name": "sms",
+		"from": "SENDER",
+		"meta": {
+			"service": "MKT",
+			"template_id": "1234XXXXXXX",
+			"entity_id":"89XXXXXXXXXXX",
+			"foreign_id":"your-custom-id",
+			"type":"U"
+		}
+	}],
+	"recipient": {
+		"group_id": "{segment_id}",
+		"to": ["91XXXXXX", "91XXXXXX"]
+	}
+}
+```
+
+#### Example Response
+
+```json
+{
+  "status": "OK",
+  "message": "Message Queued successfully",
+  "data": [
+    {
+      "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
+      "channel": "sms",
+      "from": "SENDER",
+      "to": "9190199xxxxx",
+      "credits": 1,
+      "created_at": "2021-06-18 14:48:06",
+      "status": "AWAITING-DLR",
+      "foreign_id": "your-message-id"
+    }
+  ]
+}
+```
+
+#### PARAMETERS
+
+| Name        | Description                                                                   | type                | Required                               |
+| ----------- | ----------------------------------------------------------------------------- | ------------------- | -------------------------------------- |
+| channels    | This block contains information realted messaging channel                     | `array`             | Yes                                    |
+| name        | Name of Messaging Channel. Ex: `sms`                                          | `string`            | Yes                                    |
+| from        | Sender or From Number                                                         | `number`            | Yes                                    |
+| meta        | This block contains additional information related to messaging channel       | `map`               | Yes                                    |
+| service     | Sms Service Name. Default takes the first enabled sms service.                | `string`            | Yes                                    |
+| foreign_id  | Custom id for reference from customer.                                        | `string`            | No                                     |
+| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value “U”, “N” or “A”) | `string`            | No                                     |
+| recipient   | This block contains contacts information related to channel                   | `list`              | Yes                                    |
+| group_id    | Segment id which contain list of phone numbers                                | `string` or `array` | Yes if `to` param not present          |
+| to          | Receiver mobile numbers : `text`                                              | `array`             | Yes, if `group_id` not present         |
+| template_id | DLT registered template id.                                                   | `int`               | No (applicable for indian routes only) |
+| entity_id   | DLT registered entity id.                                                     | `int`               | No (applicable for indian routes only) |
+| max_units   | The maximum number of units to be sent in the message ex:(value 2 or 3)       | `int`               | No                                     |
+
+`Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
+
+#### HTTP Methods
+
+It will support only `POST` requests.
 
 #### API Endpoint
 
@@ -18,66 +79,84 @@ Before you start sending SMS through this API, please test whether your content 
 {domain}/api/{version}/
 ```
 
-#### POST
+## Sending Text Message
 
 ```
-{endpoint}sms/send
+{endpoint}sms/message/send
 ```
 
-#### MANDATORY PARAMETERS
-
-| Name    | Descriptions                                                                                 |
-| ------- | -------------------------------------------------------------------------------------------- |
-| to      | Phone number to send with country prefix.                                                    |
-| message | The content of the SMS                                                                       |
-| sender  | The registered and approved Sender-id                                                        |
-| service | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products) |
-
-#### OPTIONAL PARAMETERS
-
-| Name        | Descriptions                                                                                                                                                           |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| webhook_id  | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms/webhook) |
-| time        | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                     |
-| type        | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                          |
-| flash       | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                 |
-| custom      | Your own unique_id                                                                                                                                                     |
-| port        | Port number to which SMS has to be delivered                                                                                                                           |
-| entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                        |
-| template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                |
-| max_units | The maximum number of units to be sent in the message ex:(value 2 or 3) |
-
-#### Example Request
+#### Example Request With Text Message
 
 ```
-curl -X POST '{endpoint}sms/send' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-    -d 'sender=TXTSMS' \
-    -d 'to=917026267xxx' \
-    -d 'service=MKT' \
-    -d 'message=Your OTP is 123456'
+curl -X POST \
+  '{endpoint}sms/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "sms",
+		"from": "SENDER"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+        "type": "text",
+		"payload": {
+			"text": "This is a simple text message from sms channel"
+		}
+	}
+}'
 ```
 
-#### Example Response
+#### PARAMETERS
 
-```json
-{
-  "status": 200,
-  "message": "1 numbers accepted for delivery.",
-  "data": [
-    {
-      "id": "b34e35ad-fe34-4a8b-977c-b21cd76cd7d6:1",
-      "mobile": "918921269xxx",
-      "status": "AWAITING-DLR",
-      "units": 1,
-      "length": 7,
-      "charges": 1,
-      "customid": "",
-      "iso_code": null,
-      "submitted_at": "2018-07-09 16:27:35"
-    }
-  ]
-}
+| Name    | Description                                 | Limits              | Required |
+| ------- | ------------------------------------------- | ------------------- | -------- |
+| payload | Messaage Payload section                    | N/A                 | Yes      |
+| to      | Destination mobile number with country code | NA                  | Yes      |
+| text    | Message Content you want to send            | Max 4096 Characters | Yes      |
+
+## Sending Template Message
+
+#### API Endpoint
+
 ```
+{domain}/api/{version}/
+```
+
+```
+{endpoint}sms/message/send
+```
+
+#### Example Request With Template
+
+```
+curl -X POST \
+  '{endpoint}sms/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+	"channels": [{
+		"name": "sms",
+		"from": "SENDER"
+	}],
+	"recipient": {
+		"to": "91XXXXXX"
+	},
+	"message": {
+        "type": "template",
+		"payload": {
+			"name": "otp",
+			"body_params": ["223344", "10"]
+		}
+	}
+}'
+```
+
+#### PARAMETERS
+
+| Name        | Description                                                                                            | Required                             |
+| ----------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------ |
+| name        | Template Name                                                                                          | yes                                  |
+| body_params | Varible values for replacing in template content (need to send as array) Ex:[“name”,“891919XXX”,“new”] | yes if variables present in template |
