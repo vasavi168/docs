@@ -42,9 +42,9 @@
 #### PARAMETERS
 
 | Name      | Description                                                 | type                | Required                       |
-| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
+| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ | -------- | --- |
 | channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. `whatsapp|rcs|ip_message`        | `string`            | Yes                            |
+| name      | Name of Messaging Channel. `whatsapp                        | rcs                 | ip_message`                    | `string` | Yes |
 | from      | Sender or From Number                                       | `number`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
@@ -378,7 +378,7 @@ curl -X POST \
 | caption  | some text for audio caption                              | N/A       | No       |
 | filename | Media file name                                          | N/A       | No       |
 
-## Send Message With Interactive Suggestions
+## Send Notification With Interactive Suggestions
 
 #### API Endpoint
 
@@ -776,4 +776,3 @@ curl -X POST \
 
 | Name | Description | Limits | Required |
 | ---- | ----------- | ------ | -------- |
-
