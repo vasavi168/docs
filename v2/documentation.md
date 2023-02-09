@@ -59,6 +59,7 @@
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
   - [Optout](/docs/{version}/whatsapp/optout)
   - [Pricing List](/docs/{version}/whatsapp/pricing)
+  - [Templates](/docs/{version}/whatsapp/templates)
 
 <!--
 - MIP
