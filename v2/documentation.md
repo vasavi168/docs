@@ -15,26 +15,31 @@
   - [Adding Credits](/docs/{version}/account/add-credits)
 -->
 
+- Verify
+
+  - [Introduction](/docs/{version}/verify)
+  - [Check](/docs/{version}/verify/check)
+  - [Search](/docs/{version}/verify/search)
+  - [Cancel](/docs/{version}/verify/cancel)
+
 - Messaging
 
   - [Introduction](/docs/{version}/sms)
   - [SMS Length Summary](/docs/{version}/sms/length-summary)
-  - [Send SMS Unified Format](/docs/{version}/sms/unified)
-  - [Send SMS Using Post](/docs/{version}/sms/send)
-  - [Send SMS Using Batch](/docs/{version}/sms/json)
-  - [Send SMS Using Template](/docs/{version}/sms/template)
-  - [Bulk SMS Using File](/docs/{version}/sms/bulk)
+  - [Send Notification](/docs/{version}/sms/send)
+  - [Send Bulk Notifications](/docs/{version}/sms/json)
+  - [Send Template Notification](/docs/{version}/sms/template)
   - [Webhook](/docs/{version}/sms/webhook)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
   - [Optout](/docs/{version}/sms/optout)
   - [View Senders](/docs/{version}/sms/senders)
-  - [Show Sender](/docs/{version}/sms/senders/show)
   - [Create Sender](/docs/{version}/sms/senders/create)
+  - [Show Sender](/docs/{version}/sms/senders/show)
   - [Edit Sender](/docs/{version}/sms/senders/edit)
   - [Delete Sender](/docs/{version}/sms/senders/delete)
   - [View Templates](/docs/{version}/sms/templates)
-  - [Show Template](/docs/{version}/sms/templates/show)
   - [Create Template](/docs/{version}/sms/templates/create)
+  - [Show Template](/docs/{version}/sms/templates/show)
   - [Edit Template](/docs/{version}/sms/templates/edit)
   - [Delete Template](/docs/{version}/sms/templates/delete)
   - [Pricing List](/docs/{version}/sms/pricing)
@@ -45,12 +50,36 @@
   - [Gateway](/docs/{version}/sms/smpp)
   - [Error Codes](/docs/{version}/sms/smpp#content-delivery-reports)
 
-- Verify
+- Whatsapp
 
-  - [Introduction](/docs/{version}/verify)
-  - [Check](/docs/{version}/verify/check)
-  - [Search](/docs/{version}/verify/search)
-  - [Cancel](/docs/{version}/verify/cancel)
+  - [Introduction](/docs/{version}/whatsapp)
+  - [Send Notification](/docs/{version}/whatsapp/send-message)
+  - [Status Info](/docs/{version}/whatsapp/status)
+  - [Webhook](/docs/{version}/whatsapp/webhooks)
+  - [Pull DLR](/docs/{version}/whatsapp/pull-status)
+  - [Optout](/docs/{version}/whatsapp/optout)
+  - [Pricing List](/docs/{version}/whatsapp/pricing)
+  - [Templates](/docs/{version}/whatsapp/templates)
+
+<!--
+- MIP
+
+  - [Introduction](/docs/{version}/mip)
+  - [Send Notification](/docs/{version}/mip/send-message)
+  - [Status Info](/docs/{version}/mip/status)
+  - [Webhook](/docs/{version}/mip/webhooks)
+  - [Pull DLR](/docs/{version}/mip/pull-status)
+-->
+
+- RCS
+
+  - [Introduction](/docs/{version}/rcs)
+  - [Send Notification](/docs/{version}/rcs/send-message)
+  - [Status Info](/docs/{version}/rcs/status)
+  - [Webhook](/docs/{version}/rcs/webhooks)
+  - [Pull DLR](/docs/{version}/rcs/pull-status)
+  - [Optout](/docs/{version}/rcs/optout)
+  - [Pricing List](/docs/{version}/rcs/pricing)
 
 - Engage (Voice)
 
@@ -64,37 +93,6 @@
   - [Call Status](/docs/{version}/reach/status)
   - [Webhook](/docs/{version}/reach/webhook)
   - [Pricing List](/docs/{version}/voice/pricing)
-
-- Whatsapp
-
-  - [Introduction](/docs/{version}/whatsapp)
-  - [Send a message](/docs/{version}/whatsapp/send-message)
-  - [Status Info](/docs/{version}/whatsapp/status)
-  - [Webhook](/docs/{version}/whatsapp/webhooks)
-  - [Pull DLR](/docs/{version}/whatsapp/pull-status)
-  - [Optout](/docs/{version}/whatsapp/optout)
-  - [Pricing List](/docs/{version}/whatsapp/pricing)
-  - [Templates](/docs/{version}/whatsapp/templates)
-
-<!--
-- MIP
-
-  - [Introduction](/docs/{version}/mip)
-  - [Send a message](/docs/{version}/mip/send-message)
-  - [Status Info](/docs/{version}/mip/status)
-  - [Webhook](/docs/{version}/mip/webhooks)
-  - [Pull DLR](/docs/{version}/mip/pull-status)
--->
-
-- RCS
-
-  - [Introduction](/docs/{version}/rcs)
-  - [Send a message](/docs/{version}/rcs/send-message)
-  - [Status Info](/docs/{version}/rcs/status)
-  - [Webhook](/docs/{version}/rcs/webhooks)
-  - [Pull DLR](/docs/{version}/rcs/pull-status)
-  - [Optout](/docs/{version}/rcs/optout)
-  - [Pricing List](/docs/{version}/rcs/pricing)
 
 - Link
 

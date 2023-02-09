@@ -13,57 +13,55 @@
 
   - [Check Account Balance](/docs/{version}/account/balance)
   - [Adding Credits](/docs/{version}/account/add-credits)
-  -->
+-->
 
 - Messaging
 
-  - [Introduction](/docs/{version}/sms)
-  - [SMS Length Summary](/docs/{version}/sms/length-summary)
-  - [Send SMS Unified Format](/docs/{version}/sms/unified)
-  - [Send SMS Using Post](/docs/{version}/sms/send)
-  - [Send SMS Using Batch](/docs/{version}/sms/json)
-  - [Send SMS Using Template](/docs/{version}/sms/template)
-  - [Bulk SMS Using File](/docs/{version}/sms/bulk)
-  - [Webhook](/docs/{version}/sms/webhook)
-  - [Pull DLR](/docs/{version}/sms/pull-dlr)
-  - [Optout](/docs/{version}/sms/optout)
-  - [View Senders](/docs/{version}/sms/senders)
-  - [Show Sender](/docs/{version}/sms/senders/show)
-  - [Create Sender](/docs/{version}/sms/senders/create)
-  - [Edit Sender](/docs/{version}/sms/senders/edit)
-  - [Delete Sender](/docs/{version}/sms/senders/delete)
-  - [View Templates](/docs/{version}/sms/templates)
-  - [Show Template](/docs/{version}/sms/templates/show)
-  - [Create Template](/docs/{version}/sms/templates/create)
-  - [Edit Template](/docs/{version}/sms/templates/edit)
-  - [Delete Template](/docs/{version}/sms/templates/delete)
-  - [Pricing List](/docs/{version}/sms/pricing)
-  <!-- [Service Usage](/docs/{version}/sms/usage) -->
+  - [Introduction](/docs/v2/sms)
+  - [SMS Length Summary](/docs/v2/sms/length-summary)
+  - [Send Notification](/docs/v2/sms/send)
+  - [Send Bulk Notifications](/docs/v2/sms/json)
+  - [Send Template Notification](/docs/v2/sms/template)
+  - [Webhook](/docs/v2/sms/webhook)
+  - [Pull DLR](/docs/v2/sms/pull-dlr)
+  - [Optout](/docs/v2/sms/optout)
+  - [View Senders](/docs/v2/sms/senders)
+  - [Show Sender](/docs/v2/sms/senders/show)
+  - [Create Sender](/docs/v2/sms/senders/create)
+  - [Edit Sender](/docs/v2/sms/senders/edit)
+  - [Delete Sender](/docs/v2/sms/senders/delete)
+  - [View Templates](/docs/v2/sms/templates)
+  - [Show Template](/docs/v2/sms/templates/show)
+  - [Create Template](/docs/v2/sms/templates/create)
+  - [Edit Template](/docs/v2/sms/templates/edit)
+  - [Delete Template](/docs/v2/sms/templates/delete)
+  - [Pricing List](/docs/v2/sms/pricing)
+  <!-- [Service Usage](/docs/v2/sms/usage) -->
 
 - SMPP
 
-  - [Gateway](/docs/{version}/sms/smpp)
-  - [Error Codes](/docs/{version}/sms/smpp#content-delivery-reports)
+  - [Gateway](/docs/v2/sms/smpp)
+  - [Error Codes](/docs/v2/sms/smpp#content-delivery-reports)
 
 - Verify
 
-  - [Introduction](/docs/{version}/verify)
-  - [Check](/docs/{version}/verify/check)
-  - [Search](/docs/{version}/verify/search)
-  - [Cancel](/docs/{version}/verify/cancel)
+  - [Introduction](/docs/v2/verify)
+  - [Check](/docs/v2/verify/check)
+  - [Search](/docs/v2/verify/search)
+  - [Cancel](/docs/v2/verify/cancel)
 
 - Engage (Voice)
 
-  - [Introduction](/docs/{version}/voice)
-  - [Click2Call/Number Masking](/docs/{version}/voice/c2c)
-  - [Outgoing Call](/docs/{version}/reach/call)
-  - [Text2Speech API](/docs/{version}/reach/tts)
-  - [Upload Sound File](/docs/{version}/reach)
-  - [Call Logs](/docs/{version}/voice/logs)
-  - [Call Recordings](/docs/{version}/voice/logs#content-recordings-report)
-  - [Call Status](/docs/{version}/reach/status)
-  - [Webhook](/docs/{version}/reach/webhook)
-  - [Pricing List](/docs/{version}/voice/pricing)
+  - [Introduction](/docs/v2/voice)
+  - [Click2Call/Number Masking](/docs/v2/voice/c2c)
+  - [Outgoing Call](/docs/v2/reach/call)
+  - [Text2Speech API](/docs/v2/reach/tts)
+  - [Upload Sound File](/docs/v2/reach)
+  - [Call Logs](/docs/v2/voice/logs)
+  - [Call Recordings](/docs/v2/voice/logs#content-recordings-report)
+  - [Call Status](/docs/v2/reach/status)
+  - [Webhook](/docs/v2/reach/webhook)
+  - [Pricing List](/docs/v2/voice/pricing)
 
 - Whatsapp
 
@@ -79,40 +77,40 @@
 <!--
 - MIP
 
-  - [Introduction](/docs/{version}/mip)
-  - [Send a message](/docs/{version}/mip/send-message)
-  - [Status Info](/docs/{version}/mip/status)
-  - [Webhook](/docs/{version}/mip/webhooks)
-  - [Pull DLR](/docs/{version}/mip/pull-status)
+  - [Introduction](/docs/v2/mip)
+  - [Send Notification](/docs/v2/mip/send-message)
+  - [Status Info](/docs/v2/mip/status)
+  - [Webhook](/docs/v2/mip/webhooks)
+  - [Pull DLR](/docs/v2/mip/pull-status)
 -->
 
 - RCS
 
-  - [Introduction](/docs/{version}/rcs)
-  - [Send a message](/docs/{version}/rcs/send-message)
-  - [Status Info](/docs/{version}/rcs/status)
-  - [Webhook](/docs/{version}/rcs/webhooks)
-  - [Pull DLR](/docs/{version}/rcs/pull-status)
-  - [Optout](/docs/{version}/rcs/optout)
-  - [Pricing List](/docs/{version}/rcs/pricing)
+  - [Introduction](/docs/v2/rcs)
+  - [Send Notification](/docs/v2/rcs/send-message)
+  - [Status Info](/docs/v2/rcs/status)
+  - [Webhook](/docs/v2/rcs/webhooks)
+  - [Pull DLR](/docs/v2/rcs/pull-status)
+  - [Optout](/docs/v2/rcs/optout)
+  - [Pricing List](/docs/v2/rcs/pricing)
 
 - Link
 
-  - [View Links](/docs/{version}/link)
-  - [Create Link](/docs/{version}/link/create)
-  - [Edit Link](/docs/{version}/link/edit)
-  - [Delete Link](/docs/{version}/link/delete)
-  - [Show](/docs/{version}/link/show)
-  - [Visits](/docs/{version}/link/visits)
-  - [Webhook](/docs/{version}/link/webhook)
+  - [View Links](/docs/v2/link)
+  - [Create Link](/docs/v2/link/create)
+  - [Edit Link](/docs/v2/link/edit)
+  - [Delete Link](/docs/v2/link/delete)
+  - [Show](/docs/v2/link/show)
+  - [Visits](/docs/v2/link/visits)
+  - [Webhook](/docs/v2/link/webhook)
 
 <!--
 - Number Lookup
 
-  - [Verify](/docs/{version}/lookup/verify)
+  - [Verify](/docs/v2/lookup/verify)
     -->
 
 - Developers
 
-  - [Webhooks](/docs/{version}/webhook)
-  - [Subscriptions](/docs/{version}/subscriptions)
+  - [Webhooks](/docs/v2/webhook)
+  - [Subscriptions](/docs/v2/subscriptions)
