@@ -32,6 +32,7 @@
   - [Webhook](/docs/{version}/sms/webhook)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
   - [Optout](/docs/{version}/sms/optout)
+  - [Post](/docs/{version}/sms/post)
   - [View Senders](/docs/{version}/sms/senders)
   - [Create Sender](/docs/{version}/sms/senders/create)
   - [Show Sender](/docs/{version}/sms/senders/show)

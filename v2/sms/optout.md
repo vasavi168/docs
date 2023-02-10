@@ -26,7 +26,7 @@ services. You can block the customer's number using our optout feature. Once the
 ```
 curl -X POST \
   '{endpoint}sms/optout'
-   -H 'Content-Type: application/x-www-form-urlencoded' \
+   -H 'Content-Type: application/form-data' \
    -H 'Accept: application/json' \
    -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx'
    -F number=9174114xxxxx
@@ -71,7 +71,7 @@ Replace the {number} with the actual number of the Mobile number that you would 
 
 ```
 curl -X DELETE \
-  {endpoint}sms/optout/91873650xxxx \
+  '{endpoint}sms/optout/91873650xxxx' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
 ```
 
