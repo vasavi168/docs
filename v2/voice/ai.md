@@ -17,7 +17,7 @@
 		}
 	}],
 	"intent": {
-		"name": "projects/mobtexting/agent/intents/8c908432-c556-44c4-b505-d9872d54da7a",
+		"name": "projects/voiceflow/agent/intents/8c908432-c556-44c4-b505-d9872d54da7a",
 		"displayName": "support"
 	},
 	"intentDetectionConfidence": 0.75001615

@@ -487,7 +487,7 @@ curl -X POST \
          "body": {
               "type": "image",
               "payload": {
-                  "url": "https://mobtexting.com/assets/images/mob-logo.png",
+                  "url": "https://yourdomain.com/assets/images/mob-logo.png",
                   "caption": "This is the Header",
                   "filename": "",
                   "height": "MEDIUM"
@@ -509,7 +509,7 @@ curl -X POST \
          "body": {
              "type": "image",
              "payload": {
-                 "url": "https://mobtexting.com/assets/images/sms-home.png",
+                 "url": "https://yourdomain.com/assets/images/sms-home.png",
                  "caption": "This is the Header2",
                  "height": "MEDIUM"
              }

@@ -8,7 +8,9 @@
   - [IP Whitelisting](/docs/{version}/whitelisting)
   - [Advanced Options](/docs/{version}/options)
   - [Voice Flow](/docs/{version}/voice/)
+  @if (!config('service.unified'))
   - [DLT](/docs/{version}/dlt/)
   - [DLT Registration](/docs/{version}/dlt/registration)
   - [DLT Registration with Pingconnect](/docs/{version}/dlt/videocon)
+  @endif
   - [Verification of Webhook](/docs/{version}/verify-webhook)
