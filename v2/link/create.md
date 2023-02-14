@@ -30,30 +30,35 @@ curl -X POST \
   '{endpoint}link/urls' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'title=smart%20link&long_url=https%3A%2F%2Fwww.google.com&advanced=1'
+    -H 'Content-Type: application/json' \
+    -d '{
+      "long_url": "https://www.example.com",
+      "title": "testing",
+      "webhook_id": "5558",
+      "is_advanced": "1"
+  }'
 ```
 
 #### Example Response
 
 ```json
 {
-    "status": "OK",
-    "code": 200,
-    "message": "Link Created Successfully",
-    "data": {
-        "id": 5,
-        "title": "testing",
-        "short_url": "https://tx3.in/",
-        "long_url": "https://o5o4o6.com/?a=1457&c=298748&s1=TN(air(40_50)",
-        "webhook_id": "5558",
-        "token": null,
-        "visits": [],
-        "last_visited": null,
-        "is_advanced": "1",
-        "status": 1,
-        "created_at": "2022-10-28T12:37:43.000000Z",
-        "updated_at": "2022-10-28T12:37:43.000000Z"
-    }
+  "status": "OK",
+  "code": 200,
+  "message": "Link Created Successfully",
+  "data": {
+    "id": 5,
+    "title": "testing",
+    "short_url": "https://tx3.in/",
+    "long_url": "https://o5o4o6.com/?a=1457&c=298748&s1=TN(air(40_50)",
+    "webhook_id": "5558",
+    "token": null,
+    "visits": [],
+    "last_visited": null,
+    "is_advanced": "1",
+    "status": 1,
+    "created_at": "2022-10-28T12:37:43.000000Z",
+    "updated_at": "2022-10-28T12:37:43.000000Z"
+  }
 }
 ```
