@@ -69,16 +69,16 @@ All params in send sms will support in JSON also.
 
 ```
   curl -X POST \
-    '{endpoint}sms/template \
+    '{endpoint}sms/template' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'content-type: application/x-www-form-urlencoded' \
+    -H 'content-type: application/json' \
     -d '{
-      "service": "MKT",
-      "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
-      "variables" : ["Laxman", "myname@gmail.com",  "New"],
-      "to": ["918919525224","8919555555"]
-    }'
+    "service": "MKT",
+    "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
+    "variables" : ["Laxman", "myname@gmail.com",  "New"],
+    "to": ["918919525224","8919555555"]
+}'
 ```
 
 #### Example Response

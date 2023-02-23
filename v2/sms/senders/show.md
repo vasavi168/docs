@@ -18,7 +18,7 @@ View one Sender-ids created under your account
 
 ```
 curl -X GET \
-  '{endpoint}sms/senders \ff467e28-7170-4a72-952e-c999cxxxxxx \
+  '{endpoint}sms/senders/ff467e28-7170-4a72-952e-c999cxxxxxx' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```

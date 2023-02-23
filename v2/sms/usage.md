@@ -23,7 +23,7 @@ curl -X GET \
   '{endpoint}sms/activity' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
-  -H 'Content-Type: application/x-www-form-urlencoded'
+  -H 'Content-Type: application/json'
 ```
 
 Kindly replace the token with your respective access_token and other params.

@@ -24,7 +24,7 @@ View all Sender-ids created under your account
 
 ```
 curl -X GET \
-  '{endpoint}sms/senders \
+  '{endpoint}sms/senders' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
