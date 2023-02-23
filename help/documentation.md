@@ -14,3 +14,4 @@
   - [DLT Registration with Pingconnect](/docs/{version}/dlt/videocon)
   @endif
   - [Verification of Webhook](/docs/{version}/verify-webhook)
+  - [Smart Delivery](/docs/{version}/smart-delivery)
