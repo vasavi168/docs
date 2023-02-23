@@ -81,6 +81,7 @@
   - [Pull DLR](/docs/{version}/rcs/pull-status)
   - [Optout](/docs/{version}/rcs/optout)
   - [Pricing List](/docs/{version}/rcs/pricing)
+  - [Template](/docs/{version}/rcs/template)
 
 - Engage (Voice)
 

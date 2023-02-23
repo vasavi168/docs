@@ -154,7 +154,7 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "text",
+    "type": "template",
     "name": "new_template",
     "category": "Marketing",
     "language": "en",
@@ -186,7 +186,7 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "text",
+    "type": "json",
     "name": "new_json",
     "category": "Marketing",
     "language": "en",
@@ -292,7 +292,7 @@ curl -X POST \
 
 ## Media Type
 
-`Note` : `header_type` always `media` value, then `body` and `footer` fields are not required.
+`Note` : `body` and `footer` fields are not required.
 
 ### Example Request
 
