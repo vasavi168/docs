@@ -27,7 +27,7 @@ View all Country wise pricing list.
 
 ```
 curl -X GET \
-  '{endpoint}voice/pricing \
+  '{endpoint}voice/pricing' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
