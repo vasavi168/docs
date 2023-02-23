@@ -2,12 +2,12 @@
 
 Smart delivery helps to increase the success rate of delivery, minimize delivery failures and credits lost.
 
-### Steps to do the smart delivery campaign
+### Steps to do the Smart Delivery campaign
 
-* Step 1 : Please enable the smart delivery option while doing the campaign in the preview section.
-* step 2 : If you enable the smart delivery it will process after 15 minutes.
+* Step 1 : Please enable the Smart Delivery option while doing the campaign in the preview section.
+* step 2 : If you enable the Smart Delivery it will process after 15 minutes.
 
-### smart delivery Process
+### Smart Delivery Process
 
 * step 1 : Smart Delivery Campaign will pick randomly 10 mobile numbers of the campaign and will send the message to those numbers.
 * step 2 : After Receiving the DLR, System will check is there any DLT rejection status like (DLT-REJECTED, INV-PEID, INV-TMID, INV-ENTITY and INV-TEMPLATE) in those 10 messages.    
