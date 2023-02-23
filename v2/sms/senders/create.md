@@ -28,15 +28,17 @@ Create sender-ids using post method under your account
 
 ```
 curl -X POST \
-  {endpoint}sms/senders \
+  '{endpoint}sms/senders' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxxx' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d name=xxxxxx \
-  -d service=xxxxxx \
-  -d entity_name=xxxxx \
-  -d entity_id=xxxxx \
-  -d country_code=IN \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name":"xxxxxx",
+    "service":"xxxxxx",
+    "entity_name":"xxxxx",
+    "entity_id":"xxxxx" ,
+    "country_code":"IN" 
+}'
 ```
 
 #### Example Response

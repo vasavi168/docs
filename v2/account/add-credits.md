@@ -9,7 +9,7 @@
 #### POST
 
 ```
-{endpoint}finance/credits
+{endpoint}finance/balance
 ```
 
 You can add the credits to your customers using this api.
@@ -35,7 +35,7 @@ You can add the credits to your customers using this api.
 
 ```curl
   curl -X POST \
-  '{endpoint}finance/credits' \
+  '{endpoint}finance/balance' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
   -H 'content-type: application/x-www-form-urlencoded' \

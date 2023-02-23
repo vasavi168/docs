@@ -1,7 +1,7 @@
 # Clevertap SMS Integration
 
 ## Integration Steps for send sms
-To integrate Mobtexting as an SMS provider, perform the following steps:
+To integrate with Clevertap as an SMS provider, perform the following steps:
 1. In the CleverTap dashboard, navigate to Settings > Engage > Channels > SMS.
 2. Click + Add Provider.
 ![alt text](/images/docimages/plugins/clevertap/addprovider.png)
@@ -30,7 +30,7 @@ Enter key and value pairs.
 ------------|-----------------------|-------------|
 | sender    | TXTSMS               |The registered and approved Sender-id | 
 | to        | 8074******           |Phone number to send with country prefix. (multiple numbers can be separated by comma.)|
-| message   | welcome to mobtexting|The content of the SMS|
+| message   | welcome to CPaaS|The content of the SMS|
 | service   | T                    |Determines whether the SMS to be sent is Transactional, Promotional or other.|
 
 ## System Dynamic Replacements
@@ -74,7 +74,7 @@ Select Parameters and choose json to pass a json object as following below.
         "type": "A",
         "flash": 0,
         "sender": "TXTSMS",
-        "message": "welcoem to mobtexting,
+        "message": "welcome to CPaas Alerts,
         "service": "T"
     },
     "nodes": [

@@ -118,12 +118,14 @@ Create a Webhook using post method under your account
   {endpoint}developer/webhook/create \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxxx' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d name=xxxxxx \
-  -d uri=xxxxx \
-  -d secret=xxxxx \
-  -d token=xxxxx \
-  -d status=1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "name of webhook",
+    "uri": "https://www.example.com",
+    "secret"= xxxxx,
+    "token"= xxxxx,
+    "status"= 1
+}'
 ```
 
 #### Example Response
@@ -178,9 +180,11 @@ curl -X PUT \
   {endpoint}developer/webhooks/93af9991-f1cc-4b36-abd5-xxxxxx \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d name=xxx \
-  -d uri=xxxxx \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "name of webhook",
+    "uri": "https://www.example.com",
+}'
 ```
 
 #### Example Response

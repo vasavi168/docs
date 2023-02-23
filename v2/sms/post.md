@@ -53,11 +53,13 @@ Before you start sending SMS through this API, please test whether your content 
 curl -X POST '{endpoint}sms/send' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-    -d 'sender=TXTSMS' \
-    -d 'to=917026267xxx' \
-    -d 'service=MKT' \
-    -d 'message=Your OTP is 123456'
+    -H 'Content-Type: application/json' \
+    -d '{
+     "sender":"TXTSMS",
+     "to":"917026267xxx",
+     "service":"MKT",
+     "message":"Your OTP is 123456"
+}'
 ```
 
 #### Example Response

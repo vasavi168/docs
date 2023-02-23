@@ -1,4 +1,4 @@
-@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.tools']))
+@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.postman']))
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection})
 @endif
 
@@ -32,6 +32,7 @@
   - [Webhook](/docs/{version}/sms/webhook)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
   - [Optout](/docs/{version}/sms/optout)
+  - [Post](/docs/{version}/sms/post)
   - [View Senders](/docs/{version}/sms/senders)
   - [Create Sender](/docs/{version}/sms/senders/create)
   - [Show Sender](/docs/{version}/sms/senders/show)
@@ -59,6 +60,7 @@
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
   - [Optout](/docs/{version}/whatsapp/optout)
   - [Pricing List](/docs/{version}/whatsapp/pricing)
+  - [Templates](/docs/{version}/whatsapp/templates)
 
 <!--
 - MIP
@@ -79,6 +81,7 @@
   - [Pull DLR](/docs/{version}/rcs/pull-status)
   - [Optout](/docs/{version}/rcs/optout)
   - [Pricing List](/docs/{version}/rcs/pricing)
+  - [Template](/docs/{version}/rcs/template)
 
 - Engage (Voice)
 

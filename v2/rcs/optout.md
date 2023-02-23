@@ -26,10 +26,12 @@ services. You can block the customer's number using our optout feature. Once the
 ```
 curl -X POST \
   '{endpoint}rcs/optout'
-   -H 'Content-Type: application/x-www-form-urlencoded' \
+   -H 'Content-Type: application/json' \
    -H 'Accept: application/json' \
    -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx'
-   -F number=9174114xxxxx
+   -d '{
+    "number":"9174114xxxxx"
+}'
 ```
 
 On triggering the above API the specified numbers will be added to your optout list.
