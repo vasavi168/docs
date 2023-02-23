@@ -51,7 +51,6 @@ Kindly replace the token with your respective access_token and other params.
             "type": "text",
             "category": "Account",
             "language": "English",
-            "body": "Hi,This is Rcs text template message.",
             "payload": "{\"type\":\"text\",\"payload\":
             {\"text\":\"Hi,This is Rcs text template message.\",
             \"body_params\":[],\"language\":\"en\"}}",
@@ -91,6 +90,51 @@ Kindly replace the token with your respective access_token and other params.
         "per_page": 15,
         "to": 1,
         "total": 1
+    }
+}
+```
+
+## Show Template
+
+Show the Template list.
+
+#### GET
+
+```
+{endpoint}rcs/templates/{template_id}
+```
+
+#### Example Request
+
+```
+curl -X GET \
+  '{endpoint}rcs/templates/2cf9e59f-d4f1-47ba-81d3-a288f31ca164' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
+```
+
+Kindly replace the template_id.
+
+### Example Response
+
+```json
+{
+    "status": "OK",
+    "code": 200,
+    "message": "Templates List",
+    "data": {
+        "id": "2cf9e59f-d4f1-47ba-81d3-a288f31ca164",
+        "name": "text_template",
+        "number": "91861xxxxxxx",
+        "type": "text",
+        "category": "Account",
+        "language": "English",
+        "payload": "{\"type\":\"text\",\"payload\":
+        {\"text\":\"Hi,This is Rcs text template message.\",
+        \"body_params\":[],\"language\":\"en\"}}",
+        "status": 1,
+        "created_at": "2023-20-08T10:41:30.000000Z",
+        "updated_at": "2023-20-08T10:41:30.000000Z"
     }
 }
 ```
