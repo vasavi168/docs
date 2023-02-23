@@ -30,8 +30,13 @@ curl -X POST \
   '{endpoint}link/urls/{id}' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'title=smart%20link&long_url=https%3A%2F%2Fwww.google.com&advanced=1'
+    -H 'Content-Type: application/json' \
+    -d '{
+      "long_url": "https://www.example.com",
+      "title": "testing",
+      "webhook_id": "5558",
+      "is_advanced": "1"
+}'
 ```
 
 #### Example Response
