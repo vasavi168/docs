@@ -76,6 +76,7 @@
 
   - [Introduction](/docs/{version}/rcs)
   - [Send Notification](/docs/{version}/rcs/send-message)
+  - [Send Template Notification](/docs/{version}/rcs/send-template)
   - [Status Info](/docs/{version}/rcs/status)
   - [Webhook](/docs/{version}/rcs/webhooks)
   - [Pull DLR](/docs/{version}/rcs/pull-status)
