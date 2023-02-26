@@ -55,6 +55,7 @@
 
   - [Introduction](/docs/{version}/whatsapp)
   - [Send Notification](/docs/{version}/whatsapp/send-message)
+  - [Send Template Notification](/docs/{version}/whatsapp/template)
   - [Status Info](/docs/{version}/whatsapp/status)
   - [Webhook](/docs/{version}/whatsapp/webhooks)
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
