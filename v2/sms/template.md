@@ -1,20 +1,26 @@
-# Template SMS API
+# Template API
 
-Now you can send message using template id of the predefined template created in your account.
+Now you can send message using template alias name or template id of the predefined template created in your account.
 
 Example template as follows:
 
-Dear @{{1}}, Thanks for registering with us. Your details as follows @{{2}}, @{{3}}.
+Dear @{{name}}, Thanks for registering with us. Your details as follows @{{email}}, @{{phone}}.
 
-While sending sms we need to pass the variables in the api url then content will be replaced automatically in the template as below.
+While sending message we need to pass the data in the data payload then content will be replaced automatically in the template as below.
 
-Ex: variables=["laxman","laxman46XXXXXX@gmail.com","91891952XXXX"]
+Ex: 
+```
+"data": {
+          "name": "Demo",
+          "email": "demoxxxx@gmail.com",
+          "phone":"89XXXXXXXX",
+        }
+```
+Output Message: 
 
-Note: Variables in array must be in order created in template. Even blank values also will replace if we specify in variables array.
+```Dear Demo, Thanks for regisitering with us. Your details as follows demoxxxx@gmail.com, 9189XXXXXXXX.```
 
-Dear laxman, Thanks for regisitering with us. Your details as follows laxman46XXXX@gmail.com, 91891952XXXX.
-
-## Send SMS
+## Send Message
 
 #### API Endpoint
 
@@ -25,21 +31,28 @@ Dear laxman, Thanks for regisitering with us. Your details as follows laxman46XX
 #### POST
 
 ```
-{endpoint}sms/template
+{endpoint}sms/send/template
 ```
 
-You can send sms using `POST` method content in body.
-
-All params in send sms will support in JSON also.
+You can send template message using `POST` method content in body.
 
 #### BODY
 
 ```json
 {
-  "service": "MKT",
-  "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
-  "variables": ["Laxman", "", "New"],
-  "to": ["91891952xxxxx", "918919xxxxxx"]
+    "alias": "template-name",
+    "recipient": {
+        "group_id": "{segment_id}",
+        "to": ["91XXXXXX", "91XXXXXX"]
+    },
+    "data": {
+        "name": "MKT",
+        "email": "1234XXXXXXX",
+        "message":"89XXXXXXXXXXX"
+    },
+    "meta": {
+        "webhook_id": "0798d163-7ca2-4mb6-8c16-c62866xxxxxxx"
+    }
 }
 ```
 
@@ -47,69 +60,74 @@ All params in send sms will support in JSON also.
 
 | Name        | Descriptions                                                                                           |
 | ----------- | ------------------------------------------------------------------------------------------------------ |
-| to          | Phone number to send with country prefix. (multiple numbers need to be sent as array.)                 |
-| template_id | Id of the template                                                                                     |
-| service     | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products)           |
-| variables   | Varible values for replacing in template content (need to send as array) Ex:["name","891919XXX","new"] |
+| alias       | alias of the registered template. (Required if `id` not present)                                         |
+| id          | id of the registered template. (Required if `alias` not present)                                         |
+| recipient   |	This block contains contacts informations                                                                |
+| group_id    |	Segment id which contain list of phone numbers (Required if `to` param not present)                      |
+| to	        | Receiver mobile numbers (Required if `group_id` param not present)                                             |
+| data        | Variable values for replacing in template content                                                       |
 
 #### OPTIONAL PARAMETERS
 
 | Name       | Descriptions                                                                                                                                                            |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name       | Name of the campaign                                                                                                                                                    |
-| webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |
-| time       | Schedule time (in format i.e,yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent.                                                                                      |
-| type       | The SMS to be sent is Unicode, Normal or Auto detect. (value "U", "N" or "A")                                                                                           |
-| flash      | This parameter can be used to send flash sms via API ( Values 1 or 0.)                                                                                                  |
-| custom     | Any customised parameters can be passed using this parameter|
-| port       | Port number to which SMS has to be sent|
-| max_units | The maximum number of units to be sent in the message ex:(value 2 or 3) |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+|
+meta      | This block contains all the optional parameters                                                                                                                                             |
+| webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |                                                                                         |
+| foreign_id     | Custom id for reference from customer.|
 
 #### Example Request
 
 ```
   curl -X POST \
-    '{endpoint}sms/template' \
+    '{endpoint}sms/send/template' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
     -H 'content-type: application/json' \
     -d '{
-    "service": "MKT",
-    "template_id": "008ed156-61b1-4582-aa8e-0f4068776c2e",
-    "variables" : ["Laxman", "myname@gmail.com",  "New"],
-    "to": ["918919525224","8919555555"]
-}'
+      "alias": "template-name",
+      "recipient": {
+        "to": ["9189195xxxx","9189196xxxx"]
+      },
+      "data" : {
+        "name" : "Demo",
+        "email" : "Demo@gmail.com",
+        "phone" : "8123xxxxxxx"
+      }
+    }'
 ```
 
 #### Example Response
 
 ```json
 {
-  "status": 200,
-  "message": "2 numbers accepted for delivery.",
-  "data": [
-    {
-      "id": "06a1880f-2396-42e7-a141-06fa3a9b23bf:1",
-      "mobile": "9189195xxxx",
-      "status": "AWAITING-DLR",
-      "units": 1,
-      "length": 152,
-      "charges": "1.0000",
-      "customid": "",
-      "iso_code": null,
-      "submitted_at": "2020-09-24 15:42:56"
-    },
-    {
-      "id": "06a1880f-2396-42e7-a141-06fa3a9b23bf:2",
-      "mobile": "9189195xxxx",
-      "status": "AWAITING-DLR",
-      "units": 1,
-      "length": 152,
-      "charges": "1.0000",
-      "customid": null,
-      "iso_code": null,
-      "submitted_at": "2020-09-24 15:42:56"
-    }
-  ]
+    "status": 200,
+    "message": "2 numbers accepted for delivery.",
+    "data": [
+        {
+            "id": "2c640de9-f3a5-449a-97e4-3e90214xxxxx:1",
+            "mobile": "9170020xxxxx",
+            "status": "AWAITING-DLR",
+            "units": 1,
+            "length": 98,
+            "charges": "1",
+            "customid": null,
+            "customid1": null,
+            "iso_code": "IN",
+            "submitted_at": "2023-01-23 13:19:38"
+        },
+        {
+            "id": "2c640de9-f3a5-449a-97e4-3e90214xxxxx:2",
+            "mobile": "9170020xxxxx",
+            "status": "AWAITING-DLR",
+            "units": 1,
+            "length": 98,
+            "charges": "1",
+            "customid": null,
+            "customid1": null,
+            "iso_code": "IN",
+            "submitted_at": "2023-01-23 13:19:38"
+        },
+    ]
 }
 ```
