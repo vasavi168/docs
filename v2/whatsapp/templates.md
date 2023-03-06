@@ -47,6 +47,7 @@ Kindly replace the token with your respective access_token and other params.
         {
             "id": "2cf9e59f-d4f1-47ba-81d3-a288f31ca164",
             "name": "text_template",
+            "alias": "text-template",
             "number": "91861xxxxxxx",
             "type": "text",
             "category": "Marketing",

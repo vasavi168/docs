@@ -31,7 +31,7 @@ Output Message:
 #### POST
 
 ```
-{endpoint}sms/send/template
+{endpoint}whatsapp/send/template
 ```
 
 You can send template message using `POST` method content in body.
@@ -73,14 +73,14 @@ You can send template message using `POST` method content in body.
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 |
 meta      | This block contains all the optional parameters                                                                                                                                             |
-| webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |                                                                                         |
+| webhook_id | The `id` of the webhook created in Webhook Section for which the response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |                                                                                         |
 | foreign_id     | Custom id for reference from customer.|
 
 #### Example Request
 
 ```
   curl -X POST \
-    '{endpoint}sms/send/template' \
+    '{endpoint}whatsapp/send/template' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
     -H 'content-type: application/json' \
@@ -101,33 +101,29 @@ meta      | This block contains all the optional parameters                     
 
 ```json
 {
-    "status": 200,
-    "message": "2 numbers accepted for delivery.",
+    "status": "OK",
+    "message": "Messages queued successfully",
     "data": [
         {
-            "id": "2c640de9-f3a5-449a-97e4-3e90214xxxxx:1",
-            "mobile": "9170020xxxxx",
-            "status": "AWAITING-DLR",
-            "units": 1,
-            "length": 98,
-            "charges": "1",
-            "customid": null,
-            "customid1": null,
-            "iso_code": "IN",
-            "submitted_at": "2023-01-23 13:19:38"
+            "id": "883137c2-7b9c-4e72-8454-1059f06xxxxx",
+            "channel": "whatsapp",
+            "from": "9170020xxxxx",
+            "recipient": "9189195xxxx",
+            "credits": 0,
+            "created_at": "2023-01-26T07:24:25.532476Z",
+            "foreign_id": null,
+            "status": "notallowed"
         },
         {
-            "id": "2c640de9-f3a5-449a-97e4-3e90214xxxxx:2",
-            "mobile": "9170020xxxxx",
-            "status": "AWAITING-DLR",
-            "units": 1,
-            "length": 98,
-            "charges": "1",
-            "customid": null,
-            "customid1": null,
-            "iso_code": "IN",
-            "submitted_at": "2023-01-23 13:19:38"
-        },
+            "id": "269d3c38-9e8a-4ed1-b81e-7cb6b31xxxxx",
+            "channel": "whatsapp",
+            "from": "9170020xxxxx",
+            "recipient": "9189196xxxx",
+            "credits": 0,
+            "created_at": "2023-01-26T07:24:25.535833Z",
+            "foreign_id": null,
+            "status": "notallowed"
+        }
     ]
 }
 ```

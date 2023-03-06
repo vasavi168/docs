@@ -55,6 +55,7 @@
 
   - [Introduction](/docs/{version}/whatsapp)
   - [Send Notification](/docs/{version}/whatsapp/send-message)
+  - [Send Template Notification](/docs/{version}/whatsapp/template)
   - [Status Info](/docs/{version}/whatsapp/status)
   - [Webhook](/docs/{version}/whatsapp/webhooks)
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
@@ -76,6 +77,7 @@
 
   - [Introduction](/docs/{version}/rcs)
   - [Send Notification](/docs/{version}/rcs/send-message)
+  - [Send Template Notification](/docs/{version}/rcs/send-template)
   - [Status Info](/docs/{version}/rcs/status)
   - [Webhook](/docs/{version}/rcs/webhooks)
   - [Pull DLR](/docs/{version}/rcs/pull-status)
