@@ -40,7 +40,7 @@ You can send template message using `POST` method content in body.
 
 ```json
 {
-    "alias": "template_name",
+    "alias": "template-name",
     "recipient": {
         "group_id": "{segment_id}",
         "to": ["91XXXXXX", "91XXXXXX"]
@@ -85,7 +85,7 @@ meta      | This block contains all the optional parameters                     
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
     -H 'content-type: application/json' \
     -d '{
-      "alias": "template_name",
+      "alias": "template-name",
       "recipient": {
         "to": ["9189195xxxx","9189196xxxx"]
       },
