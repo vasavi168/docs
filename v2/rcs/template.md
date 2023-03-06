@@ -52,8 +52,7 @@ Kindly replace the token with your respective access_token and other params.
             "category": "Account",
             "language": "English",
             "payload": "{\"type\":\"text\",\"payload\":
-            {\"text\":\"Hi,This is Rcs text template message.\",
-            \"body_params\":[],\"language\":\"en\"}}",
+            {\"text\":\"Hi,This is Rcs text template message.\",\"language\":\"en\"}}",
             "status": 1,
             "created_at": "2023-20-08T10:41:30.000000Z",
             "updated_at": "2023-20-08T10:41:30.000000Z"
@@ -131,7 +130,7 @@ Kindly replace the template_id.
         "language": "English",
         "payload": "{\"type\":\"text\",\"payload\":
         {\"text\":\"Hi,This is Rcs text template message.\",
-        \"body_params\":[],\"language\":\"en\"}}",
+        \"language\":\"en\"}}",
         "status": 1,
         "created_at": "2023-20-08T10:41:30.000000Z",
         "updated_at": "2023-20-08T10:41:30.000000Z"
@@ -164,7 +163,6 @@ Kindly replace the template_id.
 | name                | description                                                 | Type     | Required |
 | ------------------- | ----------------------------------------------------------- | -------- | -------- |
 | payload.text        | content message with variabels(optional) like @{{name}} . . | `string` | Yes      |
-| payload.body_params | replaces the variables values Ex: ['name']                  | `array`  | No       |
 
 ### Example Request
 
@@ -180,8 +178,7 @@ curl -X POST \
     "category": "marketing",
     "number": "91861xxxxxxx",
     "payload": {
-        "text" : "Hi, This is Rcs test message.",
-        "body_params" : []
+        "text" : "Hi, This is Rcs test message."
     }
 }'
 ```
@@ -202,7 +199,7 @@ curl -X POST \
         "category": "Marketing",
         "language": "English",
         "payload": "{\"type\":\"text\",\"payload\":
-        {\"text\":\"Hi, This is Rcs test message.\",\"body_params\":[]}}",
+        {\"text\":\"Hi, This is Rcs test message.\"}}",
         "status": 1,
         "created_at": "2023-02-23T05:56:58.000000Z",
         "updated_at": "2023-02-23T05:56:58.000000Z"
@@ -219,7 +216,6 @@ curl -X POST \
 | payload.body            | body text message | `object` | Yes      |
 | payload.header          | optional          | `object` | No       |
 | payload.footer          | optional          | `object` | No       |
-| payload.body_params     | optional          | `array`  | No       |
 | payload.choices         | optional          | `object` | No       |
 | payload.choices.replies | optional          | `object` | Yes      |
 
@@ -255,7 +251,6 @@ curl -X POST \
                 "text": "footer text"
             }
         },
-        "body_params": [],
         "choices": {
             "replies": [
                 {
@@ -297,7 +292,7 @@ curl -X POST \
         {\"header\":{\"type\":\"text\",\"payload\":{\"text\":\"header text\"}},
         \"body\":{\"type\":\"text\",\"payload\":{\"text\":\"do you like rcs?\"}},
         \"footer\":{\"type\":\"text\",\"payload\":{\"text\":\"footer text\"}},
-        \"body_params\":[],\"choices\":{\"replies\":
+        \"choices\":{\"replies\":
         [{\"type\":\"text\",\"payload\":{\"text\":\"yes\",\"content\":\"yes\"}},
         {\"type\":\"text\",\"payload\":{\"text\":\"no\",\"content\":\"No\"}}]}}}",
         "status": 1,
