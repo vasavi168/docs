@@ -27,7 +27,6 @@
   - [Introduction](/docs/{version}/sms)
   - [SMS Length Summary](/docs/{version}/sms/length-summary)
   - [Send Notification](/docs/{version}/sms/send)
-  - [Send Bulk Notifications](/docs/{version}/sms/json)
   - [Send Template Notification](/docs/{version}/sms/template)
   - [Webhook](/docs/{version}/sms/webhook)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)

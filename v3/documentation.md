@@ -20,7 +20,6 @@
   - [Introduction](/docs/v2/sms)
   - [SMS Length Summary](/docs/v2/sms/length-summary)
   - [Send Notification](/docs/v2/sms/send)
-  - [Send Bulk Notifications](/docs/v2/sms/json)
   - [Send Template Notification](/docs/v2/sms/template)
   - [Webhook](/docs/v2/sms/webhook)
   - [Pull DLR](/docs/v2/sms/pull-dlr)

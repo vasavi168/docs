@@ -6,7 +6,10 @@
 {
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120",
+		"from": "919019120xxx",
+        "meta" : {
+            "foreign_id":"your-custom-id"
+        },
 		"recipient": {
 			"group_id": "{segment_id}",
 			"to": ["9189195xxxx", "91886713xxxx"]
@@ -29,7 +32,7 @@
     {
       "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
       "channel": "whatsapp",
-      "from": "919019120120",
+      "from": "919019120xxx",
       "to": "9190199xxxxx",
       "credits": 1,
       "created_at": "2021-06-18T14:48:06.886358Z",
@@ -65,20 +68,20 @@ It will support only `POST` requests.
 ## Sending Text Message
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Text Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -110,7 +113,7 @@ curl -X POST \
     {
       "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
       "channel": "whatsapp",
-      "from": "919019120120",
+      "from": "919019120xxx",
       "to": "9190199xxxxx",
       "credits": 1,
       "created_at": "2021-06-18T14:48:06.886358Z",
@@ -140,20 +143,20 @@ Otp For verifying your account is @{{1}} code: @{{2}}. Valid for @{{3}} minutes.
 Here @{{1}}, @{{2}}, @{{3}} are replacement variables which is different for each message. Same needs to be for `params` or `body_params` parameters.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Template
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -196,20 +199,20 @@ curl -X POST \
 We can send Images as attachment using below API. The maximum image size is limited to 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Image Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -244,20 +247,20 @@ curl -X POST \
 We can send Document which is having valid MIME-type as attachment using below API. The maximum document size is limited to 64 MB. So anything not image, audio or video will be transmitted as document message.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Document Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -292,20 +295,20 @@ curl -X POST \
 We can send Audio clips as attachment using below API. The maximum audio file size is limited to max 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Audio Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -340,20 +343,20 @@ curl -X POST \
 We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Video Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -389,20 +392,20 @@ curl -X POST \
 We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Interactive Choice Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -514,20 +517,20 @@ curl -X POST \
 We can send location using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Vcard Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -554,7 +557,7 @@ curl -X POST \
 				"last_name": "Ka"
 			},
 			"phones": [{
-				"phone": "919019120120",
+				"phone": "919019120xxx",
 				"type": "HOME"
 			}],
 			"urls": [{
@@ -585,20 +588,20 @@ curl -X POST \
 We can send location using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Location Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -635,20 +638,20 @@ curl -X POST \
 We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Carousel Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -672,20 +675,20 @@ curl -X POST \
 We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
 
 ```
-{endpoint}messenger/message/send
+{endpoint}whatsapp/message/send
 ```
 
 #### Example Request With Card Messgae
 
 ```
 curl -X POST \
-  '{endpoint}messenger/message/send' \
+  '{endpoint}whatsapp/message/send' \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"

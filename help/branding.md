@@ -7,9 +7,8 @@ To setup your own domain name and theme colors follow the below steps:
 - Login to panel using primary domain name given by vendor
 - Click Resellers -> branding on left side menu
 - Enter your domain name in desired space. ex: `my.example.com`
-- Name your product, will be used in all communication emails
+- Name your website, will be used in all communication emails
 - Title will be displayed on brower window
-- Choose theme for your website, It's color themes for popular websites.
 - Done
 
 ## CNAME Setup
