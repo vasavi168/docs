@@ -9,11 +9,7 @@
 		"from": "91901912xxxx",
         "meta" : {
             "foreign_id":"your-custom-id"
-        },
-		"recipient": {
-			"group_id": "{segment_id}",
-			"to": ["9189195xxxx", "91886713xxxx"]
-		}
+        }
 	}]
 	"recipient": {
 		"group_id": "{segment_id}",
