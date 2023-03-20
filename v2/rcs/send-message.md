@@ -9,11 +9,7 @@
 		"from": "700969ca-0cb2-11ec-a2cxxxx", //Agent ID
         "meta" : {
             "foreign_id":"your-custom-id"
-        },
-		"recipient": {
-			"group_id": "{segment_id}",
-			"to": ["9189195xxxx", "91886713xxxx"]
-		}
+        }
 	}]
 	"recipient": {
 		"group_id": "{segment_id}",
