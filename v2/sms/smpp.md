@@ -198,7 +198,7 @@ Status and error code which can be returned by Messaging Platform.
 | 432  | SERVER-ERR            | Unknown Error                                       |
 | 433  | SERVER-ERR            | Unknown Error                                       |
 | 450  | BLACKLST              | Number blocklisted to receive messages              |
-| 451  | SNDR-NOT-ALLOTED      | Sender Id been blocked                              |
+| 451  | SNDR-BLOCK            | Sender Id been blocked                              |
 | 452  | TEMPLATE-NOT-FOUND    | No matching templates                               |
 | 453  | INV-TEMPLATE          | Message rejected as template not allotted for ESME  |
 | 454  | INV-SENDER            | Message rejected as sender id not allotted for ESME |
