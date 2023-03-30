@@ -6,7 +6,7 @@
 {
 	"channels": [{
 		"name": "mip",
-		"from": "919019120120",
+		"from": "919019120xxx",
 		"recipient": {
 			"group_id": "{segment_id}",
 			"to": ["9189195xxxx", "91886713xxxx"]
@@ -29,7 +29,7 @@
     {
       "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
       "channel": "mip",
-      "from": "919019120120",
+      "from": "919019120xxx",
       "to": "9190199xxxxx",
       "credits": 1,
       "created_at": "2021-06-18T14:48:06.886358Z",
@@ -43,9 +43,9 @@
 #### PARAMETERS
 
 | Name      | Description                                                 | type                | Required                       |
-| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
+| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ | -------- | --- |
 | channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. `whatsapp|rcs|ip_message`        | `string`            | Yes                            |
+| name      | Name of Messaging Channel. `whatsapp                        | rcs                 | ip_message`                    | `string` | Yes |
 | from      | Sender or From Number                                       | `number`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
@@ -79,7 +79,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "mip",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -123,7 +123,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "mip",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -179,7 +179,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "mip",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -304,7 +304,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "mip",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -395,4 +395,3 @@ curl -X POST \
 
 | Name | Description | Limits | Required |
 | ---- | ----------- | ------ | -------- |
-

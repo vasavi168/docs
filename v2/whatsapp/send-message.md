@@ -6,11 +6,10 @@
 {
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120",
-		"recipient": {
-			"group_id": "{segment_id}",
-			"to": ["9189195xxxx", "91886713xxxx"]
-		}
+		"from": "91901912xxxx",
+        "meta" : {
+            "foreign_id":"your-custom-id"
+        }
 	}]
 	"recipient": {
 		"group_id": "{segment_id}",
@@ -29,7 +28,7 @@
     {
       "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
       "channel": "whatsapp",
-      "from": "919019120120",
+      "from": "919019120xxx",
       "to": "9190199xxxxx",
       "credits": 1,
       "created_at": "2021-06-18T14:48:06.886358Z",
@@ -79,7 +78,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -123,7 +122,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -151,7 +150,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -243,7 +242,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -338,7 +337,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -386,7 +385,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -434,7 +433,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -482,7 +481,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -528,7 +527,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -586,7 +585,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -672,7 +671,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -699,7 +698,7 @@ curl -X POST \
 				"last_name": "Ka"
 			},
 			"phones": [{
-				"phone": "919019120120",
+				"phone": "919019120xxx",
 				"type": "HOME"
 			}],
 			"urls": [{
@@ -743,7 +742,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"

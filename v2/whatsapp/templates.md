@@ -47,6 +47,7 @@ Kindly replace the token with your respective access_token and other params.
         {
             "id": "2cf9e59f-d4f1-47ba-81d3-a288f31ca164",
             "name": "text_template",
+            "alias": "text-template",
             "number": "91861xxxxxxx",
             "type": "text",
             "category": "Marketing",
@@ -154,7 +155,7 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "text",
+    "type": "template",
     "name": "new_template",
     "category": "Marketing",
     "language": "en",
@@ -186,7 +187,7 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "text",
+    "type": "json",
     "name": "new_json",
     "category": "Marketing",
     "language": "en",
@@ -292,7 +293,7 @@ curl -X POST \
 
 ## Media Type
 
-`Note` : `header_type` always `media` value, then `body` and `footer` fields are not required.
+`Note` : `body` and `footer` fields are not required.
 
 ### Example Request
 

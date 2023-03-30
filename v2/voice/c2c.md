@@ -36,12 +36,14 @@
 curl -X POST '{endpoint}voice/c2c' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-    -d 'bridge=91806828XXXX' \
-    -d 'from=918867135XXXX' \
-    -d 'to=91702626XXXX' \
-    -d 'webhook_id=124555-78787-XXXXX' \
-    -d 'record=1'
+    -H 'Content-Type: application/json' \
+    -d '{
+    "bridge":"91806828XXXX",
+    "from":"918867135XXXX",
+    "to":"91702626XXXX",
+    "webhook_id":"124555-78787-XXXXX",
+    "record":"1"
+}'
 ```
 
 #### Example C2C Using to as Flow ID
@@ -50,12 +52,14 @@ curl -X POST '{endpoint}voice/c2c' \
 curl -X POST '{endpoint}voice/c2c' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-    -d 'bridge=91806828XXXX' \
-    -d 'from=918867135XXXX' \
-    -d 'to=flow:220' \
-    -d 'webhook_id=124555-78787-XXXXX' \
-    -d 'record=1'
+    -H 'Content-Type: application/json' \
+    -d '{
+    "bridge":"91806828XXXX",
+    "from":"918867135XXXX",
+    "to":"flow:220",
+    "webhook_id":"124555-78787-XXXXX",
+    "record":"1"
+}'
 ```
 
 #### Example Response
@@ -73,13 +77,15 @@ curl -X POST '{endpoint}voice/c2c' \
 curl -X POST '{endpoint}voice/c2c' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-    -d 'bridge=91806828XXXX' \
-    -d 'from=918867135XXXX' \
-    -d 'to=flow:220' \
-    -d 'variable[Name]="YourName"' \
-    -d 'variable[otp]=12344' \
-    -d 'record=1'
+    -H 'Content-Type: application/json' \
+    -d '{
+    "bridge":"91806828XXXX",
+    "from":"918867135XXXX",
+    "to":"flow:220",
+    "variable[Name]":"YourName",
+    "variable[otp]":"12344",
+    "record":"1"
+}'
 ```
 
 - Here `flow_id` `220` is the Ivr Journey ID created in Engage > Studio Section

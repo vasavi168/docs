@@ -32,7 +32,7 @@ List of product names and product codes
 
 Note: Few elements in endpoint may change for service to service.
 
-@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.tools']))
+@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.postman']))
 
 ## API Collection Postman link
 

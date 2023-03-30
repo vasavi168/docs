@@ -37,13 +37,16 @@ Create templates using post method under your account
 
 ```
 curl -X POST \
-  {endpoint}sms/templates \
+  '{endpoint}sms/templates' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-    -H 'Content-Type: application/x-www-form-urlencoded' \
-    -d sender=TXTsms \
-    -d name=test1 \
-    -d 'body=testing sms 1'
+    -H 'Content-Type: application/json' \
+    -d '{
+    "sender":"TXTsms",
+    "name":"test1",
+    "body":"testing sms 1"
+}'
+
 ```
 
 #### Example Response
@@ -60,6 +63,7 @@ curl -X POST \
         "template_type": "Transactional",
         "sender": "SENDER",
         "name": "hind-number",
+        "alias": "hind-number",
         "body": "Your Verification code is:@{{1}} is code @{{2}}",
         "content": null,
         "body_length": 53,

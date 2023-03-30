@@ -28,7 +28,7 @@ If you wish to have your callbacks signed and have made the proper configuration
   "payload": {
     "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
     "channel": "mip",
-    "from": "919019120120",
+    "from": "919019120xxx",
     "to": "9190199xxxxx",
     "status": "sent|delivered|read|failed|deleted",
     "delivered_at": "2021-06-18T14:48:06.886358Z",
