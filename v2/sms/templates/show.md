@@ -39,6 +39,7 @@ Kindly replace the token with your respective access_token .
          "template_type": "Transactional",
          "sender": "SENDER",
          "name": "hind-number",
+         "alias": "hind-number",
          "body": "Your Verification code is:@{{1}} is code @{{2}}",
          "content": null,
          "body_length": 53,
