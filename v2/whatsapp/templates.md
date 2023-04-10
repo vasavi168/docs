@@ -104,14 +104,13 @@ Kindly replace the token with your respective access_token and other params.
 
 #### PARAMETERS
 
-| name     | description                                                                                                                       | Type                  | Required |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------- | -------- |
-| type     | values are `text`, `template`, `json` only                                                                                        | `string`              | Yes      |
-| name     | special characters not allowed, should be unique.                                                                                 | `string`              | Yes      |
-| category | `marketing`, `OTP` or `transactional` if you are using `kaleyra` template                                                         | `string`              | Yes      |
-| language | Example : `eu`, `en_US`                                                                                                           | `string`              | Yes      |
-| number   | business number Ex:(91861xxxxxxxx)                                                                                               | `string` or `integer` | Yes      |
-| body     | if `text` type only content message, `template` type content message with variables @{{#var#}}, `json` type should be json format | `string` or `json`    | Yes      |
+| name     | description                                                               | Type                  | Required |
+| -------- | ------------------------------------------------------------------------- | --------------------- | -------- |
+| type     | values are `text`, `template`, `json` only                                | `string`              | Yes      |
+| name     | special characters not allowed, should be unique.                         | `string`              | Yes      |
+| category | `marketing`, `OTP` or `transactional` if you are using `kaleyra` template | `string`              | Yes      |
+| language | Example : `eu`, `en_US`                                                   | `string`              | Yes      |
+| number   | business number Ex:(91861xxxxxxxx)                                        | `string` or `integer` | Yes      |
 
 ## Text Type
 
@@ -128,7 +127,12 @@ curl -X POST \
     "category": "Marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
-    "body": "Hi,This is WhatsApp test message."
+    "payload": {
+        "type": "text",
+        "payload": {
+            "text": "This is a simple text message from whatsapp channel"
+        }
+    }
 }'
 ```
 
@@ -160,7 +164,13 @@ curl -X POST \
     "category": "Marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
-    "body": "Hi @{{#var#}}, Thank you for using the template message."
+    "payload": {
+        "type": "template",
+        "payload": {
+            "text": "Hello @{{var}}, This is a simple text message from whatsapp channel",
+            "body_params": ["user"]
+        }
+    }
 }'
 ```
 
@@ -192,7 +202,12 @@ curl -X POST \
     "category": "Marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
-    "body": {"message" : "Hello user this is the json message"}
+    "payload": {
+        "type": "json",
+        "payload" : {
+            "text" : {"name" : "hlo"}
+        }
+    }
 }'
 ```
 
@@ -207,25 +222,27 @@ curl -X POST \
 }
 ```
 
-## Interactive Type
+## Media Template Type
+
+### With Button
 
 #### PARAMETERS
 
-| name        | description                                                               | Type                  | Required |
-| ----------- | ------------------------------------------------------------------------- | --------------------- | -------- |
-| type        | values are `interactive` or `media` only                                  | `string`              | Yes      |
-| name        | special characters not allowed, should be unique.                         | `string`              | Yes      |
-| category    | `marketing`, `OTP` or `transactional` if you are using `kaleyra` template | `string`              | Yes      |
-| language    | Example : `eu`, `en_US`                                                   | `string`              | Yes      |
-| number      | business number Ex:(91861xxxxxxxx)                                       | `string` or `integer` | Yes      |
-| header      | Inside header `header_type` is required                                   | `object`              | Yes      |
-| header_type | value is `text` or `media`                                                | `string`              | Yes      |
-| body        | body content message, optional variable @{{#var#}}                        | `string`              | Yes      |
-| footer      | footer content message                                                    | `string`              | Yes      |
-
-### Header type is Text
-
-`Note` : if `header_type` value is `text` then `content` field and value is required.
+| name                                | optional | value                                 |
+| ----------------------------------- | -------- | ------------------------------------- |
+| payload.type                        | No       | `mediatemplate`                       |
+| payload.payload.header              | No       | The header content                    |
+| payload.payload.body                | No       | The body content                      |
+| payload.payload.footer              | No       | The footer content                    |
+| choices                             | Yes      | The choices buttons is optional       |
+| choices.type                        | No       | `actions`                             |
+| choices.actions                     | No       | expect the object at least one        |
+| choices.actions.type                | No       | `phone_number`, `url`                 |
+| choices.actions.phone_number_text   | No       | max 20 characters                     |
+| choices.actions.phone_number        | No       | country code prefix required Ex:(+91) |
+| choices.actions.website_url_type    | No       | value is `Static`                     |
+| choices.actions.website_button_text | No       | max 20 characters                     |
+| choices.actions.website_url         | No       | should be url                         |
 
 ### Example Request
 
@@ -235,24 +252,71 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "interactive",
-    "name": "new_interactive_with_text",
+    "type": "mediatemplate",
+    "name": "mediatemplate_with_buttons",
+    "category": "Marketing",
     "language": "en",
-    "category": "ACCOUNT_UPDATE",
-    "number": 91861xxxxxxxx,
-    "header": {
-        "header_type": "text",
-        "content" : "Hello @{{#var#}}"
-    },
-    "body": "Welcome to @{{#var#}},Thank you for using.",
-    "footer": "from whatsapp template"
+    "number": "91861xxxxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_buttons",
+            "language": "en",
+            "body_params": [],
+            "header_params": [],
+            "header": {
+                "type": "text",
+                "payload": {
+                    "text": "Q&A"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Any doubts please contact us"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "url": null,
+            "choices": {
+                "type": "actions",
+                "actions": [
+                    {
+                        "type": "phone_number",
+                        "phone_number_text": "Any queries call",
+                        "phone_number": "+91861xxxxxxx"
+                    },
+                    {
+                        "type": "url",
+                        "website_url_type" => "Static"
+                        "website_button_text" => "More info visit"
+                        "website_url" => "www.mobtexting.com"
+                    }
+                ]
+            }
+        }
+    }
 }'
 ```
 
-### Header type is media
+### With Reply
 
-`Note` : if `header_type` value is `media` then `media` object is required inside `media` object.
-`media_type` and `url` is required. `media_type` are `image`, `video`, `audio` or `document`.`name`, `caption` are optional.
+#### PARAMETERS
+
+| name                       | optional | value                           |
+| -------------------------- | -------- | ------------------------------- |
+| choices                    | Yes      | The choices buttons is optional |
+| choices.type               | No       | `reply`                         |
+| choices.reply              | No       | object can not be empty         |
+| choices.reply.type         | No       | `quick_reply`                   |
+| choices.reply.quick_reply1 | No       | max 20 characters               |
+| choices.reply.quick_reply2 | No       | max 20 characters               |
+| choices.reply.quick_reply3 | Yes      | value is `Static`               |
 
 ### Example Request
 
@@ -262,21 +326,48 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "interactive",
-    "name": "new_interactive_with_media",
+    "type": "mediatemplate",
+    "name": "mediatemplate_with_reply",
+    "category": "Marketing",
     "language": "en",
-    "category": "ACCOUNT_UPDATE",
-    "number": 91861xxxxxxxx,
-    "header": {
-        "header_type": "media",
-        "media" : {
-            "media_type" : "image",
-            "url": "https://www.gstatic.com/webp/gallery/4.sm.jpg",
-            "name": "image",
+    "number": "91861xxxxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_reply",
+            "language": "en",
+            "body_params": [],
+            "header_params": [],
+            "header": {
+                "type": "text",
+                "payload": {
+                    "text": "Q&A"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Do you like template?"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "url": null,
+            "choices": {
+                "type": "reply",
+                "reply": {
+                    "type": "quick_reply",
+                    "quick_reply1": "Yes",
+                    "quick_reply2": "No"
+                    "quick_reply3": "maybe"
+                }
+            }
         }
-    },
-    "body": "Hi @{{#var#}},This is WhatsApp test message.",
-    "footer": "footer content"
+    }
 }'
 ```
 
@@ -293,7 +384,11 @@ curl -X POST \
 
 ## Media Type
 
-`Note` : `body` and `footer` fields are not required.
+#### PARAMETERS
+
+| name         | optional | value                                   |
+| ------------ | -------- | --------------------------------------- |
+| payload.type | No       | `image`, `audio`, `video` or `document` |
 
 ### Example Request
 
@@ -305,16 +400,16 @@ curl -X POST \
   -d '{
     "type": "media",
     "name": "new_media",
+    "category": "Marketing",
     "language": "en",
-    "category": "ACCOUNT_UPDATE",
-    "number": 91861xxxxxxxx,
-    "header": {
-        "header_type": "media",
-        "media" : {
-            "media_type" : "image",
-            "url": "https://www.gstatic.com/webp/gallery/4.sm.jpg",
-            "name": "media",
-            "caption":"caption"
+    "number": "91861xxxxxxxx",
+    "payload": {
+        "type": "image",
+        "payload": {
+            "url": "http://127.0.0.1:8000/media/show/f4cdcf9d-936f-4193-830e-8cbbe8e19811",
+            "filename": "filename",
+            "caption": "caption",
+            "language": "en"
         }
     }
 }'
