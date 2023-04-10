@@ -52,7 +52,7 @@ curl -X PUT \
     "data": {
         "id": "b23769e6-019f-48f4-aae9-ec00a5xxxxxx",
         "sender_id": "015c2f82-1352-4d19-9f8f-b8449xxxxxx",
-        "template_id": "1107161521283358301",
+        "template_id": "110716152128335xxxx",
         "template_type": "Transactional",
         "sender": "SENDER",
         "name": "hind-number",

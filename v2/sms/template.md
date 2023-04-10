@@ -43,12 +43,12 @@ You can send template message using `POST` method content in body.
     "alias": "template-name",
     "recipient": {
         "group_id": "{segment_id}",
-        "to": ["91XXXXXX", "91XXXXXX"]
+        "to": ["9189195xxxxx", "9189196xxxxx"]
     },
     "data": {
         "name": "MKT",
-        "email": "1234XXXXXXX",
-        "message":"89XXXXXXXXXXX"
+        "email": "demoxxxx@gmail.com",
+        "phone":"89XXXXXXXX"
     },
     "meta": {
         "webhook_id": "0798d163-7ca2-4mb6-8c16-c62866xxxxxxx"
@@ -87,7 +87,7 @@ meta      | This block contains all the optional parameters                     
     -d '{
       "alias": "template-name",
       "recipient": {
-        "to": ["9189195xxxx","9189196xxxx"]
+        "to": ["9189195xxxx","9189196xxxxx"]
       },
       "data" : {
         "name" : "Demo",
@@ -101,33 +101,29 @@ meta      | This block contains all the optional parameters                     
 
 ```json
 {
-    "status": 200,
-    "message": "2 numbers accepted for delivery.",
-    "data": [
-        {
-            "id": "2c640de9-f3a5-449a-97e4-3e90214xxxxx:1",
-            "mobile": "9170020xxxxx",
-            "status": "AWAITING-DLR",
-            "units": 1,
-            "length": 98,
-            "charges": "1",
-            "customid": null,
-            "customid1": null,
-            "iso_code": "IN",
-            "submitted_at": "2023-01-23 13:19:38"
-        },
-        {
-            "id": "2c640de9-f3a5-449a-97e4-3e90214xxxxx:2",
-            "mobile": "9170020xxxxx",
-            "status": "AWAITING-DLR",
-            "units": 1,
-            "length": 98,
-            "charges": "1",
-            "customid": null,
-            "customid1": null,
-            "iso_code": "IN",
-            "submitted_at": "2023-01-23 13:19:38"
-        },
-    ]
+  "status": "OK",
+  "message": "Message(s) Queued successfully",
+  "data": [
+      {
+          "id": "71968588-9f20-456c-bdfa-1acc7b4xxxxx:1",
+          "channel": "sms",
+          "from": "sender_name",
+          "to": "9189196xxxxx",
+          "credits": "1",
+          "created_at": "2020-09-24 15:42:56",
+          "status": "AWAITING-DLR",
+          "foreign_id": ""
+      },
+      {
+          "id": "71968588-9f20-456c-bdfa-1acc7b4xxxxx:2",
+          "channel": "sms",
+          "from": "sender_name",
+          "to": "9189196xxxxx",
+          "credits": "1",
+          "created_at": "2020-09-24 15:42:56",
+          "status": "AWAITING-DLR",
+          "foreign_id": ""
+      }
+  ]
 }
 ```
