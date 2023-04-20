@@ -5,7 +5,7 @@ The DLR Push API sends the delivery report of the sent message to the client’s
 To request such delivery reports, first you need to create the Webhook in webhooks Section.
 Then you will get `id` for the webhook you created.
 
-`webhook_id` parameter in the API URL with any below mentioned replacable variables.
+pass the `webhook_id` parameter and value in the API Request then you will receive the delivery report as like below.
 
 #### Example Webhook Request to your server
 
