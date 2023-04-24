@@ -9,32 +9,32 @@ When creating a Message Temaple, you must have the following:
 
 ### Examples
 
-Creating a welcome message where the Message Template name is welcome and the message is
+Creating a welcome message where the Message Template name is `welcome` and the message is
 
 ```
-"Welcome {#var1#}. We look forward to serving you."
+"Welcome @{{name}}. We look forward to serving you."
 ```
 
 Creating an order confirmation message where the Message Template name is `order_confirmation` and the message is
 
 ```
-"Your order {#var1#} for a total of {#var2#} is confirmed. The expected delivery is {#var3#}."
+"Your order @{{name}} for a total of @{{amount}} is confirmed. The expected delivery is @{{date}}."
 ```
 
 ### Content Template Validations
 
-- Two or more spaces are not supposed to use between 2 words, before word or afterword.
-- All special characters (found on keyboard) are allowed, except < and > symbols
-- Variable format is {#var#} which is case sensitive
-- Or variable can be inserted by clicking the radio button (insert variable) above text box
-- Trans/Service category messages should have variable mandatorily
-- Promo category can have complete fixed content or with variable part
-- There is no limitation in no.of variable per message
+- Two or more spaces are not supposed to use between 2 words, before word or after word.
+- All special characters (found on keyboard) are allowed, except < and > symbols.
+- Variable format is @{{var}} which can have a defined name.
+- Or variable can be inserted by clicking the radio button (insert variable) above text box.
+- Trans/Service category messages should have variable mandatorily.
+- Promo category can have complete fixed content or with variable part.
+- There is no limitation in number of variable per message.
 - Values like amount, date, a/c no, merchant names, OTP, codes, URL, customer names, card type, etc. needs to be - replaced with variables.
 
 ## Transactional
 
-Any message which contains OTP and requires to complete a banking transaction initiated by bank customer will only be considered as transactional. This is applicable to all banks (national/scheduled/private/govt and even MNC's).
+Any message which contains OTP and requires to complete a banking transaction initiated by bank customer will only be considered as transactional. This is applicable to all banks (National/Scheduled/Private/Govt. and even MNC's).
 
 - OTP message required for completing a net-banking transaction.
 - OTP message required for completing credit/debit card transactions at a merchant location.
@@ -44,11 +44,11 @@ Any message which contains OTP and requires to complete a banking transaction in
 Any message arising out of customers actions or his existing relationship with the enterprise, that is not promotional will be considered as Service-Implicit message.
 
 - Confirmation messages of a Net-banking and credit/debit card transactions.
-- Product purchase confirmation, delivery status, etc. from e-comm websites.
-- Customer making payments through Payment Wallet over E-Commerce website / mobile app and an OTP is sent to complete - the transaction.
-- OTP’s required for e-comm website, app login’s, social media apps, authentication/verification links, securities - trading, Demat account operations, KYC, e-wallet registration, etc.
+- Product purchase confirmation, delivery status, etc. from e-commerce websites.
+- Customer making payments through Payment Wallet over e-commerce website / mobile app and an OTP is sent to complete - the transaction.
+- OTP’s required for e-commerce website, app login’s, social media apps, authentication/verification links, securities - trading, Demat account operations, KYC, e-wallet registration, etc.
 - Messages from TSP/ISP.
-- Periodic balance info, bill generation, bill dispatch, due date reminders, recharge confirmation (DTH, cable, - prepaid electricity recharge, etc.
+- Periodic balance info, bill generation, bill dispatch, due date reminders, recharge confirmation (DTH, cable, - prepaid electricity recharge, etc).
 - Delivery notifications, updates, and periodic upgrades.
 - Messages from retail stores related to the bill, warranty.
 - Messages from schools-attendance/transport alerts.
@@ -95,7 +95,7 @@ Any message with an intention to promote or sell a product, goods or service.Ser
 - Service – explicit category needs to link consent template as well, without which the template gets rejected
 - Choose a relevant/recognizable name for templates
 - Use message type as "TEXT" for all general messages & "Unicode" for regional messages.
-- Variable {#var#} insertion to be required against values like date; amount; a/c no; OTP; names; etc.
+- Variable @{{date}}, @{{amount}} or any variable name insertion to be required against values like date, amount, a/c no, OTP, names, etc.
 - Always use notepad or notepad ++ to create template, to avoid additional spaces and invalid characters
 - Min fixed char required in templates is 6 char (applicable in pure OTP messages only)
 - Linking of consent templates for content template categories "promotional" & "service – explicit" is optional (not mandatory)
