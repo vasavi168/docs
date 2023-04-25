@@ -11,7 +11,7 @@ View all created unsubscribers
 #### GET
 
 ```
-{endpoint}sms/suppressions/suppressions/unsubscribers
+{endpoint}sms/suppressions/unsubscribers
 ```
 
 #### Example Request
