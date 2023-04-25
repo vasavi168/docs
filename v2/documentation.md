@@ -30,7 +30,6 @@
   - [Send Template Notification](/docs/{version}/sms/template)
   - [Webhook](/docs/{version}/sms/webhook)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
-  - [Optout](/docs/{version}/sms/optout)
   - [Post](/docs/{version}/sms/post)
   - [View Senders](/docs/{version}/sms/senders)
   - [Create Sender](/docs/{version}/sms/senders/create)
@@ -42,6 +41,8 @@
   - [Show Template](/docs/{version}/sms/templates/show)
   - [Edit Template](/docs/{version}/sms/templates/edit)
   - [Delete Template](/docs/{version}/sms/templates/delete)
+  - [Unsubscribers](/docs/{version}/sms/suppressions/unsubscribers)
+  - [Template Blocklist](/docs/{version}/sms/suppressions/templates)
   - [Pricing List](/docs/{version}/sms/pricing)
   <!-- [Service Usage](/docs/{version}/sms/usage) -->
 
