@@ -35,8 +35,8 @@ Kindly replace the token with your respective access_token and other params.
     "data": [
         {
             "id": "0e3fdaad-2b46-4dcf-8b14-xxxxxxxxxxxx",
-            "mobile": "9198xxxxxxxx",
-            "country": "IN",
+            "iso": "IN",
+            "receiver": "9198xxxxxxxx",
             "type": "xxxxxxx",
             "value": "xxxxx",
             "created_at": "2023-04-11T12:53:29.000000Z"
@@ -80,7 +80,7 @@ Kindly replace the token with your respective access_token and other params.
 
 ## Create Unsubscriber
 
-Create contact using POST method.
+Create receiver using POST method.
 
 #### API Endpoint
 
@@ -96,11 +96,11 @@ Create contact using POST method.
 
 #### PARAMETERS
 
-| Name   | optional | Descriptions                                        |
-| ------ | -------- | --------------------------------------------------- |
-| mobile | No       | Enter the mobile that you want to create            |
-| type   | Mixed    | Type of the mobile like (tag, product, sender, all) |
-| value  | Mixed    | Input the value of the type                         |
+| Name     | optional | Descriptions                                          |
+| -------- | -------- | ----------------------------------------------------- |
+| receiver | No       | Enter the receiver that you want to create            |
+| type     | Mixed    | Type of the receiver like (tag, product, sender, all) |
+| value    | Mixed    | Input the value of the type                           |
 
 #### Example Request
 
@@ -111,7 +111,7 @@ curl -X POST\
   -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
   -H 'Content-Type: application/json' \
   -d '{
-    "mobile": "98xxxxxxxx",
+    "receiver": "98xxxxxxxx",
     "type": "xxxxxxx",
     "value": "xxxxx"
 }'
@@ -123,11 +123,11 @@ curl -X POST\
 {
   "status": "OK",
   "code": 200,
-  "message": "Contact added successfully",
+  "message": "Receiver added successfully",
   "data": {
     "id": "848c22a0-6969-455a-b5dc-4b119016b55b",
-    "mobile": "919876xxxxxx",
-    "country": "IN",
+    "iso": "IN",
+    "receiver": "919876543210",
     "type": "tag",
     "value": "promo",
     "created_at": "2023-04-11T12:50:17.000000Z"
@@ -137,7 +137,7 @@ curl -X POST\
 
 ## Edit Unsubscriber
 
-Edit contact using put method.
+Edit receiver using put method.
 
 #### API Endpoint
 
@@ -151,15 +151,15 @@ Edit contact using put method.
 {endpoint}outgoing/suppressions/unsubscribers/{id}
 ```
 
-Replace the {id} with the actual id of the mobile that you would like to Edit.
+Replace the {id} with the actual id of the receiver that you would like to Edit.
 
 #### PARAMETERS
 
-| Name   | optional | Descriptions                                        |
-| ------ | -------- | --------------------------------------------------- |
-| mobile | No       | Enter the mobile that you want to edit              |
-| type   | Mixed    | Type of the mobile like (tag, product, sender, all) |
-| value  | Mixed    | Input the value of the type                         |
+| Name     | optional | Descriptions                                          |
+| -------- | -------- | ----------------------------------------------------- |
+| receiver | No       | Enter the receiver that you want to edit              |
+| type     | Mixed    | Type of the receiver like (tag, product, sender, all) |
+| value    | Mixed    | Input the value of the type                           |
 
 #### Example Request
 
@@ -170,7 +170,7 @@ curl -X PUT \
   -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
   -H 'Content-Type: application/json' \
   -d '{
-    "mobile": "98xxxxxxxx",
+    "receiver": "98xxxxxxxx",
     "type": "xxxxxxx",
     "value": "xxxxx"
 }'
@@ -183,11 +183,11 @@ curl -X PUT \
 {
   "status": "OK",
   "code": 200,
-  "message": "Contact updated successfully",
+  "message": "Receiver update successfully",
   "data": {
-    "id": "848c22a0-6969-455a-b5dc-xxxxxxxxxxxx",
-    "mobile": "919876xxxxxx",
-    "country": "IN",
+    "id": "848c22a0-6969-455a-b5dc-4b119016b55b",
+    "iso": "IN",
+    "receiver": "919876543210",
     "type": "tag",
     "value": "promo1",
     "created_at": "2023-04-11T12:50:17.000000Z"
@@ -197,7 +197,7 @@ curl -X PUT \
 
 ## View Single Unsubscriber
 
-View one created contact
+View one created receiver
 
 #### API Endpoint
 
@@ -215,7 +215,7 @@ View one created contact
 
 ```
 curl -X GET \
-  '{endpoint}outgoing/suppressions/unsubscribers/0e3fdaad-2b46-4dcf-8b14-xxxxxxxxxxxx' \
+  '{endpoint}outgoing/suppressions/unsubscribers/0e3fdaad-2b46-4dcf-8b14-aafffbxxxxxx' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
 ```
@@ -231,8 +231,8 @@ Kindly replace the token with your respective access_token .
   "message": "Unsubscribers data",
   "data": {
     "id": "0e3fdaad-2b46-4dcf-8b14-xxxxxxxxxxxx",
-    "mobile": "9198xxxxxxxx",
-    "country": "IN",
+    "iso": "IN",
+    "receiver": "9198xxxxxxxx",
     "type": "xxxxxxx",
     "value": "xxxxxx",
     "created_at": "2023-04-11T12:53:29.000000Z"
@@ -242,7 +242,7 @@ Kindly replace the token with your respective access_token .
 
 ## Import Unsubscriber
 
-Import contacts by uploading a file
+Import receiver by uploading a file
 
 #### API Endpoint
 
@@ -264,7 +264,7 @@ curl -X POST\
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
   -H 'Content-Type: application/form-data' \
-  -F 'file=@"yourfilepath/contacts.xlsx"'
+  -F 'file=@"yourfilepath/receiver.xlsx"'
 ```
 
 #### PARAMETERS
@@ -272,9 +272,9 @@ curl -X POST\
 ```
 | Name     | Description                                              | Limits | Required |
 | -------- | -------------------------------------------------------- | ------ | -------- |
-| url      | Public url of the contact file. Either HTTP/HTTPS link.  | 100 MB | Yes      |
-| caption  | some text for contact caption                            | N/A    | No       |
-| filename | contact file name                                        | N/A    | No       |
+| url      | Public url of the receiver file. Either HTTP/HTTPS link. | 100 MB | Yes      |
+| caption  | some text for reciver caption                            | N/A    | No       |
+| filename | Receiver file name                                       | N/A    | No       |
 ```
 
 #### EXAMPLE RESPONSE
@@ -282,13 +282,13 @@ curl -X POST\
 ```json
 {
   "status": "OK",
-  "message": "Contacts accepted for import"
+  "message": "Receivers accepted for import"
 }
 ```
 
 ## Delete Unsubscriber
 
-Delete contact using delete method
+Delete receiver using delete method
 
 #### API Endpoint
 
@@ -302,7 +302,7 @@ Delete contact using delete method
 {endpoint}outgoing/suppressions/unsubscribers/{id}
 ```
 
-Replace the {id} with the actual id of the contact that you would like to delete.
+Replace the {id} with the actual id of the receiver that you would like to delete.
 
 #### Example Request
 
@@ -326,7 +326,7 @@ curl -X DELETE \
 
 ## Cleanup Unsubscriber
 
-Delete all contacts at once
+Delete all receiver at once
 
 #### API Endpoint
 
