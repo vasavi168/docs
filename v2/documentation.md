@@ -97,6 +97,7 @@
   - [Call Status](/docs/{version}/reach/status)
   - [Webhook](/docs/{version}/reach/webhook)
   - [Pricing List](/docs/{version}/voice/pricing)
+  - [VoiceId List](/docs/{version}/voice/voices)
 
 - Link
 
