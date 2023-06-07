@@ -270,11 +270,9 @@ curl -X POST\
 #### PARAMETERS
 
 ```
-| Name     | Description                                              | Limits | Required |
-| -------- | -------------------------------------------------------- | ------ | -------- |
-| url      | Public url of the receiver file. Either HTTP/HTTPS link. | 100 MB | Yes      |
-| caption  | some text for reciver caption                            | N/A    | No       |
-| filename | Receiver file name                                       | N/A    | No       |
+| Name     | Description                                                  | Limits | Required |
+| -------- | ------------------------------------------------------------ | ------ | -------- |
+| file     | Receiver number file. (Supported filetype: txt,csv,xls,xlsx) | 100 MB | Yes      |
 ```
 
 #### EXAMPLE RESPONSE
