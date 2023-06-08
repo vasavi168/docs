@@ -18,7 +18,7 @@ View one template created under your account
 
 ```
 curl -X GET \
-  '{endpoint}sms/templates/b23769e6-019f-48f4-aae9-ec00a5xxxxxx \
+  '{endpoint}sms/templates/b23769e6-019f-48f4-aae9-ec00a5xxxxxx' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
 ```
@@ -39,6 +39,7 @@ Kindly replace the token with your respective access_token .
          "template_type": "Transactional",
          "sender": "SENDER",
          "name": "hind-number",
+         "alias": "hind-number",
          "body": "Your Verification code is:@{{1}} is code @{{2}}",
          "content": null,
          "body_length": 53,

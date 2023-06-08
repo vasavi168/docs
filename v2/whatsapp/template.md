@@ -31,7 +31,7 @@ Output Message:
 #### POST
 
 ```
-{endpoint}sms/send/template
+{endpoint}whatsapp/send/template
 ```
 
 You can send template message using `POST` method content in body.
@@ -43,12 +43,12 @@ You can send template message using `POST` method content in body.
     "alias": "template-name",
     "recipient": {
         "group_id": "{segment_id}",
-        "to": ["9189195xxxxx", "9189196xxxxx"]
+        "to": ["91XXXXXX", "91XXXXXX"]
     },
     "data": {
         "name": "MKT",
-        "email": "demoxxxx@gmail.com",
-        "phone":"89XXXXXXXX"
+        "email": "1234XXXXXXX",
+        "message":"89XXXXXXXXXXX"
     },
     "meta": {
         "webhook_id": "0798d163-7ca2-4mb6-8c16-c62866xxxxxxx"
@@ -73,21 +73,21 @@ You can send template message using `POST` method content in body.
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 |
 meta      | This block contains all the optional parameters                                                                                                                                             |
-| webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |                                                                                         |
+| webhook_id | The `id` of the webhook created in Webhook Section for which the response to be sent after delivery report from operator. [read more](/docs/{version}/sms-push-dlr) |                                                                                         |
 | foreign_id     | Custom id for reference from customer.|
 
 #### Example Request
 
 ```
   curl -X POST \
-    '{endpoint}sms/send/template' \
+    '{endpoint}whatsapp/send/template' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
     -H 'content-type: application/json' \
     -d '{
       "alias": "template-name",
       "recipient": {
-        "to": ["9189195xxxx","9189196xxxxx"]
+        "to": ["9189195xxxx","9189196xxxx"]
       },
       "data" : {
         "name" : "Demo",
@@ -101,29 +101,29 @@ meta      | This block contains all the optional parameters                     
 
 ```json
 {
-  "status": "OK",
-  "message": "Message(s) Queued successfully",
-  "data": [
-      {
-          "id": "71968588-9f20-456c-bdfa-1acc7b4xxxxx:1",
-          "channel": "sms",
-          "from": "sender_name",
-          "to": "9189196xxxxx",
-          "credits": "1",
-          "created_at": "2020-09-24 15:42:56",
-          "status": "AWAITING-DLR",
-          "foreign_id": ""
-      },
-      {
-          "id": "71968588-9f20-456c-bdfa-1acc7b4xxxxx:2",
-          "channel": "sms",
-          "from": "sender_name",
-          "to": "9189196xxxxx",
-          "credits": "1",
-          "created_at": "2020-09-24 15:42:56",
-          "status": "AWAITING-DLR",
-          "foreign_id": ""
-      }
-  ]
+    "status": "OK",
+    "message": "Messages queued successfully",
+    "data": [
+        {
+            "id": "883137c2-7b9c-4e72-8454-1059f06xxxxx",
+            "channel": "whatsapp",
+            "from": "9170020xxxxx",
+            "recipient": "9189195xxxx",
+            "credits": 0,
+            "created_at": "2023-01-26T07:24:25.532476Z",
+            "foreign_id": null,
+            "status": "notallowed"
+        },
+        {
+            "id": "269d3c38-9e8a-4ed1-b81e-7cb6b31xxxxx",
+            "channel": "whatsapp",
+            "from": "9170020xxxxx",
+            "recipient": "9189196xxxx",
+            "credits": 0,
+            "created_at": "2023-01-26T07:24:25.535833Z",
+            "foreign_id": null,
+            "status": "notallowed"
+        }
+    ]
 }
 ```

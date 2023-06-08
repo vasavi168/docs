@@ -40,22 +40,56 @@ Kindly replace the token with your respective access_token and other params.
 
 ```json
 {
-  "status": "OK",
-  "code": 200,
-  "message": "Templates List",
-  "data": [
-    {
-      "id": "2cf9e59f-d4f1-47ba-81d3-a288f31ca164",
-      "name": "text_template",
-      "number": "91861xxxxxxx",
-      "type": "text",
-      "category": "Marketing",
-      "language": "English",
-      "body": "Hi,This is WhatsApp text template message.",
-      "payload": "{\"type\":\"text\",\"payload\":{\"text\":\"Hi,This is WhatsApp text template message.\",\"language\":\"en\"}}",
-      "status": "Pending",
-      "created_at": "2023-02-08T10:41:30.000000Z",
-      "updated_at": "2023-02-08T10:41:30.000000Z"
+    "status": "OK",
+    "code": 200,
+    "message": "Templates List",
+    "data": [
+        {
+            "id": "2cf9e59f-d4f1-47ba-81d3-a288f31ca164",
+            "name": "text_template",
+            "alias": "text-template",
+            "number": "91861xxxxxxx",
+            "type": "text",
+            "category": "Marketing",
+            "language": "English",
+            "body": "Hi,This is WhatsApp text template message.",
+            "payload": "{\"type\":\"text\",\"payload\":{\"text\":\"Hi,This is WhatsApp text template message.\",\"language\":\"en\"}}",
+            "status": "Pending",
+            "created_at": "2023-02-08T10:41:30.000000Z",
+            "updated_at": "2023-02-08T10:41:30.000000Z"
+        }
+    ],
+    "links": {
+        "first": "{endpoint}whatsapp/templates?page=1",
+        "last": "{endpoint}whatsapp/templates?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "{endpoint}whatsapp/templates?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "{endpoint}whatsapp/templates",
+        "per_page": 15,
+        "to": 1,
+        "total": 1
     }
   ],
   "links": {
@@ -107,7 +141,7 @@ Kindly replace the token with your respective access_token and other params.
 | -------- | ------------------------------------------------------------------------- | --------------------- | -------- |
 | type     | values are `text`, `template`, `json` only                                | `string`              | Yes      |
 | name     | name should be a alphanumeric                                             | `string`,`integer`    | Yes      |
-| category | `marketing`, `OTP` or `transactional` if you are using `kaleyra` template | `string`              | Yes      |
+| category | `marketing`, `authentication` or `utility` if you are using `Gupshup` template | `string`              | Yes      |
 | language | Example : `eu`, `en_US`                                                   | `string`              | Yes      |
 | number   | business number Ex:(91861xxxxxxxx)                                        | `string` or `integer` | Yes      |
 

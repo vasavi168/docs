@@ -36,7 +36,7 @@ Create a new Verify object through the API to start the verification process of 
         "to": "9189195xxxx"
       },
       "order": 0,
-      "wait": 60 // seconds
+      "wait": 60
     },
     {
       "name": "sms",
@@ -45,6 +45,16 @@ Create a new Verify object through the API to start the verification process of 
         "to": "9189195xxxx"
       },
       "order": 1,
+      "wait": 60
+    },
+    {
+      "name": "tts",
+      "from": "91806828XXX",
+      "recipient": {
+        "to": "9189195xxxx"
+      },
+      "language": "en_US",
+      "order": 2,
       "wait": 60
     }
   ],
@@ -70,6 +80,8 @@ Create a new Verify object through the API to start the verification process of 
 | Name     | Description                                                                                                               |
 | -------- | ------------------------------------------------------------------------------------------------------------------------- | --- |
 | template | Custom Message for sending otp if message object not specifed in verify config. use {token} in content for replacing otp. |     |
+| wait     | Waiting time [in seconds] for triggering otp via alternate channel if first channel not successful. Default 30 seconds | |
+| language | Language in which TTS should play | |
 
 #### Example Response
 

@@ -1,4 +1,4 @@
-@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.tools']))
+@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.postman']))
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection})
 @endif
 
@@ -27,11 +27,10 @@
   - [Introduction](/docs/{version}/sms)
   - [SMS Length Summary](/docs/{version}/sms/length-summary)
   - [Send Notification](/docs/{version}/sms/send)
-  - [Send Bulk Notifications](/docs/{version}/sms/json)
   - [Send Template Notification](/docs/{version}/sms/template)
   - [Webhook](/docs/{version}/sms/webhook)
   - [Pull DLR](/docs/{version}/sms/pull-dlr)
-  - [Optout](/docs/{version}/sms/optout)
+  - [Post](/docs/{version}/sms/post)
   - [View Senders](/docs/{version}/sms/senders)
   - [Create Sender](/docs/{version}/sms/senders/create)
   - [Show Sender](/docs/{version}/sms/senders/show)
@@ -42,6 +41,8 @@
   - [Show Template](/docs/{version}/sms/templates/show)
   - [Edit Template](/docs/{version}/sms/templates/edit)
   - [Delete Template](/docs/{version}/sms/templates/delete)
+  - [Unsubscribers](/docs/{version}/sms/suppressions/unsubscribers)
+  - [Template Blocklist](/docs/{version}/sms/suppressions/templates)
   - [Pricing List](/docs/{version}/sms/pricing)
   <!-- [Service Usage](/docs/{version}/sms/usage) -->
 
@@ -54,6 +55,7 @@
 
   - [Introduction](/docs/{version}/whatsapp)
   - [Send Notification](/docs/{version}/whatsapp/send-message)
+  - [Send Template Notification](/docs/{version}/whatsapp/template)
   - [Status Info](/docs/{version}/whatsapp/status)
   - [Webhook](/docs/{version}/whatsapp/webhooks)
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
@@ -75,6 +77,7 @@
 
   - [Introduction](/docs/{version}/rcs)
   - [Send Notification](/docs/{version}/rcs/send-message)
+  - [Send Template Notification](/docs/{version}/rcs/send-template)
   - [Status Info](/docs/{version}/rcs/status)
   - [Webhook](/docs/{version}/rcs/webhooks)
   - [Pull DLR](/docs/{version}/rcs/pull-status)
@@ -88,12 +91,13 @@
   - [Click2Call/Number Masking](/docs/{version}/voice/c2c)
   - [Outgoing Call](/docs/{version}/reach/call)
   - [Text2Speech API](/docs/{version}/reach/tts)
-  - [Upload Sound File](/docs/{version}/reach)
+  - [Upload Sound File](/docs/{version}/voice/sounds)
   - [Call Logs](/docs/{version}/voice/logs)
   - [Call Recordings](/docs/{version}/voice/logs#content-recordings-report)
   - [Call Status](/docs/{version}/reach/status)
   - [Webhook](/docs/{version}/reach/webhook)
   - [Pricing List](/docs/{version}/voice/pricing)
+  - [VoiceId List](/docs/{version}/voice/voices)
 
 - Link
 

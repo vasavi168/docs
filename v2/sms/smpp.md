@@ -191,14 +191,14 @@ Status and error code which can be returned by Messaging Platform.
 | 404  | INV-NUMBER            | Invalid destination number                          |
 | 405  | SERVER-ERR            | ESME client error                                   |
 | 406  | SERVER-ERR            | ESME client error                                   |
-| 407  | SPAM                  | Sent illigal content                                |
+| 407  | SPAM                  | Sent illegal content                                |
 | 408  | DNDNUMB               | Number registered in dnd database.                  |
 | 430  | SERVER-ERR            | Unknown Error                                       |
 | 431  | SERVER-ERR            | Unknown Error                                       |
 | 432  | SERVER-ERR            | Unknown Error                                       |
 | 433  | SERVER-ERR            | Unknown Error                                       |
 | 450  | BLACKLST              | Number blocklisted to receive messages              |
-| 451  | SNDR-NOT-ALLOTED      | Sender Id been blocked                              |
+| 451  | SNDR-BLOCK            | Sender Id been blocked                              |
 | 452  | TEMPLATE-NOT-FOUND    | No matching templates                               |
 | 453  | INV-TEMPLATE          | Message rejected as template not allotted for ESME  |
 | 454  | INV-SENDER            | Message rejected as sender id not allotted for ESME |
@@ -210,7 +210,8 @@ Status and error code which can be returned by Messaging Platform.
 | 460  | DUPLICATE             | Same content sent                                   |
 | 461  | UNDELIV               | Unknown Error                                       |
 | 462  | FAILED                | Unknown Error                                       |
-| 778  | REJ-MULTIPART         | All message parts are not delivrd to handset        |
+| 463  | THROTTLED             | Maximum Sent Limit is Reached                       |                  
+| 778  | REJ-MULTIPART         | All message parts are not delivered to handset      |
 | 777  | DLT-REJECTED          | Invalid Sender-Id or Invalid Template               |
 | 780  | DLT-INV-TMID          | Invalid DLT telemarketer Id                         |
 | 781  | DLT-INV-ENTITY        | Invalid Entity DLT Id                               |

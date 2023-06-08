@@ -7,10 +7,9 @@
 	"channels": [{
 		"name": "rcs",
 		"from": "700969ca-0cb2-11ec-a2cxxxx", //Agent ID
-		"recipient": {
-			"group_id": "{segment_id}",
-			"to": ["9189195xxxx", "91886713xxxx"]
-		}
+        "meta" : {
+            "foreign_id":"your-custom-id"
+        }
 	}]
 	"recipient": {
 		"group_id": "{segment_id}",
@@ -43,9 +42,9 @@
 #### PARAMETERS
 
 | Name      | Description                                                 | type                | Required                       |
-| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
+| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ | -------- | --- |
 | channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. `whatsapp|rcs|ip_message`        | `string`            | Yes                            |
+| name      | Name of Messaging Channel. `whatsapp                        | rcs                 | ip_message`                    | `string` | Yes |
 | from      | RCS Agent Reference ID                                      | `string`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
@@ -137,12 +136,12 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name    | Description                                   | Limits     | Required |
-| ------- | --------------------------------------------- | ---------- | -------- |
-| payload | Messaage Payload section                      | N/A        | Yes      |
-| to      | Destination mobile number with country code   | NA         | Yes      |
+| Name    | Description                                                                                                                              | Limits     | Required |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- |
+| payload | Messaage Payload section                                                                                                                 | N/A        | Yes      |
+| to      | Destination mobile number with country code                                                                                              | NA         | Yes      |
 | type    | Media types supported image/jpeg, image/jpg, image/gif, image/png, video/h263, video/m4v, video/mp4, video/mpeg, video/mpeg4, video/webm | NA         | Yes      |
-| url     | Publicly available Image/ Media URL           | Max 100 MB | Yes      |
+| url     | Publicly available Image/ Media URL                                                                                                      | Max 100 MB | Yes      |
 
 ## Send Interactive Message
 
@@ -487,7 +486,7 @@ curl -X POST \
          "body": {
               "type": "image",
               "payload": {
-                  "url": "https://mobtexting.com/assets/images/mob-logo.png",
+                  "url": "https://yourdomain.com/assets/images/mob-logo.png",
                   "caption": "This is the Header",
                   "filename": "",
                   "height": "MEDIUM"
@@ -509,7 +508,7 @@ curl -X POST \
          "body": {
              "type": "image",
              "payload": {
-                 "url": "https://mobtexting.com/assets/images/sms-home.png",
+                 "url": "https://yourdomain.com/assets/images/sms-home.png",
                  "caption": "This is the Header2",
                  "height": "MEDIUM"
              }

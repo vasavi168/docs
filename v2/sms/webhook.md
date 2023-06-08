@@ -5,7 +5,7 @@ The DLR Push API sends the delivery report of the sent message to the client’s
 To request such delivery reports, first you need to create the Webhook in webhooks Section.
 Then you will get `id` for the webhook you created.
 
-`wehook_id` parameter in the API URL with any below mentioned replacable variables.
+pass the `webhook_id` parameter and value in the API Request then you will receive the delivery report as like below.
 
 #### Example Webhook Request to your server
 
@@ -26,12 +26,6 @@ Then you will get `id` for the webhook you created.
       "submit_time": "2021-04-09 16:27:39",
       "cid": "1234444XXXX",
       "custom": "9882XXXX",
-      "location": "India",
-      "region" : "Bangalore",
-      "provider": "Jio",
-      "location_code": "in",
-      "region_code": "KA",
-      "provider_code": "RJ",
     }'
 ```
 
@@ -56,11 +50,4 @@ We try 3 times with interval of 30 minutes for failed requests. Continues failur
 | deliv_at      | Delivery time in unixtimestamp                          |
 | sent_time     | Request received time in unixtimestamp                  |
 | submit_time   | Sent to operator time in unixtimestamp                  |
-| cid           | Your custom id                                          |
 | custom        | Your custom id                                          |
-| location      | Mobile number country name. ex: `india`                 |
-| region        | Mobile number region name. ex: `karnataka`              |
-| provider      | Operator name. ex: `jio`                                |
-| location_code | Mobile number country code. ex: `in`                    |
-| region_code   | Mobile number region name. ex: `KA`                     |
-| provider_code | Operator name. ex: `RJ`                                 |

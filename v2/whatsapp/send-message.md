@@ -6,11 +6,10 @@
 {
 	"channels": [{
 		"name": "whatsapp",
-		"from": "9190191xxxx",
-		"recipient": {
-			"group_id": "{segment_id}",
-			"to": ["9189195xxxx", "91886713xxxx"]
-		}
+		"from": "91901912xxxx",
+        "meta" : {
+            "foreign_id":"your-custom-id"
+        }
 	}]
 	"recipient": {
 		"group_id": "{segment_id}",
@@ -23,20 +22,20 @@
 
 ```json
 {
-    "status": "OK",
-    "message": "Message Queued successfully",
-    "data": [
-        {
-            "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-            "channel": "whatsapp",
-            "from": "91901xxxxxx",
-            "to": "9190199xxxxx",
-            "credits": 1,
-            "created_at": "2021-06-18T14:48:06.886358Z",
-            "status": "queued",
-            "foreign_id": "your-message-id"
-        }
-    ]
+  "status": "OK",
+  "message": "Message Queued successfully",
+  "data": [
+    {
+      "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
+      "channel": "whatsapp",
+      "from": "919019120xxx",
+      "to": "9190199xxxxx",
+      "credits": 1,
+      "created_at": "2021-06-18T14:48:06.886358Z",
+      "status": "queued",
+      "foreign_id": "your-message-id"
+    }
+  ]
 }
 ```
 
@@ -44,7 +43,7 @@
 
 | Name      | Description                                                 | type                | Required                       |
 | --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
-| channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
+| channels  | This block contains information related messaging channel   | N/A                 | Yes                            |
 | name      | Name of Messaging Channel. Ex: `whatsapp`                   | `string`            | Yes                            |
 | from      | Sender or From Number                                       | `number`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
@@ -79,7 +78,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -97,7 +96,7 @@ curl -X POST \
 
 | Name    | Description                                 | Limits              | Required |
 | ------- | ------------------------------------------- | ------------------- | -------- |
-| payload | Messaage Payload section                    | N/A                 | Yes      |
+| payload | Message Payload section                    | N/A                 | Yes      |
 | to      | Destination mobile number with country code | NA                  | Yes      |
 | text    | Message Content you want to send            | Max 4096 Characters | Yes      |
 
@@ -123,7 +122,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019xxxxx"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -151,7 +150,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -243,7 +242,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -338,7 +337,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -388,7 +387,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -437,7 +436,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -486,7 +485,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -533,7 +532,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -591,7 +590,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -647,7 +646,7 @@ curl -X POST \
 						{
 							"id": "16",
 							"title": "Blue",
-							"description": "Yes, Blue is my favourite"
+							"description": "Yes, Blue is my favorite"
 						}]
 					}
 				}
@@ -689,7 +688,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
@@ -769,7 +768,7 @@ curl -X POST \
   -d '{
 	"channels": [{
 		"name": "whatsapp",
-		"from": "919019120120"
+		"from": "919019120xxx"
 	}],
 	"recipient": {
 		"to": "91XXXXXX"
