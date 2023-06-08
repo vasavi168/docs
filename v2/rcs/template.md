@@ -23,7 +23,7 @@ View all the Templates list.
 | filter[id]     | Yes      | The id is template id                           |
 | filter[name]   | Yes      | The name is template name                       |
 | filter[type]   | Yes      | The type is template type EX: (text, media. . ) |
-| filter[status] | Yes      | (0 is Draft), (1 is Approved)                   |
+| filter[status] | Yes      | (0 is Draft), (1 is Approved) ,(2 is Pending)   |
 
 #### Example Request
 
@@ -55,6 +55,7 @@ Kindly replace the token with your respective access_token and other params.
             {\"text\":\"Hi,This is Rcs text template message.\",
             \"body_params\":[],\"language\":\"en\"}}",
             "status": 1,
+            "is_conversation": 1,
             "created_at": "2023-20-08T10:41:30.000000Z",
             "updated_at": "2023-20-08T10:41:30.000000Z"
         }
@@ -133,6 +134,7 @@ Kindly replace the template_id.
         {\"text\":\"Hi,This is Rcs text template message.\",
         \"body_params\":[],\"language\":\"en\"}}",
         "status": 1,
+        "is_conversation": 1,
         "created_at": "2023-20-08T10:41:30.000000Z",
         "updated_at": "2023-20-08T10:41:30.000000Z"
     }
@@ -149,13 +151,14 @@ Kindly replace the template_id.
 
 #### REQUIRED PARAMETERS
 
-| name     | description                                        | Type                  | Required |
-| -------- | -------------------------------------------------- | --------------------- | -------- |
-| type     | values are like `text`, `interactive`, `media` . . | `string`              | Yes      |
-| name     | special characters not allowed, should be unique.  | `string`              | Yes      |
-| category | template category names                            | `string`              | Yes      |
-| language | Example : `eu`, `en_US`                            | `string`              | Yes      |
-| number   | bussiness number Ex:(91861xxxxxxxx)                | `string` or `integer` | Yes      |
+| name            | description                                                     | Type                  | Required |
+| --------------- | --------------------------------------------------------------- | --------------------- | -------- |
+| type            | values are like `text`, `interactive`, `media` . .              | `string`              | Yes      |
+| name            | name should be a alphanumeric                                   | `string`,`integer`    | Yes      |
+| category        | template category names                                         | `string`              | Yes      |
+| language        | Example : `eu`, `en_US`                                         | `string`              | Yes      |
+| number          | agent number Ex:(91861xxxxxxxx)                                 | `string` or `integer` | Yes      |
+| is_conversation | value is (1 auto approve) or (0 admin will approve), default(0) | `integer`             | Yes      |
 
 ## Text Type
 
@@ -163,7 +166,7 @@ Kindly replace the template_id.
 
 | name                | description                                                 | Type     | Required |
 | ------------------- | ----------------------------------------------------------- | -------- | -------- |
-| payload.text        | content message with variabels(optional) like @{{name}} . . | `string` | Yes      |
+| payload.text        | content message with variables(optional) like @{{name}} . . | `string` | Yes      |
 | payload.body_params | replaces the variables values Ex: ['name']                  | `array`  | No       |
 
 ### Example Request
@@ -179,6 +182,7 @@ curl -X POST \
     "language": "en",
     "category": "marketing",
     "number": "91861xxxxxxx",
+    "is_conversation": 1,
     "payload": {
         "text" : "Hi, This is Rcs test message.",
         "body_params" : []
@@ -204,6 +208,7 @@ curl -X POST \
         "payload": "{\"type\":\"text\",\"payload\":
         {\"text\":\"Hi, This is Rcs test message.\",\"body_params\":[]}}",
         "status": 1,
+        "is_conversation": 1,
         "created_at": "2023-02-23T05:56:58.000000Z",
         "updated_at": "2023-02-23T05:56:58.000000Z"
     }
@@ -404,7 +409,7 @@ curl -X POST \
         "body": {
             "type": "image",
             "payload": {
-                "url": "https://domin-name.com/your_image_path.png",
+                "url": "https://domain-name.com/your_image_path.png",
                 "height": "TALL"
             }
         },
@@ -471,7 +476,7 @@ curl -X POST \
         "payload": "{\"type\":\"card\",\"payload\":
         {\"title\":\"This is the card title\",
         \"description\":\"This is the card description\",\"body\":{\"type\":\"image\",\"payload\":
-        {\"url\":\"https:\\/\\/domin-name.com\\/your_image_path.png\",
+        {\"url\":\"https:\\/\\/domain-name.com\\/your_image_path.png\",
         \"height\":\"TALL\"}},\"choices\":{\"replies\":[{\"type\":\"text\",\"payload\":
         {\"text\":\"yes\",\"content\":\"yes\"}},
         {\"type\":\"text\",\"payload\":{\"text\":\"No\",\"content\":\"no\"}}],
@@ -532,7 +537,7 @@ curl -X POST \
         "language": "English",
         "payload": "{\"type\":\"carousel\",\"payload\":[{\"title\":\"This is the card title\",
         \"description\":\"This is the card description\",\"body\":
-        {\"type\":\"image\",\"payload\":{\"url\":\"https:\\/\\/domin-name.com\\/your_image_path.png\",
+        {\"type\":\"image\",\"payload\":{\"url\":\"https:\\/\\/domain-name.com\\/your_image_path.png\",
         \"height\":\"TALL\"}},\"choices\":{\"replies\":[{\"type\":\"text\",
         \"payload\":{\"text\":\"yes\",\"content\":\"yes\"}},{\"type\":\"text\",
         \"payload\":{\"text\":\"No\",\"content\":\"no\"}}],
@@ -558,15 +563,15 @@ curl -X POST \
 
 #### PARAMETERS
 
-| name        | description                                         | Type                  | Required |
-| ----------- | --------------------------------------------------- | --------------------- | -------- |
-| template id | created template id                                 | `string`              | Yes      |
-| type        | values are like `text`, `interactive`, `media` . .  | `string`              | Yes      |
-| name        | created template name (can not be change)           | `string`              | Yes      |
-| category    | template category (can be change)                   | `string`              | Yes      |
-| language    | example : `eu`, `en_US` (can be change)             | `string`              | Yes      |
-| number      | bussiness number Ex:(91861xxxxxxxx) (can be change) | `string` or `integer` | Yes      |
-| payload     | payload content (can be change)                     | `object`              | Yes      |
+| name        | description                                        | Type                  | Required |
+| ----------- | -------------------------------------------------- | --------------------- | -------- |
+| template id | created template id                                | `string`              | Yes      |
+| type        | values are like `text`, `interactive`, `media` . . | `string`              | Yes      |
+| name        | created template name (can not be change)          | `string`              | Yes      |
+| category    | template category (can be change)                  | `string`              | Yes      |
+| language    | example : `eu`, `en_US` (can be change)            | `string`              | Yes      |
+| number      | agent number Ex:(91861xxxxxxxx) (can be change)    | `string` or `integer` | Yes      |
+| payload     | payload content (can be change)                    | `object`              | Yes      |
 
 ### Example Request
 
@@ -633,9 +638,9 @@ curl -X DELETE \
 
 ```json
 {
-    "status": "OK",
-    "code": 200,
-    "message": "Template Successfully Deleted",
-    "data": []
+  "status": "OK",
+  "code": 200,
+  "message": "Template Successfully Deleted",
+  "data": []
 }
 ```
