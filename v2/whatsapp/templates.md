@@ -91,6 +91,39 @@ Kindly replace the token with your respective access_token and other params.
         "to": 1,
         "total": 1
     }
+  ],
+  "links": {
+    "first": "{endpoint}whatsapp/templates?page=1",
+    "last": "{endpoint}whatsapp/templates?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "{endpoint}whatsapp/templates?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "path": "{endpoint}whatsapp/templates",
+    "per_page": 15,
+    "to": 1,
+    "total": 1
+  }
 }
 ```
 
@@ -107,8 +140,8 @@ Kindly replace the token with your respective access_token and other params.
 | name     | description                                                               | Type                  | Required |
 | -------- | ------------------------------------------------------------------------- | --------------------- | -------- |
 | type     | values are `text`, `template`, `json` only                                | `string`              | Yes      |
-| name     | special characters not allowed, should be unique.                         | `string`              | Yes      |
-| category | `marketing`, `OTP` or `transactional` if you are using `kaleyra` template | `string`              | Yes      |
+| name     | name should be a alphanumeric                                             | `string`,`integer`    | Yes      |
+| category | `marketing`, `authentication` or `utility` if you are using `Gupshup` template | `string`              | Yes      |
 | language | Example : `eu`, `en_US`                                                   | `string`              | Yes      |
 | number   | business number Ex:(91861xxxxxxxx)                                        | `string` or `integer` | Yes      |
 
@@ -449,9 +482,9 @@ curl -X DELETE \
 
 ```json
 {
-    "status": "OK",
-    "code": 200,
-    "message": "Template Successfully Deleted",
-    "data": []
+  "status": "OK",
+  "code": 200,
+  "message": "Template Successfully Deleted",
+  "data": []
 }
 ```

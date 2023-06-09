@@ -43,7 +43,7 @@
 
 | Name      | Description                                                 | type                | Required                       |
 | --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
-| channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
+| channels  | This block contains information related messaging channel   | N/A                 | Yes                            |
 | name      | Name of Messaging Channel. Ex: `whatsapp`                   | `string`            | Yes                            |
 | from      | Sender or From Number                                       | `number`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
@@ -96,7 +96,7 @@ curl -X POST \
 
 | Name    | Description                                 | Limits              | Required |
 | ------- | ------------------------------------------- | ------------------- | -------- |
-| payload | Messaage Payload section                    | N/A                 | Yes      |
+| payload | Message Payload section                    | N/A                 | Yes      |
 | to      | Destination mobile number with country code | NA                  | Yes      |
 | text    | Message Content you want to send            | Max 4096 Characters | Yes      |
 
@@ -306,7 +306,7 @@ curl -X POST \
 
 | Name        | Description                                                                                                                                                                                         | Limits                                                                | Required                                               |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
-| name        | Template Name                                                                                                                                                                                       | N/A                                                                   | yes                                                    |
+| name        | Template Alias Name                                                                                                                                                                                 | N/A                                                                   | yes                                                    |
 | namespace   | Namespace of the template                                                                                                                                                                           | N/A                                                                   | yes                                                    |
 | language    | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                   | No                                                     |
 | body_params | Up to 1024 characters for all parameters that are predefined template text.                                                                                                                         | Up to 1024 characters for all parameters and predefined template text | Yes incase only template contains body with no headers |
@@ -345,7 +345,7 @@ curl -X POST \
 	"message": {
 		"type": "image",
 		"payload": {
-			"url": "https://domin-name.com/your_image_path.png",
+			"url": "https://www.buildquickbots.com/whatsapp/media/sample/jpg/sample01.jpg",
 			"caption": "some caption for image",
             "filename": ""
 		}
@@ -355,11 +355,13 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name     | Description                                           | Limits | Required |
-| -------- | ----------------------------------------------------- | ------ | -------- |
-| url      | Public url of the image file. Either HTTP/HTTPS link. | 64 MB  | Yes      |
-| caption  | some text for image caption                           | N/A    | No       |
-| filename | Media file name                                       | N/A    | No       |
+| Name     | Description                                                                                                                                                                      | Limits | Required |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| url      | Public url of the image file. Either HTTP/HTTPS link.                                                                                                                            | 5 MB   | Yes      |
+| type     | `image/jpg`, `image/jpeg` and `image/png`                                                                                                                                        | YES    | YES      |
+| caption  | some text for image caption                                                                                                                                                      | N/A    | No       |
+| filename | Media file name                                                                                                                                                                  | N/A    | No       |
+| pixels   | vertically crops images with the 1:91:1 aspect ratio: 800×418 pixels. To communicate effectively, design the image such that the crux information is at the center of the image. | YES    | YES      |
 
 ## Send Document Message
 
@@ -393,7 +395,7 @@ curl -X POST \
 	"message": {
 		"type": "document",
 		"payload": {
-			"url": "https://domin-name.com/docs/uploads/voice.pdf",
+			"url": "https://www.buildquickbots.com/whatsapp/media/sample/pdf/sample01.pdf",
 			"caption": "some caption for document",
 			"filename": ""
 		}
@@ -403,11 +405,12 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name     | Description                                                 | Limits             | Required |
-| -------- | ----------------------------------------------------------- | ------------------ | -------- |
-| url      | Public url of the document file. Either HTTP or HTTPS link. | Max File size 64MB | Yes      |
-| caption  | some text for document caption                              | N/A                | No       |
-| filename | Media file name                                             | N/A                | No       |
+| Name     | Description                                                 | Limits              | Required |
+| -------- | ----------------------------------------------------------- | ------------------- | -------- |
+| url      | Public url of the document file. Either HTTP or HTTPS link. | Max File size 100MB | Yes      |
+| type     | Any valid MIME-type                                         | N/A                 | No       |
+| caption  | some text for document caption                              | N/A                 | No       |
+| filename | Media file name                                             | N/A                 | No       |
 
 ## Send Audio Message
 
@@ -441,7 +444,7 @@ curl -X POST \
 	"message": {
 		"type": "audio",
 		"payload": {
-			"url": "https://domin-name.com/docs/uploads/voice.pdf",
+			"url": "https://www.buildquickbots.com/whatsapp/media/sample/audio/sample02.mp3",
 			"caption": "some caption for document",
 			"filename": ""
 		}
@@ -451,11 +454,12 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name     | Description                                              | Limits    | Required |
-| -------- | -------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the audio file. Either HTTP or HTTPS link. | Upto 64MB | Yes      |
-| caption  | some text for audio caption                              | N/A       | No       |
-| filename | Media file name                                          | N/A       | No       |
+| Name     | Description                                                                                             | Limits    | Required |
+| -------- | ------------------------------------------------------------------------------------------------------- | --------- | -------- |
+| url      | Public url of the audio file. Either HTTP or HTTPS link.                                                | Upto 16MB | Yes      |
+| type     | `audio/aac, audio/mp4, audio/amr, audio/mpeg; codecs=opus.` (The base audio/ogg type is not supported.) | YES       | YES      |
+| caption  | some text for audio caption                                                                             | N/A       | No       |
+| filename | Media file name                                                                                         | N/A       | No       |
 
 ## Send Video Message
 
@@ -489,7 +493,7 @@ curl -X POST \
 	"message": {
 		"type": "video",
 		"payload": {
-			"url": "https://domin-name.com/docs/uploads/voice.pdf",
+			"url": "https://www.buildquickbots.com/whatsapp/media/sample/video/sample01.mp4",
 			"caption": "some caption for document",
 			"filename": ""
 		}
@@ -499,11 +503,12 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name     | Description                                              | Limits    | Required |
-| -------- | -------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the audio file. Either HTTP or HTTPS link. | Upto 64MB | Yes      |
-| caption  | some text for audio caption                              | N/A       | No       |
-| filename | Media file name                                          | N/A       | No       |
+| Name     | Description                                                                            | Limits    | Required |
+| -------- | -------------------------------------------------------------------------------------- | --------- | -------- |
+| url      | Public url of the video file. Either HTTP or HTTPS link.                               | Upto 16MB | Yes      |
+| type     | `video/mp4, video/3gpp` (Only `H.264` video codec and `AAC` audio codec is supported.) | YES       | Yes      |
+| caption  | some text for audio caption                                                            | N/A       | No       |
+| filename | Media file name                                                                        | N/A       | No       |
 
 ## Send Notification With Interactive Suggestions
 
@@ -535,30 +540,30 @@ curl -X POST \
 	"message": {
 		"type": "interactive",
 		"payload": {
-			"type": "reply"
+			"type": "reply",
 			"header": {
 				"type": "text",
 				"payload": {
-					"text": "header text"
+					"text": "Hello User,"
 				}
 			},
 			"body": {
 				"type": "text",
 				"payload": {
-					"text": "header text"
+					"text": "Do you like the whatsapp?"
 				}
 			},
 			"footer": {
 				"type": "text",
 				"payload": {
-					"text": "header text"
+					"text": "Thank you"
 				}
 			},
 			"choices": [
 				{
 					"type": "reply",
 					"payload": {
-						"title": "Yes I am in",
+						"title": "Yes",
 						"id": "1"
 					}
 				},
@@ -593,34 +598,34 @@ curl -X POST \
 	"message": {
 		"type": "interactive",
 		"payload": {
-			"type": "list"
+			"type": "list",
 			"header": {
 				"type": "text",
 				"payload": {
-					"text": "header text"
+					"text": "Hello User,"
 				}
 			},
 			"body": {
 				"type": "text",
 				"payload": {
-					"text": "header text"
+					"text": "What is your favorite color?"
 				}
 			},
 			"footer": {
 				"type": "text",
 				"payload": {
-					"text": "header text"
+					"text": "Thank you"
 				}
 			},
 			"choices": [
 				{
-					"type": "section",
+					"type": "button",
 					"payload": {
-						"title": "Section1 Title",
+						"title": "Choose the option",
 						"rows": [{
 							"id": "15",
-							"title": "first product",
-							"description": "row-description-content-here"
+							"title": "Green",
+							"description": "Yes, Green is my favorite"
 						}]
 					}
 				},
@@ -630,8 +635,18 @@ curl -X POST \
 						"title": "Section2 Title",
 						"rows": [{
 							"id": "16",
-							"title": "second message",
-							"description": "row-description-content-here"
+							"title": "Red",
+							"description": "Yes, Red is my favorite"
+						},
+						{
+							"id": "16",
+							"title": "Black",
+							"description": "Yes, Black is my favorite"
+						},
+						{
+							"id": "16",
+							"title": "Blue",
+							"description": "Yes, Blue is my favorite"
 						}]
 					}
 				}
@@ -643,9 +658,11 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name    | Description                                     | Limits | Required |
-| ------- | ----------------------------------------------- | ------ | -------- |
-| choices | this block contains options list of the message | N/A    | Yes      |
+| Name         | Description                                                                                                                                     | Limits | Required |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| choices      | this block contains options list of the message                                                                                                 | N/A    | Yes      |
+| payload.type | if reply message type value should be `reply`, or list message type value should be `list`                                                      | N/A    | Yes      |
+| choices.type | if reply message type value should be `reply`, or list message type value first object should be `button` and second object should be `section` | N/A    | Yes      |
 
 ## Send Vcard / Contacts Message
 
@@ -678,45 +695,54 @@ curl -X POST \
 	},
 	"message": {
 		"type": "contacts",
-		"payload": [{
+		"payload": {
 			"addresses": [{
 				"city": "Bangalore",
 				"country": "India",
-				"country_code": "in",
+				"countryCode": "in",
 				"state": "KA",
 				"type": "Office",
 				"zip": "560078"
 			}],
-			"birthday": "1993-08-18",
-			"emails": [{
-				"email": "hello@domin-name.com",
-				"type": "WORK"
-			}],
 			"name": {
-				"first_name": "Laxman",
-				"formatted_name": "Laxman Ka",
-				"last_name": "Ka"
+				"firstName": "MOB",
+				"lastName": "Texting"
+				"formattedName": "MOB Texting",
 			},
 			"phones": [{
-				"phone": "919019120xxx",
-				"type": "HOME"
+				"phone": "91901xxxxxxx",
+				"type": "WORK"
+			}],
+			"org": {
+                "company": "MOBTexting",
+                "department": "Product",
+                "title": "Manager"
+            },
+			"birthday": "1993-08-18",
+			"emails": [{
+				"email": "hello@domain-name.com",
+				"type": "WORK"
 			}],
 			"urls": [{
 				"url": "https://www.domin-name.com",
 				"type": "WORK"
 			}]
-		}]
+		}
 	}
 }'
 ```
 
 #### PARAMETERS
 
-| Name    | Description                    | Limits | Required |
-| ------- | ------------------------------ | ------ | -------- |
-| phone   | Mobile numbers saved in mobile | N/A    | Yes      |
-| name    | Person name                    | N/A    | No       |
-| address | Address details of the contact | N/A    | No       |
+| Name     | Description                         | Limits | Required |
+| -------- | ----------------------------------- | ------ | -------- |
+| phone    | Mobile numbers saved in mobile      | N/A    | Yes      |
+| name     | Person name                         | N/A    | Yes      |
+| address  | Address details of the contact      | N/A    | Yes      |
+| org      | Organization details of the contact | N/A    | Yes      |
+| emails   | emails details of the contact       | N/A    | Yes      |
+| urls     | urls details of the contact         | N/A    | Yes      |
+| birthday | birthday details of the contact     | N/A    | No       |
 
 ## Send Location Message
 
