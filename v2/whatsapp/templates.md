@@ -18,12 +18,12 @@ View all the Templates list.
 
 #### PARAMETERS
 
-| name           | optional | value                                                 |
-| -------------- | -------- | ----------------------------------------------------- |
-| filter[id]     | Yes      | The id is template id                                 |
-| filter[name]   | Yes      | The name is template name                             |
-| filter[type]   | Yes      | The type is template type EX: (text, template)        |
-| filter[status] | Yes      | (0, 2 are Pending),(1 is Approved),or (3 is Rejected) |
+| name           | optional | value                                                |
+| -------------- | -------- | ---------------------------------------------------- |
+| filter[id]     | Yes      | The id is template id                                |
+| filter[name]   | Yes      | The name is template name                            |
+| filter[type]   | Yes      | The type is template type EX: (text, template)       |
+| filter[status] | Yes      | (1 is Approved), (2 are Pending) and (3 is Rejected) |
 
 #### Example Request
 
@@ -50,7 +50,7 @@ Kindly replace the token with your respective access_token and other params.
             "alias": "text-template",
             "number": "91861xxxxxxx",
             "type": "text",
-            "category": "Marketing",
+            "category": "marketing",
             "language": "English",
             "body": "Hi,This is WhatsApp text template message.",
             "payload": "{\"type\":\"text\",\"payload\":{\"text\":\"Hi,This is WhatsApp text template message.\",\"language\":\"en\"}}",
@@ -137,13 +137,14 @@ Kindly replace the token with your respective access_token and other params.
 
 #### PARAMETERS
 
-| name     | description                                                               | Type                  | Required |
-| -------- | ------------------------------------------------------------------------- | --------------------- | -------- |
-| type     | values are `text`, `template`, `json` only                                | `string`              | Yes      |
-| name     | name should be a alphanumeric                                             | `string`,`integer`    | Yes      |
-| category | `marketing`, `authentication` or `utility` if you are using `Gupshup` template | `string`              | Yes      |
-| language | Example : `eu`, `en_US`                                                   | `string`              | Yes      |
-| number   | business number Ex:(91861xxxxxxxx)                                        | `string` or `integer` | Yes      |
+| name          | description                                    | Type                  | Required |
+| ------------- | ---------------------------------------------- | --------------------- | -------- |
+| type          | values are `text`, `template`, `mediatemplate` | `string`              | Yes      |
+| name          | name should be a alphanumeric                  | `string`,`integer`    | Yes      |
+| category      | `marketing`, `authentication` or `utility`     | `string`              | Yes      |
+| language      | Example : `eu`, `en_US`                        | `string`              | Yes      |
+| number        | business number Ex:(91861xxxxxxxx)             | `string` or `integer` | Yes      |
+| meta_approval | Send to meta approval                          | boolean               | Yes      |
 
 ## Text Type
 
@@ -157,9 +158,10 @@ curl -X POST \
   -d '{
     "type": "text",
     "name": "new_text",
-    "category": "Marketing",
+    "category": "marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
+    "meta_approval" : true,
     "payload": {
         "type": "text",
         "payload": {
@@ -182,8 +184,6 @@ curl -X POST \
 
 ## Template Type
 
-In body content message don't use the variables @{{#var#}} at end.
-
 ### Example Request
 
 ```
@@ -194,13 +194,14 @@ curl -X POST \
   -d '{
     "type": "template",
     "name": "new_template",
-    "category": "Marketing",
+    "category": "marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
+    "meta_approval" : true,
     "payload": {
         "type": "template",
         "payload": {
-            "text": "Hello @{{var}}, This is a simple text message from whatsapp channel",
+            "text": "Hello @{{#var#}}, This is a simple text message from whatsapp channel",
             "body_params": ["user"]
         }
     }
@@ -232,9 +233,10 @@ curl -X POST \
   -d '{
     "type": "json",
     "name": "new_json",
-    "category": "Marketing",
+    "category": "marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
+    "meta_approval" : true,
     "payload": {
         "type": "json",
         "payload" : {
@@ -287,9 +289,10 @@ curl -X POST \
   -d '{
     "type": "mediatemplate",
     "name": "mediatemplate_with_buttons",
-    "category": "Marketing",
+    "category": "marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
+    "meta_approval" : true,
     "payload": {
         "type": "mediatemplate",
         "payload": {
@@ -300,7 +303,7 @@ curl -X POST \
             "header": {
                 "type": "text",
                 "payload": {
-                    "text": "Q&A"
+                    "text": "Welcome"
                 }
             },
             "body": {
@@ -361,9 +364,10 @@ curl -X POST \
   -d '{
     "type": "mediatemplate",
     "name": "mediatemplate_with_reply",
-    "category": "Marketing",
+    "category": "marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
+    "meta_approval" : true,
     "payload": {
         "type": "mediatemplate",
         "payload": {
@@ -374,7 +378,7 @@ curl -X POST \
             "header": {
                 "type": "text",
                 "payload": {
-                    "text": "Q&A"
+                    "text": "Hello User"
                 }
             },
             "body": {
@@ -433,13 +437,14 @@ curl -X POST \
   -d '{
     "type": "media",
     "name": "new_media",
-    "category": "Marketing",
+    "category": "marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
+    "meta_approval" : true,
     "payload": {
         "type": "image",
         "payload": {
-            "url": "http://127.0.0.1:8000/media/show/f4cdcf9d-936f-4193-830e-8cbbe8e19811",
+            "url": "https://www.buildquickbots.com/whatsapp/media/sample/jpg/sample01.jpg",
             "filename": "filename",
             "caption": "caption",
             "language": "en"
