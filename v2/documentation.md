@@ -62,6 +62,7 @@
   - [Optout](/docs/{version}/whatsapp/optout)
   - [Pricing List](/docs/{version}/whatsapp/pricing)
   - [Templates](/docs/{version}/whatsapp/templates)
+  - [Unsubscribers](/docs/{version}/whatsapp/suppressions/unsubscribers)
 
 <!--
 - MIP
@@ -84,6 +85,7 @@
   - [Optout](/docs/{version}/rcs/optout)
   - [Pricing List](/docs/{version}/rcs/pricing)
   - [Template](/docs/{version}/rcs/template)
+  - [Unsubscribers](/docs/{version}/rcs/suppressions/unsubscribers)
 
 - Engage (Voice)
 
