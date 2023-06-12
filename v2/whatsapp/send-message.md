@@ -96,7 +96,7 @@ curl -X POST \
 
 | Name    | Description                                 | Limits              | Required |
 | ------- | ------------------------------------------- | ------------------- | -------- |
-| payload | Message Payload section                    | N/A                 | Yes      |
+| payload | Message Payload section                     | N/A                 | Yes      |
 | to      | Destination mobile number with country code | NA                  | Yes      |
 | text    | Message Content you want to send            | Max 4096 Characters | Yes      |
 
