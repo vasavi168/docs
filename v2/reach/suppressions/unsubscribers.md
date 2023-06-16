@@ -11,14 +11,14 @@ View all created unsubscribers
 #### GET
 
 ```
-{endpoint}sms/suppressions/unsubscribers
+{endpoint}outgoing/suppressions/unsubscribers
 ```
 
 #### Example Request
 
 ```
 curl -X GET \
-  '{endpoint}sms/suppressions/unsubscribers' \
+  '{endpoint}outgoing/suppressions/unsubscribers' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
 ```
@@ -44,8 +44,8 @@ Kindly replace the token with your respective access_token and other params.
         ....
     ],
     "links": {
-        "first": "{endpoint}sms/suppressions/unsubscribers?page=1",
-        "last": "{endpoint}sms/suppressions/unsubscribers?page=1",
+        "first": "{endpoint}outgoing/suppressions/unsubscribers?page=1",
+        "last": "{endpoint}outgoing/suppressions/unsubscribers?page=1",
         "prev": null,
         "next": null
     },
@@ -60,7 +60,7 @@ Kindly replace the token with your respective access_token and other params.
                 "active": false
             },
             {
-                "url": "{endpoint}sms/suppressions/unsubscribers?page=1",
+                "url": "{endpoint}outgoing/suppressions/unsubscribers?page=1",
                 "label": "1",
                 "active": true
             },
@@ -70,7 +70,7 @@ Kindly replace the token with your respective access_token and other params.
                 "active": false
             }
         ],
-        "path": "{endpoint}sms/suppressions/unsubscribers",
+        "path": "{endpoint}outgoing/suppressions/unsubscribers",
         "per_page": 15,
         "to": 6,
         "total": 6
@@ -91,7 +91,7 @@ Create receiver using POST method.
 #### POST
 
 ```
-{endpoint}sms/suppressions/unsubscribers
+{endpoint}outgoing/suppressions/unsubscribers
 ```
 
 #### PARAMETERS
@@ -106,7 +106,7 @@ Create receiver using POST method.
 
 ```
 curl -X POST\
-  '{endpoint}sms/suppressions/unsubscribers' \
+  '{endpoint}outgoing/suppressions/unsubscribers' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
   -H 'Content-Type: application/json' \
@@ -148,7 +148,7 @@ Edit receiver using put method.
 #### PUT
 
 ```
-{endpoint}sms/suppressions/unsubscribers/{id}
+{endpoint}outgoing/suppressions/unsubscribers/{id}
 ```
 
 Replace the {id} with the actual id of the receiver that you would like to Edit.
@@ -165,7 +165,7 @@ Replace the {id} with the actual id of the receiver that you would like to Edit.
 
 ```
 curl -X PUT \
-  '{endpoint}sms/suppressions/unsubscribers/848c22a0-6969-455a-b5dc-4b119016b55b' \
+  '{endpoint}outgoing/suppressions/unsubscribers/848c22a0-6969-455a-b5dc-4b119016b55b' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
   -H 'Content-Type: application/json' \
@@ -208,14 +208,14 @@ View one created receiver
 #### GET
 
 ```
-{endpoint}sms/suppressions/unsubscribers/{id}
+{endpoint}outgoing/suppressions/unsubscribers/{id}
 ```
 
 #### Example Request
 
 ```
 curl -X GET \
-  '{endpoint}sms/suppressions/unsubscribers/0e3fdaad-2b46-4dcf-8b14-aafffbxxxxxx' \
+  '{endpoint}outgoing/suppressions/unsubscribers/0e3fdaad-2b46-4dcf-8b14-aafffbxxxxxx' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
 ```
@@ -253,14 +253,14 @@ Import receiver by uploading a file
 #### POST
 
 ```
-{endpoint}/sms/suppressions/unsubscribers/import
+{endpoint}/outgoing/suppressions/unsubscribers/import
 ```
 
 #### Example Request
 
 ```
 curl -X POST\
-  '{endpoint}sms/suppressions/unsubscribers/import' \
+  '{endpoint}outgoing/suppressions/unsubscribers/import' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
   -H 'Content-Type: application/form-data' \
@@ -297,7 +297,7 @@ Delete receiver using delete method
 #### DELETE
 
 ```
-{endpoint}sms/suppressions/unsubscribers/{id}
+{endpoint}outgoing/suppressions/unsubscribers/{id}
 ```
 
 Replace the {id} with the actual id of the receiver that you would like to delete.
@@ -306,7 +306,7 @@ Replace the {id} with the actual id of the receiver that you would like to delet
 
 ```
 curl -X DELETE \
-  '{endpoint}sms/suppressions/unsubscribers/0e3fdaad-2b46-4dcf-8b14-aafffbxxxxxx' \
+  '{endpoint}outgoing/suppressions/unsubscribers/0e3fdaad-2b46-4dcf-8b14-aafffbxxxxxx' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
 ```
@@ -335,14 +335,14 @@ Delete all receiver at once
 #### POST
 
 ```
-{endpoint}sms/suppressions/unsubscribers
+{endpoint}outgoing/suppressions/unsubscribers
 ```
 
 #### Example Request
 
 ```
 curl -X DELETE \
-  '{endpoint}sms/suppressions/unsubscribers' \
+  '{endpoint}outgoing/suppressions/unsubscribers' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
 ```
