@@ -71,6 +71,8 @@ curl -X POST '{endpoint}voice/c2c' \
 }
 ```
 
+@if (!config('service.unified'))
+
 #### Example C2C with to as Flow ID & Variables
 
 ```
@@ -104,6 +106,8 @@ curl -X POST '{endpoint}voice/c2c' \
   "message": "Call initiated successfully"
 }
 ```
+
+@endif
 
 ## Callback URL with Webhook ID
 
