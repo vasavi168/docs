@@ -1,12 +1,7 @@
 ## Delete Sender-id
 
 Delete sender-id using delete method under your account
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### DELETE
 

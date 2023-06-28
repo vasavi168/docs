@@ -1,12 +1,7 @@
 ## Edit Sender-ids
 
 Edit sender-ids using put method under your account
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### PUT
 

@@ -1,12 +1,7 @@
 ## Create Templates
 
 Create templates using post method under your account
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### POST
 

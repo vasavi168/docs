@@ -1,12 +1,7 @@
 ## View Templates
 
 View all templates created under your account
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### GET
 
