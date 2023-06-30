@@ -1,4 +1,4 @@
-## Create Templates
+# Create Templates
 
 Create templates using post method under your account
 #include "_include/endpoint.md"
@@ -29,8 +29,9 @@ Create templates using post method under your account
 | SE            | Service Explicit |
 
 #### Example Request
+#include "{version}/_samples/sms/template.md"
 
-```
+<!-- ```
 curl -X POST \
   '{endpoint}sms/templates' \
     -H 'Accept: application/json' \
@@ -42,7 +43,7 @@ curl -X POST \
     "body":"testing sms 1"
 }'
 
-```
+``` -->
 
 #### Example Response
 

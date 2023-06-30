@@ -1,4 +1,4 @@
-## View Unsubscribers
+# View Unsubscribers
 
 View all created unsubscribers
 #include "_include/endpoint.md"

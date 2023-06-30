@@ -1,4 +1,4 @@
-## View Template Blocklists
+# View Template Blocklists
 
 View all Blocklists
 #include "_include/endpoint.md"

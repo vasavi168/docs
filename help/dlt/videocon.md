@@ -1,4 +1,4 @@
-# DLT Registration with Ping Connect (Videocon) 
+# DLT Registration With Ping Connect (Videocon) 
 
 ## Registration with Ping Connect (Videocon)
 * Open the link [https://pingconnect.in/entity/register-with](https://pingconnect.in/entity/register-with).

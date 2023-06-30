@@ -1,4 +1,4 @@
-## View Sender
+# View Sender
 
 View one Sender-ids created under your account
 #include "_include/endpoint.md"

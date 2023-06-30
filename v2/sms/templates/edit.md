@@ -1,4 +1,4 @@
-## Edit Templates
+# Edit Templates
 
 Edit template using put method under your account
 #include "_include/endpoint.md"

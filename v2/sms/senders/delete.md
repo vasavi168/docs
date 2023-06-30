@@ -1,4 +1,4 @@
-## Delete Sender-id
+# Delete Sender-id
 
 Delete sender-id using delete method under your account
 #include "_include/endpoint.md"

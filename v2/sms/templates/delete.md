@@ -1,4 +1,4 @@
-## Delete Template
+# Delete Template
 
 Delete template using delete method under your account
 #include "_include/endpoint.md"

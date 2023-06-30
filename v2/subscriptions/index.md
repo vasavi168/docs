@@ -1,4 +1,4 @@
-## View Subscriptions List
+# View Subscriptions List
 
 View all Subscriptions created under your account
 #include "_include/endpoint.md"

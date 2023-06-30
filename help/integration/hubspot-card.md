@@ -1,4 +1,4 @@
-## MOBtexting SMS with Hubspot Integration
+# MOBtexting SMS With Hubspot Integration
 
 Our platform allows you to seemingly integrate Hubspot crm.
 Follow the steps below for integration guide:

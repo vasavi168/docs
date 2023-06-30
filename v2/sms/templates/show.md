@@ -1,4 +1,4 @@
-## View Template
+# View Template
 
 View one template created under your account
 #include "_include/endpoint.md"
