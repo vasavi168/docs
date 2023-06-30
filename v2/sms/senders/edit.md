@@ -20,7 +20,20 @@ Edit sender-ids using put method under your account
 
 #### Example Request
 
-#include "{version}/_samples/sms/edit.md"
+```
+curl -X PUT \
+  '{endpoint}sms/senders/ff467e28-7170-4a72-952e-c999cxxxxxx' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "entity_name":"xxxxx",
+    "entity_id":"xxxxx",
+    "service":"MKT",
+    "country_code":"IN"
+}'
+    
+```
 
 #### Example Response
 

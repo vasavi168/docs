@@ -11,7 +11,19 @@ View all created unsubscribers
 
 #### Example Request
 
-
+#### Curl
+```
+curl -X POST\
+  '{endpoint}whatsapp/suppressions/unsubscribers' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "receiver": "98xxxxxxxx",
+    "type": "xxxxxxx",
+    "value": "xxxxx"
+}'
+```
 #### Example Response
 
 ```json
