@@ -13,17 +13,13 @@ View all created unsubscribers
 
 #### Curl
 ```
-curl -X POST\
+curl -X GET \
   '{endpoint}whatsapp/suppressions/unsubscribers' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "receiver": "98xxxxxxxx",
-    "type": "xxxxxxx",
-    "value": "xxxxx"
-}'
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
 ```
+
+Kindly replace the token with your respective access_token and other params.
 #### Example Response
 
 ```json
