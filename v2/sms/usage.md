@@ -1,4 +1,4 @@
-## View Account Usage Report
+# View Account Usage Report
 
 It will display account usage report
 #include "_include/endpoint.md"

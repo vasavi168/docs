@@ -1,4 +1,4 @@
-## View VMN Logs
+# View VMN Logs
 
 Lists all message of VMN numbers of your account.
 #include "_include/endpoint.md"

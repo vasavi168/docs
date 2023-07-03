@@ -1,4 +1,4 @@
-## Generating Access Token
+# Generating Access Token
 
 Login to the portal and go to Manage -> Api Keys
 ![alt text](/images/docimages/access_token/z1.png)

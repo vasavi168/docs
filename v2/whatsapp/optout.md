@@ -1,4 +1,4 @@
-## OPTOUT
+# OPTOUT
 
 Whatsapp campaigns are targeted to those customers who are registered subscribers to your Whatsapp
 services. You can block the customer's number using our optout feature. Once the customer's number is blocked, meanwhile if you try to trigger Whatsapp to the customer's number then our system will automatically reject the Whatsapp triggered and the customer will not recieve the Whatsapp.

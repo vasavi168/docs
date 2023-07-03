@@ -1,4 +1,4 @@
-## Zoho Integration
+# Zoho Integration
 
 Our platform allows you to seemingly integrate zoho crm.
 Follow the steps below for integration guide:

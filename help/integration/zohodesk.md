@@ -1,4 +1,4 @@
-## Zoho Desk Integration
+# Zoho Desk Integration
 
 Our platform allows you to seemingly integrate zoho Desk.
 Follow the steps below for integration guide:

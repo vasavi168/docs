@@ -1,4 +1,4 @@
-## View Unsubscribers
+# View Unsubscribers
 
 View all created unsubscribers
 #include "_include/endpoint.md"
@@ -11,6 +11,7 @@ View all created unsubscribers
 
 #### Example Request
 
+#### Curl
 ```
 curl -X GET \
   '{endpoint}whatsapp/suppressions/unsubscribers' \
@@ -19,7 +20,6 @@ curl -X GET \
 ```
 
 Kindly replace the token with your respective access_token and other params.
-
 #### Example Response
 
 ```json
@@ -94,6 +94,7 @@ Create receiver using POST method.
 
 #### Example Request
 
+
 ```
 curl -X POST\
   '{endpoint}whatsapp/suppressions/unsubscribers' \
@@ -106,6 +107,7 @@ curl -X POST\
     "value": "xxxxx"
 }'
 ```
+
 
 #### Example Response
 

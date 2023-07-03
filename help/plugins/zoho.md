@@ -1,4 +1,4 @@
-## Zoho Plugin
+# Zoho Plugin
 
 Zoho plugin allows you to send sms without leaving the zoho panel.
 You can send sms to leads as well as contacts.

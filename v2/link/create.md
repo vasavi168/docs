@@ -1,4 +1,4 @@
-## Create Smart Link
+# Create Smart Link
 
 Convert long url into short and smart url.
 #include "_include/endpoint.md"

@@ -1,4 +1,4 @@
-## Delete Smart Link
+# Delete Smart Link
 
 #include "_include/endpoint.md"
 

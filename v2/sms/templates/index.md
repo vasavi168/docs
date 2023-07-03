@@ -1,4 +1,4 @@
-## View Templates
+# View Templates
 
 View all templates created under your account
 #include "_include/endpoint.md"
@@ -16,15 +16,7 @@ View all templates created under your account
 | filter[name] | Yes      | Name of the template. |
 
 #### Example Request
-
-```
-curl -X GET \
-  '{endpoint}sms/templates?filter[name]=test' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
-
-Kindly replace the token with your respective access_token and other params.
+#include "{version}/_samples/sms/templates/index.md"
 
 #### Example Response
 

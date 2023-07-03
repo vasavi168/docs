@@ -1,4 +1,4 @@
-## View Smart Links
+# View Smart Links
 
 View all smart links created under your account
 #include "_include/endpoint.md"

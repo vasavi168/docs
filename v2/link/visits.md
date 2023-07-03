@@ -1,4 +1,4 @@
-## View Smart Link Visits
+# View Smart Link Visits
 
 Access the particular Link Visits
 #include "_include/endpoint.md"
