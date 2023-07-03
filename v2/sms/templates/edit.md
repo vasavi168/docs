@@ -22,20 +22,7 @@ Replace the {id} with the actual id of the template that you would like to Edit.
 | is_english  | No      | Input the is_english (0, 1)
 
 #### Example Request
-
-```
-curl -X PUT \
- '{endpoint}sms/templates/b23769e6-019f-48f4-aae9-ec00a5xxxxxx' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-    -H 'Content-Type: application/json'
-    -d '{
-    "name":"test1",
-    "body":"testing sms 1",
-    "is_english":"1"
-}'
-
-```
+#include "{version}/_samples/sms/templates/edit.md"
 
 #### Example Response
 

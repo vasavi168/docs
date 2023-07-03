@@ -36,7 +36,7 @@
   - [Show Sender](/docs/{version}/sms/senders/show)
   - [Edit Sender](/docs/{version}/sms/senders/edit)
   - [Delete Sender](/docs/{version}/sms/senders/delete)
-  - [Sample Sender](/docs/{version}/_samples/sms/createsender)
+  - [Sample Sender](/docs/{version}/_samples/sms/senders/createsender)
   - [View Templates](/docs/{version}/sms/templates)
   - [Create Template](/docs/{version}/sms/templates/create)
   - [Show Template](/docs/{version}/sms/templates/show)
