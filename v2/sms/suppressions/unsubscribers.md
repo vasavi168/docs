@@ -1,12 +1,7 @@
-## View Unsubscribers
+# View Unsubscribers
 
 View all created unsubscribers
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -81,12 +76,7 @@ Kindly replace the token with your respective access_token and other params.
 ## Create Unsubscriber
 
 Create receiver using POST method.
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -138,12 +128,7 @@ curl -X POST\
 ## Edit Unsubscriber
 
 Edit receiver using put method.
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### PUT
 
@@ -198,12 +183,7 @@ curl -X PUT \
 ## View Single Unsubscriber
 
 View one created receiver
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -243,12 +223,7 @@ Kindly replace the token with your respective access_token .
 ## Import Unsubscriber
 
 Import receiver by uploading a file
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -270,11 +245,9 @@ curl -X POST\
 #### PARAMETERS
 
 ```
-| Name     | Description                                              | Limits | Required |
-| -------- | -------------------------------------------------------- | ------ | -------- |
-| url      | Public url of the receiver file. Either HTTP/HTTPS link. | 100 MB | Yes      |
-| caption  | some text for reciver caption                            | N/A    | No       |
-| filename | Receiver file name                                       | N/A    | No       |
+| Name     | Description                                                  | Limits | Required |
+| -------- | ------------------------------------------------------------ | ------ | -------- |
+| file     | Receiver number file. (Supported filetype: txt,csv,xls,xlsx) | 100 MB | Yes      |
 ```
 
 #### EXAMPLE RESPONSE
@@ -289,12 +262,7 @@ curl -X POST\
 ## Delete Unsubscriber
 
 Delete receiver using delete method
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### DELETE
 
@@ -327,12 +295,7 @@ curl -X DELETE \
 ## Cleanup Unsubscriber
 
 Delete all receiver at once
-
-#### API Endpoint
-
-```
-{domain}/api/{version}/
-```
+#include "_include/endpoint.md"
 
 #### POST
 
