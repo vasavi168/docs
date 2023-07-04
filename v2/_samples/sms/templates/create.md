@@ -31,7 +31,7 @@ IRestResponse response = client.Execute(request);
 Console.WriteLine(response.Content);
 ```
 
-#### Java Script
+#### JavaScript
 ```
 var settings = {
   "url": "{endpoint}/api/v2/sms/templates",
@@ -54,7 +54,8 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
-#### Node Js
+
+#### NodeJs
 ```
 var axios = require('axios');
 var data = JSON.stringify({
