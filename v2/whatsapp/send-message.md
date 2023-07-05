@@ -2,6 +2,20 @@
 
 ## Channel Info
 
+#### PARAMETERS
+
+| Name      | Description                                                 | type                | Required                       |
+| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
+| channels  | This block contains information related messaging channel   | N/A                 | Yes                            |
+| name      | Name of Messaging Channel. Ex: `whatsapp`                   | `string`            | Yes                            |
+| from      | Sender or From Number                                       | `number`            | Yes                            |
+| recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
+| group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
+| to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |
+
+`Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
+
+
 ```
 {
 	"channels": [{
@@ -39,19 +53,6 @@
 }
 ```
 
-#### PARAMETERS
-
-| Name      | Description                                                 | type                | Required                       |
-| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
-| channels  | This block contains information related messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. Ex: `whatsapp`                   | `string`            | Yes                            |
-| from      | Sender or From Number                                       | `number`            | Yes                            |
-| recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
-| group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
-| to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |
-
-`Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
-
 #### HTTP Methods
 
 It will support only `POST` requests.
@@ -62,6 +63,14 @@ It will support only `POST` requests.
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name    | Description                                 | Limits              | Required |
+| ------- | ------------------------------------------- | ------------------- | -------- |
+| to      | Destination mobile number with country code | NA                  | Yes      |
+| payload | Message Payload section                     | N/A                 | Yes      |
+| text    | Message Content you want to send            | Max 4096 Characters | Yes      |
 
 #### Example Request With Text Message
 
@@ -87,19 +96,55 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name    | Description                                 | Limits              | Required |
-| ------- | ------------------------------------------- | ------------------- | -------- |
-| payload | Message Payload section                     | N/A                 | Yes      |
-| to      | Destination mobile number with country code | NA                  | Yes      |
-| text    | Message Content you want to send            | Max 4096 Characters | Yes      |
-
 ## Sending Template Message
 #include "_include/endpoint.md"
 
 ```
 {endpoint}whatsapp/message/send
+```
+
+#### PARAMETERS
+
+| Name        | Description                                                                                                                                                                                         | Limits                                                                | Required                                               |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
+| name        | Template `Alias` Name                                                                                                                                                                                 | N/A                                                                   | yes                                                    |
+| namespace   | Namespace of the template                                                                                                                                                                           | N/A                                                                   | yes                                                    |
+| language    | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                   | No                                                     |
+| header_params | Only one header replace variable value.                                                                                | Up to 1024 characters for all parameters and predefined template text | Yes incase only templates contain header variable|
+| body_params | Up to 1024 characters for all parameters that are predefined template text, if `authentication` template has only one replace variable value.                                                                                                                  | Up to 1024 characters for all parameters and predefined template text | Yes incase only template contains body with no headers |
+| components  | This block contains header, body, footer sections payload as per predefined template.                                                                                                               | Up to 1024 characters for all parameters and predefined template text | Yes incase Template contains headers and footers       |
+| ttl         | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                  | No                                                     |
+
+#### Example Request With Templates
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/message/send' \
+  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "channels": [
+        {
+            "name": "whatsapp",
+            "from": "91901912xxxx"
+        }
+    ],
+    "recipient": {
+        "to": [
+            "91XXXXXXx"
+        ]
+    },
+    "message": {
+        "type": "template",
+        "payload": {
+            "name": "template_alias_name",
+            "namespace": "template_alias_name",
+            "language": "en",
+            "header_params" : ["Hello"]
+            "body_params" : ["Dear", "Customer"]
+        }
+    }
+}'
 ```
 
 #### Example Request With Authentication Template
@@ -124,8 +169,8 @@ curl -X POST \
     "message": {
         "type": "template",
         "payload": {
-            "name": "otp",
-            "namespace": "otp",
+            "name": "template_alias_name",
+            "namespace": "template_alias_name",
             "language": "en",
             "body_params" : [23455]
         }
@@ -295,25 +340,22 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name        | Description                                                                                                                                                                                         | Limits                                                                | Required                                               |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
-| name        | Template Alias Name                                                                                                                                                                                 | N/A                                                                   | yes                                                    |
-| namespace   | Namespace of the template                                                                                                                                                                           | N/A                                                                   | yes                                                    |
-| language    | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                   | No                                                     |
-| body_params | Up to 1024 characters for all parameters that are predefined template text.                                                                                                                         | Up to 1024 characters for all parameters and predefined template text | Yes incase only template contains body with no headers |
-| components  | This block contains header, body, footer sections payload as per predefined template.                                                                                                               | Up to 1024 characters for all parameters and predefined template text | Yes incase Template contains headers and footers       |
-| ttl         | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                  | No                                                     |
-
 ## Send Image Message
 #include "_include/endpoint.md"
-
-We can send Images as attachment using below API. The maximum image size is limited to 64 MB.
 
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name     | Description                                                                                                                                                                      | Limits | Required |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| url      | Public url of the image file. Either HTTP/HTTPS link.                                                                                                                            | 5 MB   | Yes      |
+| type     | `image/jpg`, `image/jpeg` and `image/png`                                                                                                                                        | YES    | YES      |
+| caption  | some text for image caption                                                                                                                                                      | N/A    | No       |
+| filename | Media file name                                                                                                                                                                  | N/A    | No       |
+| pixels   | vertically crops images with the 1:91:1 aspect ratio: 800×418 pixels. To communicate effectively, design the image such that the crux information is at the center of the image. | YES    | YES      |
 
 #### Example Request With Image Message
 
@@ -341,24 +383,23 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name     | Description                                                                                                                                                                      | Limits | Required |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| url      | Public url of the image file. Either HTTP/HTTPS link.                                                                                                                            | 5 MB   | Yes      |
-| type     | `image/jpg`, `image/jpeg` and `image/png`                                                                                                                                        | YES    | YES      |
-| caption  | some text for image caption                                                                                                                                                      | N/A    | No       |
-| filename | Media file name                                                                                                                                                                  | N/A    | No       |
-| pixels   | vertically crops images with the 1:91:1 aspect ratio: 800×418 pixels. To communicate effectively, design the image such that the crux information is at the center of the image. | YES    | YES      |
-
 ## Send Document Message
 #include "_include/endpoint.md"
 
-We can send Document which is having valid MIME-type as attachment using below API. The maximum document size is limited to 64 MB. So anything not image, audio or video will be transmitted as document message.
+We can send Document which is having valid MIME-type as attachment using below API. So anything not image, audio or video will be transmitted as document message.
 
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name     | Description                                                 | Limits              | Required |
+| -------- | ----------------------------------------------------------- | ------------------- | -------- |
+| url      | Public url of the document file. Either HTTP or HTTPS link. | Max File size 100MB | Yes      |
+| type     | Any valid MIME-type                                         | N/A                 | No       |
+| caption  | some text for document caption                              | N/A                 | No       |
+| filename | Media file name                                             | N/A                 | No       |
 
 #### Example Request With Document Message
 
@@ -386,23 +427,23 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name     | Description                                                 | Limits              | Required |
-| -------- | ----------------------------------------------------------- | ------------------- | -------- |
-| url      | Public url of the document file. Either HTTP or HTTPS link. | Max File size 100MB | Yes      |
-| type     | Any valid MIME-type                                         | N/A                 | No       |
-| caption  | some text for document caption                              | N/A                 | No       |
-| filename | Media file name                                             | N/A                 | No       |
-
 ## Send Audio Message
 #include "_include/endpoint.md"
 
-We can send Audio clips as attachment using below API. The maximum audio file size is limited to max 64 MB.
+We can send Audio clips as attachment using below API.
 
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name     | Description                                                                                             | Limits    | Required |
+| -------- | ------------------------------------------------------------------------------------------------------- | --------- | -------- |
+| url      | Public url of the audio file. Either HTTP or HTTPS link.                                                | Upto 16MB | Yes      |
+| type     | `audio/aac, audio/mp4, audio/amr, audio/mpeg; codecs=opus.` (The base audio/ogg type is not supported.) | YES       | YES      |
+| caption  | some text for audio caption                                                                             | N/A       | No       |
+| filename | Media file name                                                                                         | N/A       | No       |
 
 #### Example Request With Audio Message
 
@@ -430,23 +471,23 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name     | Description                                                                                             | Limits    | Required |
-| -------- | ------------------------------------------------------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the audio file. Either HTTP or HTTPS link.                                                | Upto 16MB | Yes      |
-| type     | `audio/aac, audio/mp4, audio/amr, audio/mpeg; codecs=opus.` (The base audio/ogg type is not supported.) | YES       | YES      |
-| caption  | some text for audio caption                                                                             | N/A       | No       |
-| filename | Media file name                                                                                         | N/A       | No       |
-
 ## Send Video Message
 #include "_include/endpoint.md"
 
-We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
+We can send Video clips as attachment using below API.
 
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name     | Description                                                                            | Limits    | Required |
+| -------- | -------------------------------------------------------------------------------------- | --------- | -------- |
+| url      | Public url of the video file. Either HTTP or HTTPS link.                               | Upto 16MB | Yes      |
+| type     | `video/mp4, video/3gpp` (Only `H.264` video codec and `AAC` audio codec is supported.) | YES       | Yes      |
+| caption  | some text for audio caption                                                            | N/A       | No       |
+| filename | Media file name                                                                        | N/A       | No       |
 
 #### Example Request With Video Message
 
@@ -474,21 +515,20 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name     | Description                                                                            | Limits    | Required |
-| -------- | -------------------------------------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the video file. Either HTTP or HTTPS link.                               | Upto 16MB | Yes      |
-| type     | `video/mp4, video/3gpp` (Only `H.264` video codec and `AAC` audio codec is supported.) | YES       | Yes      |
-| caption  | some text for audio caption                                                            | N/A       | No       |
-| filename | Media file name                                                                        | N/A       | No       |
-
 ## Send Notification With Interactive Suggestions
 #include "_include/endpoint.md"
 
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name         | Description                                                                                                                                     | Limits | Required |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| choices      | this block contains options list of the message                                                                                                 | N/A    | Yes      |
+| payload.type | if reply message type value should be `reply`, or list message type value should be `list`                                                      | N/A    | Yes      |
+| choices.type | if reply message type value should be `reply`, or list message type value first object should be `button` and second object should be `section` | N/A    | Yes      |
 
 #### Example Request With Interactive Reply Message
 
@@ -624,22 +664,24 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name         | Description                                                                                                                                     | Limits | Required |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| choices      | this block contains options list of the message                                                                                                 | N/A    | Yes      |
-| payload.type | if reply message type value should be `reply`, or list message type value should be `list`                                                      | N/A    | Yes      |
-| choices.type | if reply message type value should be `reply`, or list message type value first object should be `button` and second object should be `section` | N/A    | Yes      |
-
 ## Send Vcard / Contacts Message
 #include "_include/endpoint.md"
-
-We can send location using below API. The maximum audio file size is limited to 64 MB.
 
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name     | Description                         | Limits | Required |
+| -------- | ----------------------------------- | ------ | -------- |
+| phone    | Mobile numbers saved in mobile      | N/A    | Yes      |
+| name     | Person name                         | N/A    | Yes      |
+| address  | Address details of the contact      | N/A    | Yes      |
+| org      | Organization details of the contact | N/A    | Yes      |
+| emails   | emails details of the contact       | N/A    | Yes      |
+| urls     | urls details of the contact         | N/A    | Yes      |
+| birthday | birthday details of the contact     | N/A    | No       |
 
 #### Example Request With Vcard Message
 
@@ -695,26 +737,21 @@ curl -X POST \
 }'
 ```
 
-#### PARAMETERS
-
-| Name     | Description                         | Limits | Required |
-| -------- | ----------------------------------- | ------ | -------- |
-| phone    | Mobile numbers saved in mobile      | N/A    | Yes      |
-| name     | Person name                         | N/A    | Yes      |
-| address  | Address details of the contact      | N/A    | Yes      |
-| org      | Organization details of the contact | N/A    | Yes      |
-| emails   | emails details of the contact       | N/A    | Yes      |
-| urls     | urls details of the contact         | N/A    | Yes      |
-| birthday | birthday details of the contact     | N/A    | No       |
-
 ## Send Location Message
 #include "_include/endpoint.md"
-
-We can send location using below API. The maximum audio file size is limited to 64 MB.
 
 ```
 {endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name      | Description                           | Limits | Required |
+| --------- | ------------------------------------- | ------ | -------- |
+| longitude | Longitude of the location coordinates | N/A    | Yes      |
+| latitude  | Latitude of the location coordinates  | N/A    | No       |
+| name      | Address name                          | N/A    | No       |
+| address   | Textual representation of location    | N/A    | No       |
 
 #### Example Request With Location Message
 
@@ -742,12 +779,3 @@ curl -X POST \
     }
 }'
 ```
-
-#### PARAMETERS
-
-| Name      | Description                           | Limits | Required |
-| --------- | ------------------------------------- | ------ | -------- |
-| longitude | Longitude of the location coordinates | N/A    | Yes      |
-| latitude  | Latitude of the location coordinates  | N/A    | No       |
-| name      | Address name                          | N/A    | No       |
-| address   | Textual representation of location    | N/A    | No       |

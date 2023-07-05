@@ -1,7 +1,7 @@
 # CREATE OUTBOUND CALL USING TEXT
 
 Using Text2Speech API we can trigger a call using text as input and that text will be played as voice message once recipient answers the call.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### POST
 
