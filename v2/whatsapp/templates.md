@@ -16,6 +16,12 @@ View all the Templates list.
 {endpoint}whatsapp/templates
 ```
 
+#### Example Filter
+
+```
+{endpoint}whatsapp/templates?filter[name]=template_name
+```
+
 #### PARAMETERS
 
 | name           | optional | value                                                |
@@ -259,27 +265,31 @@ curl -X POST \
 
 ## Media Template Type
 
-### With Button
-
 #### PARAMETERS
 
-| name                                | optional | value                                 |
-| ----------------------------------- | -------- | ------------------------------------- |
-| payload.type                        | No       | `mediatemplate`                       |
-| payload.payload.header              | No       | The header content                    |
-| payload.payload.body                | No       | The body content                      |
-| payload.payload.footer              | No       | The footer content                    |
-| choices                             | Yes      | The choices buttons is optional       |
-| choices.type                        | No       | `actions`                             |
-| choices.actions                     | No       | expect the object at least one        |
-| choices.actions.type                | No       | `phone_number`, `url`                 |
-| choices.actions.phone_number_text   | No       | max 20 characters                     |
-| choices.actions.phone_number        | No       | country code prefix required Ex:(+91) |
-| choices.actions.website_url_type    | No       | value is `Static`                     |
-| choices.actions.website_button_text | No       | max 20 characters                     |
-| choices.actions.website_url         | No       | should be url                         |
+| name                                | optional | value                                                                                                   |
+| ----------------------------------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| category                            | No       | `marketing`, `utility` or `authentication` [if authentication](/docs/{version}/whatsapp/authentication) |
+| language                            | No       | prefer language ex: en, en_US, af                                                                       |
+| payload.type                        | No       | `mediatemplate`                                                                                         |
+| payload.payload.header              | No       | The header content, header contain only one variable                                                    |
+| payload.payload.body                | No       | The body content, body contains multiple variables (one variable is required if category utility)       |
+| payload.payload.footer              | Yes      | The footer content                                                                                      |
+| choices                             | Yes      | The choices buttons is optional                                                                         |
+| choices.type                        | No       | `actions`                                                                                               |
+| choices.actions                     | No       | expect the object at least one                                                                          |
+| choices.actions.type                | No       | `phone_number`, `url`                                                                                   |
+| choices.actions.phone_number_text   | No       | max 20 characters                                                                                       |
+| choices.actions.phone_number        | No       | country code prefix required Ex:(+91)                                                                   |
+| choices.actions.website_url_type    | No       | value is `Static`                                                                                       |
+| choices.actions.website_button_text | No       | max 20 characters                                                                                       |
+| choices.actions.website_url         | No       | should be url                                                                                           |
+
+### With Button
 
 ### Example Request
+
+#### Type Text
 
 ```
 curl -X POST \
@@ -288,11 +298,11 @@ curl -X POST \
   -H 'content-type: application/json' \
   -d '{
     "type": "mediatemplate",
-    "name": "mediatemplate_with_buttons",
-    "category": "marketing",
+    "name": "template_name",
+    "category": "Marketing",
     "language": "en",
-    "number": "91861xxxxxxxx",
-    "meta_approval" : true,
+    "meta_approval": true,
+    "number": "918736xxxxxx",
     "payload": {
         "type": "mediatemplate",
         "payload": {
@@ -303,7 +313,7 @@ curl -X POST \
             "header": {
                 "type": "text",
                 "payload": {
-                    "text": "Welcome"
+                    "text": "Q&A"
                 }
             },
             "body": {
@@ -318,20 +328,19 @@ curl -X POST \
                     "text": "Thank you!"
                 }
             },
-            "url": null,
             "choices": {
                 "type": "actions",
                 "actions": [
                     {
                         "type": "phone_number",
                         "phone_number_text": "Any queries call",
-                        "phone_number": "+91861xxxxxxx"
+                        "phone_number": "+918783xxxxxx"
                     },
                     {
                         "type": "url",
-                        "website_url_type" => "Static"
-                        "website_button_text" => "More info visit"
-                        "website_url" => "www.mobtexting.com"
+                        "website_url_type" : "Static",
+                        "website_button_text" : "More info visit",
+                        "website_url" : "www.example.com"
                     }
                 ]
             }
@@ -340,7 +349,201 @@ curl -X POST \
 }'
 ```
 
-### With Reply
+#### Type Image
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "mediatemplate",
+    "name": "template_name",
+    "category": "marketing",
+    "meta_approval": true,
+    "language": "en",
+    "number": "918736xxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_buttons",
+            "language": "en",
+            "body_params": [
+                "body"
+            ],
+            "header_params": [
+                "header"
+            ],
+            "header": {
+                "type": "image",
+                "payload": {
+                    "text": "Header text @{{#var#}}",
+                    "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Any doubts please contact us  @{{#var#}}"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "choices": {
+                "type": "actions",
+                "actions": [
+                    {
+                        "type": "phone_number",
+                        "phone_number_text": "Any queries call",
+                        "phone_number": "+918783xxxxxx"
+                    },
+                    {
+                        "type": "url",
+                        "website_url_type": "Static",
+                        "website_button_text": "More info visit",
+                        "website_url": "www.example.com"
+                    }
+                ]
+            }
+        }
+    }
+}'
+
+```
+
+#### Type Video
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "mediatemplate",
+    "name": "template_name",
+    "category": "marketing",
+    "meta_approval": true,
+    "language": "en",
+    "number": "918736xxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_button",
+            "language": "en",
+            "body_params": [
+                "body_params"
+            ],
+            "header_params": [
+                "header_params"
+            ],
+            "header": {
+                "type": "video",
+                "payload": {
+                    "text": "Header text @{{#var#}}",
+                    "url": "https://www.example/sample/video/sample.mp4"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Any doubts please contact us @{{#var#}}"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "choices": {
+                "type": "actions",
+                "actions": [
+                    {
+                        "type": "phone_number",
+                        "phone_number_text": "Any queries call",
+                        "phone_number": "+918783xxxxxx"
+                    },
+                    {
+                        "type": "url",
+                        "website_url_type": "Static",
+                        "website_button_text": "More info visit",
+                        "website_url": "www.example.com"
+                    }
+                ]
+            }
+        }
+    }
+}'
+```
+
+#### Type Document
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "mediatemplate",
+    "name": "template_name",
+    "category": "marketing",
+    "meta_approval": true,
+    "language": "en",
+    "number": "918736xxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_buttons",
+            "language": "en",
+            "body_params": [
+                "body"
+            ],
+            "header_params": [
+                "header"
+            ],
+            "header": {
+                "type": "document",
+                "payload": {
+                    "text": "Header text @{{#var#}}",
+                    "url": "https://www.example.com/pdf-test.pdf"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Any doubts please contact us @{{#var#}}"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "choices": {
+                "type": "actions",
+                "actions": [
+                    {
+                        "type": "phone_number",
+                        "phone_number_text": "Any queries call",
+                        "phone_number": "+918783xxxxxx"
+                    },
+                    {
+                        "type": "url",
+                        "website_url_type": "Static",
+                        "website_button_text": "More info visit",
+                        "website_url": "www.example.com"
+                    }
+                ]
+            }
+        }
+    }
+}'
+```
 
 #### PARAMETERS
 
@@ -354,7 +557,11 @@ curl -X POST \
 | choices.reply.quick_reply2 | No       | max 20 characters               |
 | choices.reply.quick_reply3 | Yes      | value is `Static`               |
 
+### With Reply
+
 ### Example Request
+
+#### Type Text
 
 ```
 curl -X POST \
@@ -363,28 +570,32 @@ curl -X POST \
   -H 'content-type: application/json' \
   -d '{
     "type": "mediatemplate",
-    "name": "mediatemplate_with_reply",
+    "name": "template_name",
     "category": "marketing",
     "language": "en",
-    "number": "91861xxxxxxxx",
-    "meta_approval" : true,
+    "meta_approval": true,
+    "number": "918736xxxxxx",
     "payload": {
         "type": "mediatemplate",
         "payload": {
             "name": "mediatemplate_with_reply",
             "language": "en",
-            "body_params": [],
-            "header_params": [],
+            "body_params": [
+                "body"
+            ],
+            "header_params": [
+                "header"
+            ],
             "header": {
                 "type": "text",
                 "payload": {
-                    "text": "Hello User"
+                    "text": "Header text @{{#var#}}"
                 }
             },
             "body": {
                 "type": "text",
                 "payload": {
-                    "text": "Do you like template?"
+                    "text": "Any doubts please contact us @{{#var#}}"
                 }
             },
             "footer": {
@@ -393,14 +604,184 @@ curl -X POST \
                     "text": "Thank you!"
                 }
             },
-            "url": null,
             "choices": {
                 "type": "reply",
                 "reply": {
                     "type": "quick_reply",
                     "quick_reply1": "Yes",
                     "quick_reply2": "No"
-                    "quick_reply3": "maybe"
+                }
+            }
+        }
+    }
+}'
+```
+
+#### Type Image
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "mediatemplate",
+    "name": "template_name",
+    "category": "marketing",
+    "meta_approval": true,
+    "language": "en",
+    "number": "918736xxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_buttons",
+            "language": "en",
+            "body_params": [
+                "body"
+            ],
+            "header_params": [
+                "header"
+            ],
+            "header": {
+                "type": "image",
+                "payload": {
+                    "text": "Header text @{{#var#}}",
+                    "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Any doubts please contact us  @{{#var#}}"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "choices": {
+                "type": "reply",
+                "reply": {
+                    "type": "quick_reply",
+                    "quick_reply1": "Yes",
+                    "quick_reply2": "No"
+                }
+            }
+        }
+    }
+}'
+
+```
+
+#### Type Video
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "mediatemplate",
+    "name": "template_name",
+    "category": "marketing",
+    "meta_approval": true,
+    "language": "en",
+    "number": "918736xxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_button",
+            "language": "en",
+            "body_params": [
+                "body_params"
+            ],
+            "header_params": [
+                "header_params"
+            ],
+            "header": {
+                "type": "video",
+                "payload": {
+                    "text": "Header text @{{#var#}}",
+                    "url": "https://www.example/sample/video/sample.mp4"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Any doubts please contact us @{{#var#}}"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "choices": {
+                "type": "reply",
+                "reply": {
+                    "type": "quick_reply",
+                    "quick_reply1": "Yes",
+                    "quick_reply2": "No"
+                }
+            }
+        }
+    }
+}'
+```
+
+#### Type Document
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "mediatemplate",
+    "name": "template_name",
+    "category": "marketing",
+    "meta_approval": true,
+    "language": "en",
+    "number": "918736xxxxxx",
+    "payload": {
+        "type": "mediatemplate",
+        "payload": {
+            "name": "mediatemplate_with_buttons",
+            "language": "en",
+            "body_params": [
+                "body"
+            ],
+            "header_params": [
+                "header"
+            ],
+            "header": {
+                "type": "document",
+                "payload": {
+                    "text": "Header text @{{#var#}}",
+                    "url": "https://www.example.com/pdf-test.pdf"
+                }
+            },
+            "body": {
+                "type": "text",
+                "payload": {
+                    "text": "Any doubts please contact us @{{#var#}}"
+                }
+            },
+            "footer": {
+                "type": "text",
+                "payload": {
+                    "text": "Thank you!"
+                }
+            },
+            "choices": {
+                "type": "reply",
+                "reply": {
+                    "type": "quick_reply",
+                    "quick_reply1": "Yes",
+                    "quick_reply2": "No"
                 }
             }
         }
@@ -487,9 +868,9 @@ curl -X DELETE \
 
 ```json
 {
-  "status": "OK",
-  "code": 200,
-  "message": "Template Successfully Deleted",
-  "data": []
+    "status": "OK",
+    "code": 200,
+    "message": "Template Successfully Deleted",
+    "data": []
 }
 ```

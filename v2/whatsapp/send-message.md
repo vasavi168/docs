@@ -102,7 +102,7 @@ curl -X POST \
 {endpoint}whatsapp/message/send
 ```
 
-#### Example Request With Template
+#### Example Request With Authentication Template
 
 ```
 curl -X POST \
@@ -110,23 +110,26 @@ curl -X POST \
   -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
   -H 'content-type: application/json' \
   -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "template",
-		"payload": {
-			"name": "otp",
-			"namespace": "",
-			"language": "en",
-			"body_params": ["223344", "10"],
-			"components": []
-		}
-	}
+    "channels": [
+        {
+            "name": "whatsapp",
+            "from": "91901912xxxx"
+        }
+    ],
+    "recipient": {
+        "to": [
+            "91XXXXXXx"
+        ]
+    },
+    "message": {
+        "type": "template",
+        "payload": {
+            "name": "otp",
+            "namespace": "otp",
+            "language": "en",
+            "body_params" : [23455]
+        }
+    }
 }'
 ```
 
@@ -332,7 +335,7 @@ curl -X POST \
 		"payload": {
 			"url": "https://www.buildquickbots.com/whatsapp/media/sample/jpg/sample01.jpg",
 			"caption": "some caption for image",
-            "filename": ""
+            "filename": "Sample Image file"
 		}
 	}
 }'
@@ -573,7 +576,7 @@ curl -X POST \
 			"body": {
 				"type": "text",
 				"payload": {
-					"text": "What is your favorite color?"
+					"text": "What is your favorite colour?"
 				}
 			},
 			"footer": {
@@ -662,19 +665,19 @@ curl -X POST \
 				"countryCode": "in",
 				"state": "KA",
 				"type": "Office",
-				"zip": "560078"
+				"zip": "56***"
 			}],
 			"name": {
-				"firstName": "MOB",
-				"lastName": "Texting"
-				"formattedName": "MOB Texting",
+				"firstName": "Peter",
+				"lastName": "Parker"
+				"formattedName": "Peter Parker",
 			},
 			"phones": [{
 				"phone": "91901xxxxxxx",
 				"type": "WORK"
 			}],
 			"org": {
-                "company": "MOBTexting",
+                "company": "Company_name",
                 "department": "Product",
                 "title": "Manager"
             },

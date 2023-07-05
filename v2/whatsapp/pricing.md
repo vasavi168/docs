@@ -1,7 +1,7 @@
 # View Pricing List
 
 View all Country wise pricing list.
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 #### GET
 
@@ -11,12 +11,12 @@ View all Country wise pricing list.
 
 #### PARAMETERS
 
-| name               | optional | value                                          |
-| ------------------ | -------- | ---------------------------------------------- |
-| filter[iso]        | Yes      | The ISO code of the Country. EX: (IN, AF, ...) |
-| filter[service]    | Yes      | The short code of the service name. EX: (WAP)  |
-| filter[subservice] | Yes      | The short code of the service name. EX: (WAI)  |
-| filter[status]     | Yes      | 1 or 0                                         |
+| name               | optional | value                                                   |
+| ------------------ | -------- | ------------------------------------------------------- |
+| filter[iso]        | Yes      | The ISO code of the Country. EX: (IN, AF, ...)          |
+| filter[service]    | Yes      | The short code of the service name. EX: (WAP)           |
+| filter[subservice] | Yes      | The short code of the service name. EX: (WMC, WUC, WAA) |
+| filter[status]     | Yes      | 1 or 0                                                  |
 
 #### Example Request
 
