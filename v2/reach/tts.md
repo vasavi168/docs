@@ -44,7 +44,6 @@ curl -X POST '{endpoint}outgoing/tts' \
     "to": 918867XXXXXX,
     "text": "Hi## This is the text to speech using ##outgoing api",
     "options": {
-        "language": "en-US",
         "break": {
             "identifier": "##",
             "time": 1
@@ -69,6 +68,7 @@ curl -X POST '{endpoint}outgoing/tts' \
       "credits": "0.0005",
       "created_at": "2023-01-23T12:13:25.666366Z",
       "foreign_id": null,
+      "options": null,
       "status": "queued"
     }
   ]
@@ -87,7 +87,6 @@ curl -X POST '{endpoint}outgoing/tts' \
     "to": 918867XXXXXX,
     "text": "Hi## This is the text to speech using ##outgoing api",
     "options": {
-        "language": "en-US",
         "break": {
             "identifier": "##",
             "time": 1
@@ -116,6 +115,7 @@ curl -X POST '{endpoint}outgoing/tts' \
       "credits": "0.0005",
       "created_at": "2023-01-23T12:13:25.666366Z",
       "foreign_id": null,
+      "options": null,
       "status": "queued"
     }
   ]
@@ -134,7 +134,6 @@ curl -X POST '{endpoint}outgoing/tts' \
     "to": 918867XXXXXX,
     "text": "Hi## This is the text to speech using ##outgoing api",
     "options": {
-        "language": "en-US",
         "break": {
             "identifier": "##",
             "time": 1
@@ -160,6 +159,7 @@ curl -X POST '{endpoint}outgoing/tts' \
       "credits": "0.0005",
       "created_at": "2023-01-23T12:13:25.666366Z",
       "foreign_id": null,
+      "options": null,
       "status": "queued"
     }
   ]
