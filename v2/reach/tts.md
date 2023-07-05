@@ -44,7 +44,6 @@ curl -X POST '{endpoint}outgoing/tts' \
     "to": 918867XXXXXX,
     "text": "Hi## This is the text to speech using ##outgoing api",
     "options": {
-        "language": "en-US",
         "break": {
             "identifier": "##",
             "time": 1
@@ -87,7 +86,6 @@ curl -X POST '{endpoint}outgoing/tts' \
     "to": 918867XXXXXX,
     "text": "Hi## This is the text to speech using ##outgoing api",
     "options": {
-        "language": "en-US",
         "break": {
             "identifier": "##",
             "time": 1
@@ -134,7 +132,6 @@ curl -X POST '{endpoint}outgoing/tts' \
     "to": 918867XXXXXX,
     "text": "Hi## This is the text to speech using ##outgoing api",
     "options": {
-        "language": "en-US",
         "break": {
             "identifier": "##",
             "time": 1
