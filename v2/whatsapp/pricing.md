@@ -1,7 +1,7 @@
 # View Pricing List
 
 View all Country wise pricing list.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
