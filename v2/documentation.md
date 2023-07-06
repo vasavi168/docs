@@ -20,7 +20,7 @@
 
   - [Introduction](/docs/{version}/sms)
   - [SMS Length Summary](/docs/{version}/sms/length-summary)
-  - [Send Notification](/docs/{version}/sms/send)
+  - [Send Notification](/docs/{version}/sms/sendsms)
   - [Send Template Notification](/docs/{version}/sms/template)
   - [Post](/docs/{version}/sms/post)
   - [Webhook](/docs/{version}/sms/webhook)
