@@ -1,4 +1,4 @@
-@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.postman']))
+@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.tools']))
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection})
 @endif
 
@@ -64,14 +64,13 @@
 
 - [Whatsapp](#)
 
-  - [Introduction](/docs/{version}/whatsapp)
-  - [Send a message](/docs/{version}/whatsapp/send-message)
-  - [Status Info](/docs/{version}/whatsapp/status)
-  - [Webhook](/docs/{version}/whatsapp/webhooks)
-  - [Pull DLR](/docs/{version}/whatsapp/pull-status)
-  - [Optout](/docs/{version}/whatsapp/optout)
-  - [Pricing List](/docs/{version}/whatsapp/pricing)
-  - [Templates](/docs/{version}/whatsapp/templates)
+  - [Introduction](/docs/v2/whatsapp)
+  - [Send Notification](/docs/v2/whatsapp/send-message)
+  - [Status Info](/docs/v2/whatsapp/status)
+  - [Webhook](/docs/v2/whatsapp/webhooks)
+  - [Pull DLR](/docs/v2/whatsapp/pull-status)
+  - [Optout](/docs/v2/whatsapp/optout)
+  - [Pricing List](/docs/v2/whatsapp/pricing)
 
 <!--
 - MIP
