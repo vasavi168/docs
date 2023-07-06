@@ -711,7 +711,7 @@ curl -X POST \
 			}],
 			"name": {
 				"firstName": "Peter",
-				"lastName": "Parker"
+				"lastName": "Parker",
 				"formattedName": "Peter Parker",
 			},
 			"phones": [{
