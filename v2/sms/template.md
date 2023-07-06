@@ -37,7 +37,6 @@ You can send template message using `POST` method content in body.
 {
     "alias": "template-name",
     "recipient": {
-        "group_id": "{segment_id}",
         "to": ["9189195xxxxx", "9189196xxxxx"]
     },
     "data": {
