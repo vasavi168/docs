@@ -76,6 +76,7 @@ Create a new Verify object through the API to start the verification process of 
 | Name     | Description                                                                                                               |
 | -------- | ------------------------------------------------------------------------------------------------------------------------- | --- |
 | template | Custom Message for sending otp if message object not specifed in verify config. use {token} in content for replacing otp. |     |
+| order     | Order of channels [starts from 0]. It will trigger channels in specified order. | |
 | wait     | Waiting time [in seconds] for triggering otp via alternate channel if first channel not successful. Default 30 seconds | |
 | language | Language in which TTS should play | |
 | token | Token length should be equal to defined length
