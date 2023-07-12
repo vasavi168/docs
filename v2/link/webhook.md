@@ -28,7 +28,7 @@ Upon receiving visits to the smart link, we will send a `POST` request in JSON f
 
 #### Example Url
 
-```curl -X POST \ 
+```shell -X POST \ 
   https://www.domain.com/ack/receive \
   -H 'content-type: application/json' \
   -d '{

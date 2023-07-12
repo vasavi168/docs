@@ -23,7 +23,7 @@ This process can only be performed once for each token, ensuring the integrity o
 
 #### Example Request
 
-```curl
+```shell
 curl -X GET \
   '{endpoint}verify/check/41379328-d3a7-4fcd-be90-d5237f911d76/742385' \
   -H 'Accept: application/json' \

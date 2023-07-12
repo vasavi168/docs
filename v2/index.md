@@ -23,19 +23,8 @@ List of product names and product codes
 @endforeach
 
 @endif
+
 #include "_include/endpoint.md"
-
-Note: Few elements in endpoint may change for service to service.
-
-@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.postman']))
-
-## API Collection Postman link
-
-```
-https://www.getpostman.com/collections/{collection}
-```
-
-@endif
 
 #### Available HTTP methods
 
