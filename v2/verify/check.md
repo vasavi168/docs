@@ -1,9 +1,11 @@
 # Verify Token
 
-Verify a sent verification token. Can only be done once for each token.
+To verify a sent verification token, follow these steps:
 
-- Send the verification code that your user supplied, with the corresponding `id` from the Verify request.
-- Check the `status` of the response to determine if the code the user supplied matches the one sent by {app}.
+- Send the verification code provided by your user along with the corresponding `id` from the initial Verify request.
+- Check the `status` of the response to verify if the code provided by the user matches the one sent by {app}.
+
+This process can only be performed once for each token, ensuring the integrity of the verification system.
 #include "_include/endpoint.md"
 
 #### GET

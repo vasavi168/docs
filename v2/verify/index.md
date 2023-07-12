@@ -1,14 +1,14 @@
 # Verify Api
 
-Verify API enables you to verify a mobile phone number with two-factor authentication.
+The Verify API allows you to implement two-factor authentication by verifying mobile phone numbers.
 
-This is useful for:
+This functionality is beneficial for the following purposes:
 
-- Protecting against spam, by preventing spammers from creating multiple accounts
-- Monitoring suspicious activity, by forcing an account user to verify ownership of a number
-- Ensuring that you can reach your users at any time because you have their correct phone number
+- Protection against spam: Preventing spammers from creating multiple accounts.
+- Monitoring suspicious activity: Verifying ownership of a phone number to detect any unusual behavior.
+- Ensuring effective communication: Having the correct phone number on record to reach users reliably.
 
-Create a new Verify object through the API to start the verification process of a recipient. We will take care of creating a token and making sure that the message gets delivered to the user's handset.
+To initiate the verification process for a recipient, simply create a new Verify object through the API. We will handle the generation of a token and ensure that the verification message is successfully delivered to the user's mobile device.
 
 ## Verify Request
 #include "_include/endpoint.md"
