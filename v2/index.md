@@ -2,7 +2,7 @@
 
 Our APIs are built using the `REST` standard, which enables you to effortlessly send messages to your end users, simplifying your work. With this feature, you can send alerts, reminders, notifications, and even verification messages containing one-time passcodes (OTP).
 
-This documentation provides clear instructions on how to integrate our API using different *HTTP*_ and _*JSON*_ APIs.
+This documentation provides clear instructions on how to integrate our API using different _*HTTP*_ and _*JSON*_ APIs.
 
 We are here to assist you in configuring, accessing, and utilizing our API for our services.
 
