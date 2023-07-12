@@ -4,7 +4,7 @@ The WEBHOOK Push API enables the delivery of smart link visit reports to the cli
 
 To request these reports, you must first create a webhook URL in the Webhooks section. When creating a smart link, ensure that you select the corresponding webhook that you previously created.
 
-Upon receiving visits to the smart link, we will send a `POST` request in JSON format to the specified webhook URL
+Upon receiving visits to the smart link, we will send a `POST` request in JSON format to the specified webhook URL. The request will contain the following parameters
 
 #### REPLACEABLE PARAMETERS
 
